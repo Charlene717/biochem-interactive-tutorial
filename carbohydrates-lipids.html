@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.4 醣類、脂質與生物膜 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html" class="active">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 4 / 18 · BLOCK A</div>
+<h1 data-zh="醣類、脂質與生物膜" data-en="Carbohydrates, Lipids &amp; Membranes">醣類、脂質與生物膜</h1>
+<p class="subtitle" data-lang="zh">從單醣到醣綴合物、從脂肪酸到流動鑲嵌膜——生命如何用碳鏈打造能源、結構、界面。</p>
+<p class="subtitle" data-lang="en">From monosaccharides to glycoconjugates, from fatty acids to fluid-mosaic membranes — how life uses carbon chains to build fuel, structure, and interface.</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="醣類" data-en="CARBOHYDRATES">醣類</div>
+<h2 data-zh="一、醣類分類與化學特徵" data-en="I. Carbohydrate classes &amp; chemistry">一、醣類分類</h2>
+<div data-lang="zh"><p>通式 (CH₂O)ₙ。功能：(1) 能量儲存（澱粉、肝醣）；(2) 結構（纖維素、幾丁質、肽聚醣）；(3) 細胞識別（醣蛋白、醣脂、血型抗原）。重點區分<strong>環式 vs 鏈式</strong>、<strong>α vs β 異頭異構物</strong>、<strong>D vs L 對映異構</strong>。</p></div>
+<div data-lang="en"><p>General formula (CH₂O)ₙ. Functions: (1) energy storage (starch, glycogen); (2) structure (cellulose, chitin, peptidoglycan); (3) cell recognition (glycoproteins, glycolipids, blood-group antigens). Key distinctions: <strong>cyclic vs linear</strong>, <strong>α vs β anomers</strong>, <strong>D vs L enantiomers</strong>.</p></div>
+<table class="comp-table">
+<thead><tr><th data-zh="類別" data-en="Class">類別</th><th data-zh="例子" data-en="Example">例子</th><th data-zh="化學特徵" data-en="Chemistry">化學</th><th data-zh="生物角色" data-en="Role">角色</th></tr></thead>
+<tbody>
+<tr><td><strong data-zh="單醣" data-en="Monosaccharide">單醣</strong></td><td>Glucose, Fructose, Ribose</td><td data-zh="3–7 碳醛醣/酮醣" data-en="3–7 C aldoses/ketoses">3–7 碳醛醣/酮醣</td><td data-zh="能量、核酸組成" data-en="Energy, NA component">能量、核酸</td></tr>
+<tr><td><strong data-zh="雙醣" data-en="Disaccharide">雙醣</strong></td><td>Sucrose, Lactose, Maltose</td><td data-zh="α/β 醣苷鍵" data-en="α/β glycosidic bonds">醣苷鍵</td><td data-zh="運輸、奶營養" data-en="Transport, milk">運輸、奶</td></tr>
+<tr><td><strong data-zh="多醣" data-en="Polysaccharide">多醣</strong></td><td>Glycogen, Cellulose, Starch</td><td data-zh="α-1,4 + α-1,6（葡萄糖儲存）vs β-1,4（結構）" data-en="α-1,4+α-1,6 storage vs β-1,4 structure">儲存 vs 結構</td><td data-zh="動物/植物能源、結構" data-en="Storage/structural">能源/結構</td></tr>
+<tr><td><strong data-zh="醣綴合物" data-en="Glycoconjugates">醣綴合物</strong></td><td data-zh="醣蛋白、蛋白聚醣、醣脂" data-en="Glycoproteins, proteoglycans, glycolipids">醣蛋白等</td><td data-zh="N-連、O-連、GAG" data-en="N-linked, O-linked, GAGs">N/O 連</td><td data-zh="細胞識別、ECM" data-en="Cell recognition, ECM">識別、ECM</td></tr>
+</tbody></table>
+<div class="callout tip"><span class="callout-icon">💡</span><div>
+<span data-lang="zh"><strong>糖鏈即訊息：</strong>單一蛋白可帶數十種不同醣鏈組合，產生「醣型 (glycoforms)」。ABO 血型即由<strong>單醣鏈差異</strong>決定（A 加 GalNAc，B 加 Gal，O 不加）。COVID-19 棘蛋白上的 22 個 N-glycans 影響病毒中和抗體辨識——「醣盾」概念。</span>
+<span data-lang="en"><strong>Glycans are information:</strong> a single protein can bear dozens of glycan compositions ("glycoforms"). ABO blood groups are determined by <strong>monosaccharide differences</strong> (A adds GalNAc, B adds Gal, O nothing). SARS-CoV-2 spike has 22 N-glycans that shield from neutralizing antibodies — the "glycan shield" concept.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="脂質" data-en="LIPIDS">脂質</div>
+<h2 data-zh="二、脂質類別" data-en="II. Lipid classes">二、脂質類別</h2>
+<div class="card-grid cols-2">
+<div class="card"><h4>🪶 <span data-zh="脂肪酸" data-en="Fatty acids">脂肪酸</span></h4><div data-lang="zh"><p>4–36 碳長鏈羧酸。<strong>飽和</strong>（無 C=C）vs <strong>不飽和</strong>（cis 雙鍵造成扭折，降低熔點）。<strong>必需脂肪酸：</strong>ω-3 (α-亞麻酸)、ω-6 (亞麻酸)。<strong>反式脂肪酸</strong>因健康疑慮已被多國禁用。</p></div><div data-lang="en"><p>4–36 C long-chain carboxylic acids. <strong>Saturated</strong> (no C=C) vs <strong>unsaturated</strong> (cis double bonds introduce kinks, lowering melting point). <strong>Essential FAs:</strong> ω-3 (α-linolenic), ω-6 (linoleic). <strong>Trans fats</strong> are now widely banned for health reasons.</p></div></div>
+<div class="card"><h4>🧈 <span data-zh="三酸甘油酯 (TG)" data-en="Triacylglycerols (TG)">三酸甘油酯</span></h4><div data-lang="zh"><p>脂肪細胞主要能源儲存——3 個脂肪酸酯化於甘油。同質量 TG 提供 ATP 是肝醣的 6×。</p></div><div data-lang="en"><p>Main fuel reservoir in adipocytes — 3 FAs esterified to glycerol. TG yields ~6× more ATP per gram than glycogen.</p></div></div>
+<div class="card"><h4>📐 <span data-zh="磷脂 (phospholipids)" data-en="Phospholipids">磷脂</span></h4><div data-lang="zh"><p>膜的主要成分。<strong>磷脂醯膽鹼 (PC)、磷脂醯絲胺酸 (PS)、磷脂醯肌醇 (PI/PIP/PIP₂)</strong>——PIP₂ 是訊息傳遞關鍵（IP₃/DAG 來源）。</p></div><div data-lang="en"><p>Membrane staples. <strong>PC, PS, PI/PIP/PIP₂</strong> — PIP₂ is critical in signaling (source of IP₃/DAG).</p></div></div>
+<div class="card"><h4>🟢 <span data-zh="類固醇 (steroids)" data-en="Steroids">類固醇</span></h4><div data-lang="zh"><p>四環核（gonane）。<strong>膽固醇</strong>（膜流動性緩衝）、<strong>類固醇激素</strong>（皮質醇、性激素、aldosterone）、膽汁酸。</p></div><div data-lang="en"><p>Four-ring gonane core. <strong>Cholesterol</strong> (membrane fluidity buffer), <strong>steroid hormones</strong> (cortisol, sex hormones, aldosterone), bile acids.</p></div></div>
+<div class="card"><h4>🌟 <span data-zh="鞘脂 (sphingolipids)" data-en="Sphingolipids">鞘脂</span></h4><div data-lang="zh"><p>以鞘胺醇為骨架，包括鞘磷脂、神經節苷脂（gangliosides）。富集於神經細胞髓鞘與 lipid rafts。Tay-Sachs 病為鞘脂代謝缺陷。</p></div><div data-lang="en"><p>Sphingosine backbone — sphingomyelin, gangliosides. Enriched in nerve myelin and lipid rafts. Tay-Sachs disease is a sphingolipid catabolism defect.</p></div></div>
+<div class="card"><h4>🎯 <span data-zh="信號脂質" data-en="Signaling lipids">信號脂質</span></h4><div data-lang="zh"><p><strong>前列腺素</strong>（花生四烯酸代謝產物）、<strong>白三烯</strong>、<strong>內源大麻素</strong>。NSAIDs（阿斯匹靈、布洛芬）即抑制 COX 阻斷前列腺素合成。</p></div><div data-lang="en"><p><strong>Prostaglandins</strong> (from arachidonic acid), <strong>leukotrienes</strong>, <strong>endocannabinoids</strong>. NSAIDs (aspirin, ibuprofen) inhibit COX to block prostaglandin synthesis.</p></div></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="生物膜" data-en="MEMBRANES">生物膜</div>
+<h2 data-zh="三、流動鑲嵌膜與膜運輸" data-en="III. Fluid-mosaic membrane &amp; transport">三、膜結構與運輸</h2>
+<div data-lang="zh"><p>Singer-Nicolson 流動鑲嵌模型 (1972)：磷脂雙層為動態溶劑，蛋白嵌入或附著。膽固醇調節流動性（高溫時減少、低溫時增加）。<strong>Lipid rafts</strong> 是富含鞘脂與膽固醇的微結構域，集中訊息傳遞分子。</p></div>
+<div data-lang="en"><p>Singer-Nicolson fluid-mosaic model (1972): the phospholipid bilayer is a dynamic solvent in which proteins are embedded or peripherally associated. Cholesterol buffers fluidity (reduces at high T, increases at low T). <strong>Lipid rafts</strong> are sphingolipid/cholesterol-rich microdomains that cluster signaling molecules.</p></div>
+<table class="comp-table">
+<thead><tr><th data-zh="運輸類型" data-en="Transport">運輸</th><th data-zh="ΔG" data-en="ΔG">ΔG</th><th data-zh="能量來源" data-en="Energy">能量</th><th data-zh="例子" data-en="Example">例子</th></tr></thead>
+<tbody>
+<tr><td data-zh="簡單擴散" data-en="Simple diffusion">簡單擴散</td><td>&lt;0</td><td>—</td><td>O₂, CO₂, 類固醇</td></tr>
+<tr><td data-zh="促進擴散（通道/載體）" data-en="Facilitated diffusion">促進擴散</td><td>&lt;0</td><td>—</td><td>GLUT、aquaporin、K⁺ 通道</td></tr>
+<tr><td data-zh="主動運輸（一級）" data-en="Primary active">主動運輸（一級）</td><td>&gt;0</td><td>ATP</td><td>Na⁺/K⁺-ATPase, P-glycoprotein</td></tr>
+<tr><td data-zh="次級主動運輸" data-en="Secondary active">次級主動</td><td>&gt;0</td><td data-zh="離子梯度" data-en="Ion gradient">離子梯度</td><td>SGLT、NCX</td></tr>
+</tbody></table>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="膜流動性 vs 溫度與膽固醇" data-en="Membrane fluidity vs temperature &amp; cholesterol">膜流動性模擬</h2>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statPhase">—</span><span class="sim-stat gold" id="statFluid">—</span></div>
+<div class="slider-group"><label><span data-zh="溫度 (°C)" data-en="Temperature (°C)">溫度</span> <span id="valT">37</span></label><input type="range" id="sliderT" min="0" max="60" value="37" step="1"></div>
+<div class="slider-group"><label><span data-zh="膽固醇含量 (%)" data-en="Cholesterol (%)">膽固醇</span> <span id="valChol">25</span></label><input type="range" id="sliderChol" min="0" max="50" value="25" step="1"></div>
+<div class="slider-group"><label><span data-zh="不飽和脂肪酸比例 (%)" data-en="Unsaturated FA (%)">不飽和比例</span> <span id="valUnsat">40</span></label><input type="range" id="sliderUnsat" min="0" max="100" value="40" step="5"></div>
+<div class="chart-container"><canvas id="fluidChart"></canvas></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="四、預測膜運輸路徑" data-en="IV. Predicting transport routes">四、預測膜運輸</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="該分子如何過膜？" data-en="How does this molecule cross?">該分子如何過膜？</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>小、非極性、無電荷（O₂、CO₂、N₂、類固醇）<span class="dt-arrow">→</span> 直接<strong>簡單擴散</strong>，無需轉運蛋白。</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>極性小分子（H₂O、urea、glycerol）<span class="dt-arrow">→</span> 透過<strong>通道蛋白</strong>（aquaporin）。</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>糖、胺基酸<span class="dt-arrow">→</span> 順濃度梯度 = <strong>GLUT 等促進擴散</strong>；逆梯度 = <strong>SGLT</strong>（共運 Na⁺）。</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>離子（Na⁺、K⁺、Ca²⁺）<span class="dt-arrow">→</span> 通道（電壓/配體門控）或 <strong>ATPase pump</strong>（如 Na⁺/K⁺）。</div></div>
+<div class="dt-node"><span class="dt-q">Q5:</span><div>大分子（蛋白、mRNA）<span class="dt-arrow">→</span> <strong>內吞 / 外排 / 跨核孔複合體</strong>。</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>Small, nonpolar, uncharged (O₂, CO₂, N₂, steroids) <span class="dt-arrow">→</span> <strong>simple diffusion</strong>, no transporter.</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>Polar small molecules (H₂O, urea, glycerol) <span class="dt-arrow">→</span> <strong>channel proteins</strong> (aquaporin).</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>Sugars, amino acids <span class="dt-arrow">→</span> down gradient = <strong>GLUT facilitated</strong>; up gradient = <strong>SGLT</strong> (Na⁺ symport).</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>Ions (Na⁺, K⁺, Ca²⁺) <span class="dt-arrow">→</span> channels (voltage/ligand-gated) or <strong>ATPase pumps</strong> (Na⁺/K⁺).</div></div>
+<div class="dt-node"><span class="dt-q">Q5:</span><div>Macromolecules (proteins, mRNA) <span class="dt-arrow">→</span> <strong>endocytosis / exocytosis / nuclear pore complexes</strong>.</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="脂質分子質量與 LogP 預測" data-en="Lipid MW &amp; LogP prediction">脂質與 LogP</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'r1')">R</button><button class="code-tab-btn" onclick="switchTab(this,'py1')">Python / RDKit</button></div>
+<div class="code-tab-content active" id="r1"><pre><span class="kw">library</span>(ChemmineR)
+<span class="kw">library</span>(rcdk)
+
+<span class="comment"># 棕櫚酸 SMILES</span>
+mol &lt;- <span class="func">parse.smiles</span>(<span class="str">"CCCCCCCCCCCCCCCC(=O)O"</span>)[[<span class="num">1</span>]]
+<span class="func">get.mol2formula</span>(mol)$mass            <span class="comment"># 256.43 Da</span>
+<span class="func">get.alogp</span>(mol)                          <span class="comment"># LogP ~7（極疏水）</span>
+
+<span class="comment"># 從 LIPID MAPS 下載脂質結構</span>
+<span class="kw">library</span>(httr)
+r &lt;- <span class="func">GET</span>(<span class="str">"https://www.lipidmaps.org/rest/compound/lm_id/LMFA01010001/all/json"</span>)
+content(r)$mass</pre></div>
+<div class="code-tab-content" id="py1"><pre><span class="kw">from</span> rdkit <span class="kw">import</span> Chem
+<span class="kw">from</span> rdkit.Chem <span class="kw">import</span> Descriptors, AllChem, Draw
+
+<span class="comment"># 一些常見脂質</span>
+lipids = {
+    <span class="str">"Palmitic acid"</span>:    <span class="str">"CCCCCCCCCCCCCCCC(=O)O"</span>,
+    <span class="str">"Oleic acid (18:1)"</span>: <span class="str">"CCCCCCCC/C=C\\CCCCCCCC(=O)O"</span>,
+    <span class="str">"Cholesterol"</span>:      <span class="str">"CC(C)CCCC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)O)C)C"</span>,
+    <span class="str">"DHA (22:6 ω-3)"</span>:    <span class="str">"CC/C=C\\C/C=C\\C/C=C\\C/C=C\\C/C=C\\C/C=C\\CCC(=O)O"</span>,
+}
+<span class="kw">for</span> name, smi <span class="kw">in</span> lipids.items():
+    m = Chem.MolFromSmiles(smi)
+    <span class="func">print</span>(<span class="str">f"{name:20s} MW={Descriptors.MolWt(m):6.1f} LogP={Descriptors.MolLogP(m):5.2f}"</span>)
+
+<span class="comment"># 預測膜通透性（Lipinski + LogP）</span>
+<span class="kw">def</span> <span class="func">likely_permeates</span>(smiles):
+    m = Chem.MolFromSmiles(smiles)
+    MW = Descriptors.MolWt(m); logP = Descriptors.MolLogP(m)
+    HBD = Descriptors.NumHDonors(m); HBA = Descriptors.NumHAcceptors(m)
+    <span class="kw">return</span> (MW &lt; <span class="num">500</span>) <span class="kw">and</span> (logP &lt; <span class="num">5</span>) <span class="kw">and</span> (HBD &lt;= <span class="num">5</span>) <span class="kw">and</span> (HBA &lt;= <span class="num">10</span>)</pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="2"><p data-lang="zh">1. 不飽和脂肪酸對膜的影響？</p><p data-lang="en">1. Effect of unsaturated fatty acids on membranes?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 使膜更剛硬</span><span data-lang="en">A. Makes membrane more rigid</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 不影響流動性</span><span data-lang="en">B. No effect on fluidity</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. cis 雙鍵造成扭折，增加流動性、降低熔點</span><span data-lang="en">C. cis double bonds kink the chain, increasing fluidity, lowering Tm</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 完全阻斷膜運輸</span><span data-lang="en">D. Blocks membrane transport</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="2"><p data-lang="zh">2. 葡萄糖透過小腸壁從腸腔吸收到血液，主要靠？</p><p data-lang="en">2. Glucose absorption from intestinal lumen into blood uses?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 簡單擴散</span><span data-lang="en">A. Simple diffusion</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 內吞作用</span><span data-lang="en">B. Endocytosis</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. SGLT1（與 Na⁺ 共運的次級主動運輸）→ GLUT2 出膜</span><span data-lang="en">C. SGLT1 (Na⁺-coupled secondary active) → GLUT2 efflux</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. ATPase 直接 pump</span><span data-lang="en">D. ATPase direct pump</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="1"><p data-lang="zh">3. 膽固醇對膜流動性的雙重作用？</p><p data-lang="en">3. Cholesterol's dual effect on fluidity?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 永遠增加流動性</span><span data-lang="en">A. Always increases fluidity</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 高溫降低流動性，低溫增加流動性（流動性緩衝劑）</span><span data-lang="en">B. Lowers fluidity at high T, raises at low T (a fluidity buffer)</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 永遠降低流動性</span><span data-lang="en">C. Always decreases fluidity</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 不影響流動性</span><span data-lang="en">D. No effect</span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="protein-structure-methods.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="結構解析方法與 AlphaFold 3" data-en="Structure Determination &amp;amp; AlphaFold 3">結構解析方法與 AlphaFold 3</span></a>
+<a href="nucleic-acids.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="核酸的化學與結構" data-en="Nucleic Acid Chemistry &amp;amp; Structure">核酸的化學與結構</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+// Fluidity simulator
+const fluidChart=new Chart(document.getElementById('fluidChart'),{type:'line',data:{labels:Array.from({length:61},(_,i)=>i),datasets:[
+  {label:'Fluidity index',data:[],borderColor:'#9f1239',backgroundColor:'rgba(159,18,57,0.15)',fill:true,tension:0.3}
+]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{x:{title:{display:true,text:'°C'}},y:{title:{display:true,text:'Fluidity (relative)'},min:0,max:100}}}});
+function updateFluid(){
+  const T=+document.getElementById('sliderT').value;
+  const chol=+document.getElementById('sliderChol').value;
+  const unsat=+document.getElementById('sliderUnsat').value;
+  document.getElementById('valT').textContent=T;
+  document.getElementById('valChol').textContent=chol;
+  document.getElementById('valUnsat').textContent=unsat;
+  // Tm approximation: lower with more unsaturation, modulated by cholesterol (buffer)
+  const Tm = 50 - unsat*0.3;
+  const data = [];
+  for(let t=0;t<=60;t++){
+    let f = 100/(1+Math.exp(-(t-Tm)/4));
+    // cholesterol smooths transition (reduces slope, raises baseline below Tm, lowers above)
+    f = f + (chol/50)*(50-f)*0.3;
+    data.push(f);
+  }
+  fluidChart.data.datasets[0].data=data;
+  fluidChart.update('none');
+  const curF=data[T];
+  const L=I18n.get();
+  let phase;
+  if(curF<30) phase=L==='zh'?'❄️ 凝膠相':'❄️ Gel phase';
+  else if(curF<70) phase=L==='zh'?'🟡 過渡區':'🟡 Transition';
+  else phase=L==='zh'?'🔥 液晶相':'🔥 Liquid-crystalline';
+  document.getElementById('statPhase').textContent=phase;
+  document.getElementById('statFluid').textContent=(L==='zh'?'流動性 = ':'Fluidity = ')+curF.toFixed(0);
+}
+['sliderT','sliderChol','sliderUnsat'].forEach(id=>document.getElementById(id).addEventListener('input',updateFluid));
+document.addEventListener('langchange',updateFluid);
+updateFluid();
+
+const QF={zh:{q1_y:'cis 雙鍵造成尾鏈扭折，使膜流動性增加、熔點降低——所以植物油是液態。',q2_y:'腸道吸收糖：SGLT1（共運 Na⁺）抓進腸上皮 → GLUT2 從基底側出去。',q3_y:'膽固醇是「流動性緩衝劑」：高溫時填補空隙、降低流動；低溫時防止脂質排列太緊密。'},en:{q1_y:'cis double bonds kink the tail — increasing fluidity and lowering Tm. That is why plant oils are liquid.',q2_y:'SGLT1 (Na⁺-coupled) brings glucose into enterocyte; GLUT2 exports to blood.',q3_y:'Cholesterol is a "fluidity buffer": fills gaps at high T (decreases fluidity), prevents tight packing at low T (increases fluidity).'}};['q1_n','q2_n','q3_n'].forEach(k=>{QF.zh[k]='正確答案已標示。';QF.en[k]='Correct answer highlighted.';});
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Biochemistry 互動考題 · Quiz</title>
+<style>
+:root{
+  --bg:#faf7f2; --card:#fff; --ink:#1c1310; --soft:#5a4f48; --line:#d8c8b8;
+  --primary:#B33951; --primary-soft:#F2E3E6; --primary-dark:#4D1923;
+  --accent:#2E86AB; --accent-soft:#E5EDF0;
+  --exam:#7c3aed; --exam-soft:#f3e8ff;
+  --green:#059669; --green-soft:#d1fae5;
+  --red:#b91c1c; --red-soft:#fee2e2;
+  --yellow:#d97706; --yellow-soft:#fef3c7;
+  --grey:#f1f3f5; --grey-soft:#f7f1e6;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 12px rgba(0,0,0,.04);
+  --radius:10px;
+}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:-apple-system,"Segoe UI","PingFang TC","Microsoft JhengHei","Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px}
+header{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 60%,var(--accent) 100%);color:#fff;padding:16px 22px;position:sticky;top:0;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.h-row{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+h1{font-size:18px;margin:0;font-weight:700;display:flex;align-items:center;gap:8px}
+.homelink{color:#fff;text-decoration:none;font-size:13px;padding:5px 12px;border:1px solid rgba(255,255,255,.5);border-radius:999px;background:transparent;cursor:pointer;font-family:inherit}
+.homelink:hover{background:rgba(255,255,255,.15)}
+.lang-toggle{background:#fff;color:var(--primary-dark);border:none;border-radius:999px;padding:5px 14px;font-size:13px;font-weight:700;cursor:pointer;margin-left:auto;font-family:inherit}
+.stat{color:rgba(255,255,255,.95);font-size:13px}
+.stat strong{color:#fff;font-size:17px}
+main{max-width:1280px;margin:22px auto;padding:0 18px 40px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:18px}
+.panel h2{margin:0 0 6px;font-size:17px;font-weight:600;color:var(--primary-dark)}
+.panel .desc{color:var(--soft);font-size:13px;margin-bottom:14px}
+.global-prog{display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--primary-soft);border:1px solid var(--primary);border-radius:8px;margin-bottom:14px;font-size:13px;flex-wrap:wrap}
+.global-prog .gp-label{color:var(--primary);font-weight:600;min-width:90px}
+.global-prog .gp-bar{flex:1;height:8px;background:#fff;border-radius:4px;overflow:hidden;box-shadow:inset 0 0 0 1px var(--line);min-width:160px}
+.global-prog .gp-fill{height:100%;background:var(--green);transition:width .35s;width:0%}
+.gp-reset{background:#fff;border:1px solid var(--red);color:var(--red);padding:4px 10px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit}
+.gp-reset:hover{background:var(--red);color:#fff}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.ycard{background:var(--grey-soft);border:1px solid var(--line);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.ytitle{font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ytitle .badge-block{padding:2px 8px;border-radius:6px;font-size:11px;font-weight:700;background:var(--primary-soft);color:var(--primary-dark)}
+.ystatus{font-size:12px;color:var(--soft);display:flex;align-items:center;gap:6px}
+.ystatus .badge-status{padding:2px 8px;border-radius:999px;font-weight:600;font-size:11px}
+.ystatus .badge-status.ip{background:var(--yellow-soft);color:#92400e}
+.ystatus .badge-status.done{background:var(--green-soft);color:var(--green)}
+.action-row{display:flex;gap:6px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:999px;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;border:1px solid;transition:all .12s;flex:1;min-width:120px;justify-content:center}
+.chip.practice{border-color:var(--primary);background:var(--primary-soft);color:var(--primary-dark)}
+.chip.practice:hover{background:var(--primary);color:#fff;transform:translateY(-1px)}
+.chip.review{border-color:var(--accent);background:var(--accent-soft);color:#92400e}
+.chip.review:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
+.quiz-view{max-width:800px;margin:22px auto;padding:0 18px}
+.q-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-bottom:14px;box-shadow:var(--shadow)}
+.q-stem{font-size:15px;font-weight:600;margin-bottom:14px;line-height:1.55}
+.q-stem .q-num{background:var(--primary-soft);color:var(--primary-dark);padding:2px 8px;border-radius:6px;font-size:12px;margin-right:8px;font-weight:700}
+.q-stem .q-type{background:var(--accent-soft);color:#92400e;padding:2px 8px;border-radius:6px;font-size:11px;margin-right:8px;font-weight:600}
+.q-options{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.q-opt{display:flex;align-items:flex-start;gap:10px;padding:11px 16px;background:var(--grey-soft);border:1px solid var(--line);border-radius:8px;cursor:pointer;font-size:14px;transition:all .15s;line-height:1.5}
+.q-opt:hover{border-color:var(--primary);background:var(--primary-soft)}
+.q-opt.selected{border-color:var(--primary);background:var(--primary-soft);color:var(--primary-dark)}
+.q-opt.correct{border-color:var(--green);background:var(--green-soft);color:#065f46}
+.q-opt.wrong{border-color:var(--red);background:var(--red-soft);color:#991b1b}
+.q-opt .opt-key{font-weight:700;min-width:18px}
+.q-feedback{margin-top:8px;padding:11px 14px;border-radius:8px;font-size:13px;display:none;line-height:1.6}
+.q-feedback.show{display:block}
+.q-feedback.correct-fb{background:var(--green-soft);color:#065f46;border-left:3px solid var(--green)}
+.q-feedback.wrong-fb{background:var(--red-soft);color:#991b1b;border-left:3px solid var(--red)}
+.q-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.btn{background:var(--primary);color:#fff;border:none;border-radius:8px;padding:8px 18px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:background .15s}
+.btn:hover{background:var(--primary-dark)}
+.btn.ghost{background:#fff;color:var(--soft);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--primary);color:var(--primary)}
+.summary{background:linear-gradient(135deg,#fdf3f5 0%,#fef9e9 100%);border:2px solid var(--primary);border-radius:var(--radius);padding:22px;margin-bottom:18px;text-align:center}
+.summary .score{font-size:36px;font-weight:700;color:var(--primary-dark);font-family:Georgia,serif}
+.summary .label{color:var(--soft);font-size:14px}
+.hidden{display:none!important}
+@media(max-width:600px){.cards{grid-template-columns:1fr}.h-row{font-size:14px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="h-row">
+    <h1 data-zh="⚗️ 生物化學 互動式考題" data-en="⚗️ Biochemistry Interactive Quiz">⚗️ 生物化學 互動式考題</h1>
+    <button class="homelink" onclick="location.href='../index.html'"><span data-zh="← 回教程" data-en="← Back to Tutorial">← 回教程</span></button>
+    <div class="stat"><span data-zh="進度" data-en="Progress">進度</span>: <strong id="globalScore">0</strong>/<strong id="globalTotal">180</strong></div>
+    <button class="lang-toggle" id="langToggle">EN</button>
+  </div>
+</header>
+
+<main id="homeView">
+  <div class="panel">
+    <h2 data-zh="📊 整體進度" data-en="📊 Overall Progress">📊 整體進度</h2>
+    <div class="global-prog">
+      <span class="gp-label" data-zh="完成度" data-en="Completion">完成度</span>
+      <div class="gp-bar"><div class="gp-fill" id="gpFill"></div></div>
+      <span id="gpText">0 / 180</span>
+      <button class="gp-reset" onclick="resetAll()" data-zh="重置全部" data-en="Reset all">重置全部</button>
+    </div>
+    <p style="font-size:13px;color:var(--soft);margin:8px 0 0;" data-lang="zh">💡 18 章節 × 10 題 = 180 題雙語題庫。涵蓋單選、多選、是非；每題附詳細解析。進度儲存在瀏覽器本地。</p>
+    <p style="font-size:13px;color:var(--soft);margin:8px 0 0;" data-lang="en">💡 18 chapters × 10 Q = 180 bilingual questions. Single/multi/TF with explanations. Progress saved in your browser.</p>
+  </div>
+
+  <div class="panel">
+    <h2 data-zh="📚 章節列表" data-en="📚 Chapters">📚 章節列表</h2>
+    <div class="cards" id="chapterCards"></div>
+  </div>
+</main>
+
+<div class="quiz-view hidden" id="quizView">
+  <button class="btn ghost" onclick="backToHome()" style="margin-bottom:14px"><span data-zh="← 返回章節列表" data-en="← Back to chapters">← 返回章節列表</span></button>
+  <div class="panel"><h2 id="quizTitle">—</h2><div class="desc" id="quizSubtitle"></div></div>
+  <div id="quizContent"></div>
+  <div id="quizSummary" class="hidden"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="i18n.js"></script>
+<script>
+const D = window.QUIZ_DATA && window.QUIZ_DATA.biochem;
+const KEY_PROGRESS = "biochem_quiz_progress_v1";
+const KEY_MARKS = "biochem_quiz_marks_v1";
+
+function L(){return I18n.get();}
+function loadJSON(k,def){try{const v=localStorage.getItem(k);return v?JSON.parse(v):def;}catch(e){return def;}}
+function saveJSON(k,v){localStorage.setItem(k,JSON.stringify(v));}
+let progress = loadJSON(KEY_PROGRESS, {});
+
+function getQ(q,field){const v=L()==='en'?q[field+'_en']:q[field];return v||q[field];}
+function chapterStats(ch){
+  const p=progress[ch.id]||{};
+  const total=ch.questions.length;
+  let answered=0,correct=0;
+  ch.questions.forEach((q,i)=>{const a=p[i];if(a!==undefined){answered++;if(isCorrect(q,a))correct++;}});
+  return {total,answered,correct};
+}
+function isCorrect(q,ans){
+  if(q.type==='single'||q.type==='tf')return ans===q.ans;
+  if(q.type==='multi'){if(!Array.isArray(ans))return false;const a=ans.slice().sort().join(',');const b=q.ans.slice().sort().join(',');return a===b;}
+  return false;
+}
+function globalStats(){
+  let total=0,answered=0,correct=0;
+  D.chapters.forEach(ch=>{const s=chapterStats(ch);total+=s.total;answered+=s.answered;correct+=s.correct;});
+  return {total,answered,correct};
+}
+
+function renderHome(){
+  const cards=document.getElementById('chapterCards');
+  cards.innerHTML='';
+  D.chapters.forEach((ch,idx)=>{
+    const s=chapterStats(ch);
+    const title=L()==='en'?ch.title_en:ch.title;
+    const card=document.createElement('div');card.className='ycard';
+    let status='';
+    if(s.answered===s.total) status='<span class="badge-status done">'+(L()==='zh'?'完成':'Done')+' '+s.correct+'/'+s.total+'</span>';
+    else if(s.answered>0) status='<span class="badge-status ip">'+(L()==='zh'?'進行中':'In progress')+' '+s.answered+'/'+s.total+'</span>';
+    card.innerHTML=`
+      <div class="ytitle"><span class="badge-block">Block ${ch.block}</span><span>${title}</span></div>
+      <div class="ystatus">${status||'<span style="color:#999">'+s.total+' 題</span>'}</div>
+      <div class="action-row">
+        <button class="chip practice" onclick="startChapter(${idx},'all')">${L()==='zh'?'📝 練習':'📝 Practice'}</button>
+        ${s.answered>0?'<button class="chip review" onclick="reviewWrong('+idx+')">'+(L()==='zh'?'🔁 復習錯題':'🔁 Wrong only')+'</button>':''}
+      </div>`;
+    cards.appendChild(card);
+  });
+  const g=globalStats();
+  document.getElementById('globalScore').textContent=g.correct;
+  document.getElementById('globalTotal').textContent=g.total;
+  document.getElementById('gpFill').style.width=(g.answered/g.total*100)+'%';
+  document.getElementById('gpText').textContent=g.answered+' / '+g.total;
+}
+
+let currentChapter=null;
+let currentMode='all';
+function startChapter(idx,mode){
+  currentChapter=idx; currentMode=mode||'all';
+  document.getElementById('homeView').classList.add('hidden');
+  document.getElementById('quizView').classList.remove('hidden');
+  renderQuiz();
+}
+function reviewWrong(idx){
+  startChapter(idx,'wrong');
+}
+function backToHome(){
+  document.getElementById('homeView').classList.remove('hidden');
+  document.getElementById('quizView').classList.add('hidden');
+  renderHome();
+}
+function renderQuiz(){
+  const ch=D.chapters[currentChapter];
+  const title=L()==='en'?ch.title_en:ch.title;
+  document.getElementById('quizTitle').textContent=title;
+  const p=progress[ch.id]||{};
+  let questions=ch.questions.map((q,i)=>({...q,_idx:i}));
+  if(currentMode==='wrong'){
+    questions=questions.filter((q,i)=>{const a=p[q._idx];return a!==undefined&&!isCorrect(q,a);});
+  }
+  document.getElementById('quizSubtitle').innerHTML=(L()==='zh'?'共 ':'')+questions.length+(L()==='zh'?' 題':' questions')+(currentMode==='wrong'?(L()==='zh'?'（錯題復習）':' (wrong review)'):'');
+  const content=document.getElementById('quizContent');
+  content.innerHTML='';
+  if(questions.length===0){
+    content.innerHTML='<div class="panel"><p>'+(L()==='zh'?'目前沒有錯題！🎉':'No wrong answers! 🎉')+'</p></div>';
+    return;
+  }
+  questions.forEach((q,displayIdx)=>{
+    const card=document.createElement('div');card.className='q-card';card.dataset.qidx=q._idx;
+    const stem=getQ(q,'stem');
+    const tlabel=q.type==='single'?(L()==='zh'?'單選':'Single'):q.type==='multi'?(L()==='zh'?'多選':'Multi'):(L()==='zh'?'是非':'TF');
+    let html=`<div class="q-stem"><span class="q-num">${displayIdx+1}/${questions.length}</span><span class="q-type">${tlabel}</span>${stem}</div>`;
+    html+='<div class="q-options">';
+    if(q.type==='single'||q.type==='multi'){
+      ['A','B','C','D'].forEach(key=>{
+        if(getQ(q,key)){html+=`<div class="q-opt" data-key="${key}" onclick="selectOpt(this,${q._idx},${q.type==='multi'})"><span class="opt-key">${key}.</span><span>${getQ(q,key)}</span></div>`;}
+      });
+    } else if(q.type==='tf'){
+      html+=`<div class="q-opt" data-key="T" onclick="selectOpt(this,${q._idx},false)"><span class="opt-key">○</span><span>${L()==='zh'?'正確':'True'}</span></div>`;
+      html+=`<div class="q-opt" data-key="F" onclick="selectOpt(this,${q._idx},false)"><span class="opt-key">✕</span><span>${L()==='zh'?'錯誤':'False'}</span></div>`;
+    }
+    html+='</div>';
+    html+=`<div class="q-feedback" id="fb_${q._idx}"></div>`;
+    if(q.type==='multi'){html+=`<div class="q-actions"><button class="btn" onclick="submitMulti(${q._idx})">${L()==='zh'?'提交答案':'Submit'}</button></div>`;}
+    card.innerHTML=html;
+    content.appendChild(card);
+    // Restore previous answer
+    const prev=(progress[ch.id]||{})[q._idx];
+    if(prev!==undefined){applyAnswer(q,prev,card);}
+  });
+}
+
+let multiSelections={};
+function selectOpt(el,qidx,isMulti){
+  const card=el.closest('.q-card');
+  if(card.classList.contains('answered'))return;
+  if(isMulti){
+    el.classList.toggle('selected');
+    multiSelections[qidx]=Array.from(card.querySelectorAll('.q-opt.selected')).map(o=>o.dataset.key);
+  } else {
+    card.querySelectorAll('.q-opt').forEach(o=>o.classList.remove('selected'));
+    el.classList.add('selected');
+    commitAnswer(qidx, el.dataset.key);
+  }
+}
+function submitMulti(qidx){
+  const sel=multiSelections[qidx]||[];
+  if(sel.length===0)return;
+  commitAnswer(qidx,sel);
+}
+function commitAnswer(qidx,ans){
+  const ch=D.chapters[currentChapter];
+  const q=ch.questions[qidx];
+  progress[ch.id]=progress[ch.id]||{};
+  progress[ch.id][qidx]=ans;
+  saveJSON(KEY_PROGRESS,progress);
+  const card=document.querySelector(`.q-card[data-qidx="${qidx}"]`);
+  applyAnswer(q,ans,card);
+}
+function applyAnswer(q,ans,card){
+  card.classList.add('answered');
+  const ok=isCorrect(q,ans);
+  const correctAns=q.type==='multi'?q.ans:[q.ans];
+  card.querySelectorAll('.q-opt').forEach(o=>{
+    const k=o.dataset.key;
+    if(correctAns.includes(k))o.classList.add('correct');
+    if(q.type==='multi'){
+      if(Array.isArray(ans)&&ans.includes(k)&&!correctAns.includes(k))o.classList.add('wrong');
+    } else {
+      if(k===ans&&!ok)o.classList.add('wrong');
+    }
+  });
+  const fb=card.querySelector('.q-feedback');
+  const exp=getQ(q,'exp');
+  fb.className='q-feedback show '+(ok?'correct-fb':'wrong-fb');
+  fb.textContent=(ok?'✅ ':'❌ ')+exp;
+}
+function resetAll(){
+  if(!confirm(L()==='zh'?'確定要清除全部作答記錄？':'Clear all progress?'))return;
+  progress={};
+  saveJSON(KEY_PROGRESS,progress);
+  renderHome();
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('langToggle').onclick=()=>{I18n.toggle();renderHome();if(!document.getElementById('quizView').classList.contains('hidden'))renderQuiz();};
+  renderHome();
+});
+document.addEventListener('langchange',()=>{renderHome();if(!document.getElementById('quizView').classList.contains('hidden'))renderQuiz();});
+</script>
+</body></html>

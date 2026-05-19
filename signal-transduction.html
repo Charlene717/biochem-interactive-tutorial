@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.14 訊息傳遞與第二訊息 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html" class="active">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 14 / 18 · BLOCK D</div>
+<h1 data-zh="訊息傳遞與第二訊息" data-en="Signal Transduction &amp; Second Messengers">訊息傳遞與第二訊息</h1>
+<p class="subtitle" data-lang="zh">GPCR、RTK、cAMP/IP3-DAG/Ca²⁺、MAPK 級聯、PI3K-AKT-mTOR——細胞如何「聽見」激素並做出反應。</p>
+<p class="subtitle" data-lang="en">GPCRs, RTKs, cAMP/IP3-DAG/Ca²⁺, MAPK cascades, PI3K-AKT-mTOR — how cells "hear" hormones and respond.</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="原則" data-en="PRINCIPLES">原則</div>
+<h2 data-zh="一、訊息傳遞的四個共通原則" data-en="I. Four universal signaling principles">一、四個原則</h2>
+<div class="card-grid cols-2">
+<div class="card"><h4>🎯 <span data-zh="① 訊息放大 (amplification)" data-en="① Signal amplification">① 訊息放大</span></h4><div data-lang="zh"><p>一個激素分子 → 啟動多個 G 蛋白 → 每個 G 蛋白啟動多個 cAMP → 每個 cAMP 啟動多個 PKA → 每個 PKA 磷酸化多個受質。最終放大可達 10⁶ 倍。</p></div><div data-lang="en"><p>One hormone molecule → activates many G proteins → each makes many cAMPs → each activates many PKAs → each phosphorylates many substrates. Net amplification up to 10⁶-fold.</p></div></div>
+<div class="card"><h4>↔️ <span data-zh="② 可逆性與終止" data-en="② Reversibility &amp; termination">② 可逆與終止</span></h4><div data-lang="zh"><p>磷酸酶移除磷酸；磷酸二酯酶分解 cAMP/cGMP；GTPase 將 G 蛋白關回；β-arrestin 內吞 GPCR。<strong>沒有終止 = 病理</strong>（如霍亂毒素鎖住 Gs、百日咳毒素鎖住 Gi）。</p></div><div data-lang="en"><p>Phosphatases remove phosphate; PDEs degrade cAMP/cGMP; GTPases switch G proteins off; β-arrestin internalizes GPCRs. <strong>No termination = pathology</strong> (cholera toxin locks Gs; pertussis toxin locks Gi).</p></div></div>
+<div class="card"><h4>🌐 <span data-zh="③ 整合 (crosstalk)" data-en="③ Crosstalk integration">③ 整合</span></h4><div data-lang="zh"><p>同一細胞收多個訊息（hormone, growth factor, ECM, neighbor）——透過交叉抑制/協同形成決策。例如 PI3K-AKT 抑制 mTOR autophagy 但激活 protein 合成。</p></div><div data-lang="en"><p>A single cell integrates many inputs (hormones, growth factors, ECM, neighbors) via cross-inhibition/synergy. PI3K-AKT both inhibits autophagy and activates protein synthesis.</p></div></div>
+<div class="card"><h4>🧮 <span data-zh="④ 特異性 (specificity)" data-en="④ Specificity">④ 特異性</span></h4><div data-lang="zh"><p>用 scaffolding 蛋白（如 KSR、AKAP）把同路徑酶聚在一起，避免「亂線」。SH2、PTB、PDZ、SH3 結構域辨識磷酸化、PolyPro 序列等，實現精確配對。</p></div><div data-lang="en"><p>Scaffold proteins (KSR, AKAP) keep pathway components together to avoid "crosstalk noise." SH2, PTB, PDZ, SH3 domains read phospho-residues, PolyPro motifs etc. for precise pairing.</p></div></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="GPCR" data-en="GPCR">GPCR</div>
+<h2 data-zh="二、GPCR：七次跨膜受體" data-en="II. GPCRs: seven-transmembrane receptors">二、GPCR</h2>
+<div data-lang="zh"><p>人類有 ~800 個 GPCR，是最大的細胞表面受體家族——也是<strong>34% 上市藥物的標靶</strong>。七次跨膜結構，配體可為光（視紫紅質）、氣味分子、激素、神經傳導物質、肽。</p>
+<p><strong>核心機制：</strong>配體結合 → 受體構象變 → 內質一側活化 Gα（GDP→GTP 交換）→ Gα 解離後活化下游酶 → GTPase 活性將 Gα 關回 → β-arrestin 招募 → 內吞回收。</p>
+<p><strong>三大 Gα 家族與下游：</strong></p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>Gαs</strong>：激活 adenylyl cyclase → cAMP↑ → PKA。例：β-腎上腺素受體、glucagon 受體</li>
+<li><strong>Gαi</strong>：抑制 adenylyl cyclase → cAMP↓。例：μ-opioid 受體、α2-腎上腺素受體</li>
+<li><strong>Gαq</strong>：激活 PLCβ → IP3 + DAG → Ca²⁺ + PKC。例：α1-腎上腺素、AT1 angiotensin、M1 muscarinic</li>
+</ul></div>
+<div data-lang="en"><p>Humans have ~800 GPCRs — the largest cell-surface receptor family and target of <strong>~34% of approved drugs</strong>. Seven-transmembrane structure; ligands include light (rhodopsin), odorants, hormones, neurotransmitters, peptides.</p>
+<p><strong>Core mechanism:</strong> ligand binds → receptor conformational change → intracellular Gα activation (GDP→GTP) → Gα dissociates to activate downstream enzymes → GTPase activity turns Gα off → β-arrestin recruited → internalization.</p>
+<p><strong>Three Gα families and downstream:</strong></p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>Gαs</strong>: activates adenylyl cyclase → cAMP↑ → PKA. e.g. β-adrenergic, glucagon</li>
+<li><strong>Gαi</strong>: inhibits adenylyl cyclase → cAMP↓. e.g. μ-opioid, α2-adrenergic</li>
+<li><strong>Gαq</strong>: activates PLCβ → IP3 + DAG → Ca²⁺ + PKC. e.g. α1-adrenergic, AT1 angiotensin, M1 muscarinic</li>
+</ul></div>
+<div class="callout tip"><span class="callout-icon">💡</span><div>
+<span data-lang="zh"><strong>2024 GLP-1 革命：</strong>GLP-1 受體 (Gαs 路徑) 激動劑（semaglutide / Ozempic, tirzepatide / Mounjaro）。原本為糖尿病藥，後來發現顯著減重效果，2023-2025 在西方掀起減重熱潮。tirzepatide 是 GLP-1 + GIP 雙激動劑，效果更強。下一代正開發口服與三激動劑 (GLP-1 + GIP + glucagon)。</span>
+<span data-lang="en"><strong>2024 GLP-1 revolution:</strong> GLP-1 receptor (Gαs) agonists (semaglutide/Ozempic, tirzepatide/Mounjaro). Originally for diabetes, dramatic weight-loss effects discovered later — 2023-2025 cultural craze in the West. Tirzepatide is a dual GLP-1+GIP agonist; oral and triple-agonist (GLP-1+GIP+glucagon) versions are next.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="RTK" data-en="RTK">RTK</div>
+<h2 data-zh="三、RTK：受體酪胺酸激酶" data-en="III. RTK: receptor tyrosine kinases">三、RTK</h2>
+<div data-lang="zh"><p>~58 個人類 RTK。經典機制：<strong>配體誘導二聚化 → 自磷酸化 Tyr → SH2/PTB 接合下游</strong>。涵蓋 EGFR (HER family)、insulin R、IGF-1R、VEGFR、PDGFR、FGFR、TRK、Eph 等。</p>
+<p>四個主要下游路徑：</p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>RAS-RAF-MEK-ERK (MAPK)</strong>：增殖、分化。RAS 突變於 ~30% 癌症（KRAS in 結直腸/胰臟/肺）</li>
+<li><strong>PI3K-AKT-mTOR</strong>：細胞存活、生長、代謝。AKT、PI3K、mTOR 突變於多種癌症</li>
+<li><strong>PLCγ</strong>：與 GPCR Gq 路徑匯流：IP3-Ca²⁺、DAG-PKC</li>
+<li><strong>JAK-STAT</strong>：細胞激素受體用此路徑（雖然 JAK 是受體相關激酶，非 RTK 本體）</li>
+</ul></div>
+<div data-lang="en"><p>~58 human RTKs. Core mechanism: <strong>ligand-induced dimerization → Tyr autophosphorylation → SH2/PTB recruit downstream</strong>. Includes EGFR (HER family), insulin R, IGF-1R, VEGFR, PDGFR, FGFR, TRK, Eph, etc.</p>
+<p>Four main downstream paths:</p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>RAS-RAF-MEK-ERK (MAPK)</strong>: proliferation, differentiation. RAS mutated in ~30% of cancers (KRAS in colon/pancreas/lung)</li>
+<li><strong>PI3K-AKT-mTOR</strong>: survival, growth, metabolism. AKT, PI3K, mTOR commonly mutated in cancer</li>
+<li><strong>PLCγ</strong>: converges with Gq path: IP3-Ca²⁺, DAG-PKC</li>
+<li><strong>JAK-STAT</strong>: cytokine receptors (JAK is receptor-associated, not an RTK proper)</li>
+</ul></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="第二訊息" data-en="2ND MESSENGERS">第二訊息</div>
+<h2 data-zh="四、第二訊息分子" data-en="IV. Second messengers">四、第二訊息</h2>
+<table class="comp-table">
+<thead><tr><th data-zh="分子" data-en="Molecule">分子</th><th data-zh="生成" data-en="Made by">生成</th><th data-zh="降解" data-en="Degraded by">降解</th><th data-zh="主要靶" data-en="Main target">靶</th></tr></thead>
+<tbody>
+<tr><td><strong>cAMP</strong></td><td>Adenylyl cyclase (Gαs)</td><td>PDE4 (Phosphodiesterase)</td><td>PKA, Epac</td></tr>
+<tr><td><strong>cGMP</strong></td><td>Guanylyl cyclase (NO 或 ANP)</td><td>PDE5/6</td><td>PKG, CNG 通道</td></tr>
+<tr><td><strong>IP3</strong></td><td>PLCβ/γ from PIP2</td><td data-zh="磷酸酶" data-en="phosphatases">磷酸酶</td><td>IP3R → Ca²⁺ 從 ER 釋出</td></tr>
+<tr><td><strong>DAG</strong></td><td>PLCβ/γ from PIP2</td><td>DAG kinase, DAG lipase</td><td>PKC（+ Ca²⁺）</td></tr>
+<tr><td><strong>Ca²⁺</strong></td><td data-zh="細胞外進入或從 ER 釋出" data-en="External entry or ER release">外進/ER 釋</td><td>PMCA, SERCA pump</td><td data-zh="calmodulin、CaMK、PKC、calcineurin" data-en="calmodulin, CaMK, PKC, calcineurin">CaM, CaMK</td></tr>
+<tr><td><strong>PIP3</strong></td><td>PI3K (from PIP2)</td><td>PTEN（腫瘤抑制因子）</td><td>AKT, BTK 等 PH-domain 蛋白</td></tr>
+<tr><td><strong>NO</strong></td><td>NOS (nNOS, eNOS, iNOS)</td><td data-zh="自身擴散後氧化" data-en="Diffuses, oxidizes">擴散</td><td data-zh="可溶 guanylyl cyclase" data-en="Soluble GC">sGC</td></tr>
+</tbody></table>
+<div class="callout warn"><span class="callout-icon">⚠️</span><div>
+<span data-lang="zh"><strong>偉哥/犀利士的化學：</strong>PDE5 抑制劑 (sildenafil, tadalafil) 阻斷 cGMP 降解 → cGMP↑ → 海綿體平滑肌鬆弛 → 勃起。同類藥物也用於肺動脈高壓。臨床例證「理解訊息傳遞 = 設計新藥」。</span>
+<span data-lang="en"><strong>Viagra/Cialis chemistry:</strong> PDE5 inhibitors (sildenafil, tadalafil) block cGMP degradation → cGMP↑ → corpus cavernosum smooth muscle relaxation → erection. Same class treats pulmonary hypertension. Clinical proof "understand signaling = design drugs."</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="GPCR 訊息放大模擬" data-en="GPCR signal amplification">訊息放大</h2>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statAmp">—</span><span class="sim-stat gold" id="statT">—</span></div>
+<div class="slider-group"><label><span data-zh="激素 [μM]" data-en="Hormone [μM]">激素</span> <span id="valH">0.1</span></label><input type="range" id="sliderHrm" min="0.001" max="1" value="0.1" step="0.01"></div>
+<div class="slider-group"><label><span data-zh="PDE 活性 (清除 cAMP)" data-en="PDE activity">PDE</span> <span id="valPDE">5</span></label><input type="range" id="sliderPDE" min="1" max="20" value="5" step="1"></div>
+<div class="chart-container"><canvas id="ampChart"></canvas></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="五、識別異常訊息傳遞" data-en="V. Identifying signaling pathologies">五、訊息傳遞異常</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="哪個路徑出錯了？" data-en="Which pathway is broken?">哪個路徑出錯了？</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">霍亂</span><span class="dt-arrow">→</span><div>霍亂毒素 ADP-ribose 化 Gαs → 鎖死活化狀態 → cAMP 持續高 → 腸壁狂送水進腸腔 → 嚴重腹瀉</div></div>
+<div class="dt-node"><span class="dt-q">百日咳</span><span class="dt-arrow">→</span><div>百日咳毒素鎖 Gαi 為非活化 → cAMP↑ → 各種發炎</div></div>
+<div class="dt-node"><span class="dt-q">大多數癌症</span><span class="dt-arrow">→</span><div>RAS/RAF/MAPK 或 PI3K/AKT/mTOR 過度激活；EGFR 過表達；PTEN 喪失；BCR-ABL 融合 (CML)</div></div>
+<div class="dt-node"><span class="dt-q">糖尿病 II 型</span><span class="dt-arrow">→</span><div>胰島素 RTK → IRS-1/2 → PI3K-AKT 訊息缺陷（胰島素阻抗）</div></div>
+<div class="dt-node"><span class="dt-q">關節炎</span><span class="dt-arrow">→</span><div>JAK-STAT 過度激活；治療用 JAK 抑制劑（tofacitinib, baricitinib）</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">Cholera</span><span class="dt-arrow">→</span><div>Cholera toxin ADP-ribosylates Gαs → locks active → persistent cAMP → intestinal wall pumps water into lumen → severe diarrhea</div></div>
+<div class="dt-node"><span class="dt-q">Pertussis</span><span class="dt-arrow">→</span><div>Pertussis toxin locks Gαi inactive → cAMP↑ → inflammation</div></div>
+<div class="dt-node"><span class="dt-q">Most cancers</span><span class="dt-arrow">→</span><div>RAS/RAF/MAPK or PI3K/AKT/mTOR hyperactivated; EGFR overexpressed; PTEN loss; BCR-ABL fusion (CML)</div></div>
+<div class="dt-node"><span class="dt-q">Type 2 diabetes</span><span class="dt-arrow">→</span><div>Insulin RTK → IRS-1/2 → PI3K-AKT signaling defective (insulin resistance)</div></div>
+<div class="dt-node"><span class="dt-q">Arthritis</span><span class="dt-arrow">→</span><div>JAK-STAT hyperactive; treat with JAK inhibitors (tofacitinib, baricitinib)</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="路徑富集分析 (KEGG pathway enrichment)" data-en="Pathway enrichment analysis">路徑富集分析</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'r1')">R</button><button class="code-tab-btn" onclick="switchTab(this,'py1')">Python</button></div>
+<div class="code-tab-content active" id="r1"><pre><span class="kw">library</span>(clusterProfiler)
+<span class="kw">library</span>(org.Hs.eg.db)
+
+<span class="comment"># 假設你有一組差異表達的基因（Entrez IDs）</span>
+deg &lt;- <span class="kw">c</span>(<span class="str">"3845"</span>,  <span class="comment"># KRAS</span>
+         <span class="str">"5594"</span>,  <span class="comment"># MAPK1</span>
+         <span class="str">"5728"</span>,  <span class="comment"># PTEN</span>
+         <span class="str">"207"</span>,   <span class="comment"># AKT1</span>
+         <span class="str">"2475"</span>,  <span class="comment"># mTOR</span>
+         <span class="str">"5747"</span>)  <span class="comment"># PTK2</span>
+
+<span class="comment"># KEGG 富集</span>
+kk &lt;- <span class="func">enrichKEGG</span>(gene = deg, organism = <span class="str">"hsa"</span>, pvalueCutoff = <span class="num">0.05</span>)
+<span class="func">head</span>(kk@result[, <span class="kw">c</span>(<span class="str">"Description"</span>, <span class="str">"pvalue"</span>, <span class="str">"qvalue"</span>)])
+
+<span class="comment"># GO 富集</span>
+go &lt;- <span class="func">enrichGO</span>(gene = deg, OrgDb = org.Hs.eg.db,
+                ont = <span class="str">"BP"</span>, pvalueCutoff = <span class="num">0.05</span>)
+<span class="func">dotplot</span>(go, showCategory = <span class="num">15</span>)
+
+<span class="comment"># GSEA（用於排序基因列表）</span>
+ranked &lt;- <span class="func">setNames</span>(<span class="kw">c</span>(<span class="num">3.2</span>, <span class="num">2.5</span>, -<span class="num">1.8</span>, <span class="num">1.5</span>), deg[<span class="num">1</span>:<span class="num">4</span>])
+gsea &lt;- <span class="func">gseKEGG</span>(geneList = <span class="func">sort</span>(ranked, decreasing=<span class="kw">TRUE</span>), organism = <span class="str">"hsa"</span>)</pre></div>
+<div class="code-tab-content" id="py1"><pre><span class="kw">import</span> gseapy <span class="kw">as</span> gp
+
+deg = [<span class="str">"KRAS"</span>, <span class="str">"MAPK1"</span>, <span class="str">"PTEN"</span>, <span class="str">"AKT1"</span>, <span class="str">"MTOR"</span>, <span class="str">"PTK2"</span>,
+       <span class="str">"PIK3CA"</span>, <span class="str">"BRAF"</span>, <span class="str">"NRAS"</span>, <span class="str">"GAB1"</span>]
+
+<span class="comment"># 富集 (ORA / hypergeometric)</span>
+enr = gp.enrichr(gene_list=deg,
+                 gene_sets=[<span class="str">"KEGG_2021_Human"</span>, <span class="str">"GO_Biological_Process_2023"</span>],
+                 organism=<span class="str">"human"</span>)
+<span class="func">print</span>(enr.results[[<span class="str">"Term"</span>, <span class="str">"P-value"</span>, <span class="str">"Adjusted P-value"</span>, <span class="str">"Genes"</span>]].head(<span class="num">10</span>))
+
+<span class="comment"># 預期會看到：MAPK signaling, PI3K-Akt signaling, EGFR tyrosine kinase inhibitor resistance, pathways in cancer</span>
+
+<span class="comment"># 互動數據庫</span>
+<span class="comment"># - Reactome: https://reactome.org/PathwayBrowser</span>
+<span class="comment"># - WikiPathways: https://www.wikipathways.org</span>
+<span class="comment"># - SignaLink: 訊息傳遞特化</span></pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="2"><p data-lang="zh">1. 霍亂毒素如何造成腹瀉？</p><p data-lang="en">1. How does cholera toxin cause diarrhea?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 破壞腸黏膜</span><span data-lang="en">A. Damages mucosa</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 干擾葡萄糖吸收</span><span data-lang="en">B. Inhibits glucose uptake</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. ADP-核糖化 Gαs → 鎖死活化 → cAMP 持續高 → CFTR 通道大開水流出</span><span data-lang="en">C. ADP-ribosylates Gαs → locks active → persistent cAMP → CFTR opens, water out</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 增加食慾</span><span data-lang="en">D. Increases appetite</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="2"><p data-lang="zh">2. RTK 啟動的標準步驟？</p><p data-lang="en">2. Standard RTK activation steps?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 直接磷酸化 ATP</span><span data-lang="en">A. Directly phosphorylates ATP</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 跨膜七次</span><span data-lang="en">B. Spans membrane 7×</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 配體誘導二聚化 → 自磷酸化 Tyr → SH2/PTB 招募下游</span><span data-lang="en">C. Ligand-induced dimerization → autophosphorylates Tyr → SH2/PTB recruit downstream</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 用 cAMP 訊息</span><span data-lang="en">D. Uses cAMP</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="1"><p data-lang="zh">3. Sildenafil（偉哥）的作用機制？</p><p data-lang="en">3. Sildenafil's mechanism?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 激活 cAMP</span><span data-lang="en">A. Activates cAMP</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 抑制 PDE5 → cGMP 累積 → 平滑肌鬆弛</span><span data-lang="en">B. Inhibits PDE5 → cGMP accumulates → smooth muscle relaxation</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 增加睪固酮</span><span data-lang="en">C. Increases testosterone</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 直接結合受體</span><span data-lang="en">D. Directly binds receptor</span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="metabolism-integration.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="代謝整合與荷爾蒙調控" data-en="Metabolic Integration &amp;amp; Hormonal Control">代謝整合與荷爾蒙調控</span></a>
+<a href="molecular-biology-chemistry.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="中心法則的化學細節" data-en="Chemistry of the Central Dogma">中心法則的化學細節</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+const ampChart=new Chart(document.getElementById('ampChart'),{type:'bar',data:{labels:['Hormone','Active GPCR','Gα-GTP','cAMP','PKA','Substrate-P'],datasets:[{label:'molecules',data:[],backgroundColor:'#9f1239'}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,animation:false,scales:{x:{type:'logarithmic',title:{display:true,text:'molecules (log)'}}}}});
+function updateAmp(){
+  const h=+document.getElementById('sliderHrm').value;
+  const pde=+document.getElementById('sliderPDE').value;
+  document.getElementById('valH').textContent=h;
+  document.getElementById('valPDE').textContent=pde;
+  const data=[
+    h*100,           // hormone in molecules
+    h*100*20,        // each hormone activates ~20 GPCRs
+    h*100*20*100,    // each GPCR activates ~100 Gα
+    h*100*20*100*200/pde,
+    h*100*20*100*200/pde * 10,
+    h*100*20*100*200/pde * 10 * 50
+  ];
+  ampChart.data.datasets[0].data=data;
+  ampChart.update('none');
+  const L=I18n.get();
+  const amp=data[5]/data[0];
+  document.getElementById('statAmp').textContent=(L==='zh'?'放大倍數: ':'Amplification: ')+amp.toExponential(2);
+  document.getElementById('statT').textContent=(L==='zh'?'PDE 速率: ':'PDE rate: ')+pde+'×';
+}
+['sliderHrm','sliderPDE'].forEach(id=>document.getElementById(id).addEventListener('input',updateAmp));
+document.addEventListener('langchange',updateAmp);
+updateAmp();
+
+const QF={zh:{q1_y:'霍亂毒素 ADP-ribose 化 Gαs 而鎖死活化態，cAMP 持續高、CFTR 大開將 Cl⁻ 和水送入腸腔。',q2_y:'RTK 標準機制：二聚化 → 自磷酸化 Tyr → SH2/PTB 結構域招募下游訊息蛋白。',q3_y:'Sildenafil 抑制 PDE5，cGMP 不被降解、平滑肌鬆弛、海綿體血流增加。'},en:{q1_y:'Cholera toxin ADP-ribosylates Gαs to lock it active; sustained cAMP opens CFTR, dumping Cl⁻ and water into lumen.',q2_y:'RTK canonical mechanism: dimerization → autophosphorylates Tyr → SH2/PTB domains recruit downstream proteins.',q3_y:'Sildenafil inhibits PDE5; cGMP persists, smooth muscle relaxes, corpus blood flow increases.'}};['q1_n','q2_n','q3_n'].forEach(k=>{QF.zh[k]='正確答案已標示。';QF.en[k]='Correct answer highlighted.';});
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.10 醣類代謝 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html" class="active">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 10 / 18 · BLOCK C</div>
+<h1 data-zh="醣類代謝" data-en="Carbohydrate Metabolism">醣類代謝</h1>
+<p class="subtitle" data-lang="zh">糖解 10 步 + 糖質新生、肝醣、PPP 與 Warburg 效應——細胞能量學的主軸。</p>
+<p class="subtitle" data-lang="en">The 10 steps of glycolysis plus gluconeogenesis, glycogen, PPP, and the Warburg effect — the backbone of cellular energetics.</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="糖解" data-en="GLYCOLYSIS">糖解</div>
+<h2 data-zh="一、糖解 10 步：能量投資 vs 收割" data-en="I. Glycolysis: investment vs payoff phases">一、糖解 10 步</h2>
+<div data-lang="zh"><p>葡萄糖 → 2 丙酮酸，發生在細胞質。淨產物：<strong>2 ATP + 2 NADH + 2 丙酮酸</strong>。分為兩階段：</p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>投資階段（步驟 1–5）：</strong>消耗 2 ATP 將葡萄糖活化為 2 個三碳分子</li>
+<li><strong>收割階段（步驟 6–10）：</strong>產生 4 ATP（淨 2）+ 2 NADH</li>
+</ul>
+<p><strong>三個調控節點（不可逆步驟）：</strong>己糖激酶（步驟 1，HK）、磷酸果糖激酶 1（步驟 3，PFK-1）、丙酮酸激酶（步驟 10，PK）。</p></div>
+<div data-lang="en"><p>Glucose → 2 pyruvates in the cytoplasm. Net: <strong>2 ATP + 2 NADH + 2 pyruvates</strong>. Two phases:</p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>Investment (steps 1–5):</strong> 2 ATP used to activate glucose into 2 three-carbon molecules</li>
+<li><strong>Payoff (steps 6–10):</strong> 4 ATP made (net 2) + 2 NADH</li>
+</ul>
+<p><strong>Three regulatory nodes (irreversible):</strong> hexokinase (step 1, HK), phosphofructokinase-1 (step 3, PFK-1), pyruvate kinase (step 10, PK).</p></div>
+<table class="comp-table">
+<thead><tr><th>Step</th><th data-zh="酶 / 反應" data-en="Enzyme / reaction">酶 / 反應</th><th>ΔG°' (kJ/mol)</th><th data-zh="特性" data-en="Note">特性</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>Hexokinase</strong>: Glc → G6P</td><td>−16.7</td><td data-zh="🔒 不可逆；耗 1 ATP" data-en="🔒 Irreversible; -1 ATP">🔒 不可逆</td></tr>
+<tr><td>2</td><td>PGI: G6P → F6P</td><td>+1.7</td><td data-zh="可逆" data-en="Reversible">可逆</td></tr>
+<tr><td>3</td><td><strong>PFK-1</strong>: F6P → F1,6BP</td><td>−14.2</td><td data-zh="🔒 不可逆；耗 1 ATP；最重要調控點（變構）" data-en="🔒 Irreversible; -1 ATP; main regulatory point (allosteric)">🔒 主要調控點</td></tr>
+<tr><td>4</td><td>Aldolase: F1,6BP → DHAP + G3P</td><td>+23.8</td><td data-zh="高 ΔG°'，但細胞內 ΔG ≈ 0" data-en="High ΔG°' but cellular ≈ 0">細胞內可逆</td></tr>
+<tr><td>5</td><td>TPI: DHAP ⇌ G3P</td><td>+7.5</td><td data-zh="完美酶；接近擴散極限" data-en="Catalytically perfect">完美酶</td></tr>
+<tr><td>6</td><td>GAPDH: G3P → 1,3BPG</td><td>+6.3</td><td data-zh="+ NADH" data-en="+ NADH">+NADH</td></tr>
+<tr><td>7</td><td>PGK: 1,3BPG → 3PG</td><td>−18.5</td><td data-zh="+ ATP（第一次受質磷酸化）" data-en="+ATP (1st substrate-level)">+ATP</td></tr>
+<tr><td>8</td><td>PGM: 3PG ⇌ 2PG</td><td>+4.4</td><td data-zh="可逆" data-en="Reversible">可逆</td></tr>
+<tr><td>9</td><td>Enolase: 2PG → PEP</td><td>+7.5</td><td data-zh="可逆" data-en="Reversible">可逆</td></tr>
+<tr><td>10</td><td><strong>Pyruvate kinase</strong>: PEP → Pyr</td><td>−31.4</td><td data-zh="🔒 不可逆；+ ATP（第二次受質磷酸化）" data-en="🔒 Irreversible; +ATP">🔒 不可逆</td></tr>
+</tbody></table>
+<div class="callout tip"><span class="callout-icon">💡</span><div>
+<span data-lang="zh"><strong>PFK-1 是糖解最重要的調控酶。</strong>變構抑制：ATP、檸檬酸（細胞能量充足）。變構激活：AMP、ADP（能量不足）、<strong>F2,6BP</strong>（最強激活劑，由 PFK-2 製造，回應胰島素 / 升糖素）。F2,6BP 系統是 PKL 雙腳激酶/磷酸酶 PFK-2/FBPase-2 機制——詳見 Ch.13。</span>
+<span data-lang="en"><strong>PFK-1 is the master regulator of glycolysis.</strong> Allosteric inhibition: ATP, citrate (energy sufficient). Allosteric activation: AMP, ADP (energy low), <strong>F2,6BP</strong> (strongest activator, made by PFK-2 in response to insulin/glucagon). The F2,6BP / PFK-2-FBPase-2 bifunctional enzyme is the central hub — see Ch.13.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="糖質新生" data-en="GLUCONEOGENESIS">糖質新生</div>
+<h2 data-zh="二、糖質新生：不是糖解的反向" data-en="II. Gluconeogenesis: not just reverse glycolysis">二、糖質新生</h2>
+<div data-lang="zh"><p>糖質新生 = <strong>非醣前體</strong>（乳酸、丙胺酸、甘油、TCA 中間體）合成葡萄糖。發生在<strong>肝</strong>（90%）與<strong>腎</strong>（10%）。雖然多數步驟與糖解可逆，但三個不可逆步驟必須繞道：</p>
+<ol style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>Pyr → PEP：</strong>需要兩步——丙酮酸羧化酶 (PC, 粒線體) → PEP 羧激酶 (PEPCK, 細胞質)，消耗 1 ATP + 1 GTP</li>
+<li><strong>F1,6BP → F6P：</strong>果糖-1,6-雙磷酸酶 (FBPase-1)</li>
+<li><strong>G6P → Glc：</strong>葡萄糖-6-磷酸酶 (G6Pase, 內質網)</li>
+</ol>
+<p><strong>能量成本：</strong>每合成 1 葡萄糖需 6 ATP（糖解只產 2，因此糖質新生「賠錢」——但維持血糖必要）。<strong>糖尿病第二型</strong>的肝糖質新生失控是血糖升高主因。</p></div>
+<div data-lang="en"><p>Gluconeogenesis = synthesis of glucose from <strong>non-carbohydrate precursors</strong> (lactate, alanine, glycerol, TCA intermediates) in the <strong>liver</strong> (90%) and <strong>kidney</strong> (10%). Most steps share enzymes with glycolysis, but three irreversible glycolysis steps require bypasses:</p>
+<ol style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>Pyr → PEP:</strong> two steps — pyruvate carboxylase (PC, mitochondrial) then PEP carboxykinase (PEPCK, cytosolic), costing 1 ATP + 1 GTP</li>
+<li><strong>F1,6BP → F6P:</strong> fructose-1,6-bisphosphatase (FBPase-1)</li>
+<li><strong>G6P → Glc:</strong> glucose-6-phosphatase (G6Pase, in ER)</li>
+</ol>
+<p><strong>Energy cost:</strong> 6 ATP per glucose synthesized — gluconeogenesis is "expensive" but essential for blood-glucose maintenance. <strong>Type 2 diabetes</strong> hepatic gluconeogenesis dysregulation is the main cause of hyperglycemia.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="糖解流量 vs 細胞狀態" data-en="Glycolytic flux vs cell state">糖解流量模擬</h2>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statFlux">—</span><span class="sim-stat gold" id="statState">—</span></div>
+<div class="slider-group"><label><span data-zh="[ATP] (mM)" data-en="[ATP] (mM)">ATP</span> <span id="valATP">5</span></label><input type="range" id="sliderATP" min="0.5" max="10" value="5" step="0.1"></div>
+<div class="slider-group"><label><span data-zh="[AMP] (μM)" data-en="[AMP] (μM)">AMP</span> <span id="valAMP">20</span></label><input type="range" id="sliderAMP" min="1" max="500" value="20" step="5"></div>
+<div class="slider-group"><label><span data-zh="[citrate] (mM)" data-en="[citrate] (mM)">Citrate</span> <span id="valCit">0.2</span></label><input type="range" id="sliderCit" min="0.05" max="2" value="0.2" step="0.05"></div>
+<div class="slider-group"><label><span data-zh="胰島素訊號（F2,6BP）" data-en="Insulin signal (F2,6BP)">F2,6BP</span> <span id="valF26">10</span></label><input type="range" id="sliderF26" min="0" max="50" value="10" step="1"></div>
+<div class="chart-container"><canvas id="fluxChart"></canvas></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="PPP" data-en="PPP">PPP</div>
+<h2 data-zh="三、戊糖磷酸途徑 (PPP)" data-en="III. Pentose phosphate pathway (PPP)">三、PPP</h2>
+<div data-lang="zh"><p>PPP 是<strong>並行</strong>於糖解的醣代謝路徑，主要功能：(1) 產生 <strong>NADPH</strong>（合成代謝與抗氧化）；(2) 產生 <strong>核糖-5-磷酸 (R5P)</strong>（核苷酸合成的前體）。兩階段：</p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>氧化階段（不可逆）：</strong>G6P → 6-磷酸葡萄糖酸內酯 → 6-磷酸葡萄糖酸 → 5-磷酸核酮糖，產生 <strong>2 NADPH + 1 CO₂</strong></li>
+<li><strong>非氧化階段（可逆）：</strong>5C 糖之間相互轉換，產生 F6P 與 G3P 進入糖解，或 R5P 進入核苷酸合成</li>
+</ul>
+<p><strong>臨床：G6PD 缺陷</strong>是最常見遺傳代謝疾病（~4 億人，X 連鎖）。NADPH 不足無法重生 glutathione，紅血球易受氧化壓力傷害——蠶豆症 (favism)、磺胺類藥物溶血。</p></div>
+<div data-lang="en"><p>PPP runs <strong>in parallel</strong> with glycolysis. Two main outputs: (1) <strong>NADPH</strong> for biosynthesis and antioxidant; (2) <strong>ribose-5-phosphate (R5P)</strong> for nucleotide synthesis. Two phases:</p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>Oxidative (irreversible):</strong> G6P → 6-phosphogluconolactone → 6-phosphogluconate → ribulose-5-P, yielding <strong>2 NADPH + 1 CO₂</strong></li>
+<li><strong>Non-oxidative (reversible):</strong> interconverts 5C sugars to F6P + G3P (re-enters glycolysis) or R5P (for nucleotides)</li>
+</ul>
+<p><strong>Clinical: G6PD deficiency</strong> — the most common inherited metabolic disease (~400 M people, X-linked). Without NADPH, glutathione cannot be regenerated; RBCs are vulnerable to oxidative stress — favism and sulfa-drug hemolysis.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="Warburg" data-en="WARBURG">Warburg</div>
+<h2 data-zh="四、Warburg 效應與癌症代謝" data-en="IV. Warburg effect &amp; cancer metabolism">四、Warburg 效應</h2>
+<div class="callout warn"><span class="callout-icon">⚠️</span><div>
+<span data-lang="zh"><strong>Otto Warburg 1924 觀察：</strong>癌細胞即使在氧氣充足下，仍偏好<strong>有氧醣解 (aerobic glycolysis)</strong>——葡萄糖代謝為乳酸而非完全氧化。為什麼？癌細胞 ATP 效率（糖解 2 ATP）遠低於 OXPHOS（30 ATP）卻仍選擇糖解。<br><br><strong>2024 理解：</strong>(1) 快速分裂需要大量<strong>合成代謝前體</strong>（核苷酸、胺基酸、脂肪酸）來自糖解/PPP 分支；(2) 糖解快速無需粒線體；(3) 釋放乳酸酸化微環境，幫助侵襲與免疫逃逸。<strong>2-DG、metformin、GLS 抑制劑</strong>等代謝標靶藥物正在臨床測試。</span>
+<span data-lang="en"><strong>Warburg's 1924 observation:</strong> cancer cells prefer <strong>aerobic glycolysis</strong> even with O₂ — glucose → lactate rather than full oxidation. Why? Cancer ATP efficiency (2 from glycolysis) is far worse than OXPHOS (~30), yet they choose glycolysis.<br><br><strong>2024 understanding:</strong> (1) rapid division demands <strong>biosynthetic precursors</strong> (nucleotides, AAs, FAs) from glycolytic/PPP branches; (2) glycolysis is fast and mitochondria-free; (3) released lactate acidifies the tumor microenvironment, aiding invasion and immune escape. Metabolic drugs (<strong>2-DG, metformin, GLS inhibitors</strong>) are in clinical trials.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="五、細胞如何在糖解 vs 糖質新生之間切換？" data-en="V. Switching glycolysis vs gluconeogenesis">五、雙向切換</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="飯後 vs 飢餓 vs 運動" data-en="Fed vs fasted vs exercise">飯後 vs 飢餓 vs 運動</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">🍔 飯後</span><span class="dt-arrow">→</span><div>胰島素↑ → F2,6BP↑ → 激活 PFK-1 / 抑制 FBPase-1 → <strong>糖解 ON、糖質新生 OFF</strong></div></div>
+<div class="dt-node"><span class="dt-q">😴 飢餓</span><span class="dt-arrow">→</span><div>升糖素↑ → cAMP→PKA → 磷酸化 PFK-2 (FBPase-2 域活化) → F2,6BP↓ → <strong>糖解 OFF、糖質新生 ON</strong></div></div>
+<div class="dt-node"><span class="dt-q">🏃 運動</span><span class="dt-arrow">→</span><div>AMP↑ → 激活 PFK-1 + AMPK → <strong>糖解 ON</strong>；同時抑制 ACC、激活 FA 氧化</div></div>
+<div class="dt-node"><span class="dt-q">🩺 糖尿病</span><span class="dt-arrow">→</span><div>胰島素阻抗 → 即使飯後仍維持糖質新生 → 高血糖。Metformin 抑制肝糖質新生（標靶 mGPD / GDH）。</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">🍔 Fed</span><span class="dt-arrow">→</span><div>Insulin↑ → F2,6BP↑ → activates PFK-1 / inhibits FBPase-1 → <strong>glycolysis ON, gluconeogenesis OFF</strong></div></div>
+<div class="dt-node"><span class="dt-q">😴 Fasted</span><span class="dt-arrow">→</span><div>Glucagon↑ → cAMP→PKA → phosphorylates PFK-2 (activating FBPase-2 domain) → F2,6BP↓ → <strong>glycolysis OFF, gluconeogenesis ON</strong></div></div>
+<div class="dt-node"><span class="dt-q">🏃 Exercise</span><span class="dt-arrow">→</span><div>AMP↑ → activates PFK-1 + AMPK → <strong>glycolysis ON</strong>; AMPK also inhibits ACC, activating FA oxidation</div></div>
+<div class="dt-node"><span class="dt-q">🩺 Diabetes</span><span class="dt-arrow">→</span><div>Insulin resistance → gluconeogenesis persists even after meals → hyperglycemia. Metformin inhibits hepatic gluconeogenesis (targets mGPD / GDH).</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="代謝路徑分析與 KEGG API" data-en="Pathway analysis &amp; KEGG API">KEGG 代謝路徑</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'r1')">R / KEGGREST</button><button class="code-tab-btn" onclick="switchTab(this,'py1')">Python / Bioservices</button></div>
+<div class="code-tab-content active" id="r1"><pre><span class="kw">library</span>(KEGGREST)
+<span class="kw">library</span>(pathview)
+
+<span class="comment"># 取得糖解路徑（hsa00010）</span>
+glyc &lt;- <span class="func">keggGet</span>(<span class="str">"hsa00010"</span>)
+<span class="func">names</span>(glyc[[<span class="num">1</span>]])
+glyc[[<span class="num">1</span>]]$GENE  <span class="comment"># 該路徑相關基因</span>
+
+<span class="comment"># 用 pathview 將 RNA-seq 差異表達上色到 KEGG 圖</span>
+gene_data &lt;- <span class="func">setNames</span>(<span class="kw">c</span>(<span class="num">2</span>, -<span class="num">1.5</span>, <span class="num">0.8</span>),
+                       <span class="kw">c</span>(<span class="str">"3098"</span>, <span class="str">"5213"</span>, <span class="str">"5230"</span>))  <span class="comment"># HK1, PFKM, PGK1</span>
+<span class="func">pathview</span>(gene.data = gene_data, pathway.id = <span class="str">"00010"</span>, species = <span class="str">"hsa"</span>)
+
+<span class="comment"># Flux Balance Analysis 入門 — sybil 或 cobrar</span>
+<span class="kw">library</span>(sybil)
+data(Ec_core)
+fba_res &lt;- <span class="func">optimizeProb</span>(Ec_core, algorithm = <span class="str">"fba"</span>)
+<span class="func">lp_obj</span>(fba_res)  <span class="comment"># 最大生長速率</span></pre></div>
+<div class="code-tab-content" id="py1"><pre><span class="kw">import</span> requests
+<span class="kw">from</span> bioservices <span class="kw">import</span> KEGG
+
+kegg = KEGG()
+
+<span class="comment"># 取得糖解路徑</span>
+glyc = kegg.get(<span class="str">"hsa00010"</span>)
+<span class="func">print</span>(kegg.parse(glyc)[<span class="str">"GENE"</span>])
+
+<span class="comment"># cobrapy: Flux Balance Analysis</span>
+<span class="kw">import</span> cobra
+<span class="kw">from</span> cobra.io <span class="kw">import</span> load_model
+
+model = load_model(<span class="str">"textbook"</span>)  <span class="comment"># E. coli core</span>
+solution = model.optimize()
+<span class="func">print</span>(<span class="str">f"Growth rate = {solution.objective_value:.3f} h⁻¹"</span>)
+
+<span class="comment"># 模擬糖解流量</span>
+<span class="kw">for</span> rxn <span class="kw">in</span> model.reactions:
+    <span class="kw">if</span> <span class="str">"glyc"</span> <span class="kw">in</span> rxn.name.lower() <span class="kw">or</span> <span class="str">"HEX"</span> <span class="kw">in</span> rxn.id <span class="kw">or</span> <span class="str">"PFK"</span> <span class="kw">in</span> rxn.id:
+        <span class="func">print</span>(<span class="str">f"{rxn.id}: {solution.fluxes[rxn.id]:.2f}"</span>)
+
+<span class="comment"># 模擬糖尿病：移除胰島素效果</span>
+<span class="kw">with</span> model:
+    model.reactions.PFK.bounds = (<span class="num">0</span>, <span class="num">5</span>)  <span class="comment"># 限制糖解流量</span>
+    sol2 = model.optimize()
+    <span class="func">print</span>(<span class="str">f"Reduced glycolysis growth: {sol2.objective_value:.3f}"</span>)</pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="1"><p data-lang="zh">1. 糖解淨產出？</p><p data-lang="en">1. Net yield of glycolysis?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 4 ATP + 4 NADH</span><span data-lang="en">A. 4 ATP + 4 NADH</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 2 ATP + 2 NADH + 2 丙酮酸</span><span data-lang="en">B. 2 ATP + 2 NADH + 2 pyruvate</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 30 ATP</span><span data-lang="en">C. 30 ATP</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 2 FADH₂ + 1 ATP</span><span data-lang="en">D. 2 FADH₂ + 1 ATP</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="2"><p data-lang="zh">2. 糖解最重要的調控酶？</p><p data-lang="en">2. Master regulator of glycolysis?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 己糖激酶</span><span data-lang="en">A. Hexokinase</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 丙酮酸激酶</span><span data-lang="en">B. Pyruvate kinase</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. PFK-1（受 F2,6BP、AMP/ATP、citrate 調控）</span><span data-lang="en">C. PFK-1 (regulated by F2,6BP, AMP/ATP, citrate)</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. Aldolase</span><span data-lang="en">D. Aldolase</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="2"><p data-lang="zh">3. Warburg 效應的主要解釋？</p><p data-lang="en">3. Main explanation for Warburg effect?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 癌細胞缺乏粒線體</span><span data-lang="en">A. Cancer cells lack mitochondria</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. ATP 不足</span><span data-lang="en">B. ATP shortage</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 快速分裂需要 PPP/糖解分支提供合成代謝前體 + 微環境酸化助侵襲</span><span data-lang="en">C. Rapid division needs PPP/glycolytic intermediates for biosynthesis + lactate acidifies microenvironment</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 隨機現象</span><span data-lang="en">D. Random</span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="bioenergetics.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="生物能量學：ΔG、ATP 與 Redox" data-en="Bioenergetics: ΔG, ATP &amp;amp; Redox">生物能量學：ΔG、ATP 與 Redox</span></a>
+<a href="tca-oxphos.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="TCA 循環與氧化磷酸化" data-en="TCA Cycle &amp;amp; Oxidative Phosphorylation">TCA 循環與氧化磷酸化</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+const fluxChart=new Chart(document.getElementById('fluxChart'),{type:'bar',data:{labels:[],datasets:[{label:'Flux',data:[],backgroundColor:[]}]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{y:{title:{display:true,text:'Relative flux'},min:0,max:10}}}});
+function updateFlux(){
+  const atp=+document.getElementById('sliderATP').value;
+  const amp=+document.getElementById('sliderAMP').value;
+  const cit=+document.getElementById('sliderCit').value;
+  const f26=+document.getElementById('sliderF26').value;
+  document.getElementById('valATP').textContent=atp;
+  document.getElementById('valAMP').textContent=amp;
+  document.getElementById('valCit').textContent=cit;
+  document.getElementById('valF26').textContent=f26;
+  // simplified PFK-1 activity:
+  const pfk = (1/atp) * (1 + amp/50) * (1/(1+cit*2)) * (1 + f26/10);
+  const glyc = pfk*2;
+  const gng = (atp/5) * 1/(1+f26/10);
+  const pp = (atp>3?1.5:0.8);
+  fluxChart.data.labels=['Glycolysis','Gluconeogenesis','PPP'];
+  fluxChart.data.datasets[0].data=[glyc, gng, pp];
+  fluxChart.data.datasets[0].backgroundColor=['#9f1239','#a16207','#0e7490'];
+  fluxChart.update('none');
+  const L=I18n.get();
+  document.getElementById('statFlux').textContent=(L==='zh'?'糖解 ':'Glyc ')+glyc.toFixed(1);
+  let state;
+  if(glyc>3 && gng<1) state=L==='zh'?'🍔 飯後/胰島素訊號':'🍔 Fed / insulin';
+  else if(gng>2 && glyc<1) state=L==='zh'?'😴 飢餓/升糖素訊號':'😴 Fasted / glucagon';
+  else if(amp>100) state=L==='zh'?'🏃 運動/AMP↑':'🏃 Exercise / AMP↑';
+  else state=L==='zh'?'⚖️ 平衡狀態':'⚖️ Balanced';
+  document.getElementById('statState').textContent=state;
+}
+['sliderATP','sliderAMP','sliderCit','sliderF26'].forEach(id=>document.getElementById(id).addEventListener('input',updateFlux));
+document.addEventListener('langchange',updateFlux);
+updateFlux();
+
+const QF={zh:{q1_y:'糖解淨產出：每葡萄糖 2 ATP + 2 NADH + 2 丙酮酸（投資 2 ATP、收割 4 ATP）。',q2_y:'PFK-1 是糖解最重要的調控酶，由 F2,6BP、AMP/ATP、citrate 多重調節。',q3_y:'Warburg 效應的主因不是 ATP，而是癌細胞需要 PPP/糖解分支提供核苷酸、脂質、胺基酸前體，並用乳酸酸化助侵襲。'},en:{q1_y:'Net glycolysis per glucose: 2 ATP + 2 NADH + 2 pyruvate (2 ATP invested, 4 made).',q2_y:'PFK-1 is the master regulator, controlled by F2,6BP, AMP/ATP, and citrate.',q3_y:'The Warburg effect is driven by biosynthetic precursors from PPP/glycolytic branches plus tumor-microenvironment acidification, not by ATP shortage.'}};['q1_n','q2_n','q3_n'].forEach(k=>{QF.zh[k]='正確答案已標示。';QF.en[k]='Correct answer highlighted.';});
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

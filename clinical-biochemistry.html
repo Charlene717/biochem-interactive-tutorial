@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.16 臨床生化與代謝疾病 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html" class="active">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 16 / 18 · BLOCK E</div>
+<h1 data-zh="臨床生化與代謝疾病" data-en="Clinical Biochemistry &amp; Metabolic Diseases">臨床生化與代謝疾病</h1>
+<p class="subtitle" data-lang="zh">糖尿病、痛風、PKU、粒線體病——生化路徑出錯如何造成疾病；常規血液檢驗背後的化學。</p>
+<p class="subtitle" data-lang="en">Diabetes, gout, PKU, mitochondrial disease — how broken pathways cause disease, and the chemistry behind routine blood tests.</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="糖尿病" data-en="DIABETES">糖尿病</div>
+<h2 data-zh="一、糖尿病：胰島素訊息缺陷的兩種模式" data-en="I. Diabetes: two modes of insulin failure">一、糖尿病</h2>
+<table class="comp-table">
+<thead><tr><th></th><th>Type 1</th><th>Type 2</th><th>MODY/單基因</th><th>妊娠</th></tr></thead>
+<tbody>
+<tr><td data-zh="病因" data-en="Cause">病因</td><td data-zh="β 細胞被自體免疫破壞" data-en="Autoimmune β-cell destruction">自體免疫</td><td data-zh="胰島素阻抗 + β 細胞功能衰退" data-en="Insulin resistance + β decline">阻抗 + 衰退</td><td data-zh="單一基因突變（HNF1A 等）" data-en="Single-gene (HNF1A etc.)">單基因</td><td data-zh="妊娠中暫時胰島素阻抗" data-en="Pregnancy-related transient resistance">暫時</td></tr>
+<tr><td data-zh="主要治療" data-en="Treatment">治療</td><td data-zh="胰島素（注射 / pump）" data-en="Insulin (injection/pump)">胰島素</td><td data-zh="飲食 + 運動 + metformin、SGLT2i、GLP-1RA" data-en="Diet/exercise + metformin, SGLT2i, GLP-1RA">多藥</td><td data-zh="磺脲類常有效" data-en="Sulfonylureas often work">磺脲</td><td data-zh="飲食控制；必要時胰島素" data-en="Diet; insulin if needed">飲食</td></tr>
+<tr><td data-zh="HbA1c 目標" data-en="HbA1c target">HbA1c</td><td>&lt;7.0%</td><td>&lt;7.0%</td><td>&lt;6.5%</td><td>&lt;6.5%</td></tr>
+</tbody></table>
+<div data-lang="zh"><p><strong>糖化血色素 (HbA1c)：</strong>葡萄糖透過<strong>非酶 Maillard 反應</strong>共價接到血紅蛋白 N 末端 Val。因為紅血球壽命約 120 天，HbA1c 反映過去 8-12 週的平均血糖。&lt; 5.7% 正常，5.7-6.4% 前期，&gt; 6.5% 糖尿病。</p>
+<p><strong>糖尿病併發症的化學：</strong>持續高血糖造成<strong>蛋白糖化 (AGEs)</strong>——蛋白功能受損，血管、神經、腎、視網膜逐漸受害。GLO1（甘油醛 lyase）解毒系統一旦力不從心，臨床併發症出現。</p></div>
+<div data-lang="en"><p><strong>HbA1c (glycated hemoglobin):</strong> glucose covalently attaches to hemoglobin N-terminal Val via <strong>non-enzymatic Maillard reaction</strong>. RBC lifespan ~120 days → HbA1c reflects 8-12 week average blood glucose. &lt;5.7% normal, 5.7-6.4% prediabetes, &gt;6.5% diabetes.</p>
+<p><strong>Chemistry of diabetic complications:</strong> chronic hyperglycemia causes <strong>protein glycation → AGEs</strong> — impaired function in vessels, nerves, kidneys, retinas. When the GLO1 (glyoxalase) detox system is overwhelmed, complications emerge.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="IEM" data-en="IEM">先天代謝缺陷</div>
+<h2 data-zh="二、經典先天代謝缺陷 (Inborn Errors of Metabolism)" data-en="II. Classic inborn errors of metabolism">二、IEM 經典案例</h2>
+<div class="card-grid cols-2">
+<div class="card"><h4>🧪 <span data-zh="PKU（苯酮尿症）" data-en="PKU (phenylketonuria)">PKU</span></h4><div data-lang="zh"><p><strong>PAH 缺陷</strong>無法把 Phe 轉成 Tyr → Phe 累積（&gt;1 mM）→ 神經毒性、智能障礙。新生兒篩檢標準項目。治療：嚴格低 Phe 飲食 + Tyr 補充。<strong>2024 新藥</strong>：sepiapterin (BH4 增益)、pegvaliase (PAL 酶替代)。</p></div><div data-lang="en"><p><strong>PAH deficiency</strong> blocks Phe → Tyr → Phe accumulates (&gt;1 mM) → neurotoxicity, intellectual disability. Standard newborn screen item. Treatment: low-Phe diet + Tyr. <strong>2024 drugs:</strong> sepiapterin (BH4 augmenter), pegvaliase (enzyme replacement).</p></div></div>
+<div class="card"><h4>🍼 <span data-zh="半乳糖血症" data-en="Galactosemia">半乳糖血症</span></h4><div data-lang="zh"><p>GALT 缺陷 → 半乳糖累積、肝損傷、白內障、智能。新生兒篩檢。治療：終身無乳糖飲食。</p></div><div data-lang="en"><p>GALT deficiency → galactose accumulates, causing liver damage, cataracts, intellectual disability. Newborn-screened. Treatment: lifelong lactose-free diet.</p></div></div>
+<div class="card"><h4>🧬 <span data-zh="鐮刀型紅血球症" data-en="Sickle cell disease">鐮刀型貧血</span></h4><div data-lang="zh"><p>HbS：β-globin Glu6Val 突變 → 缺氧時聚合形成纖維 → RBC 變形。<strong>2023 FDA：Casgevy</strong>，CRISPR-Cas9 治療鐮刀症的首個基因編輯藥物。</p></div><div data-lang="en"><p>HbS: β-globin Glu6Val → deoxy-state polymerizes into fibers → RBC sickling. <strong>2023 FDA: Casgevy</strong>, the first CRISPR-Cas9 therapy, approved for sickle cell.</p></div></div>
+<div class="card"><h4>🦠 <span data-zh="囊狀纖維化 (CF)" data-en="Cystic fibrosis (CF)">囊狀纖維化</span></h4><div data-lang="zh"><p>CFTR (氯離子通道) 缺陷——ΔF508 最常見。引發濃稠黏液阻塞肺與胰。<strong>Trikafta (2019)</strong>：elexacaftor + tezacaftor + ivacaftor 三藥組合，矯正蛋白摺疊與通道功能，大幅改善預後。</p></div><div data-lang="en"><p>CFTR (Cl⁻ channel) defect — ΔF508 most common. Thick mucus blocks lungs and pancreas. <strong>Trikafta (2019):</strong> elexacaftor + tezacaftor + ivacaftor — corrects folding + restores channel function; transformed prognosis.</p></div></div>
+<div class="card"><h4>🩺 <span data-zh="楓糖尿症 (MSUD)" data-en="Maple syrup urine disease (MSUD)">楓糖尿症</span></h4><div data-lang="zh"><p>BCKDH 缺陷 → 分支鏈胺基酸 (Leu/Ile/Val) 與支酮酸累積 → 尿有楓糖味。新生兒嗜睡、抽搐。治療：嚴格 BCAA 飲食 + 急性高蛋白移除。</p></div><div data-lang="en"><p>BCKDH defect → BCAAs (Leu/Ile/Val) + branched ketoacids accumulate → urine smells like maple syrup. Neonatal lethargy, seizures. Treatment: strict BCAA-restricted diet + acute removal of protein.</p></div></div>
+<div class="card"><h4>⚡ <span data-zh="粒線體病" data-en="Mitochondrial disease">粒線體病</span></h4><div data-lang="zh"><p>mtDNA 或核 DNA 編碼的 ETC/TCA/PDH 蛋白突變。臨床多樣：MELAS（中風樣發作）、LHON（視神經）、Leigh（嬰兒神經退化）、MERRF（肌陣攣性癲癇）。<strong>2025 新藥</strong>: vincerinone (Leigh)、elamipretide (心肌粒線體疾病) 臨床測試中。</p></div><div data-lang="en"><p>mtDNA or nuclear-encoded ETC/TCA/PDH mutations. Heterogeneous: MELAS (stroke-like), LHON (optic), Leigh (infantile neurodegeneration), MERRF (myoclonic epilepsy). <strong>2025:</strong> vincerinone (Leigh), elamipretide (cardiac mito) in trials.</p></div></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="痛風" data-en="GOUT">痛風</div>
+<h2 data-zh="三、痛風：尿酸結晶的化學" data-en="III. Gout: chemistry of urate crystals">三、痛風</h2>
+<div data-lang="zh"><p>嘌呤代謝終產物為<strong>尿酸</strong>。人類缺乏尿酸氧化酶（基因失活），所以尿酸是最終代謝物。血漿尿酸 &gt; 6.8 mg/dL 即接近溶解度上限，過量時形成<strong>單水尿酸鈉晶體 (MSU)</strong> 沉積關節，引發劇痛炎症（NLRP3 inflammasome 激活）。</p>
+<p><strong>臨床治療：</strong></p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>急性</strong>: NSAIDs (阻斷 COX/前列腺素)、秋水仙素 (colchicine)、類固醇</li>
+<li><strong>慢性降尿酸</strong>: allopurinol、febuxostat（黃嘌呤氧化酶抑制劑，阻止尿酸生成）</li>
+<li><strong>溶解尿酸</strong>: pegloticase（重組尿酸氧化酶，僅難治型）</li>
+</ul></div>
+<div data-lang="en"><p>End product of purine catabolism is <strong>urate</strong>. Humans lack urate oxidase (gene inactivated), so urate is the terminal metabolite. Plasma urate &gt; 6.8 mg/dL approaches its solubility limit; excess crystallizes as <strong>monosodium urate (MSU)</strong> in joints, triggering severe inflammation (NLRP3 inflammasome activation).</p>
+<p><strong>Clinical treatment:</strong></p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>Acute:</strong> NSAIDs (block COX/PG), colchicine, steroids</li>
+<li><strong>Chronic urate-lowering:</strong> allopurinol, febuxostat (xanthine oxidase inhibitors)</li>
+<li><strong>Urate degradation:</strong> pegloticase (recombinant urate oxidase, refractory cases only)</li>
+</ul></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="生化檢驗" data-en="LAB TESTS">生化檢驗</div>
+<h2 data-zh="四、常規血液生化檢驗的化學" data-en="IV. Chemistry of routine blood tests">四、常規檢驗</h2>
+<table class="comp-table">
+<thead><tr><th data-zh="檢驗" data-en="Test">檢驗</th><th data-zh="參考值" data-en="Reference">參考值</th><th data-zh="升高意義" data-en="Elevated">升高</th><th data-zh="降低意義" data-en="Low">降低</th></tr></thead>
+<tbody>
+<tr><td><strong>ALT (GPT)</strong></td><td>&lt; 35 U/L</td><td data-zh="肝細胞損傷" data-en="Hepatocyte damage">肝損傷</td><td>—</td></tr>
+<tr><td><strong>AST (GOT)</strong></td><td>&lt; 35 U/L</td><td data-zh="肝/心/肌肉損傷" data-en="Liver/heart/muscle">肝心肌</td><td>—</td></tr>
+<tr><td><strong>ALP</strong></td><td>40-130 U/L</td><td data-zh="膽道阻塞、骨疾病" data-en="Biliary obstruction, bone">膽道、骨</td><td data-zh="鋅缺乏、甲狀腺低下" data-en="Zn def, hypothyroid">Zn↓</td></tr>
+<tr><td><strong>Bilirubin</strong></td><td>&lt; 1.2 mg/dL</td><td data-zh="黃疸（前肝/肝/後肝）" data-en="Jaundice (pre/hepatic/post)">黃疸</td><td>—</td></tr>
+<tr><td><strong>Albumin</strong></td><td>3.5-5.0 g/dL</td><td>—</td><td data-zh="肝衰、營養不良、發炎" data-en="Liver failure, malnutrition, inflammation">肝衰、營養</td></tr>
+<tr><td><strong>BUN / Cr</strong></td><td>—</td><td data-zh="腎功能下降" data-en="Renal dysfunction">腎功能</td><td>—</td></tr>
+<tr><td><strong>Troponin I/T</strong></td><td>&lt; 0.04 ng/mL</td><td data-zh="心肌梗塞（hs-Trop 是金標準）" data-en="MI (hs-Troponin is the gold standard)">MI</td><td>—</td></tr>
+<tr><td><strong>CK-MB</strong></td><td>&lt; 5 ng/mL</td><td data-zh="心肌梗塞（已被 Troponin 取代）" data-en="MI (now superseded by Troponin)">MI</td><td>—</td></tr>
+<tr><td><strong>HbA1c</strong></td><td>&lt; 5.7%</td><td data-zh="長期血糖控制不佳" data-en="Poor glycemic control">糖尿病</td><td>—</td></tr>
+<tr><td><strong>LDL-C</strong></td><td>&lt; 100 mg/dL</td><td data-zh="心血管風險升高" data-en="CV risk">心血管</td><td>—</td></tr>
+</tbody></table>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="OGTT (口服葡萄糖耐量試驗)" data-en="OGTT (oral glucose tolerance)">OGTT 模擬</h2>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statDx">—</span><span class="sim-stat gold" id="statHbA1c">—</span></div>
+<div class="slider-group"><label><span data-zh="胰島素敏感度 (1=完全；0=阻抗)" data-en="Insulin sensitivity">敏感度</span> <span id="valSens">1</span></label><input type="range" id="sliderSens" min="0.1" max="1" value="1" step="0.05"></div>
+<div class="slider-group"><label><span data-zh="β 細胞功能 (1=完整；0=破壞)" data-en="β-cell function">β 細胞</span> <span id="valBeta">1</span></label><input type="range" id="sliderBeta" min="0.1" max="1" value="1" step="0.05"></div>
+<div class="chart-container"><canvas id="ogttChart"></canvas></div>
+<p style="font-size:.82rem;color:var(--c-ink-muted);text-align:center;"><span data-lang="zh">OGTT 標準：空腹 &lt;100；2h &lt;140 = 正常；2h ≥200 = 糖尿病</span><span data-lang="en">OGTT: fasting &lt;100; 2h &lt;140 = normal; 2h ≥200 = diabetes</span></p>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="五、新生兒篩檢與代謝急症" data-en="V. Newborn screen &amp; metabolic emergencies">五、新生兒急症</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="新生兒嗜睡 + 不吃奶——查什麼？" data-en="Lethargic neonate not feeding — what to check?">代謝急症診斷</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">血氨 ↑</span><span class="dt-arrow">→</span><div>尿素循環缺陷（OTC、CPS-1、ASS、ASL）或有機酸血症（B12 相關）。緊急血液透析。</div></div>
+<div class="dt-node"><span class="dt-q">低血糖</span><span class="dt-arrow">→</span><div>糖原儲積病（GSD I, von Gierke）、脂肪酸氧化缺陷（MCAD）、糖質新生缺陷。</div></div>
+<div class="dt-node"><span class="dt-q">代謝性酸中毒</span><span class="dt-arrow">→</span><div>查 anion gap：若高，可能是有機酸尿、乳酸性酸中毒（粒線體病）、酮酸中毒（MSUD、DKA）。</div></div>
+<div class="dt-node"><span class="dt-q">尿味異常</span><span class="dt-arrow">→</span><div>楓糖尿味 = MSUD；鼠尿味 = PKU；汗腳味 = 異戊酸血症</div></div>
+<div class="dt-node"><span class="dt-q">家族史</span><span class="dt-arrow">→</span><div>近親結婚、過去新生兒死亡——疑似 X 連鎖或常染色體隱性 IEM。</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">High ammonia</span><span class="dt-arrow">→</span><div>Urea cycle defect (OTC, CPS-1, ASS, ASL) or organic acidemia (B12-related). Emergency dialysis.</div></div>
+<div class="dt-node"><span class="dt-q">Hypoglycemia</span><span class="dt-arrow">→</span><div>Glycogen storage disease (GSD I, von Gierke), FA oxidation defect (MCAD), gluconeogenesis defect.</div></div>
+<div class="dt-node"><span class="dt-q">Metabolic acidosis</span><span class="dt-arrow">→</span><div>Check anion gap: if elevated, consider organic aciduria, lactic acidosis (mito disease), ketoacidosis (MSUD, DKA).</div></div>
+<div class="dt-node"><span class="dt-q">Abnormal urine odor</span><span class="dt-arrow">→</span><div>Maple syrup = MSUD; mousy = PKU; sweaty-feet = isovaleric acidemia</div></div>
+<div class="dt-node"><span class="dt-q">Family history</span><span class="dt-arrow">→</span><div>Consanguinity, prior neonatal death — suspect X-linked or autosomal recessive IEM.</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="HbA1c → estimated Average Glucose (eAG) 換算" data-en="HbA1c → eAG conversion">HbA1c 與 eAG</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'r1')">R</button><button class="code-tab-btn" onclick="switchTab(this,'py1')">Python</button></div>
+<div class="code-tab-content active" id="r1"><pre><span class="comment"># Nathan formula (ADAG 2008): eAG (mg/dL) = 28.7 × HbA1c − 46.7</span>
+hba1c_to_eag &lt;- <span class="kw">function</span>(a1c) <span class="num">28.7</span> * a1c - <span class="num">46.7</span>
+
+<span class="comment"># 範例</span>
+hba1c &lt;- <span class="kw">c</span>(<span class="num">5.0</span>, <span class="num">5.7</span>, <span class="num">6.5</span>, <span class="num">7.0</span>, <span class="num">8.0</span>, <span class="num">9.0</span>)
+<span class="func">data.frame</span>(HbA1c=hba1c, eAG_mgdl=<span class="func">hba1c_to_eag</span>(hba1c))
+
+<span class="comment"># 計算 eGFR (CKD-EPI 2021)</span>
+egfr_ckdepi &lt;- <span class="kw">function</span>(Scr, age, female, race=<span class="kw">NULL</span>) {
+  <span class="comment"># Scr in mg/dL; 2021 不再用 race 校正</span>
+  kappa &lt;- <span class="kw">ifelse</span>(female, <span class="num">0.7</span>, <span class="num">0.9</span>)
+  alpha &lt;- <span class="kw">ifelse</span>(female, -<span class="num">0.241</span>, -<span class="num">0.302</span>)
+  egfr &lt;- <span class="num">142</span> * <span class="func">min</span>(Scr/kappa, <span class="num">1</span>)^alpha * <span class="func">max</span>(Scr/kappa, <span class="num">1</span>)^-<span class="num">1.200</span> *
+          <span class="num">0.9938</span>^age * <span class="kw">ifelse</span>(female, <span class="num">1.012</span>, <span class="num">1</span>)
+  egfr
+}
+<span class="func">egfr_ckdepi</span>(<span class="num">1.5</span>, <span class="num">65</span>, <span class="kw">FALSE</span>)  <span class="comment"># 中度 CKD</span></pre></div>
+<div class="code-tab-content" id="py1"><pre><span class="kw">def</span> <span class="func">hba1c_to_eag</span>(a1c):
+    <span class="kw">return</span> <span class="num">28.7</span> * a1c - <span class="num">46.7</span>
+
+<span class="kw">for</span> a <span class="kw">in</span> [<span class="num">5.0</span>, <span class="num">5.7</span>, <span class="num">6.5</span>, <span class="num">7.0</span>, <span class="num">8.0</span>, <span class="num">9.0</span>]:
+    <span class="func">print</span>(<span class="str">f"HbA1c {a}% → eAG {hba1c_to_eag(a):.0f} mg/dL"</span>)
+
+<span class="comment"># Lipid panel risk stratification (ASCVD 10-year risk calculator)</span>
+<span class="kw">def</span> <span class="func">ldl_target</span>(risk_category):
+    targets = {
+        <span class="str">"very_high"</span>: <span class="num">70</span>,     <span class="comment"># 確診冠心、糖尿病 + 風險因子</span>
+        <span class="str">"high"</span>:      <span class="num">100</span>,
+        <span class="str">"moderate"</span>:  <span class="num">130</span>,
+        <span class="str">"low"</span>:       <span class="num">160</span>,
+    }
+    <span class="kw">return</span> targets[risk_category]
+
+<span class="comment"># 肝功能評估 - 大致用 ALT 與 AST 比例</span>
+<span class="kw">def</span> <span class="func">ast_alt_ratio</span>(AST, ALT):
+    ratio = AST / ALT
+    <span class="kw">if</span> ratio &gt; <span class="num">2</span>: <span class="kw">return</span> <span class="str">"Alcoholic hepatitis"</span>
+    <span class="kw">elif</span> ratio &gt; <span class="num">1.5</span>: <span class="kw">return</span> <span class="str">"Cirrhosis (advanced)"</span>
+    <span class="kw">elif</span> ratio &lt; <span class="num">1</span>: <span class="kw">return</span> <span class="str">"Viral hepatitis / NAFLD"</span>
+    <span class="kw">else</span>: <span class="kw">return</span> <span class="str">"Nonspecific"</span>
+
+<span class="func">print</span>(<span class="func">ast_alt_ratio</span>(<span class="num">80</span>, <span class="num">30</span>))  <span class="comment"># 酒精</span></pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="2"><p data-lang="zh">1. HbA1c 反映多久的平均血糖？</p><p data-lang="en">1. HbA1c reflects average glucose over how long?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 1 天</span><span data-lang="en">A. 1 day</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 1 週</span><span data-lang="en">B. 1 week</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 8-12 週（取決於紅血球壽命）</span><span data-lang="en">C. 8-12 weeks (RBC lifespan)</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 1 年</span><span data-lang="en">D. 1 year</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="2"><p data-lang="zh">2. 鐮刀型紅血球的分子病因？</p><p data-lang="en">2. Molecular cause of sickle cell?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. α-globin 缺失</span><span data-lang="en">A. α-globin deletion</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 血紅素鐵中毒</span><span data-lang="en">B. Heme iron toxicity</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. β-globin Glu6Val 點突變——脫氧時聚合成纖維</span><span data-lang="en">C. β-globin Glu6Val point mutation — polymerizes in deoxy state</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 紅血球體積大</span><span data-lang="en">D. Large RBC volume</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="1"><p data-lang="zh">3. 痛風急性發作為何劇痛？</p><p data-lang="en">3. Why is acute gout so painful?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 尿酸刺激神經末梢</span><span data-lang="en">A. Urate stimulates nerves directly</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. MSU 晶體激活 NLRP3 inflammasome → IL-1β 釋放 → 強烈炎症</span><span data-lang="en">B. MSU crystals activate NLRP3 inflammasome → IL-1β release → intense inflammation</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 細菌感染</span><span data-lang="en">C. Bacterial infection</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 缺血</span><span data-lang="en">D. Ischemia</span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="molecular-biology-chemistry.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="中心法則的化學細節" data-en="Chemistry of the Central Dogma">中心法則的化學細節</span></a>
+<a href="drug-design-biochem.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="生化學與藥物設計" data-en="Biochemistry-Driven Drug Design">生化學與藥物設計</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+const ogttChart=new Chart(document.getElementById('ogttChart'),{type:'line',data:{labels:[0,30,60,90,120,150,180],datasets:[
+  {label:'Glucose (mg/dL)',data:[],borderColor:'#9f1239',tension:0.3,fill:true,backgroundColor:'rgba(159,18,57,0.1)'},
+  {label:'Insulin (μU/mL)',data:[],borderColor:'#a16207',tension:0.3,yAxisID:'y2'}
+]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{x:{title:{display:true,text:'min'}},y:{title:{display:true,text:'Glucose'},min:50},y2:{position:'right',title:{display:true,text:'Insulin'},min:0}}}});
+function updateOGTT(){
+  const sens=+document.getElementById('sliderSens').value;
+  const beta=+document.getElementById('sliderBeta').value;
+  document.getElementById('valSens').textContent=sens.toFixed(2);
+  document.getElementById('valBeta').textContent=beta.toFixed(2);
+  const t=[0,30,60,90,120,150,180];
+  const fasting = 80 + (1-sens)*20 + (1-beta)*30;
+  const peak = 100 + (1-sens)*120 + (1-beta)*80;
+  const peakInsulin = 40 * beta;
+  const glc=[], ins=[];
+  for(const ti of t){
+    const g = fasting + (peak-fasting)*Math.exp(-Math.pow((ti-45)/40,2)) - (ti>60?20*sens*beta:0);
+    const i = 5 + peakInsulin * Math.exp(-Math.pow((ti-60)/30,2));
+    glc.push(g);
+    ins.push(i);
+  }
+  ogttChart.data.datasets[0].data=glc;
+  ogttChart.data.datasets[1].data=ins;
+  ogttChart.update('none');
+  const t120 = glc[4];
+  const L=I18n.get();
+  let dx;
+  if(t120>=200) dx=L==='zh'?'⚠️ 糖尿病 (2h ≥200)':'⚠️ Diabetes (2h ≥200)';
+  else if(t120>=140) dx=L==='zh'?'🟡 葡萄糖耐量不良 (IGT)':'🟡 Impaired glucose tolerance (IGT)';
+  else dx=L==='zh'?'✅ 正常':'✅ Normal';
+  document.getElementById('statDx').textContent=dx;
+  // approx HbA1c from mean glucose
+  const meanG = glc.reduce((a,b)=>a+b)/glc.length;
+  const est = (meanG + 46.7) / 28.7;
+  document.getElementById('statHbA1c').textContent=(L==='zh'?'估計 HbA1c ≈ ':'Est. HbA1c ≈ ')+est.toFixed(1)+'%';
+}
+['sliderSens','sliderBeta'].forEach(id=>document.getElementById(id).addEventListener('input',updateOGTT));
+document.addEventListener('langchange',updateOGTT);
+updateOGTT();
+
+const QF={zh:{q1_y:'HbA1c 受紅血球壽命限制（120 天），代表過去 8-12 週的平均血糖。',q2_y:'鐮刀症為 β-globin Glu6Val 點突變；脫氧 HbS 因新增疏水點而聚合成纖維，造成 RBC 變形。',q3_y:'MSU 晶體刺激 NLRP3 inflammasome → IL-1β 釋放 → 中性球大量湧入造成劇痛。'},en:{q1_y:'HbA1c is bounded by RBC lifespan (120 days), reflecting 8-12 week average glucose.',q2_y:'Sickle cell is a β-globin Glu6Val point mutation; deoxy-HbS gains a hydrophobic patch that polymerizes into fibers, deforming RBCs.',q3_y:'MSU crystals stimulate the NLRP3 inflammasome → IL-1β release → massive neutrophil influx causing severe pain.'}};['q1_n','q2_n','q3_n'].forEach(k=>{QF.zh[k]='正確答案已標示。';QF.en[k]='Correct answer highlighted.';});
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

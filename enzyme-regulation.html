@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.8 酶調控 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html" class="active">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 8 / 18 · BLOCK B</div>
+<h1 data-zh="酶調控：協同性與翻譯後修飾" data-en="Enzyme Regulation: Allostery &amp; PTMs">酶調控：協同性與翻譯後修飾</h1>
+<p class="subtitle" data-lang="zh">細胞如何精準控制每秒幾百個酶的活性？四種主要調控機制與 MWC/KNF 變構模型。</p>
+<p class="subtitle" data-lang="en">How do cells fine-tune hundreds of enzymes per second? Four regulatory mechanisms and the MWC/KNF allosteric models.</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="四種模式" data-en="FOUR MODES">四種模式</div>
+<h2 data-zh="一、酶調控的四種主要模式" data-en="I. Four major modes of regulation">一、四種調控模式</h2>
+<div class="card-grid cols-2">
+<div class="card"><h4>🎚️ <span data-zh="① 變構調節 (Allostery)" data-en="① Allostery">① 變構調節</span></h4><div data-lang="zh"><p>調節劑結合在<strong>非催化位點</strong>，引起構象改變影響活位點。產生 <strong>S 形動力學曲線</strong>（協同性），Hill 係數 &gt; 1。例：ATCase、磷酸果糖激酶 (PFK-1)、glycogen phosphorylase。</p></div><div data-lang="en"><p>Effector binds a <strong>non-catalytic site</strong>, inducing conformational change at the active site. Produces <strong>sigmoidal kinetics</strong> (cooperativity), Hill coefficient &gt; 1. Examples: ATCase, PFK-1, glycogen phosphorylase.</p></div></div>
+<div class="card"><h4>💎 <span data-zh="② 共價修飾" data-en="② Covalent modification">② 共價修飾</span></h4><div data-lang="zh"><p>翻譯後加減原子團，最常見<strong>磷酸化 (Ser/Thr/Tyr)</strong>——由 kinase 加、phosphatase 移除。其他 PTMs：乙醯化、甲基化、泛素化、SUMO 化、糖基化、ADP-核糖化、prenylation。</p></div><div data-lang="en"><p>Post-translational add/remove of groups. Most common: <strong>phosphorylation (Ser/Thr/Tyr)</strong> — kinase adds, phosphatase removes. Others: acetylation, methylation, ubiquitination, SUMOylation, glycosylation, ADP-ribosylation, prenylation.</p></div></div>
+<div class="card"><h4>✂️ <span data-zh="③ 酶原激活" data-en="③ Zymogen activation">③ 酶原激活</span></h4><div data-lang="zh"><p>合成為<strong>無活性前驅體 (zymogen)</strong>，由蛋白酶切割激活——<strong>不可逆</strong>。例：胰蛋白酶原 → 胰蛋白酶；凝血酶原 → 凝血酶；caspase 前體 → 活化 caspase（細胞凋亡）。</p></div><div data-lang="en"><p>Made as <strong>inactive zymogen</strong>; proteolytic cleavage activates — <strong>irreversible</strong>. Examples: trypsinogen → trypsin; prothrombin → thrombin; pro-caspase → caspase (apoptosis).</p></div></div>
+<div class="card"><h4>🔢 <span data-zh="④ 表達量調節" data-en="④ Expression control">④ 表達量調節</span></h4><div data-lang="zh"><p>透過轉錄/翻譯改變酶總量（小時–天的時間尺度）。例：胰島素誘導糖解相關酶；類固醇激素誘導氨甲醯磷酸合成酶 I。</p></div><div data-lang="en"><p>Transcriptional/translational control of enzyme abundance (hours-to-days timescale). Examples: insulin induces glycolysis enzymes; steroid hormones induce carbamoyl phosphate synthetase I.</p></div></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="變構模型" data-en="ALLOSTERIC MODELS">變構模型</div>
+<h2 data-zh="二、MWC vs KNF 變構模型" data-en="II. MWC vs KNF allosteric models">二、MWC vs KNF</h2>
+<table class="comp-table">
+<thead><tr><th></th><th><strong>MWC (Monod-Wyman-Changeux, 1965)</strong></th><th><strong>KNF (Koshland-Némethy-Filmer, 1966)</strong></th></tr></thead>
+<tbody>
+<tr><td data-zh="核心" data-en="Core">核心</td><td data-zh="多次單元之間「協同」切換 T ⇌ R 狀態" data-en="Subunits switch T ⇌ R cooperatively">協同切換</td><td data-zh="基質結合一個次單元，誘導鄰近改變（連續、依序）" data-en="Sequential induced change in neighboring subunits">依序誘導</td></tr>
+<tr><td data-zh="對稱" data-en="Symmetry">對稱</td><td data-zh="次單元必須維持對稱（同步切換）" data-en="Subunits maintain symmetry (synchronous)">必須對稱</td><td data-zh="次單元可不同步" data-en="Subunits can differ">可不對稱</td></tr>
+<tr><td data-zh="預測" data-en="Predicts">預測</td><td data-zh="基質非依賴的構象切換（先存在 T/R 平衡）" data-en="Substrate-independent T/R equilibrium">先存平衡</td><td data-zh="基質誘導構象（無基質時無 T/R 切換）" data-en="Substrate-induced conformations">基質誘導</td></tr>
+<tr><td data-zh="實際" data-en="Reality">實際</td><td colspan="2" data-zh="多數蛋白為兩者混合——血紅蛋白接近 MWC、ATCase 也偏 MWC、有些激酶偏 KNF" data-en="Most proteins are a mix — hemoglobin closer to MWC, some kinases closer to KNF">大多為混合</td></tr>
+</tbody></table>
+<div class="callout tip"><span class="callout-icon">💡</span><div>
+<span data-lang="zh"><strong>血紅蛋白</strong>是變構教科書範例：α₂β₂ 四聚體，氧結合到一個次單元會「誘導」其他次單元從 T (tense, 低親和) 切到 R (relaxed, 高親和)。結果：氧解離曲線呈 S 形 (Hill ≈ 2.8)，使肺與組織間的氧運輸效率最大化。<strong>Bohr 效應</strong>（pH↓ → 親和度↓）讓代謝旺盛組織能多取氧。</span>
+<span data-lang="en"><strong>Hemoglobin</strong> is the textbook allosteric protein: α₂β₂ tetramer, O₂ binding one subunit induces others to switch from T (tense, low-affinity) to R (relaxed, high-affinity). Result: sigmoidal O₂ saturation curve (Hill ≈ 2.8), maximizing O₂ transport between lungs and tissues. The <strong>Bohr effect</strong> (low pH → low affinity) lets metabolically active tissues extract more O₂.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="協同性與 Hill 係數" data-en="Cooperativity &amp; Hill coefficient">Hill 係數模擬</h2>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statH">—</span><span class="sim-stat gold" id="statCo">—</span></div>
+<div class="slider-group"><label><span data-zh="Hill 係數 n" data-en="Hill coefficient n">Hill n</span> <span id="valN">2.8</span></label><input type="range" id="sliderN" min="0.5" max="4" value="2.8" step="0.1"></div>
+<div class="slider-group"><label><span data-zh="K0.5 (μM)" data-en="K0.5 (μM)">K0.5</span> <span id="valK">26</span></label><input type="range" id="sliderK" min="5" max="100" value="26" step="1"></div>
+<div class="chart-container"><canvas id="hillChart"></canvas></div>
+<p style="font-size:.82rem;color:var(--c-ink-muted);text-align:center;"><span data-lang="zh">n &gt; 1: 正向協同（S 形）；n = 1: 無協同（MM）；n &lt; 1: 負向協同</span><span data-lang="en">n &gt; 1: positive cooperativity (sigmoidal); n = 1: none (MM); n &lt; 1: negative</span></p>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="磷酸化" data-en="PHOSPHORYLATION">磷酸化</div>
+<h2 data-zh="三、磷酸化：細胞最常見的 PTM" data-en="III. Phosphorylation: the most common PTM">三、磷酸化</h2>
+<div data-lang="zh"><p>人體基因組編碼約 <strong>518 個 kinases、189 個 phosphatases</strong>（合稱激酶體 kinome）。磷酸化加一個 –PO₃²⁻（雙負電），帶來幾個關鍵變化：</p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>引入大量負電 (-2)</strong>：可形成新鹽橋、可被 SH2/PTB/14-3-3 結構域辨識（招募下游蛋白）</li>
+<li><strong>產生氫鍵接受體</strong>：穩定特定構象</li>
+<li><strong>可快速逆轉</strong>：phosphatase 一秒鐘移除（適合動態訊息）</li>
+<li><strong>幾乎不需能量</strong>：消耗一個 ATP 即可</li>
+</ul>
+<p><strong>2024 觀點：</strong>單細胞磷酸化體學（scPhospho-MS）正在揭示 PTM 的細胞間異質性；AI 工具 (NetPhos, MusiteDeep, PhosIDN) 可預測磷酸化位點，但實驗驗證仍重要。</p></div>
+<div data-lang="en"><p>The human genome encodes ~<strong>518 kinases and 189 phosphatases</strong> (the "kinome"). Adding a –PO₃²⁻ (–2 charge) causes:</p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>Large negative charge</strong>: forms new salt bridges; recognized by SH2/PTB/14-3-3 domains (recruits downstream proteins)</li>
+<li><strong>New H-bond acceptor</strong>: stabilizes specific conformations</li>
+<li><strong>Rapid reversibility</strong>: phosphatase removes in &lt;1 s (ideal for dynamic signaling)</li>
+<li><strong>Almost no energy cost</strong>: one ATP per modification</li>
+</ul>
+<p><strong>2024 view:</strong> Single-cell phospho-proteomics (scPhospho-MS) is revealing PTM heterogeneity; AI tools (NetPhos, MusiteDeep, PhosIDN) predict sites but experimental validation remains essential.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="四、調控時間尺度選擇" data-en="IV. Regulatory timescale matching">四、調控時間尺度</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="選擇正確的調控時間尺度" data-en="Pick the right timescale">調控時間尺度</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">⚡ 毫秒–秒</span><span class="dt-arrow">→</span><div><strong>變構調節</strong>（ATP/ADP/AMP 直接結合 PFK-1）——最快。</div></div>
+<div class="dt-node"><span class="dt-q">⏱️ 秒–分</span><span class="dt-arrow">→</span><div><strong>磷酸化</strong>（kinase cascade，如 MAPK）——可逆、訊息傳遞。</div></div>
+<div class="dt-node"><span class="dt-q">⏰ 分–小時</span><span class="dt-arrow">→</span><div><strong>酶原激活</strong>（消化、凝血、apoptosis）——不可逆、單次激活。</div></div>
+<div class="dt-node"><span class="dt-q">📅 小時–天</span><span class="dt-arrow">→</span><div><strong>表達量改變</strong>（轉錄/翻譯）——長期適應、發育、分化。</div></div>
+<div class="dt-node"><span class="dt-q">🕰️ 天–週</span><span class="dt-arrow">→</span><div><strong>蛋白降解</strong>（泛素-蛋白酶體、autophagy）——回收與壽命控制。</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">⚡ ms–s</span><span class="dt-arrow">→</span><div><strong>Allosteric regulation</strong> (ATP/ADP/AMP binding PFK-1) — fastest.</div></div>
+<div class="dt-node"><span class="dt-q">⏱️ s–min</span><span class="dt-arrow">→</span><div><strong>Phosphorylation</strong> (kinase cascades like MAPK) — reversible, signaling.</div></div>
+<div class="dt-node"><span class="dt-q">⏰ min–hr</span><span class="dt-arrow">→</span><div><strong>Zymogen activation</strong> (digestion, clotting, apoptosis) — irreversible, single-shot.</div></div>
+<div class="dt-node"><span class="dt-q">📅 hr–days</span><span class="dt-arrow">→</span><div><strong>Expression changes</strong> (transcription/translation) — long-term adaptation, development.</div></div>
+<div class="dt-node"><span class="dt-q">🕰️ days–wks</span><span class="dt-arrow">→</span><div><strong>Protein degradation</strong> (ubiquitin-proteasome, autophagy) — turnover, lifespan control.</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="Hill 方程擬合與磷酸化位點預測" data-en="Hill fit &amp; phosphosite prediction">Hill 擬合與磷酸化位點</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'r1')">R</button><button class="code-tab-btn" onclick="switchTab(this,'py1')">Python</button></div>
+<div class="code-tab-content active" id="r1"><pre><span class="comment"># Hill 方程：θ = [S]^n / (K^n + [S]^n)</span>
+hill &lt;- <span class="kw">function</span>(S, K, n) S^n / (K^n + S^n)
+
+<span class="comment"># 擬合 (假設 saturation 數據)</span>
+df &lt;- data.frame(S=<span class="kw">c</span>(<span class="num">5</span>,<span class="num">10</span>,<span class="num">20</span>,<span class="num">30</span>,<span class="num">50</span>,<span class="num">80</span>,<span class="num">150</span>), Y=<span class="kw">c</span>(<span class="num">0.03</span>,<span class="num">0.10</span>,<span class="num">0.35</span>,<span class="num">0.55</span>,<span class="num">0.82</span>,<span class="num">0.94</span>,<span class="num">0.99</span>))
+fit &lt;- <span class="func">nls</span>(Y ~ <span class="func">hill</span>(S, K, n), data=df, start=<span class="kw">list</span>(K=<span class="num">30</span>, n=<span class="num">2</span>))
+<span class="func">summary</span>(fit)
+<span class="comment"># n=2-3 表示協同性</span>
+
+<span class="comment"># 從 UniProt 抓出已知磷酸化位點</span>
+<span class="kw">library</span>(httr); <span class="kw">library</span>(jsonlite)
+uniprot &lt;- <span class="str">"P53_HUMAN"</span>
+r &lt;- <span class="func">GET</span>(<span class="func">paste0</span>(<span class="str">"https://rest.uniprot.org/uniprotkb/"</span>, uniprot, <span class="str">".json"</span>))
+ft &lt;- <span class="func">content</span>(r)$features
+<span class="comment"># 篩 modification residue</span>
+ptm &lt;- <span class="func">Filter</span>(<span class="kw">function</span>(x) x$type == <span class="str">"Modified residue"</span>, ft)</pre></div>
+<div class="code-tab-content" id="py1"><pre><span class="kw">import</span> numpy <span class="kw">as</span> np
+<span class="kw">from</span> scipy.optimize <span class="kw">import</span> curve_fit
+
+<span class="kw">def</span> <span class="func">hill</span>(S, K, n):
+    <span class="kw">return</span> S**n / (K**n + S**n)
+
+S = np.array([<span class="num">5</span>,<span class="num">10</span>,<span class="num">20</span>,<span class="num">30</span>,<span class="num">50</span>,<span class="num">80</span>,<span class="num">150</span>])
+Y = np.array([<span class="num">0.03</span>,<span class="num">0.10</span>,<span class="num">0.35</span>,<span class="num">0.55</span>,<span class="num">0.82</span>,<span class="num">0.94</span>,<span class="num">0.99</span>])
+
+popt, _ = curve_fit(hill, S, Y, p0=[<span class="num">30</span>, <span class="num">2</span>])
+K, n = popt
+<span class="func">print</span>(<span class="str">f"K0.5 = {K:.1f}, Hill n = {n:.2f}"</span>)
+<span class="comment"># n > 1 → 正向協同；n = 2.8 是血紅蛋白典型值</span>
+
+<span class="comment"># Phosphosite 預測 - 透過 NetPhos / GPS API</span>
+<span class="kw">import</span> requests
+seq = <span class="str">"MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDIEQWFTEDPGPDEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPLSSSVPSQKTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHHERCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCNSSCMGGMNRRPILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENLRKKGEPHHELPPGSTKRALPNNTSSSPQPKKKPLDGEYFTLQIRGRERFEMFRELNEALELKDAQAGKEPGGSRAHSSHLKSKKGQSTSRHKKLMFKTEGPDSD"</span>
+<span class="comment"># 真實 API 略，這裡僅示意</span>
+<span class="comment"># 使用 PSP (PhosphoSitePlus) 或 GPS 5.0 預測 Ser/Thr/Tyr 磷酸位點</span></pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="2"><p data-lang="zh">1. Hill 係數 = 2.8 代表？</p><p data-lang="en">1. Hill coefficient = 2.8 means?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 反應級數為 2.8</span><span data-lang="en">A. Reaction order 2.8</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 無協同性</span><span data-lang="en">B. No cooperativity</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 強正向協同（如血紅蛋白）</span><span data-lang="en">C. Strong positive cooperativity (like hemoglobin)</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 競爭性抑制</span><span data-lang="en">D. Competitive inhibition</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="1"><p data-lang="zh">2. 凝血酶原（prothrombin）的激活方式？</p><p data-lang="en">2. How is prothrombin activated?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 磷酸化</span><span data-lang="en">A. Phosphorylation</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 蛋白酶切割（不可逆酶原激活）</span><span data-lang="en">B. Proteolytic cleavage (irreversible zymogen activation)</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 變構效應</span><span data-lang="en">C. Allosteric effect</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 提升表達</span><span data-lang="en">D. Increased expression</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="2"><p data-lang="zh">3. 為什麼細胞偏好磷酸化作為「短期可逆」訊息？</p><p data-lang="en">3. Why phosphorylation for short reversible signaling?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 需要大量能量</span><span data-lang="en">A. Requires lots of energy</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 不可逆</span><span data-lang="en">B. Irreversible</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 一個 ATP 即可、磷酸酶可秒速反向，且 -2 電荷與 SH2/14-3-3 結構域配對</span><span data-lang="en">C. Costs only 1 ATP, phosphatases reverse within seconds, and the −2 charge pairs with SH2/14-3-3 domains</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 永久改變蛋白</span><span data-lang="en">D. Permanently alters the protein</span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="enzyme-kinetics.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="酶動力學與抑制" data-en="Enzyme Kinetics &amp;amp; Inhibition">酶動力學與抑制</span></a>
+<a href="bioenergetics.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="生物能量學：ΔG、ATP 與 Redox" data-en="Bioenergetics: ΔG, ATP &amp;amp; Redox">生物能量學：ΔG、ATP 與 Redox</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+const hillChart=new Chart(document.getElementById('hillChart'),{type:'scatter',data:{datasets:[
+  {label:'Hill curve',data:[],showLine:true,borderColor:'#9f1239',pointRadius:0,borderWidth:2},
+  {label:'MM (n=1)',data:[],showLine:true,borderColor:'#a16207',borderDash:[5,5],pointRadius:0,borderWidth:2}
+]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{x:{title:{display:true,text:'[S]'},min:0,max:200},y:{title:{display:true,text:'θ (saturation)'},min:0,max:1.05}},plugins:{legend:{position:'top'}}}});
+function updateHill(){
+  const n=+document.getElementById('sliderN').value;
+  const K=+document.getElementById('sliderK').value;
+  document.getElementById('valN').textContent=n.toFixed(1);
+  document.getElementById('valK').textContent=K;
+  const data=[];const ref=[];
+  for(let s=0;s<=200;s+=2){
+    data.push({x:s,y:Math.pow(s,n)/(Math.pow(K,n)+Math.pow(s,n))});
+    ref.push({x:s,y:s/(K+s)});
+  }
+  hillChart.data.datasets[0].data=data;
+  hillChart.data.datasets[1].data=ref;
+  hillChart.update('none');
+  const L=I18n.get();
+  document.getElementById('statH').textContent=(L==='zh'?'Hill = ':'Hill = ')+n.toFixed(1);
+  let coop;
+  if(n>1.5) coop=L==='zh'?'⚡ 強正向協同':'⚡ Strong positive coop.';
+  else if(n>1) coop=L==='zh'?'➕ 正向協同':'➕ Positive coop.';
+  else if(n>=0.9) coop=L==='zh'?'➖ 無協同（MM）':'➖ No cooperativity (MM)';
+  else coop=L==='zh'?'➗ 負向協同':'➗ Negative coop.';
+  document.getElementById('statCo').textContent=coop;
+}
+['sliderN','sliderK'].forEach(id=>document.getElementById(id).addEventListener('input',updateHill));
+document.addEventListener('langchange',updateHill);
+updateHill();
+
+const QF={zh:{q1_y:'Hill 係數 > 1 為正向協同。血紅蛋白 Hill ≈ 2.8 是典型例子。',q2_y:'凝血酶原由蛋白酶切割激活，屬於不可逆的酶原激活模式。',q3_y:'磷酸化便宜（1 ATP）、迅速可逆（秒級）、且帶 −2 電荷可被 SH2、14-3-3 等識別——理想的短期訊息開關。'},en:{q1_y:'Hill > 1 indicates positive cooperativity; hemoglobin Hill ≈ 2.8 is the classic example.',q2_y:'Prothrombin is activated by proteolytic cleavage — an irreversible zymogen activation.',q3_y:'Phosphorylation is cheap (1 ATP), rapidly reversible (sec), and the −2 charge is read by SH2/14-3-3 domains — perfect for short-term signaling.'}};['q1_n','q2_n','q3_n'].forEach(k=>{QF.zh[k]='正確答案已標示。';QF.en[k]='Correct answer highlighted.';});
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

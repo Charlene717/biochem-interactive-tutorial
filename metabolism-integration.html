@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.13 代謝整合與荷爾蒙調控 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html" class="active">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 13 / 18 · BLOCK C</div>
+<h1 data-zh="代謝整合與荷爾蒙調控" data-en="Metabolic Integration &amp; Hormonal Control">代謝整合與荷爾蒙調控</h1>
+<p class="subtitle" data-lang="zh">器官分工、胰島素 vs 升糖素、AMPK/mTOR/SIRT——身體如何整合所有代謝路徑。</p>
+<p class="subtitle" data-lang="en">Organ specialization, insulin vs glucagon, AMPK/mTOR/SIRT — how the body integrates all metabolic pathways.</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="器官分工" data-en="ORGAN ROLES">器官分工</div>
+<h2 data-zh="一、五大器官的代謝分工" data-en="I. Five organs and their metabolic specialization">一、器官分工</h2>
+<div class="card-grid cols-2">
+<div class="card"><h4>🫁 <span data-zh="肝臟（代謝中樞）" data-en="Liver (metabolic hub)">肝臟</span></h4><div data-lang="zh"><p>糖質新生、肝醣儲存、酮體合成、尿素合成、膽固醇/脂蛋白合成、藥物代謝。是其他器官的「補給站」。GLUT2（高 Km，反映血糖）讓肝隨血糖動態調節。</p></div><div data-lang="en"><p>Gluconeogenesis, glycogen storage, ketogenesis, urea synthesis, cholesterol/lipoprotein synthesis, drug metabolism. The "supply hub" for other organs. GLUT2 (high Km) lets liver sense blood glucose dynamically.</p></div></div>
+<div class="card"><h4>🧠 <span data-zh="大腦" data-en="Brain">大腦</span></h4><div data-lang="zh"><p>佔身體 2% 重量但消耗 20% 能量。<strong>幾乎只用葡萄糖</strong>（120 g/day），飢餓時可改用酮體（最多 75%）。<strong>無法用脂肪酸</strong>（不通過血腦屏障）。GLUT3（低 Km）保證低血糖時仍能取糖。</p></div><div data-lang="en"><p>2% body weight but 20% energy. <strong>Primarily glucose</strong> (120 g/day); switches to ketones in starvation (up to 75%). <strong>Cannot use FAs</strong> (don't cross BBB). GLUT3 (low Km) ensures uptake even at low blood sugar.</p></div></div>
+<div class="card"><h4>💪 <span data-zh="骨骼肌" data-en="Skeletal muscle">骨骼肌</span></h4><div data-lang="zh"><p>佔身體 40% 重量。<strong>休息燒脂肪酸；爆發運動燒葡萄糖（糖解→乳酸）</strong>。儲存大量肝醣（自用，無 G6Pase 故不釋出葡萄糖到血）。GLUT4（胰島素誘導）。</p></div><div data-lang="en"><p>40% of body mass. <strong>Burns FAs at rest; burns glucose (glycolysis→lactate) during burst exercise</strong>. Stores glycogen for own use only (no G6Pase, can't release glucose). GLUT4 (insulin-induced).</p></div></div>
+<div class="card"><h4>🫀 <span data-zh="心臟" data-en="Heart">心臟</span></h4><div data-lang="zh"><p>幾乎永遠有氧。<strong>偏好脂肪酸（70%）、酮體、乳酸</strong>，少用葡萄糖。心臟代謝在心衰時改變——以糖為主，這也是新藥（SGLT2i）改善心衰的部分機制。</p></div><div data-lang="en"><p>Always aerobic. <strong>Prefers FAs (70%), ketones, lactate</strong> over glucose. Cardiac metabolism shifts toward glucose in heart failure — partly explaining SGLT2i benefits.</p></div></div>
+<div class="card"><h4>🧈 <span data-zh="脂肪組織" data-en="Adipose">脂肪組織</span></h4><div data-lang="zh"><p><strong>白色脂肪</strong>儲存 TG，分泌瘦素/脂聯素；<strong>棕色脂肪</strong> UCP1 解偶聯產熱。脂肪細胞是內分泌器官——分泌瘦素、脂聯素、TNF-α、IL-6 等「脂肪激素 (adipokines)」。</p></div><div data-lang="en"><p><strong>White adipose</strong> stores TG, secretes leptin/adiponectin; <strong>brown adipose</strong> uncouples via UCP1 to produce heat. Adipose is an endocrine organ — secretes "adipokines" like leptin, adiponectin, TNF-α, IL-6.</p></div></div>
+<div class="card"><h4>🫘 <span data-zh="腎臟" data-en="Kidney">腎臟</span></h4><div data-lang="zh"><p>飢餓時提供 40% 糖質新生（用麩胺醯胺）。也是維生素 D 活化、紅血球生成素分泌的器官。</p></div><div data-lang="en"><p>Contributes ~40% of gluconeogenesis during starvation (uses glutamine). Also activates vitamin D and secretes erythropoietin.</p></div></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="荷爾蒙" data-en="HORMONES">荷爾蒙</div>
+<h2 data-zh="二、胰島素 vs 升糖素：黃金二元對立" data-en="II. Insulin vs glucagon: the golden duality">二、胰島素 vs 升糖素</h2>
+<table class="comp-table">
+<thead><tr><th></th><th><strong data-zh="胰島素 (Insulin)" data-en="Insulin">胰島素</strong></th><th><strong data-zh="升糖素 (Glucagon)" data-en="Glucagon">升糖素</strong></th></tr></thead>
+<tbody>
+<tr><td data-zh="來源" data-en="Source">來源</td><td data-zh="胰島 β 細胞" data-en="Pancreatic β cells">胰島 β</td><td data-zh="胰島 α 細胞" data-en="Pancreatic α cells">胰島 α</td></tr>
+<tr><td data-zh="觸發" data-en="Triggered by">觸發</td><td data-zh="高血糖、胺基酸" data-en="High glucose, AAs">高血糖</td><td data-zh="低血糖" data-en="Low glucose">低血糖</td></tr>
+<tr><td data-zh="受體" data-en="Receptor">受體</td><td data-zh="RTK → IRS-1/2 → PI3K-AKT" data-en="RTK → IRS-1/2 → PI3K-AKT">RTK</td><td data-zh="GPCR → cAMP-PKA" data-en="GPCR → cAMP-PKA">GPCR</td></tr>
+<tr><td data-zh="糖解" data-en="Glycolysis">糖解</td><td>↑↑</td><td>↓</td></tr>
+<tr><td data-zh="糖質新生" data-en="Gluconeogenesis">糖質新生</td><td>↓</td><td>↑↑</td></tr>
+<tr><td data-zh="肝醣合成 / 分解" data-en="Glycogen syn/breakdown">肝醣</td><td>合成↑</td><td>分解↑</td></tr>
+<tr><td data-zh="脂肪生成 / 脂解" data-en="Lipogen/lipolysis">脂肪</td><td>合成↑</td><td>脂解↑</td></tr>
+<tr><td data-zh="蛋白合成" data-en="Protein synth">蛋白</td><td>合成↑</td><td>分解↑（飢餓）</td></tr>
+</tbody></table>
+<div class="callout tip"><span class="callout-icon">💡</span><div>
+<span data-lang="zh"><strong>關鍵分子：果糖-2,6-雙磷酸 (F2,6BP)</strong>。胰島素 → 去磷酸化 PFK-2/FBPase-2（雙功能酶）的 PFK-2 域活化 → F2,6BP↑ → PFK-1 啟動。升糖素 → cAMP-PKA → 磷酸化雙功能酶 → FBPase-2 域活化 → F2,6BP↓ → 糖解關閉、糖質新生啟動。一個分子控制兩條路。</span>
+<span data-lang="en"><strong>Key molecule: fructose-2,6-bisphosphate (F2,6BP)</strong>. Insulin → dephosphorylates bifunctional PFK-2/FBPase-2 → PFK-2 domain active → F2,6BP↑ → PFK-1 ON. Glucagon → cAMP-PKA → phosphorylates the bifunctional enzyme → FBPase-2 domain active → F2,6BP↓ → glycolysis OFF, gluconeogenesis ON. One molecule controls both paths.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="代謝感測器" data-en="METABOLIC SENSORS">代謝感測器</div>
+<h2 data-zh="三、四大代謝感測器：AMPK、mTOR、SIRT、HIF" data-en="III. Four metabolic sensors: AMPK, mTOR, SIRT, HIF">三、四大感測器</h2>
+<div class="workflow">
+<div class="workflow-step" data-step="1"><h4>AMPK <span data-zh="（能量低警報）" data-en="(low-energy alarm)">（能量低警報）</span></h4>
+<p data-lang="zh">由 AMP/ATP 比例（細胞「能量電量計」）激活。激活效應：抑制合成（脂肪、膽固醇、蛋白）、激活分解（脂肪氧化、糖解、自噬）。<strong>Metformin</strong> 主要透過激活 AMPK 治療糖尿病。</p>
+<p data-lang="en">Activated by AMP/ATP ratio (cell's "fuel gauge"). Effects: inhibits anabolism (FAs, cholesterol, protein), activates catabolism (FA oxidation, glycolysis, autophagy). <strong>Metformin</strong> works largely by activating AMPK.</p>
+</div>
+<div class="workflow-step" data-step="2"><h4>mTORC1 <span data-zh="（增長感測器）" data-en="(growth sensor)">（增長感測器）</span></h4>
+<p data-lang="zh">由胺基酸（尤其 leucine）、生長因子、能量充足共同激活。激活效應：促蛋白合成（透過 4E-BP1、S6K）、抑制自噬、促進細胞生長。<strong>Rapamycin</strong> 抑制 mTOR——延壽、抗癌、抑制移植排斥。</p>
+<p data-lang="en">Activated by amino acids (especially leucine), growth factors, and energy sufficiency. Effects: drives protein synthesis (via 4E-BP1, S6K), inhibits autophagy, promotes cell growth. <strong>Rapamycin</strong> inhibits mTOR — longevity, anticancer, transplant suppression.</p>
+</div>
+<div class="workflow-step" data-step="3"><h4>SIRT1-7 <span data-zh="（NAD⁺ 感測器）" data-en="(NAD⁺ sensors)">（NAD⁺ 感測器）</span></h4>
+<p data-lang="zh">用 NAD⁺ 去乙醯化組蛋白、PGC-1α、FOXO 等。熱量限制 → NAD⁺ ↑ → SIRT1 ↑ → 抗老化、抗發炎、線粒體生合成。<strong>白藜蘆醇 (resveratrol)、NMN/NR 補充劑</strong> 都瞄準此路徑。</p>
+<p data-lang="en">Use NAD⁺ to deacetylate histones, PGC-1α, FOXO, etc. Caloric restriction → NAD⁺ ↑ → SIRT1 ↑ → anti-aging, anti-inflammation, mitochondrial biogenesis. <strong>Resveratrol, NMN/NR supplements</strong> target this pathway.</p>
+</div>
+<div class="workflow-step" data-step="4"><h4>HIF-1α <span data-zh="（氧感測）" data-en="(oxygen sensor)">（氧感測）</span></h4>
+<p data-lang="zh">常氧時被脯胺醯羥化酶 (PHD) 羥化、VHL 識別、降解。低氧時 PHD 失活 → HIF-1α 累積 → 入核 → 啟動糖解酶、EPO、VEGF。<strong>2019 Nobel</strong>。腎細胞癌靶向 HIF-2α（belzutifan, 2021 FDA）。</p>
+<p data-lang="en">In normoxia, prolyl hydroxylases (PHDs) hydroxylate HIF-1α, VHL recognizes it, degraded. In hypoxia, PHDs inactive → HIF-1α accumulates → nucleus → activates glycolysis genes, EPO, VEGF. <strong>2019 Nobel</strong>. Kidney cancer drug belzutifan (2021 FDA) targets HIF-2α.</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="飲食狀態與代謝切換" data-en="Diet state &amp; metabolic switching">代謝狀態切換</h2>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statState">—</span><span class="sim-stat gold" id="statGlc">—</span></div>
+<div class="slider-group"><label><span data-zh="飯後時間 (h)" data-en="Hours since meal">飯後</span> <span id="valH">3</span></label><input type="range" id="sliderH" min="0" max="120" value="3" step="1"></div>
+<div class="slider-group"><label><span data-zh="運動強度 (0-10)" data-en="Exercise (0-10)">運動</span> <span id="valEx">0</span></label><input type="range" id="sliderEx" min="0" max="10" value="0" step="1"></div>
+<div class="chart-container"><canvas id="metaChart"></canvas></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="四、預測組織能源選擇" data-en="IV. Predicting tissue fuel choice">四、組織能源選擇</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="該組織會燒什麼？" data-en="Which fuel will this tissue use?">該組織燒什麼？</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">🧠 大腦</span><span class="dt-arrow">→</span><div>常態：葡萄糖；長期飢餓：可改 75% 酮體（但仍需 ~30 g 葡萄糖/天）。<strong>絕不</strong>燒脂肪酸。</div></div>
+<div class="dt-node"><span class="dt-q">💪 休息肌肉</span><span class="dt-arrow">→</span><div>脂肪酸 + 葡萄糖。輕度運動：仍以脂肪為主。</div></div>
+<div class="dt-node"><span class="dt-q">🏃 爆發性運動</span><span class="dt-arrow">→</span><div>無氧糖解（產乳酸，痠痛來源）。Cori 循環將乳酸送回肝再變糖。</div></div>
+<div class="dt-node"><span class="dt-q">🫀 心臟</span><span class="dt-arrow">→</span><div>常態：70% FA + 30% 葡萄糖/乳酸/酮體。心衰時切換為以糖為主——這是 SGLT2 抑制劑改善心衰的機制之一。</div></div>
+<div class="dt-node"><span class="dt-q">🩸 紅血球</span><span class="dt-arrow">→</span><div><strong>只能</strong>糖解（無粒線體）。所以 RBC 全靠葡萄糖、絕對的乳酸生產者。</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">🧠 Brain</span><span class="dt-arrow">→</span><div>Default: glucose; prolonged starvation: up to 75% ketones (still needs ~30 g glucose/day). <strong>Never</strong> FAs.</div></div>
+<div class="dt-node"><span class="dt-q">💪 Resting muscle</span><span class="dt-arrow">→</span><div>FAs + glucose. Light exercise: still mostly FAs.</div></div>
+<div class="dt-node"><span class="dt-q">🏃 Burst exercise</span><span class="dt-arrow">→</span><div>Anaerobic glycolysis (lactate; source of muscle burn). Cori cycle returns lactate to liver for glucose remake.</div></div>
+<div class="dt-node"><span class="dt-q">🫀 Heart</span><span class="dt-arrow">→</span><div>Default: 70% FA + 30% glucose/lactate/ketones. Failing hearts shift toward glucose — part of why SGLT2 inhibitors help.</div></div>
+<div class="dt-node"><span class="dt-q">🩸 Red blood cells</span><span class="dt-arrow">→</span><div><strong>Glycolysis only</strong> (no mitochondria). RBCs are obligate glucose consumers and absolute lactate producers.</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="代謝體學差異分析（MetaboAnalyst 風格）" data-en="Metabolomics differential analysis">代謝體分析</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'r1')">R</button><button class="code-tab-btn" onclick="switchTab(this,'py1')">Python</button></div>
+<div class="code-tab-content active" id="r1"><pre><span class="kw">library</span>(tidyverse); <span class="kw">library</span>(MetaboAnalystR)
+
+<span class="comment"># 模擬數據：糖尿病 vs 健康血清代謝體</span>
+df &lt;- <span class="func">data.frame</span>(
+  glucose       = <span class="kw">c</span>(<span class="num">5</span>, <span class="num">5.5</span>, <span class="num">12</span>, <span class="num">14</span>),
+  bhb           = <span class="kw">c</span>(<span class="num">0.1</span>, <span class="num">0.15</span>, <span class="num">2.5</span>, <span class="num">3.1</span>),  <span class="comment"># β-羥丁酸</span>
+  lactate       = <span class="kw">c</span>(<span class="num">1</span>, <span class="num">1.2</span>, <span class="num">2.8</span>, <span class="num">3.0</span>),
+  TG            = <span class="kw">c</span>(<span class="num">100</span>, <span class="num">120</span>, <span class="num">280</span>, <span class="num">320</span>),
+  branched_AA   = <span class="kw">c</span>(<span class="num">400</span>, <span class="num">410</span>, <span class="num">580</span>, <span class="num">620</span>),
+  group         = <span class="kw">c</span>(<span class="str">"H"</span>, <span class="str">"H"</span>, <span class="str">"D"</span>, <span class="str">"D"</span>)
+)
+
+<span class="comment"># t-test for each metabolite</span>
+<span class="kw">for</span>(m <span class="kw">in</span> <span class="kw">c</span>(<span class="str">"glucose"</span>, <span class="str">"bhb"</span>, <span class="str">"lactate"</span>, <span class="str">"TG"</span>, <span class="str">"branched_AA"</span>)) {
+  res &lt;- <span class="func">t.test</span>(df[[m]] ~ df$group)
+  <span class="func">cat</span>(m, <span class="str">": p ="</span>, <span class="func">signif</span>(res$p.value, <span class="num">3</span>), <span class="str">"\n"</span>)
+}
+
+<span class="comment"># 路徑富集（KEGG）</span>
+<span class="kw">library</span>(KEGGREST)
+diabetes_metab &lt;- <span class="kw">c</span>(<span class="str">"glucose"</span>, <span class="str">"BHB"</span>, <span class="str">"BCAA"</span>, <span class="str">"acylcarnitines"</span>)
+<span class="comment"># 模擬：對應的 KEGG 路徑 hsa00010 (glycolysis), hsa00071 (FA degradation)</span></pre></div>
+<div class="code-tab-content" id="py1"><pre><span class="kw">import</span> pandas <span class="kw">as</span> pd
+<span class="kw">import</span> numpy <span class="kw">as</span> np
+<span class="kw">from</span> scipy <span class="kw">import</span> stats
+
+df = pd.DataFrame({
+    <span class="str">"glucose"</span>: [<span class="num">5</span>, <span class="num">5.5</span>, <span class="num">12</span>, <span class="num">14</span>],
+    <span class="str">"bhb"</span>: [<span class="num">0.1</span>, <span class="num">0.15</span>, <span class="num">2.5</span>, <span class="num">3.1</span>],
+    <span class="str">"lactate"</span>: [<span class="num">1</span>, <span class="num">1.2</span>, <span class="num">2.8</span>, <span class="num">3.0</span>],
+    <span class="str">"TG"</span>: [<span class="num">100</span>, <span class="num">120</span>, <span class="num">280</span>, <span class="num">320</span>],
+    <span class="str">"BCAA"</span>: [<span class="num">400</span>, <span class="num">410</span>, <span class="num">580</span>, <span class="num">620</span>],
+    <span class="str">"group"</span>: [<span class="str">"H"</span>,<span class="str">"H"</span>,<span class="str">"D"</span>,<span class="str">"D"</span>]
+})
+
+<span class="kw">for</span> m <span class="kw">in</span> [<span class="str">"glucose"</span>,<span class="str">"bhb"</span>,<span class="str">"lactate"</span>,<span class="str">"TG"</span>,<span class="str">"BCAA"</span>]:
+    h = df[df.group==<span class="str">"H"</span>][m]; d = df[df.group==<span class="str">"D"</span>][m]
+    t, p = stats.ttest_ind(h, d)
+    fc = d.mean() / h.mean()
+    <span class="func">print</span>(<span class="str">f"{m:10s} FC={fc:.2f}  p={p:.4f}"</span>)
+
+<span class="comment"># Lipidomics 風格：脂質類別比例</span>
+lipid_classes = {<span class="str">"PC"</span>:<span class="num">35</span>, <span class="str">"PE"</span>:<span class="num">20</span>, <span class="str">"PS"</span>:<span class="num">8</span>, <span class="str">"PI"</span>:<span class="num">5</span>,
+                 <span class="str">"SM"</span>:<span class="num">12</span>, <span class="str">"Cer"</span>:<span class="num">3</span>, <span class="str">"DG"</span>:<span class="num">7</span>, <span class="str">"TG"</span>:<span class="num">10</span>}
+<span class="comment"># 糖尿病患者通常 ceramide ↑、PS ↓、TG ↑</span></pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="2"><p data-lang="zh">1. F2,6BP 在代謝整合中的角色？</p><p data-lang="en">1. Role of F2,6BP in metabolic integration?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 糖解中間體</span><span data-lang="en">A. Glycolysis intermediate</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 蛋白合成原料</span><span data-lang="en">B. Protein synthesis substrate</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 變構訊號：胰島素↑F2,6BP→開糖解；升糖素↓F2,6BP→開糖質新生</span><span data-lang="en">C. Allosteric signal: insulin↑F2,6BP→glycolysis; glucagon↓F2,6BP→gluconeogenesis</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 沒有作用</span><span data-lang="en">D. No role</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="1"><p data-lang="zh">2. Metformin 治療糖尿病的主要機制？</p><p data-lang="en">2. Main mechanism of metformin?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 直接刺激胰島素分泌</span><span data-lang="en">A. Stimulates insulin secretion</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 激活 AMPK + 抑制 mGPD/GDH → 抑制肝糖質新生</span><span data-lang="en">B. Activates AMPK + inhibits mGPD/GDH → suppresses hepatic gluconeogenesis</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 抑制脂肪吸收</span><span data-lang="en">C. Inhibits fat absorption</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 增加食慾</span><span data-lang="en">D. Increases appetite</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="1"><p data-lang="zh">3. 紅血球為什麼是「絕對的乳酸生產者」？</p><p data-lang="en">3. Why are RBCs "obligate lactate producers"?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 缺乏葡萄糖</span><span data-lang="en">A. No glucose</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 沒有粒線體，只能糖解 → 丙酮酸 → 乳酸再生 NAD⁺</span><span data-lang="en">B. No mitochondria — only glycolysis → pyruvate → lactate (regenerates NAD⁺)</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 大腦命令</span><span data-lang="en">C. Brain commands</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 缺乏酶</span><span data-lang="en">D. Missing enzymes</span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="lipid-aa-metabolism.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="脂質與胺基酸代謝" data-en="Lipid &amp;amp; Amino Acid Metabolism">脂質與胺基酸代謝</span></a>
+<a href="signal-transduction.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="訊息傳遞與第二訊息" data-en="Signal Transduction &amp;amp; Second Messengers">訊息傳遞與第二訊息</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+const metaChart=new Chart(document.getElementById('metaChart'),{type:'line',data:{labels:[],datasets:[
+  {label:'血糖 (mg/dL)',data:[],borderColor:'#9f1239',tension:0.3},
+  {label:'胰島素',data:[],borderColor:'#a16207',tension:0.3},
+  {label:'升糖素',data:[],borderColor:'#0e7490',tension:0.3},
+  {label:'酮體',data:[],borderColor:'#7c3aed',tension:0.3}
+]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{x:{title:{display:true,text:'Hours'}},y:{title:{display:true,text:'Relative'}}}}});
+function updateMeta(){
+  const h=+document.getElementById('sliderH').value;
+  const ex=+document.getElementById('sliderEx').value;
+  document.getElementById('valH').textContent=h;
+  document.getElementById('valEx').textContent=ex;
+  // Generate time series 0 to 120h
+  const labels=[],glc=[],ins=[],glu=[],ket=[];
+  for(let t=0;t<=120;t+=4){
+    labels.push(t);
+    // Right after meal: glc 140, drops to 90 by 2h, then to 80 by 8h, stable to 16h, then drops to 70 at 72h
+    const g = 80 + 60*Math.exp(-t/2) - (ex>5?10:0);
+    const i = 80*Math.exp(-t/3) + (ex>5?5:0);
+    const u = 20 + 50*(1-Math.exp(-t/12)) + (ex>5?20:0);
+    const k = Math.max(0, 0.1 + 0.5*Math.log1p(t/8));
+    glc.push(g); ins.push(i); glu.push(u); ket.push(k*10);
+  }
+  metaChart.data.labels=labels;
+  metaChart.data.datasets[0].data=glc;
+  metaChart.data.datasets[1].data=ins;
+  metaChart.data.datasets[2].data=glu;
+  metaChart.data.datasets[3].data=ket;
+  metaChart.update('none');
+  const L=I18n.get();
+  let state;
+  if(h<4) state=L==='zh'?'🍔 飯後吸收期':'🍔 Postprandial';
+  else if(h<16) state=L==='zh'?'⏰ 吸收後':'⏰ Postabsorptive';
+  else if(h<72) state=L==='zh'?'😴 早期飢餓':'😴 Early starvation';
+  else state=L==='zh'?'⛺ 長期飢餓（酮症）':'⛺ Prolonged starvation (ketosis)';
+  document.getElementById('statState').textContent=state;
+  const curG = 80 + 60*Math.exp(-h/2);
+  document.getElementById('statGlc').textContent=(L==='zh'?'血糖 ≈ ':'Glucose ≈ ')+curG.toFixed(0)+' mg/dL';
+}
+['sliderH','sliderEx'].forEach(id=>document.getElementById(id).addEventListener('input',updateMeta));
+document.addEventListener('langchange',updateMeta);
+updateMeta();
+
+const QF={zh:{q1_y:'F2,6BP 是糖解 vs 糖質新生的核心切換訊號，由 PFK-2/FBPase-2 雙功能酶調節。',q2_y:'Metformin 透過激活 AMPK + 抑制粒線體 mGPD/GDH 抑制肝糖質新生，是 SGLT2i 之外最常用的第二型糖尿病藥物。',q3_y:'紅血球無粒線體只能糖解；丙酮酸轉為乳酸是為了再生 NAD⁺ 讓糖解繼續。'},en:{q1_y:'F2,6BP is the central switch between glycolysis and gluconeogenesis, controlled by the bifunctional PFK-2/FBPase-2 enzyme.',q2_y:'Metformin activates AMPK and inhibits mitochondrial mGPD/GDH, suppressing hepatic gluconeogenesis — second only to SGLT2i in T2DM use.',q3_y:'RBCs lack mitochondria, so glycolysis is their only ATP source; pyruvate is converted to lactate to regenerate NAD⁺ and keep glycolysis running.'}};['q1_n','q2_n','q3_n'].forEach(k=>{QF.zh[k]='正確答案已標示。';QF.en[k]='Correct answer highlighted.';});
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

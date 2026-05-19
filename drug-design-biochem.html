@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.17 生化學與藥物設計 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html" class="active">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 17 / 18 · BLOCK E</div>
+<h1 data-zh="生化學與藥物設計" data-en="Biochemistry-Driven Drug Design">生化學與藥物設計</h1>
+<p class="subtitle" data-lang="zh">SBDD + AlphaFold 3 + PROTAC + 分子膠——2025 藥物開發的全景。</p>
+<p class="subtitle" data-lang="en">SBDD + AlphaFold 3 + PROTACs + molecular glues — the 2025 drug discovery landscape.</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="模式" data-en="MODALITIES">模式</div>
+<h2 data-zh="一、現代藥物的五大模式" data-en="I. Five modalities of modern drugs">一、五大模式</h2>
+<table class="comp-table">
+<thead><tr><th data-zh="模式" data-en="Modality">模式</th><th data-zh="特性" data-en="Properties">特性</th><th data-zh="例子" data-en="Examples">例</th></tr></thead>
+<tbody>
+<tr><td><strong data-zh="小分子" data-en="Small molecules">小分子</strong></td><td>MW &lt; 500, 口服, 細胞內可及, ~80% 上市藥</td><td data-zh="阿斯匹靈、imatinib、osimertinib" data-en="Aspirin, imatinib, osimertinib">imatinib</td></tr>
+<tr><td><strong data-zh="生物製劑（抗體、蛋白）" data-en="Biologics (antibodies, proteins)">生物製劑</strong></td><td data-zh="MW 大、注射、高特異性、貴" data-en="Large MW, IV/SC, high specificity, expensive">大分子</td><td data-zh="trastuzumab、pembrolizumab、胰島素" data-en="trastuzumab, pembrolizumab, insulin">抗體</td></tr>
+<tr><td><strong data-zh="抗體-藥物偶聯物 (ADC)" data-en="Antibody-drug conjugates (ADC)">ADC</strong></td><td data-zh="抗體攜帶細胞毒（精準殺癌）" data-en="Antibody carries cytotoxin">標靶</td><td data-zh="T-DXd（trastuzumab deruxtecan）" data-en="T-DXd">T-DXd</td></tr>
+<tr><td><strong data-zh="核酸藥物" data-en="Nucleic acid drugs">核酸</strong></td><td data-zh="ASO, siRNA, mRNA, gRNA" data-en="ASO, siRNA, mRNA, gRNA">核酸</td><td data-zh="patisiran (TTR siRNA)、mRNA 疫苗、Casgevy (CRISPR)" data-en="patisiran, mRNA vaccines, Casgevy (CRISPR)">CRISPR</td></tr>
+<tr><td><strong data-zh="標靶蛋白降解 (TPD)" data-en="Targeted protein degradation (TPD)">TPD</strong></td><td data-zh="PROTAC、分子膠——主動降解標靶蛋白" data-en="PROTACs, molecular glues — actively degrade target">降解</td><td data-zh="ARV-471 (ER PROTAC)、Lenalidomide" data-en="ARV-471, lenalidomide">PROTAC</td></tr>
+</tbody></table>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="SBDD" data-en="SBDD">SBDD</div>
+<h2 data-zh="二、結構導向藥物設計 (SBDD)" data-en="II. Structure-based drug design (SBDD)">二、SBDD</h2>
+<div data-lang="zh"><p><strong>SBDD 流程：</strong>(1) 取得目標蛋白結構（X-ray, cryo-EM, NMR, 或 AlphaFold 3 預測）；(2) 找出結合口袋；(3) 虛擬篩選或片段篩選找 hit；(4) 結構-活性關係 (SAR) 優化；(5) 改善 ADMET（藥動學）；(6) 進臨床測試。</p>
+<p><strong>2024 AlphaFold 3 的影響：</strong>AF3 對蛋白-小分子複合物預測比傳統 docking 提升 ~50%（PoseBusters benchmark）。但<strong>並非取代</strong>實驗結構——預測幾何不等於可信結合自由能，仍需實驗驗證。AF3 加速了「初步篩選 + 假設生成」，而非取代藥物開發後段。</p>
+<p><strong>分子對接 (docking)</strong>：將小分子放入口袋，評估配合度（AutoDock Vina, Glide, GOLD）。標準流程用 ROC AUC, RMSD &lt; 2Å 評估。</p>
+<p><strong>Fragment-Based Drug Discovery (FBDD)：</strong>從小片段（MW &lt; 250）開始篩選——比 HTS 的命中率高 100×。透過 X-ray 或 NMR (STD, WaterLOGSY) 偵測弱結合 (mM-μM Kd)，再串接/生長。已誕生多個臨床藥物（venetoclax, vemurafenib）。</p></div>
+<div data-lang="en"><p><strong>SBDD pipeline:</strong> (1) obtain target structure (X-ray, cryo-EM, NMR, or AlphaFold 3); (2) identify binding pocket; (3) virtual screen or fragment screen for hits; (4) SAR optimization; (5) improve ADMET; (6) clinical trials.</p>
+<p><strong>2024 AF3 impact:</strong> AF3 protein-ligand prediction is ~50% better than traditional docking (PoseBusters benchmark). But it does <strong>not replace</strong> experimental structures — predicted geometry doesn't equal reliable binding ΔG; experimental validation still needed. AF3 accelerates "initial screen + hypothesis generation," not late-stage drug discovery.</p>
+<p><strong>Docking:</strong> place a small molecule in a pocket and score the fit (AutoDock Vina, Glide, GOLD). Standard QC uses ROC AUC and RMSD &lt; 2 Å.</p>
+<p><strong>Fragment-Based Drug Discovery (FBDD):</strong> start from tiny fragments (MW &lt; 250); hit rates are 100× higher than HTS. Detect weak binding (mM-μM Kd) via X-ray or NMR (STD, WaterLOGSY), then link/grow. Multiple clinical drugs from FBDD (venetoclax, vemurafenib).</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="共價" data-en="COVALENT">共價</div>
+<h2 data-zh="三、共價抑制劑復興" data-en="III. The covalent inhibitor renaissance">三、共價抑制劑</h2>
+<div data-lang="zh"><p>過去因擔心毒性（off-target 共價反應）共價藥物被冷落，但 2010 後熱潮復興——關鍵是精準選擇 <strong>warhead 化學 + 靶向 Cys（cysteine 比 Lys 親核性強，且基因組可定位）</strong>。</p>
+<p><strong>標誌性 2021 突破：sotorasib (AMG-510, Lumakras)</strong>，第一個 KRAS-G12C 共價抑制劑。KRAS 過去被認為「不可成藥」（口袋淺、平滑），sotorasib 利用 G12C 突變產生的<strong>獨特 Cys 殘基</strong>形成共價鍵。一年後 adagrasib 跟進。這扇門打開後，多個「不可成藥」靶點開始被攻克。</p>
+<p><strong>2024-2025 趨勢：</strong>(1) 共價片段篩選；(2) 反向化學基因組學 (chemogenomics) 找 cysteinome 可成藥靶點；(3) photoswitchable 共價 warhead；(4) 共價結合到 Lys、Tyr、Ser（非僅 Cys）。</p></div>
+<div data-lang="en"><p>Covalent drugs were long avoided due to off-target toxicity, but post-2010 a renaissance has emerged — driven by carefully chosen <strong>warhead chemistry + targeting Cys (more nucleophilic than Lys, and genomically mappable)</strong>.</p>
+<p><strong>Landmark 2021 breakthrough: sotorasib (AMG-510, Lumakras)</strong>, the first KRAS-G12C covalent inhibitor. KRAS was considered "undruggable" (shallow, smooth pocket); sotorasib exploits the <strong>unique Cys</strong> created by the G12C mutation to form a covalent bond. Adagrasib followed a year later. With this door open, many "undruggable" targets are being attacked.</p>
+<p><strong>2024-2025 trends:</strong> (1) covalent fragment screening; (2) chemogenomics to map druggable cysteinome targets; (3) photoswitchable covalent warheads; (4) targeting Lys, Tyr, Ser (not just Cys).</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="PROTAC" data-en="PROTAC">PROTAC</div>
+<h2 data-zh="四、PROTAC 與分子膠：標靶蛋白降解" data-en="IV. PROTACs &amp; molecular glues">四、PROTAC</h2>
+<div data-lang="zh"><p>傳統抑制劑透過<strong>佔據</strong>（occupancy）阻斷功能；TPD 則透過<strong>事件驅動</strong>（event-driven）讓細胞自己降解標靶。</p>
+<p><strong>PROTAC（Proteolysis-Targeting Chimera）：</strong>雙頭分子——一端結合標靶蛋白、另一端結合 E3 連接酶（cereblon、VHL）→ 拉近距離 → 標靶被泛素化 → 蛋白酶體降解。一個 PROTAC 分子可催化多次降解（催化型）。</p>
+<p><strong>2025 最新發展：</strong></p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>Trivalent PROTACs</strong>：三點結合，三元複合物更穩定，降解效率更高</li>
+<li><strong>新 E3 連接酶</strong>：超越 cereblon / VHL，拓展到 RNF114、KEAP1、FEM1B 等</li>
+<li><strong>Photoswitchable PROTACs (PHOTAC)</strong>：用光控制時空</li>
+<li><strong>Antibody-PROTAC conjugates (Ab-PROTACs)</strong>：腫瘤特異性遞送</li>
+<li><strong>AI 驅動設計</strong>：機器學習預測三元複合物形成、linker 設計、ADMET 優化</li>
+</ul>
+<p><strong>分子膠 (molecular glue)：</strong>單頭分子，誘導兩個原本不互動的蛋白結合。Lenalidomide（cereblon-IKZF1/3）即為經典分子膠，用於多發性骨髓瘤。比 PROTAC 更像「藥物」（小、口服、好遞送）但機制隨機性更高。<strong>2024-2025</strong>：「分子膠 + PROTAC 混合分子」興起。</p></div>
+<div data-lang="en"><p>Classical inhibitors block function by <strong>occupancy</strong>; TPD induces target degradation by <strong>event-driven</strong> mechanisms.</p>
+<p><strong>PROTAC (Proteolysis-Targeting Chimera):</strong> bifunctional molecule — one end binds target, other binds E3 ligase (cereblon, VHL) → forces proximity → target ubiquitinated → proteasomal degradation. One PROTAC catalyzes multiple degradations.</p>
+<p><strong>2025 advances:</strong></p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>Trivalent PROTACs</strong>: three-point binding gives more stable ternary complex, higher efficiency</li>
+<li><strong>Novel E3 ligases</strong>: beyond cereblon/VHL — RNF114, KEAP1, FEM1B, etc.</li>
+<li><strong>Photoswitchable PROTACs (PHOTAC)</strong>: light-controlled spatiotemporal activity</li>
+<li><strong>Antibody-PROTAC conjugates (Ab-PROTACs)</strong>: tumor-specific delivery</li>
+<li><strong>AI-driven design</strong>: ML predicts ternary complex formation, linker design, ADMET</li>
+</ul>
+<p><strong>Molecular glues:</strong> monovalent molecules that induce association between non-interacting proteins. Lenalidomide (cereblon-IKZF1/3) is the classic — used in multiple myeloma. More "drug-like" than PROTACs (small, oral, deliverable) but discovery is more serendipitous. <strong>2024-2025:</strong> hybrid "glue-PROTAC" molecules emerging.</p></div>
+<div class="callout warn"><span class="callout-icon">⚠️</span><div>
+<span data-lang="zh"><strong>2025 PROTAC 臨床里程碑：</strong>Arvinas 的 <strong>ARV-471 (vepdegestrant)</strong> 在乳癌 III 期試驗中——是首個進入 III 期的 PROTAC。BMS 的 <strong>CC-94676 (KT-474, BTK PROTAC)</strong> 等多個 PROTAC 在 II 期。預計 2026-2027 將有首個 PROTAC 獲 FDA 核准。</span>
+<span data-lang="en"><strong>2025 PROTAC clinical milestone:</strong> Arvinas' <strong>ARV-471 (vepdegestrant)</strong> is in Phase III for breast cancer — the first PROTAC at Phase III. BMS's <strong>CC-94676</strong>, KT-474 (BTK PROTAC) etc. are in Phase II. First FDA-approved PROTAC expected 2026-2027.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="ADMET" data-en="ADMET">ADMET</div>
+<h2 data-zh="五、ADMET：藥動學的化學" data-en="V. ADMET: pharmacokinetic chemistry">五、ADMET</h2>
+<table class="comp-table">
+<thead><tr><th>A</th><td colspan="2"><strong data-zh="Absorption（吸收）" data-en="Absorption">吸收</strong>：Lipinski 5 規則 (MW &lt; 500、LogP &lt; 5、HBD &lt; 5、HBA &lt; 10、可旋轉鍵 &lt; 10)；BCS 分類；P-glycoprotein 外排</td></tr></thead>
+<tbody>
+<tr><th>D</th><td colspan="2"><strong data-zh="Distribution（分布）" data-en="Distribution">分布</strong>：血漿白蛋白結合（影響游離藥比例）；組織分布（脂溶性大者進腦快）</td></tr>
+<tr><th>M</th><td colspan="2"><strong data-zh="Metabolism（代謝）" data-en="Metabolism">代謝</strong>：肝臟 CYP450（CYP3A4 處理 50% 藥物）、UGT 葡萄醛酸化、N-乙醯化；prodrug 設計</td></tr>
+<tr><th>E</th><td colspan="2"><strong data-zh="Excretion（排泄）" data-en="Excretion">排泄</strong>：腎（小分子、水溶）、膽汁（大分子、脂溶）</td></tr>
+<tr><th>T</th><td colspan="2"><strong data-zh="Toxicity（毒性）" data-en="Toxicity">毒性</strong>：hERG 心律不整、肝毒（acetaminophen NAPQI）、基因毒、idiosyncratic、混雜效應 (off-target)</td></tr>
+</tbody></table>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="Lipinski 5 規則檢核器" data-en="Lipinski's Rule of 5 checker">Lipinski 檢核器</h2>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statPass">—</span><span class="sim-stat gold" id="statClass">—</span></div>
+<div class="slider-group"><label><span data-zh="MW (Da)" data-en="MW (Da)">MW</span> <span id="valMW">350</span></label><input type="range" id="sliderMW" min="100" max="1500" value="350" step="10"></div>
+<div class="slider-group"><label><span data-zh="LogP" data-en="LogP">LogP</span> <span id="valLogP">3</span></label><input type="range" id="sliderLogP" min="-2" max="10" value="3" step="0.1"></div>
+<div class="slider-group"><label><span data-zh="氫鍵供體 (HBD)" data-en="HBD">HBD</span> <span id="valHBD">2</span></label><input type="range" id="sliderHBD" min="0" max="10" value="2" step="1"></div>
+<div class="slider-group"><label><span data-zh="氫鍵受體 (HBA)" data-en="HBA">HBA</span> <span id="valHBA">5</span></label><input type="range" id="sliderHBA" min="0" max="20" value="5" step="1"></div>
+<div class="chart-container"><canvas id="lipinskiChart"></canvas></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="六、選擇藥物模式" data-en="VI. Choosing a drug modality">六、選擇模式</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="您的標靶適合哪種模式？" data-en="Which modality suits your target?">標靶 vs 模式</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">細胞內標靶</span><span class="dt-arrow">→</span><div>需穿膜：小分子 / PROTAC / 分子膠 / mRNA。<strong>不能</strong>用抗體（抗體不過細胞膜）。</div></div>
+<div class="dt-node"><span class="dt-q">細胞表面/外</span><span class="dt-arrow">→</span><div>抗體、ADC、CAR-T、雙特異抗體都可用。也可考慮小分子（如 GPCR）。</div></div>
+<div class="dt-node"><span class="dt-q">難成藥（無口袋）</span><span class="dt-arrow">→</span><div>PROTAC / 分子膠（不需高親和力結合）；抑制 RNA 表達（ASO/siRNA）；蛋白-蛋白互作小分子穩定劑/抑制劑。</div></div>
+<div class="dt-node"><span class="dt-q">罕見遺傳病</span><span class="dt-arrow">→</span><div>基因療法（AAV-）、CRISPR-Cas、ASO、酵素替代（ERT）。</div></div>
+<div class="dt-node"><span class="dt-q">大腦 CNS</span><span class="dt-arrow">→</span><div>小分子（穿 BBB；MW &lt; 450、LogP 2-5）；少數抗體 (aducanumab, lecanemab 透過血腦屏障少量)；ASO 腦室內注射。</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">Intracellular</span><span class="dt-arrow">→</span><div>Needs membrane crossing: small molecules / PROTACs / molecular glues / mRNA. <strong>Not</strong> antibodies (don't cross membrane).</div></div>
+<div class="dt-node"><span class="dt-q">Surface / extracellular</span><span class="dt-arrow">→</span><div>Antibodies, ADCs, CAR-T, bispecifics. Also small molecules (e.g. GPCRs).</div></div>
+<div class="dt-node"><span class="dt-q">Undruggable (no pocket)</span><span class="dt-arrow">→</span><div>PROTAC / molecular glue (no high-affinity binding needed); RNA-level inhibition (ASO/siRNA); PPI stabilizers/inhibitors.</div></div>
+<div class="dt-node"><span class="dt-q">Rare genetic disease</span><span class="dt-arrow">→</span><div>Gene therapy (AAV), CRISPR-Cas, ASO, enzyme replacement therapy.</div></div>
+<div class="dt-node"><span class="dt-q">CNS</span><span class="dt-arrow">→</span><div>Small molecules (BBB-permeable; MW &lt; 450, LogP 2-5); few antibodies (aducanumab, lecanemab cross BBB slightly); intrathecal ASOs.</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="虛擬篩選與 ADMET 預測" data-en="Virtual screening &amp; ADMET prediction">SBDD 工具鏈</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'py1')">Python / RDKit + AutoDock</button><button class="code-tab-btn" onclick="switchTab(this,'r1')">R</button></div>
+<div class="code-tab-content active" id="py1"><pre><span class="kw">from</span> rdkit <span class="kw">import</span> Chem
+<span class="kw">from</span> rdkit.Chem <span class="kw">import</span> Descriptors, AllChem
+<span class="kw">import</span> requests
+
+<span class="comment"># 1) Lipinski filter</span>
+<span class="kw">def</span> <span class="func">lipinski_pass</span>(smi):
+    m = Chem.MolFromSmiles(smi)
+    <span class="kw">return</span> (Descriptors.MolWt(m) &lt; <span class="num">500</span>
+        <span class="kw">and</span> Descriptors.MolLogP(m) &lt; <span class="num">5</span>
+        <span class="kw">and</span> Descriptors.NumHDonors(m) &lt;= <span class="num">5</span>
+        <span class="kw">and</span> Descriptors.NumHAcceptors(m) &lt;= <span class="num">10</span>)
+
+candidates = [<span class="str">"CC(=O)Oc1ccccc1C(=O)O"</span>,  <span class="comment"># aspirin</span>
+              <span class="str">"CCN(CC)CCNC(=O)c1ccc(N)cc1"</span>,  <span class="comment"># procainamide</span>
+              <span class="str">"C1=CC=C(C=C1)C(=O)O"</span>]    <span class="comment"># benzoic acid</span>
+<span class="kw">for</span> smi <span class="kw">in</span> candidates:
+    m = Chem.MolFromSmiles(smi)
+    <span class="func">print</span>(<span class="str">f"{Chem.MolToSmiles(m):40s} MW={Descriptors.MolWt(m):.0f} LogP={Descriptors.MolLogP(m):.2f} pass={lipinski_pass(smi)}"</span>)
+
+<span class="comment"># 2) Docking (AutoDock Vina via Python)</span>
+<span class="kw">from</span> vina <span class="kw">import</span> Vina
+v = Vina(sf_name=<span class="str">"vina"</span>)
+v.set_receptor(<span class="str">"protein.pdbqt"</span>)
+v.set_ligand_from_file(<span class="str">"ligand.pdbqt"</span>)
+v.compute_vina_maps(center=[<span class="num">10</span>,<span class="num">5</span>,<span class="num">2</span>], box_size=[<span class="num">20</span>,<span class="num">20</span>,<span class="num">20</span>])
+v.dock(exhaustiveness=<span class="num">8</span>, n_poses=<span class="num">10</span>)
+<span class="func">print</span>(<span class="str">f"Best ΔG = {v.score()[0]:.1f} kcal/mol"</span>)
+
+<span class="comment"># 3) ADMET 預測（多種雲端 API：admetSAR, SwissADME, pkCSM）</span>
+<span class="comment"># 或用 RDKit 計算 PSA、QED 等簡易屬性</span>
+<span class="kw">from</span> rdkit.Chem <span class="kw">import</span> QED
+qed = QED.qed(Chem.MolFromSmiles(candidates[<span class="num">0</span>]))
+<span class="func">print</span>(<span class="str">f"QED (drug-likeness) = {qed:.2f}"</span>)
+
+<span class="comment"># 4) AlphaFold 3 預測蛋白-配體複合物（從 AF Server）</span>
+<span class="comment"># 範例 JSON 輸入</span>
+job = {
+    <span class="str">"name"</span>: <span class="str">"my_target_lig"</span>,
+    <span class="str">"sequences"</span>: [
+        {<span class="str">"protein"</span>: {<span class="str">"id"</span>: <span class="str">"A"</span>, <span class="str">"sequence"</span>: <span class="str">"MAEEK..."</span>}},
+        {<span class="str">"ligand"</span>:  {<span class="str">"id"</span>: <span class="str">"L"</span>, <span class="str">"smiles"</span>: candidates[<span class="num">0</span>]}}
+    ]
+}
+<span class="comment"># 提交到 https://alphafoldserver.com/</span></pre></div>
+<div class="code-tab-content" id="r1"><pre><span class="kw">library</span>(rcdk); <span class="kw">library</span>(httr)
+
+<span class="comment"># Lipinski</span>
+lipinski &lt;- <span class="kw">function</span>(smi) {
+  m &lt;- <span class="func">parse.smiles</span>(smi)[[<span class="num">1</span>]]
+  <span class="kw">list</span>(
+    MW   = <span class="func">get.mol2formula</span>(m)$mass,
+    LogP = <span class="func">get.alogp</span>(m),
+    HBD  = <span class="func">get.hbond.donor.count</span>(m),
+    HBA  = <span class="func">get.hbond.acceptor.count</span>(m)
+  )
+}
+<span class="func">lipinski</span>(<span class="str">"CC(=O)Oc1ccccc1C(=O)O"</span>)  <span class="comment"># aspirin</span>
+
+<span class="comment"># 提交 AlphaFold Server (2024+)</span>
+<span class="comment"># 或本地用 ColabFold / AF3 開源實作</span>
+
+<span class="comment"># Drug-Target Interaction (DTI) 預測</span>
+<span class="comment"># 使用 chembl, BindingDB, PubChem 資料庫</span>
+<span class="kw">library</span>(ChemmineR)
+qry &lt;- <span class="str">"https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL25.json"</span>
+res &lt;- <span class="func">GET</span>(qry)
+<span class="func">content</span>(res)$molecule_properties</pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="2"><p data-lang="zh">1. PROTAC 與傳統抑制劑的核心差別？</p><p data-lang="en">1. Core difference between PROTAC and classical inhibitor?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. PROTAC 永久結合</span><span data-lang="en">A. PROTAC binds permanently</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 都需要高親和力</span><span data-lang="en">B. Both need high affinity</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 傳統 = 佔據活位點；PROTAC = 把蛋白引向 E3 連接酶降解（事件驅動、催化型）</span><span data-lang="en">C. Classical = occupy active site; PROTAC = recruit target to E3 → degradation (event-driven, catalytic)</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. PROTAC 不是分子</span><span data-lang="en">D. PROTACs aren't molecules</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="1"><p data-lang="zh">2. Sotorasib (Lumakras) 的關鍵化學特點？</p><p data-lang="en">2. Key chemistry of sotorasib?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 非共價抑制 KRAS-WT</span><span data-lang="en">A. Non-covalent inhibitor of KRAS-WT</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 利用 KRAS-G12C 突變的獨特 Cys 形成共價鍵</span><span data-lang="en">B. Forms covalent bond with the unique Cys of KRAS-G12C mutant</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 抗體</span><span data-lang="en">C. Antibody</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. siRNA</span><span data-lang="en">D. siRNA</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="3"><p data-lang="zh">3. 治療胰島細胞內訊息缺陷該選哪種模式？</p><p data-lang="en">3. To target an intracellular protein, which modality?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 抗體</span><span data-lang="en">A. Antibody</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. CAR-T</span><span data-lang="en">B. CAR-T</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 雙特異抗體</span><span data-lang="en">C. Bispecific antibody</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 小分子 / PROTAC / 分子膠（需能穿膜）</span><span data-lang="en">D. Small molecule / PROTAC / molecular glue (membrane permeable)</span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="clinical-biochemistry.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="臨床生化與代謝疾病" data-en="Clinical Biochemistry &amp;amp; Metabolic Diseases">臨床生化與代謝疾病</span></a>
+<a href="modern-techniques-ai.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="現代生化技術與 AI" data-en="Modern Techniques &amp;amp; AI in Biochemistry">現代生化技術與 AI</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+const lipChart=new Chart(document.getElementById('lipinskiChart'),{type:'radar',data:{labels:['MW (≤500)','LogP (≤5)','HBD (≤5)','HBA (≤10)','PSA (≤140)'],datasets:[{label:'Your compound',data:[],backgroundColor:'rgba(159,18,57,0.2)',borderColor:'#9f1239',borderWidth:2},{label:'Lipinski limit',data:[100,100,100,100,100],backgroundColor:'rgba(212,160,60,0.1)',borderColor:'#a16207',borderDash:[5,5]}]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{r:{min:0,max:150,ticks:{stepSize:50}}}}});
+function updateLip(){
+  const MW=+document.getElementById('sliderMW').value;
+  const lp=+document.getElementById('sliderLogP').value;
+  const hbd=+document.getElementById('sliderHBD').value;
+  const hba=+document.getElementById('sliderHBA').value;
+  document.getElementById('valMW').textContent=MW;
+  document.getElementById('valLogP').textContent=lp.toFixed(1);
+  document.getElementById('valHBD').textContent=hbd;
+  document.getElementById('valHBA').textContent=hba;
+  const psa = hbd*30 + hba*15; // crude estimate
+  const data=[
+    Math.min(150, MW/500*100),
+    Math.min(150, lp/5*100),
+    Math.min(150, hbd/5*100),
+    Math.min(150, hba/10*100),
+    Math.min(150, psa/140*100)
+  ];
+  lipChart.data.datasets[0].data=data;
+  lipChart.update('none');
+  const violations = (MW>500?1:0)+(lp>5?1:0)+(hbd>5?1:0)+(hba>10?1:0);
+  const L=I18n.get();
+  if(violations===0) document.getElementById('statPass').textContent=L==='zh'?'✅ Pass (0 violation)':'✅ Pass (0 violation)';
+  else if(violations===1) document.getElementById('statPass').textContent=L==='zh'?'🟡 Marginal (1 violation)':'🟡 Marginal (1 violation)';
+  else document.getElementById('statPass').textContent=L==='zh'?'❌ Fail ('+violations+' violations)':'❌ Fail ('+violations+' violations)';
+  let cls;
+  if(MW<300) cls=L==='zh'?'Fragment (FBDD 適合)':'Fragment (good for FBDD)';
+  else if(MW<500) cls=L==='zh'?'類藥 (drug-like)':'Drug-like';
+  else if(MW<1000) cls=L==='zh'?'超出 Lipinski (PROTAC、肽)':'Beyond Lipinski (PROTAC, peptide)';
+  else cls=L==='zh'?'生物製劑領域':'Biologic territory';
+  document.getElementById('statClass').textContent=cls;
+}
+['sliderMW','sliderLogP','sliderHBD','sliderHBA'].forEach(id=>document.getElementById(id).addEventListener('input',updateLip));
+document.addEventListener('langchange',updateLip);
+updateLip();
+
+const QF={zh:{q1_y:'PROTAC 把標靶與 E3 連接酶拉近，標靶被泛素化降解；一個 PROTAC 可催化多次（事件驅動），不需高親和力。',q2_y:'Sotorasib 利用 KRAS-G12C 突變產生的獨特 Cys 形成共價鍵，打破 KRAS "無法成藥"的觀念。',q3_y:'細胞內標靶需要可穿膜的模式——小分子、PROTAC、分子膠、mRNA 都可以；抗體因不過細胞膜不行。'},en:{q1_y:'PROTAC brings target and E3 close → ubiquitination → degradation; one molecule catalyzes many events, so high affinity is not required.',q2_y:'Sotorasib exploits the unique Cys created by KRAS-G12C mutation to form a covalent bond, breaking the "undruggable" reputation of KRAS.',q3_y:'Intracellular targets need a membrane-permeable modality — small molecules, PROTACs, molecular glues, mRNA all work; antibodies don\'t cross membranes.'}};['q1_n','q2_n','q3_n'].forEach(k=>{QF.zh[k]='正確答案已標示。';QF.en[k]='Correct answer highlighted.';});
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.11 TCA 循環與氧化磷酸化 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html" class="active">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 11 / 18 · BLOCK C</div>
+<h1 data-zh="TCA 循環與氧化磷酸化" data-en="TCA Cycle &amp; Oxidative Phosphorylation">TCA 循環與氧化磷酸化</h1>
+<p class="subtitle" data-lang="zh">代謝中央車站 TCA + Mitchell 化學滲透學說 + ATP synthase 旋轉機制——細胞 90% 的 ATP 在這裡產生。</p>
+<p class="subtitle" data-lang="en">TCA as metabolism's hub + Mitchell's chemiosmotic theory + ATP synthase's rotary mechanism — where 90% of cellular ATP is made.</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="PDH" data-en="PDH">PDH</div>
+<h2 data-zh="一、丙酮酸進入粒線體：PDH 複合體" data-en="I. Pyruvate enters the mitochondrion: PDH">一、PDH 複合體</h2>
+<div data-lang="zh"><p>糖解產物丙酮酸經 <strong>MPC (mitochondrial pyruvate carrier)</strong> 進入粒線體基質，被 <strong>丙酮酸脫氫酶複合體 (PDH)</strong> 不可逆地脫羧為<strong>乙醯-CoA</strong>，連接糖解與 TCA。</p>
+<p>PDH 是 60 個次單元的巨大複合體，由 E1（脫羧）、E2（轉移）、E3（再生 FAD）三種酶協作。需要 5 種輔因子：<strong>TPP、硫辛酸、CoA、FAD、NAD⁺</strong>（記憶法：「Tender Loving Care For Nancy」）。維生素缺乏（B1=TPP）直接影響此酶——腳氣病、Wernicke-Korsakoff 症候群。</p>
+<p>PDH 受嚴格調控：高 ATP/NADH/Acetyl-CoA 抑制（產物抑制），磷酸化關閉（PDK），脫磷酸化激活（PDP）。<strong>胰島素</strong>透過 PDP 激活 PDH，<strong>飢餓</strong>時 PDK 磷酸化關閉。</p></div>
+<div data-lang="en"><p>Glycolytic pyruvate enters mitochondria via <strong>MPC</strong> and is irreversibly decarboxylated to <strong>acetyl-CoA</strong> by the <strong>pyruvate dehydrogenase (PDH) complex</strong>, connecting glycolysis to TCA.</p>
+<p>PDH is a 60-subunit megacomplex with three enzymes — E1 (decarboxylation), E2 (transfer), E3 (FAD regeneration). It needs five cofactors: <strong>TPP, lipoic acid, CoA, FAD, NAD⁺</strong>. Vitamin deficiency (B1 = TPP) directly impairs PDH — beriberi, Wernicke-Korsakoff.</p>
+<p>PDH is tightly regulated: inhibited by high ATP/NADH/acetyl-CoA (product inhibition), turned off by phosphorylation (PDK), turned on by dephosphorylation (PDP). <strong>Insulin</strong> activates PDH via PDP; <strong>fasting</strong> turns it off via PDK.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="TCA 8 步" data-en="TCA 8 STEPS">TCA 8 步</h2>
+<h2 data-zh="二、Krebs 循環：8 步代謝中央車站" data-en="II. The Krebs cycle: 8 steps of metabolic central station">二、TCA 8 步</h2>
+<table class="comp-table">
+<thead><tr><th>Step</th><th data-zh="酶 / 反應" data-en="Enzyme / reaction">酶 / 反應</th><th data-zh="產物" data-en="Product">產物</th><th data-zh="調控" data-en="Regulation">調控</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>Citrate synthase</strong>: OAA + AcCoA → 檸檬酸</td><td>—</td><td data-zh="抑制：ATP、citrate、NADH、長鏈醯-CoA" data-en="Inhibit: ATP, citrate, NADH">受抑制</td></tr>
+<tr><td>2</td><td>Aconitase: 檸檬酸 ⇌ isocitrate</td><td>—</td><td data-zh="可逆；Fe-S 中心" data-en="Reversible; Fe-S">Fe-S</td></tr>
+<tr><td>3</td><td><strong>Isocitrate DH</strong>: → α-酮戊二酸</td><td>+NADH, CO₂</td><td data-zh="🔒 主要調控；激活：ADP、Ca²⁺；抑制：ATP、NADH" data-en="🔒 Major; activated: ADP/Ca²⁺">🔒 主要</td></tr>
+<tr><td>4</td><td><strong>α-KG DH complex</strong>: → 琥珀醯-CoA</td><td>+NADH, CO₂</td><td data-zh="與 PDH 同類；抑制：產物、ATP/NADH" data-en="PDH-like complex">類 PDH</td></tr>
+<tr><td>5</td><td>琥珀醯-CoA synthetase: → 琥珀酸</td><td>+GTP (受質磷酸化)</td><td>—</td></tr>
+<tr><td>6</td><td>Succinate DH (Complex II)</td><td>+FADH₂</td><td data-zh="嵌在內膜；連接 TCA-ETC" data-en="Inner membrane; links TCA-ETC">內膜</td></tr>
+<tr><td>7</td><td>Fumarase: → malate</td><td>—</td><td data-zh="可逆" data-en="Reversible">可逆</td></tr>
+<tr><td>8</td><td>Malate DH: → OAA</td><td>+NADH</td><td data-zh="ΔG°' +29 但細胞內 OAA 極低 → 自發" data-en="ΔG°' +29 but cell [OAA] tiny → forward">細胞內向前</td></tr>
+</tbody></table>
+<div data-lang="zh"><p><strong>每圈總結：</strong>1 乙醯-CoA → 2 CO₂ + 3 NADH + 1 FADH₂ + 1 GTP。<strong>每葡萄糖（2 丙酮酸）</strong>產 6 NADH + 2 FADH₂ + 2 GTP 來自 TCA，再加上 2 NADH 從 PDH。</p></div>
+<div data-lang="en"><p><strong>Per turn:</strong> 1 acetyl-CoA → 2 CO₂ + 3 NADH + 1 FADH₂ + 1 GTP. <strong>Per glucose (2 pyruvates):</strong> 6 NADH + 2 FADH₂ + 2 GTP from TCA, plus 2 NADH from PDH.</p></div>
+<div class="callout tip"><span class="callout-icon">💡</span><div>
+<span data-lang="zh"><strong>TCA 是「代謝中央車站」：</strong>不只氧化能量。中間體可被抽走作合成材料（α-KG → 麩胺酸、OAA → 天門冬胺酸、琥珀醯-CoA → 血基質、檸檬酸 → 脂肪酸合成）。所以需<strong>回填反應 (anaplerosis)</strong> 補充——主要由丙酮酸羧化酶 (PC) 提供 OAA。</span>
+<span data-lang="en"><strong>TCA is "metabolic central station":</strong> not just oxidation. Intermediates are siphoned for biosynthesis (α-KG → Glu, OAA → Asp, succinyl-CoA → heme, citrate → fatty acids). <strong>Anaplerotic reactions</strong> refill them — pyruvate carboxylase (PC) → OAA is the main one.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="ETC" data-en="ETC">ETC</div>
+<h2 data-zh="三、電子傳遞鏈四複合體" data-en="III. The four ETC complexes">三、ETC 四複合體</h2>
+<div data-lang="zh"><p>NADH/FADH₂ 將電子傳到 O₂，過程中泵出 H⁺ 進膜間腔，建立<strong>質子梯度 (Δp ≈ 220 mV)</strong>。內膜上四個複合體：</p>
+<table class="comp-table">
+<thead><tr><th>Complex</th><th data-zh="名稱" data-en="Name">名稱</th><th data-zh="泵 H⁺" data-en="Pumps H⁺">泵 H⁺</th><th data-zh="抑制劑" data-en="Inhibitor">抑制劑</th></tr></thead>
+<tbody>
+<tr><td><strong>I</strong></td><td>NADH dehydrogenase</td><td>4 H⁺/NADH</td><td>Rotenone, 1-甲基-4-苯基吡啶 (MPP⁺)</td></tr>
+<tr><td><strong>II</strong></td><td>Succinate DH (=TCA Step 6)</td><td>0</td><td data-zh="無泵；FADH₂ 入口" data-en="No pumping; FADH₂ entry">—</td></tr>
+<tr><td><strong>III</strong></td><td>Cytochrome bc₁</td><td>2 H⁺/e⁻ pair</td><td>Antimycin A, 銅</td></tr>
+<tr><td><strong>IV</strong></td><td>Cytochrome c oxidase</td><td>2 H⁺/e⁻ pair</td><td>Cyanide (CN⁻), 一氧化碳 (CO), 疊氮 (azide)</td></tr>
+</tbody></table></div>
+<div data-lang="en"><p>NADH/FADH₂ deliver electrons to O₂; H⁺ is pumped to intermembrane space, building a <strong>proton motive force (Δp ≈ 220 mV)</strong>. The four inner-membrane complexes:</p></div>
+<div class="callout warn"><span class="callout-icon">⚠️</span><div>
+<span data-lang="zh"><strong>Mitchell 化學滲透學說 (1961, 1978 Nobel)：</strong>當時被學界激烈反對的「異端」——「呼吸鏈不是直接合成 ATP，而是建立質子梯度，然後 ATP synthase 利用梯度合成 ATP」。今天看來是教科書事實，但當年顛覆了整個生物能量學。</span>
+<span data-lang="en"><strong>Mitchell's chemiosmotic theory (1961, 1978 Nobel):</strong> initially fiercely opposed — "the respiratory chain doesn't directly synthesize ATP; it builds a proton gradient, which ATP synthase uses to make ATP." Now textbook, but revolutionary at the time.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="ATP synthase" data-en="ATP SYNTHASE">ATP synthase</div>
+<h2 data-zh="四、ATP synthase：旋轉分子馬達" data-en="IV. ATP synthase: the rotary motor">四、ATP synthase</h2>
+<div data-lang="zh"><p><strong>ATP synthase (Complex V)</strong> 是一個真正的奈米馬達。F<sub>0</sub> 嵌在膜，F<sub>1</sub> 突出基質。質子流過 F<sub>0</sub> 的 c 環使其旋轉（每 8–10 個 H⁺ 轉一圈，依生物物種而異）；γ 軸旋轉迫使 F<sub>1</sub> 的三個 β 次單元依序通過 <strong>O → L → T → O 三構象</strong>，使 ADP+Pi 在 T 構象合成為 ATP 並釋放。Boyer 與 Walker 因此獲 1997 Nobel。</p>
+<p><strong>P/O 比例：</strong>每個 NADH 約產 2.5 ATP；每個 FADH₂ 約產 1.5 ATP。每分子葡萄糖完全氧化產 30–32 ATP（過去課本說 36–38，2000 後修正）。</p></div>
+<div data-lang="en"><p><strong>ATP synthase (Complex V)</strong> is a true nanomotor. F<sub>0</sub> sits in the membrane, F<sub>1</sub> protrudes into the matrix. Protons flowing through F<sub>0</sub>'s c-ring rotate it (8–10 H⁺ per turn depending on species); rotation of the γ shaft cycles the three β subunits through <strong>O → L → T → O conformations</strong>, synthesizing and releasing ATP at T. Boyer &amp; Walker won the 1997 Nobel.</p>
+<p><strong>P/O ratio:</strong> ~2.5 ATP per NADH; ~1.5 ATP per FADH₂. Full glucose oxidation yields 30–32 ATP (older textbooks said 36–38; revised after 2000).</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="質子梯度與 ATP 產率" data-en="Proton motive force &amp; ATP yield">PMF 模擬</h2>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statPMF">—</span><span class="sim-stat gold" id="statATP">—</span></div>
+<div class="slider-group"><label><span data-zh="ΔpH（基質-膜間腔）" data-en="ΔpH (matrix-IMS)">ΔpH</span> <span id="valdpH">0.5</span></label><input type="range" id="sliderdpH" min="0" max="1.5" value="0.5" step="0.1"></div>
+<div class="slider-group"><label><span data-zh="Δψ (mV)" data-en="Δψ (mV)">Δψ</span> <span id="valdpsi">180</span></label><input type="range" id="sliderdpsi" min="0" max="250" value="180" step="10"></div>
+<div class="slider-group"><label><span data-zh="解偶聯劑 (DNP, %)" data-en="Uncoupler (DNP, %)">解偶聯</span> <span id="valUnc">0</span></label><input type="range" id="sliderUnc" min="0" max="100" value="0" step="5"></div>
+<div class="chart-container"><canvas id="pmfChart"></canvas></div>
+<p style="font-size:.82rem;color:var(--c-ink-muted);text-align:center;"><span data-lang="zh">Δp = Δψ − 59·ΔpH (mV)，需 ~ 200 mV 才能合成 ATP</span><span data-lang="en">Δp = Δψ − 59·ΔpH (mV); ~200 mV needed to synthesize ATP</span></p>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="ROS 與棕色脂肪" data-en="ROS &amp; BAT">ROS / 棕色脂肪</div>
+<h2 data-zh="五、ROS、UCP1 與棕色脂肪" data-en="V. ROS, UCP1 &amp; brown fat">五、ROS 與棕色脂肪</h2>
+<div data-lang="zh"><p><strong>ROS 副產物：</strong>~1–2% 的 O₂ 在 ETC 中變成 O₂·⁻、H₂O₂、·OH。細胞用 SOD（Cu/Zn 細胞質、Mn 粒線體）、catalase、GPx、TXN/PRX 系統清除。<strong>失衡 → 氧化壓力 → 老化、神經退化、癌</strong>。</p>
+<p><strong>UCP1（thermogenin）：</strong>棕色脂肪細胞特有的「解偶聯蛋白」——允許 H⁺ 漏回基質而不經 ATP synthase，將電子傳遞鏈的能量直接變熱。嬰兒、冬眠動物用此維持體溫。2021 後成為「可激活棕色脂肪」抗肥胖藥物標靶。</p></div>
+<div data-lang="en"><p><strong>ROS by-products:</strong> ~1–2% of O₂ becomes O₂·⁻, H₂O₂, ·OH in the ETC. Cells use SOD (Cu/Zn cytosolic, Mn mitochondrial), catalase, GPx, TXN/PRX systems to clear them. <strong>Imbalance → oxidative stress → aging, neurodegeneration, cancer</strong>.</p>
+<p><strong>UCP1 (thermogenin):</strong> brown-fat-specific "uncoupling protein" — lets H⁺ leak back to the matrix bypassing ATP synthase, dissipating ETC energy as heat. Infants and hibernating animals use it for thermoregulation. Since 2021, "activatable brown fat" has become a drug target for obesity.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="六、診斷代謝缺陷" data-en="VI. Diagnosing metabolic defects">六、診斷</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="病人乳酸性酸中毒——哪裡卡住？" data-en="Patient with lactic acidosis — where is the block?">乳酸性酸中毒診斷</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>乳酸 ↑ 但丙酮酸正常？<span class="dt-arrow">→</span> <strong>NADH/NAD⁺ 失衡</strong>（粒線體故障、缺氧、酒精中毒）</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>丙酮酸 ↑ 乳酸 ↑？<span class="dt-arrow">→</span> 上游（PDH 缺陷、PC 缺陷、糖質新生卡住）</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>家族遺傳 + 多器官？<span class="dt-arrow">→</span> <strong>粒線體病</strong>（MELAS、Leigh、LHON、MERRF）。基因檢測：mtDNA / 核 DNA。</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>藥物服用後？<span class="dt-arrow">→</span> Metformin（高劑量）、抗逆轉錄病毒藥物、cyanide 中毒。</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>Lactate ↑ but pyruvate normal? <span class="dt-arrow">→</span> <strong>NADH/NAD⁺ imbalance</strong> (mitochondrial dysfunction, hypoxia, alcohol intox.)</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>Both pyruvate ↑ and lactate ↑? <span class="dt-arrow">→</span> Upstream (PDH defect, PC defect, gluconeogenesis block)</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>Family history + multi-organ? <span class="dt-arrow">→</span> <strong>Mitochondrial disease</strong> (MELAS, Leigh, LHON, MERRF). Test mtDNA + nuclear DNA.</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>After drug use? <span class="dt-arrow">→</span> Metformin (high dose), antiretrovirals, cyanide poisoning.</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="OCR (耗氧率) 分析" data-en="OCR (oxygen consumption rate) analysis">OCR 分析</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'r1')">R</button><button class="code-tab-btn" onclick="switchTab(this,'py1')">Python</button></div>
+<div class="code-tab-content active" id="r1"><pre><span class="comment"># Seahorse XF Mito Stress Test 分析</span>
+<span class="kw">library</span>(ggplot2)
+
+ocr &lt;- data.frame(
+  time   = <span class="kw">c</span>(<span class="num">1</span>:<span class="num">12</span>),
+  rate   = <span class="kw">c</span>(<span class="num">100</span>,<span class="num">105</span>,<span class="num">95</span>, <span class="num">120</span>,<span class="num">125</span>,<span class="num">115</span>, <span class="num">30</span>,<span class="num">28</span>,<span class="num">32</span>, <span class="num">180</span>,<span class="num">175</span>,<span class="num">15</span>),
+  treat  = <span class="func">rep</span>(<span class="kw">c</span>(<span class="str">"basal"</span>,<span class="str">"oligomycin"</span>,<span class="str">"FCCP"</span>,<span class="str">"rot+AA"</span>), each=<span class="num">3</span>)
+)
+
+<span class="comment"># 計算關鍵參數</span>
+basal    &lt;- <span class="func">mean</span>(ocr$rate[ocr$treat==<span class="str">"basal"</span>])
+oligo    &lt;- <span class="func">mean</span>(ocr$rate[ocr$treat==<span class="str">"oligomycin"</span>])
+fccp     &lt;- <span class="func">mean</span>(ocr$rate[ocr$treat==<span class="str">"FCCP"</span>])
+non_mito &lt;- <span class="func">mean</span>(ocr$rate[ocr$treat==<span class="str">"rot+AA"</span>])
+
+atp_linked &lt;- basal - oligo                    <span class="comment"># ATP-linked OCR</span>
+max_resp   &lt;- fccp - non_mito                  <span class="comment"># 最大呼吸</span>
+reserve    &lt;- max_resp - (basal - non_mito)    <span class="comment"># 備用呼吸量</span>
+proton_leak&lt;- oligo - non_mito                 <span class="comment"># 質子漏 (uncoupling)</span>
+
+<span class="func">cat</span>(<span class="str">"ATP-linked:"</span>, atp_linked, <span class="str">"\n"</span>)
+<span class="func">cat</span>(<span class="str">"Max:"</span>, max_resp, <span class="str">"\nReserve:"</span>, reserve, <span class="str">"\nLeak:"</span>, proton_leak, <span class="str">"\n"</span>)</pre></div>
+<div class="code-tab-content" id="py1"><pre><span class="kw">import</span> pandas <span class="kw">as</span> pd
+<span class="kw">import</span> matplotlib.pyplot <span class="kw">as</span> plt
+
+<span class="comment"># Seahorse data</span>
+df = pd.DataFrame({
+    <span class="str">"time"</span>: <span class="func">range</span>(<span class="num">12</span>),
+    <span class="str">"rate"</span>: [<span class="num">100</span>,<span class="num">105</span>,<span class="num">95</span>,  <span class="num">120</span>,<span class="num">125</span>,<span class="num">115</span>,  <span class="num">30</span>,<span class="num">28</span>,<span class="num">32</span>,  <span class="num">180</span>,<span class="num">175</span>,<span class="num">15</span>],
+    <span class="str">"treat"</span>: [<span class="str">"basal"</span>]*<span class="num">3</span> + [<span class="str">"oligo"</span>]*<span class="num">3</span> + [<span class="str">"FCCP"</span>]*<span class="num">3</span> + [<span class="str">"rot_AA"</span>]*<span class="num">3</span>
+})
+
+basal = df[df.treat==<span class="str">"basal"</span>].rate.mean()
+oligo = df[df.treat==<span class="str">"oligo"</span>].rate.mean()
+fccp  = df[df.treat==<span class="str">"FCCP"</span>].rate.mean()
+nonmt = df[df.treat==<span class="str">"rot_AA"</span>].rate.mean()
+
+<span class="func">print</span>(<span class="str">f"ATP-linked OCR  = {basal-oligo:.1f}"</span>)
+<span class="func">print</span>(<span class="str">f"Max respiration = {fccp-nonmt:.1f}"</span>)
+<span class="func">print</span>(<span class="str">f"Reserve         = {fccp-basal:.1f}"</span>)
+<span class="func">print</span>(<span class="str">f"Proton leak     = {oligo-nonmt:.1f}"</span>)
+
+<span class="comment"># 評估：ATP-linked OCR &lt; 50% 表示粒線體功能受損</span>
+<span class="kw">if</span> (basal - oligo) / basal &lt; <span class="num">0.5</span>:
+    <span class="func">print</span>(<span class="str">"⚠️ Mitochondrial dysfunction suspected"</span>)</pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="3"><p data-lang="zh">1. 每葡萄糖完全氧化淨產 ATP？</p><p data-lang="en">1. Net ATP per glucose fully oxidized?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 2</span><span data-lang="en">A. 2</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 4</span><span data-lang="en">B. 4</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 38</span><span data-lang="en">C. 38</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 約 30–32（修訂後 P/O 比例）</span><span data-lang="en">D. ~30–32 (revised P/O ratio)</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="2"><p data-lang="zh">2. Mitchell 化學滲透學說的核心？</p><p data-lang="en">2. Core of Mitchell's chemiosmotic theory?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 高能磷酸鍵直接被 ETC 合成</span><span data-lang="en">A. ETC directly forms a high-energy phosphate bond</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. NADH 直接給 ADP</span><span data-lang="en">B. NADH directly phosphorylates ADP</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. ETC 建立質子梯度，ATP synthase 利用此梯度合成 ATP</span><span data-lang="en">C. ETC builds proton gradient; ATP synthase uses it to make ATP</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 質子不參與</span><span data-lang="en">D. Protons are not involved</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="3"><p data-lang="zh">3. DNP（2,4-二硝基酚）的代謝效果？</p><p data-lang="en">3. Metabolic effect of DNP (2,4-dinitrophenol)?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 抑制 PDH</span><span data-lang="en">A. Inhibits PDH</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 增加 ATP 產量</span><span data-lang="en">B. Increases ATP yield</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 阻斷 TCA</span><span data-lang="en">C. Blocks TCA</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 解偶聯：讓 H⁺ 漏回基質，能量轉為熱，ATP 大量減少</span><span data-lang="en">D. Uncouples: H⁺ leaks back, energy becomes heat, ATP plummets</span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="carb-metabolism.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="醣類代謝" data-en="Carbohydrate Metabolism">醣類代謝</span></a>
+<a href="lipid-aa-metabolism.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="脂質與胺基酸代謝" data-en="Lipid &amp;amp; Amino Acid Metabolism">脂質與胺基酸代謝</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+const pmfChart=new Chart(document.getElementById('pmfChart'),{type:'bar',data:{labels:[],datasets:[{label:'Energy (mV)',data:[],backgroundColor:[]}]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{y:{title:{display:true,text:'mV'},min:-50,max:300}}}});
+function updatePMF(){
+  const dpH=+document.getElementById('sliderdpH').value;
+  const dpsi=+document.getElementById('sliderdpsi').value;
+  const unc=+document.getElementById('sliderUnc').value;
+  document.getElementById('valdpH').textContent=dpH;
+  document.getElementById('valdpsi').textContent=dpsi;
+  document.getElementById('valUnc').textContent=unc;
+  let pmf = dpsi + 59*dpH;  // mV
+  pmf = pmf * (1 - unc/100);
+  const atp = pmf>180 ? (pmf-180)/2 : 0;
+  pmfChart.data.labels=['Δψ','ΔpH·59','Total Δp','ATP synth.'];
+  pmfChart.data.datasets[0].data=[dpsi, 59*dpH, pmf, atp];
+  pmfChart.data.datasets[0].backgroundColor=['#9f1239','#a16207','#5a0a23','#10b981'];
+  pmfChart.update('none');
+  const L=I18n.get();
+  document.getElementById('statPMF').textContent=(L==='zh'?'Δp = ':'Δp = ')+pmf.toFixed(0)+' mV';
+  document.getElementById('statATP').textContent=pmf>=180?(L==='zh'?'⚡ ATP 合成中':'⚡ ATP synthesis active'):(L==='zh'?'⚠️ 不足以合成 ATP':'⚠️ Insufficient for ATP');
+}
+['sliderdpH','sliderdpsi','sliderUnc'].forEach(id=>document.getElementById(id).addEventListener('input',updatePMF));
+document.addEventListener('langchange',updatePMF);
+updatePMF();
+
+const QF={zh:{q1_y:'每葡萄糖完全氧化淨產 30-32 ATP（過去課本 36-38，2000 年後 P/O 比例修訂）。',q2_y:'Mitchell 學說（1978 Nobel）：ETC 建立質子梯度，ATP synthase 用此梯度旋轉合成 ATP。',q3_y:'DNP 是經典解偶聯劑：脂溶性弱酸載 H⁺ 過膜，繞過 ATP synthase 將能量散為熱。20 世紀 30 年代曾用於減重，因致死性高熱已禁用。'},en:{q1_y:'Net ATP per glucose ≈ 30-32 (older books said 36-38 before P/O ratios were revised).',q2_y:'Mitchell\'s theory (1978 Nobel): ETC builds proton gradient; ATP synthase uses it to spin and make ATP.',q3_y:'DNP is the classic uncoupler — a lipophilic weak acid that ferries H⁺ across the membrane, bypassing ATP synthase and dissipating energy as heat. Used as a 1930s diet drug; banned because of lethal hyperthermia.'}};['q1_n','q2_n','q3_n'].forEach(k=>{QF.zh[k]='正確答案已標示。';QF.en[k]='Correct answer highlighted.';});
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

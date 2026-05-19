@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.18 現代生化技術與 AI — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html" class="active">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 18 / 18 · BLOCK E</div>
+<h1 data-zh="現代生化技術與 AI" data-en="Modern Techniques &amp; AI in Biochemistry">現代生化技術與 AI</h1>
+<p class="subtitle" data-lang="zh">質譜、代謝體學、cryo-ET、HDX-MS、AI 設計酶與蛋白——2026 生化學的工具箱。</p>
+<p class="subtitle" data-lang="en">MS, metabolomics, cryo-ET, HDX-MS, AI-designed enzymes &amp; proteins — the 2026 biochemistry toolbox.</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="質譜" data-en="MASS SPEC">質譜</div>
+<h2 data-zh="一、質譜：蛋白質與代謝體的瑞士刀" data-en="I. Mass spec: Swiss army knife for proteins &amp; metabolites">一、質譜</h2>
+<div data-lang="zh"><p>質譜原理：分子離子化 → 在電/磁場中按 m/z 分離 → 偵測器計數。現代生化已不可或缺。</p>
+<table class="comp-table">
+<thead><tr><th data-zh="技術" data-en="Technique">技術</th><th data-zh="用途" data-en="Use">用途</th></tr></thead>
+<tbody>
+<tr><td><strong>LC-MS/MS（DDA）</strong></td><td data-zh="蛋白質體學主流；prediction → digestion → LC → MS/MS → 序列鑑定" data-en="Mainstream proteomics; digest → LC → MS/MS → sequence ID">主流蛋白</td></tr>
+<tr><td><strong>DIA-MS (data-independent)</strong></td><td data-zh="所有離子同時打碎；定量重現性高；2020+ 取代多數 DDA" data-en="Fragments all ions; high reproducibility; replacing DDA since 2020">DIA</td></tr>
+<tr><td><strong>TMT / iTRAQ</strong></td><td data-zh="同位素標籤；多樣本（10-18 plex）同時定量" data-en="Isobaric tags; multiplex quant (10-18 plex)">多重定量</td></tr>
+<tr><td><strong>Native MS</strong></td><td data-zh="保留蛋白原生構象，研究複合體化學計量、配體結合" data-en="Preserves native conformation; complex stoichiometry, ligand binding">原生</td></tr>
+<tr><td><strong>HDX-MS</strong></td><td data-zh="氫氘交換；測蛋白動態、結合界面、變構效應" data-en="H/D exchange; protein dynamics, interfaces, allostery">動態</td></tr>
+<tr><td><strong>Cross-link MS (XL-MS)</strong></td><td data-zh="加交聯劑連接接近殘基；推算結構與互作" data-en="Cross-linker tags proximal residues; infer structure/interactions">結構</td></tr>
+<tr><td><strong>單細胞蛋白質體 (SCP)</strong></td><td data-zh="2024+：奈升 LC + Orbitrap Ascend，單細胞 ~3000 蛋白" data-en="2024+: nanoflow LC + Orbitrap Ascend; ~3000 proteins per cell">單細胞</td></tr>
+<tr><td><strong>代謝體 / 脂質體</strong></td><td data-zh="HMDB、LIPID MAPS 資料庫；MSI 信心等級" data-en="HMDB, LIPID MAPS DBs; MSI confidence levels">代謝脂質</td></tr>
+</tbody></table></div>
+<div data-lang="en"><p>MS principle: ionize molecules → separate by m/z in electric/magnetic fields → detector counts. Indispensable to modern biochemistry.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="代謝體" data-en="METABOLOMICS">代謝體學</div>
+<h2 data-zh="二、代謝體與脂質體：臨床標誌物前線" data-en="II. Metabolomics &amp; lipidomics: biomarker frontline">二、代謝體</h2>
+<div data-lang="zh"><p>代謝體 = 所有小分子代謝物（&lt; 1500 Da）的集合。<strong>2024-2025 臨床熱點：</strong></p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>癌症</strong>：oncometabolites（2-hydroxyglutarate in IDH1-mut glioma, fumarate in HLRCC, succinate in pheochromocytoma）；早期偵測（Galleri 多癌篩檢）</li>
+<li><strong>神經退化</strong>：阿茲海默症血漿磷脂組合預測認知衰退；Parkinson 多巴胺代謝產物</li>
+<li><strong>糖尿病</strong>：分支鏈胺基酸 (Leu/Ile/Val)、α-hydroxybutyrate 是糖尿病前期指標</li>
+<li><strong>心血管</strong>：TMAO（腸道菌代謝產物）與動脈硬化關聯</li>
+<li><strong>感染症</strong>：宿主代謝特徵區分 COVID 嚴重度、結核病潛伏期診斷</li>
+</ul>
+<p><strong>MSI 信心等級（Metabolomics Standards Initiative）：</strong>Level 1（最高，標品比對）→ Level 4（未知化學式）。臨床用必須 ≥ Level 2。</p></div>
+<div data-lang="en"><p>Metabolome = all small-molecule metabolites (&lt; 1500 Da). <strong>2024-2025 clinical highlights:</strong></p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>Cancer:</strong> oncometabolites (2-HG in IDH1-mut glioma, fumarate in HLRCC, succinate in pheochromocytoma); early detection (Galleri multi-cancer screen)</li>
+<li><strong>Neurodegeneration:</strong> plasma phospholipid signatures predict Alzheimer's cognitive decline; dopamine metabolites in Parkinson's</li>
+<li><strong>Diabetes:</strong> BCAAs (Leu/Ile/Val), α-hydroxybutyrate as prediabetes markers</li>
+<li><strong>Cardiovascular:</strong> TMAO (gut microbial metabolite) linked to atherosclerosis</li>
+<li><strong>Infectious disease:</strong> host metabolic signatures distinguish COVID severity; latent TB diagnosis</li>
+</ul>
+<p><strong>MSI confidence levels:</strong> Level 1 (highest, standard match) → Level 4 (unknown formula). Clinical use requires ≥ Level 2.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="Cryo-EM/ET" data-en="CRYO-EM/ET">Cryo</div>
+<h2 data-zh="三、Cryo-ET：原位結構生物學" data-en="III. Cryo-ET: in-situ structural biology">三、Cryo-ET</h2>
+<div data-lang="zh"><p><strong>Cryo-EM</strong>（單顆粒）已成主流。<strong>Cryo-ET（電子斷層）</strong>則是「在細胞裡看蛋白」的革命——把冷凍細胞切薄 (FIB-SEM milling) → 從各角度收集投影 → 重建 3D 體積（解析度 4-10 Å）。已用於：核糖體、剪接體、核孔複合體、突觸結構、病毒組裝中間態。</p>
+<p><strong>2025 時間分辨 cryo-EM：</strong>雷射閃熔讓樣品融化 5-100 μs，啟動反應後再冷凍——首次能拍下「酶反應中間態」原子級結構。Nature Methods 2025 報導用此技術解析多個 GTPase、kinase 中間態。</p></div>
+<div data-lang="en"><p><strong>Cryo-EM</strong> (single-particle) is now mainstream. <strong>Cryo-ET (electron tomography)</strong> is revolutionizing "in-cell" structural biology — FIB-SEM milling thins frozen cells → projections from many angles → 3D reconstruction (resolution 4-10 Å). Used for ribosomes, spliceosomes, nuclear pore complexes, synaptic structures, viral assembly intermediates.</p>
+<p><strong>2025 time-resolved cryo-EM:</strong> laser flash-melts samples for 5-100 μs, initiating a reaction before refreezing — the first atomic snapshots of "enzyme reaction intermediates." Nature Methods 2025 reports several GTPase and kinase intermediates resolved this way.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="AI 設計" data-en="AI DESIGN">AI</div>
+<h2 data-zh="四、AI 在生化學的角色" data-en="IV. AI's role in biochemistry">四、AI 在生化學</h2>
+<div class="card-grid cols-2">
+<div class="card"><h4>🤖 <span data-zh="① 結構預測：AlphaFold 系列" data-en="① Structure prediction: AlphaFold series">① 結構預測</span></h4><div data-lang="zh"><p>AF 2 (2020)、AF-Multimer (2022)、AF 3 (Nature 2024)、ESM-3 (2024) 、Boltz-1 (2024 開源 AF3 替代)。提供生化研究的「全球可用結構庫」。</p></div><div data-lang="en"><p>AF 2 (2020), AF-Multimer (2022), AF 3 (Nature 2024), ESM-3 (2024), Boltz-1 (2024 open-source AF3-equivalent). A "global structure library" for biochemistry.</p></div></div>
+<div class="card"><h4>🧬 <span data-zh="② 蛋白設計：RFdiffusion + ProteinMPNN" data-en="② Protein design: RFdiffusion + ProteinMPNN">② 蛋白設計</span></h4><div data-lang="zh"><p><strong>RFdiffusion (Baker lab 2023)</strong>：擴散模型設計從零開始的蛋白骨架；<strong>ProteinMPNN</strong> 填入序列。2024-2025 設計出超穩定酶、新發炎抑制劑、奈米孔——速度與成功率史無前例。</p></div><div data-lang="en"><p><strong>RFdiffusion (Baker lab, 2023)</strong>: diffusion model designs protein backbones de novo; <strong>ProteinMPNN</strong> fills the sequence. 2024-2025 designs include ultrastable enzymes, novel inflammasome inhibitors, nanopores — unprecedented speed and success.</p></div></div>
+<div class="card"><h4>⚗️ <span data-zh="③ 酶設計與工程" data-en="③ Enzyme design &amp; engineering">③ 酶設計</span></h4><div data-lang="zh"><p>AI 預測活位點殘基、計算過渡態 → 結合定向演化（Arnold 2018 Nobel）。<strong>2024 EvolutionaryScale 的 ESM-3 (LM-G)：</strong>從 prompts 設計新型發光蛋白、抗體；甚至跨越演化分布的新蛋白。</p></div><div data-lang="en"><p>AI predicts active-site residues, computes transition states → combined with directed evolution (Arnold 2018 Nobel). <strong>2024 EvolutionaryScale's ESM-3 (LM-G):</strong> prompts-based design of novel luminescent proteins, antibodies — new proteins beyond known evolutionary distribution.</p></div></div>
+<div class="card"><h4>💊 <span data-zh="④ AI 藥物發現" data-en="④ AI-driven drug discovery">④ AI 藥物發現</span></h4><div data-lang="zh"><p>Insilico Medicine (Pharma.ai)、Recursion、Isomorphic Labs (Google DeepMind 子公司)。<strong>2024 第一個 AI 設計 (主要靶點)</strong>分子進入 II 期臨床（INS018-055，IPF 治療）。生成式 AI 同時設計分子 + 預測 ADMET。</p></div><div data-lang="en"><p>Insilico Medicine (Pharma.ai), Recursion, Isomorphic Labs (Google DeepMind subsidiary). <strong>2024 first AI-designed (primary target)</strong> drug entered Phase II (INS018-055 for IPF). Generative AI simultaneously designs molecules and predicts ADMET.</p></div></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="代謝體差異分析" data-en="Metabolomics differential analysis">代謝體模擬</h2>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statBiomarker">—</span><span class="sim-stat gold" id="statN">—</span></div>
+<div class="slider-group"><label><span data-zh="效應大小 (Cohen's d)" data-en="Effect size (Cohen's d)">效應大小</span> <span id="valD">0.8</span></label><input type="range" id="sliderD" min="0" max="3" value="0.8" step="0.1"></div>
+<div class="slider-group"><label><span data-zh="樣本數 (per group)" data-en="Sample size (per group)">樣本數</span> <span id="valN">30</span></label><input type="range" id="sliderN" min="5" max="200" value="30" step="5"></div>
+<div class="slider-group"><label><span data-zh="代謝物數量" data-en="# metabolites">代謝物</span> <span id="valM">500</span></label><input type="range" id="sliderM" min="50" max="5000" value="500" step="50"></div>
+<div class="chart-container"><canvas id="metaboChart"></canvas></div>
+<p style="font-size:.82rem;color:var(--c-ink-muted);text-align:center;"><span data-lang="zh">考慮多重檢驗校正（FDR）後的真正可偵測差異代謝物比例</span><span data-lang="en">Proportion of true differential metabolites detectable after FDR correction</span></p>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="五、AI 與實驗的分工" data-en="V. AI vs experiment division of labor">五、AI vs 實驗</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="什麼時候用 AI、什麼時候用實驗？" data-en="When AI, when experiment?">AI 還是實驗？</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">已知摺疊類別預測</span><span class="dt-arrow">→</span><div>AlphaFold 3 / ESM-3 起步——快、便宜、可大規模。但需檢查 pLDDT 與 PAE。</div></div>
+<div class="dt-node"><span class="dt-q">機制細節、配體位置</span><span class="dt-arrow">→</span><div>實驗結構（X-ray, cryo-EM）為金標準。AI 預測作為起步假設。</div></div>
+<div class="dt-node"><span class="dt-q">IDP、構象動態</span><span class="dt-arrow">→</span><div>AI 弱項——用 NMR、HDX-MS、SAXS、分子動力學。</div></div>
+<div class="dt-node"><span class="dt-q">新蛋白設計</span><span class="dt-arrow">→</span><div>RFdiffusion + ProteinMPNN 高速產生候選；實驗驗證表達、摺疊、活性。</div></div>
+<div class="dt-node"><span class="dt-q">藥物-靶點親和力</span><span class="dt-arrow">→</span><div>AF3 + docking 提供方向；最終要 SPR、ITC、cellular assay 確認 Kd 與 IC50。</div></div>
+<div class="dt-node"><span class="dt-q">代謝體鑑定</span><span class="dt-arrow">→</span><div>AI 加速 m/z 註解；但 MSI Level 1 證據（標品 retention time + MS/MS）仍需實驗。</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">Known-fold prediction</span><span class="dt-arrow">→</span><div>Start with AlphaFold 3 / ESM-3 — fast, cheap, scalable. Check pLDDT and PAE.</div></div>
+<div class="dt-node"><span class="dt-q">Mechanism, ligand pose</span><span class="dt-arrow">→</span><div>Experimental structures (X-ray, cryo-EM) remain the gold standard. AI is the hypothesis starter.</div></div>
+<div class="dt-node"><span class="dt-q">IDP, dynamics</span><span class="dt-arrow">→</span><div>AI weakness — use NMR, HDX-MS, SAXS, MD simulations.</div></div>
+<div class="dt-node"><span class="dt-q">De novo protein design</span><span class="dt-arrow">→</span><div>RFdiffusion + ProteinMPNN generate candidates fast; experimentally validate expression, fold, activity.</div></div>
+<div class="dt-node"><span class="dt-q">Drug-target affinity</span><span class="dt-arrow">→</span><div>AF3 + docking suggest poses; final Kd/IC50 needs SPR, ITC, cellular assays.</div></div>
+<div class="dt-node"><span class="dt-q">Metabolite identification</span><span class="dt-arrow">→</span><div>AI accelerates m/z annotation; MSI Level 1 evidence (standard RT + MS/MS) still requires experiment.</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="ESM-3 / AlphaFold Server API + Metabolomics 分析" data-en="ESM-3 / AlphaFold Server API + Metabolomics">AI + 代謝體</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'py1')">Python</button><button class="code-tab-btn" onclick="switchTab(this,'r1')">R</button></div>
+<div class="code-tab-content active" id="py1"><pre><span class="comment"># ESM-3 結構預測（API）</span>
+<span class="kw">import</span> requests, base64
+
+seq = <span class="str">"MASKVAILSAITYRTRDGGVPGKTYTYHHFV"</span>
+<span class="comment"># ESM Atlas API (公開)</span>
+r = requests.post(<span class="str">"https://api.esmatlas.com/foldSequence/v1/pdb/"</span>, data=seq)
+<span class="kw">with</span> <span class="func">open</span>(<span class="str">"esm_predicted.pdb"</span>, <span class="str">"w"</span>) <span class="kw">as</span> f: f.write(r.text)
+<span class="func">print</span>(<span class="str">"ESM-3 PDB saved."</span>)
+
+<span class="comment"># RFdiffusion 設計新蛋白（本地 GPU 執行，這裡只示意命令）</span>
+<span class="comment"># inference.py 'contigmap.contigs=[100-150]' inference.num_designs=10</span>
+
+<span class="comment"># Metabolomics 分析：差異代謝物 + 路徑富集</span>
+<span class="kw">import</span> pandas <span class="kw">as</span> pd
+<span class="kw">import</span> numpy <span class="kw">as</span> np
+<span class="kw">from</span> scipy <span class="kw">import</span> stats
+<span class="kw">from</span> statsmodels.stats.multitest <span class="kw">import</span> multipletests
+
+<span class="comment"># 模擬：50 患者 vs 50 對照，500 個代謝物</span>
+np.random.seed(<span class="num">42</span>)
+n=<span class="num">50</span>; m=<span class="num">500</span>
+ctrl  = np.random.normal(<span class="num">0</span>, <span class="num">1</span>, (n, m))
+patient = ctrl + np.random.choice([<span class="num">0</span>,<span class="num">0.8</span>], size=(<span class="num">1</span>, m), p=[<span class="num">0.95</span>,<span class="num">0.05</span>])  <span class="comment"># 5% 真正差異</span>
+patient[:, <span class="num">0</span>] += np.random.normal(<span class="num">0</span>, <span class="num">1</span>, n)
+
+pvals = [stats.ttest_ind(ctrl[:,i], patient[:,i]).pvalue <span class="kw">for</span> i <span class="kw">in</span> <span class="func">range</span>(m)]
+adj = multipletests(pvals, method=<span class="str">"fdr_bh"</span>)[<span class="num">1</span>]
+sig = (adj &lt; <span class="num">0.05</span>).sum()
+<span class="func">print</span>(<span class="str">f"FDR-significant: {sig}/{m}"</span>)
+
+<span class="comment"># 路徑富集 (MetaboAnalyst Python wrapper、或 MetaboAtlas API)</span>
+<span class="comment"># 主要參考 KEGG, Reactome, HMDB</span></pre></div>
+<div class="code-tab-content" id="r1"><pre><span class="kw">library</span>(MetaboAnalystR)
+<span class="kw">library</span>(MSnbase)
+<span class="kw">library</span>(xcms)
+
+<span class="comment"># 代謝體 peak detection (xcms)</span>
+files &lt;- <span class="kw">c</span>(<span class="str">"sample1.mzML"</span>, <span class="str">"sample2.mzML"</span>)
+xset &lt;- <span class="func">xcmsSet</span>(files, method=<span class="str">"centWave"</span>, ppm=<span class="num">5</span>)
+xset &lt;- <span class="func">retcor</span>(xset)
+xset &lt;- <span class="func">group</span>(xset)
+xset &lt;- <span class="func">fillPeaks</span>(xset)
+
+<span class="comment"># 差異分析</span>
+diffrep &lt;- <span class="func">diffreport</span>(xset, <span class="str">"control"</span>, <span class="str">"disease"</span>, <span class="str">"diff_results"</span>)
+
+<span class="comment"># 註解 m/z → 代謝物（用 HMDB, METLIN, LipidMaps）</span>
+<span class="kw">library</span>(MetaboAnnotation)
+<span class="comment"># matchValues with HMDB reference</span></pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="2"><p data-lang="zh">1. HDX-MS 的主要用途？</p><p data-lang="en">1. Main use of HDX-MS?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 蛋白質序列鑑定</span><span data-lang="en">A. Protein sequencing</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 定量蛋白</span><span data-lang="en">B. Protein quantification</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 測蛋白動態、結合界面、變構效應</span><span data-lang="en">C. Probe protein dynamics, interfaces, allostery</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 細胞篩選</span><span data-lang="en">D. Cell screening</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="1"><p data-lang="zh">2. RFdiffusion 是什麼？</p><p data-lang="en">2. What is RFdiffusion?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 結構預測模型</span><span data-lang="en">A. Structure prediction model</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 用擴散模型「從零設計」新蛋白骨架的 AI（Baker lab）</span><span data-lang="en">B. AI that designs novel protein backbones de novo using diffusion (Baker lab)</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 影像分析工具</span><span data-lang="en">C. Image analysis tool</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 核磁共振方法</span><span data-lang="en">D. NMR method</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="2"><p data-lang="zh">3. 為什麼 IDP 是 AlphaFold 系列的弱項？</p><p data-lang="en">3. Why are IDPs an AlphaFold weak spot?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 太小</span><span data-lang="en">A. Too small</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 沒有序列</span><span data-lang="en">B. No sequence</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 本質無結構/構象集合，AlphaFold 假設單一摺疊不適用</span><span data-lang="en">C. Intrinsically disordered — AlphaFold's single-fold assumption fails</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 訓練集裡完全沒有</span><span data-lang="en">D. Absent from training set</span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="drug-design-biochem.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="生化學與藥物設計" data-en="Biochemistry-Driven Drug Design">生化學與藥物設計</span></a>
+<a href="references/index.html"><span class="nav-dir" data-zh="參考資料 →" data-en="References →">參考資料 →</span><span class="nav-title" data-zh="參考資料" data-en="References">參考資料</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+const metaboChart=new Chart(document.getElementById('metaboChart'),{type:'bar',data:{labels:['True diff','Detected (raw)','Detected (FDR)','Power %'],datasets:[{label:'count',data:[],backgroundColor:[]}]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{y:{title:{display:true,text:'count or %'}}}}});
+function updateMetabo(){
+  const d=+document.getElementById('sliderD').value;
+  const n=+document.getElementById('sliderN').value;
+  const m=+document.getElementById('sliderM').value;
+  document.getElementById('valD').textContent=d.toFixed(1);
+  document.getElementById('valN').textContent=n;
+  document.getElementById('valM').textContent=m;
+  // assume 5% truly different
+  const trueDiff = Math.round(m * 0.05);
+  // power for t-test
+  const power = 1 - Math.exp(-d*d*n/4);
+  const detected_raw = Math.round(trueDiff * power + (m-trueDiff) * 0.05);
+  const detected_fdr = Math.round(trueDiff * Math.max(0,power-0.15));
+  metaboChart.data.labels=['True diff','Raw p<0.05','FDR<0.05','Power %'];
+  metaboChart.data.datasets[0].data=[trueDiff, detected_raw, detected_fdr, power*100];
+  metaboChart.data.datasets[0].backgroundColor=['#a16207','#9f1239','#10b981','#7c3aed'];
+  metaboChart.update('none');
+  const L=I18n.get();
+  document.getElementById('statBiomarker').textContent=(L==='zh'?'可偵測 biomarker: ':'Detectable biomarkers: ')+detected_fdr;
+  document.getElementById('statN').textContent=(L==='zh'?'統計力 = ':'Power = ')+(power*100).toFixed(0)+'%';
+}
+['sliderD','sliderN','sliderM'].forEach(id=>document.getElementById(id).addEventListener('input',updateMetabo));
+document.addEventListener('langchange',updateMetabo);
+updateMetabo();
+
+const QF={zh:{q1_y:'HDX-MS 透過氫氘交換速率反映蛋白局部動態，最常用於研究結合界面與變構效應。',q2_y:'RFdiffusion (Baker lab 2023) 用擴散模型 de novo 設計蛋白骨架，再用 ProteinMPNN 填序列；已設計多個新型蛋白。',q3_y:'IDP 本質沒有單一結構，存在構象集合；AlphaFold 系列預測「最佳折疊」的設定不適用。'},en:{q1_y:'HDX-MS reads protein local dynamics from H/D exchange rates — widely used for binding interfaces and allostery.',q2_y:'RFdiffusion (Baker lab, 2023) is a diffusion model for de novo protein backbone design; ProteinMPNN fills the sequence. Many novel proteins designed.',q3_y:'IDPs lack a single structure; they exist as conformational ensembles, so AlphaFold\'s "best fold" assumption fails.'}};['q1_n','q2_n','q3_n'].forEach(k=>{QF.zh[k]='正確答案已標示。';QF.en[k]='Correct answer highlighted.';});
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

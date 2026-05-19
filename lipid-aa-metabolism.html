@@ -1,0 +1,229 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.12 脂質與胺基酸代謝 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html" class="active">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 12 / 18 · BLOCK C</div>
+<h1 data-zh="脂質與胺基酸代謝" data-en="Lipid &amp; Amino Acid Metabolism">脂質與胺基酸代謝</h1>
+<p class="subtitle" data-lang="zh">β 氧化、脂肪酸合成、酮體、轉胺反應、尿素循環——身體燃料、骨架與廢物處理的化學。</p>
+<p class="subtitle" data-lang="en">β-oxidation, fatty-acid synthesis, ketone bodies, transamination, urea cycle — the chemistry of fuel, building blocks, and waste.</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="β-氧化" data-en="β-OXIDATION">β-氧化</div>
+<h2 data-zh="一、脂肪酸 β 氧化" data-en="I. Fatty acid β-oxidation">一、β 氧化</h2>
+<div data-lang="zh"><p>脂肪酸分解的核心過程，發生在<strong>粒線體基質</strong>。每輪移除 2 個碳產出一個乙醯-CoA。</p>
+<p><strong>3 個關鍵步驟：</strong>(1) 脂肪酸 + CoA 在細胞質活化為脂醯-CoA (耗 2 ATP)；(2) <strong>肉鹼穿梭 (carnitine shuttle)</strong> 將長鏈脂醯帶過內膜（受 malonyl-CoA 抑制——這是脂解 vs 脂合的關鍵切換點）；(3) 基質內進入 β-氧化 4 步循環：脫氫 (FAD)→水合→脫氫 (NAD)→硫解。</p>
+<p><strong>能量產率：</strong>例如 16 碳棕櫚酸完全氧化產 106 ATP（vs 葡萄糖 30 ATP/6C =每碳 5 ATP，脂肪酸每碳 ~6.6 ATP）。所以脂肪是「最划算」能量儲存——每克 9 kcal vs 葡萄糖 4 kcal。</p></div>
+<div data-lang="en"><p>The core fat-breakdown pathway in the <strong>mitochondrial matrix</strong>. Each cycle removes 2 carbons producing one acetyl-CoA.</p>
+<p><strong>3 critical steps:</strong> (1) cytosolic activation: FA + CoA → fatty acyl-CoA (costs 2 ATP); (2) <strong>carnitine shuttle</strong> to cross inner membrane (inhibited by malonyl-CoA — the lipogenesis/lipolysis switch); (3) β-oxidation 4-step cycle in matrix: dehydrogenation (FAD) → hydration → dehydrogenation (NAD) → thiolysis.</p>
+<p><strong>Energy yield:</strong> e.g. palmitate (16C) fully oxidized → 106 ATP. Glucose: 30 ATP/6C = 5 per C; fat ~6.6 per C. Fat is the most efficient energy storage — 9 kcal/g vs 4 kcal/g for sugars.</p></div>
+<div class="callout tip"><span class="callout-icon">💡</span><div>
+<span data-lang="zh"><strong>Malonyl-CoA 的雙重角色：</strong>(1) 脂肪酸合成第一個中間體；(2) 抑制 CPT-1（肉鹼穿梭），阻止脂肪酸進粒線體燃燒。這個分子是「身體決定是要合脂還是燒脂」的關鍵開關，受 ACC (acetyl-CoA carboxylase) 調控，後者再受 AMPK 與胰島素影響。</span>
+<span data-lang="en"><strong>Malonyl-CoA's dual role:</strong> (1) first intermediate of FA synthesis; (2) inhibits CPT-1 (carnitine shuttle), blocking FA entry into mitochondria for oxidation. This molecule is the switch deciding "synthesize or burn fat" — controlled by ACC (acetyl-CoA carboxylase), itself regulated by AMPK and insulin.</p>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="脂肪酸合成" data-en="FA SYNTHESIS">FA 合成</div>
+<h2 data-zh="二、脂肪酸合成 (FAS)" data-en="II. Fatty acid synthesis (FAS)">二、脂肪酸合成</h2>
+<div data-lang="zh"><p>發生在<strong>細胞質</strong>（不是粒線體！）。乙醯-CoA 需經 citrate 從粒線體運出（citrate shuttle），再被 ACC 羧化為 malonyl-CoA。<strong>脂肪酸合成酶 (FAS)</strong> 是大型多功能酶（哺乳類為單一蛋白質帶 7 個催化結構域），每輪延長 2 碳，消耗<strong>1 malonyl-CoA + 2 NADPH</strong>。</p>
+<p><strong>對比 β 氧化：</strong>不同位置（質 vs 基質）、不同還原力（NADPH vs NADH/FAD）、不同活化（malonyl-CoA 與 acyl carrier protein vs CoA），確保兩者不會同時跑——避免「無效循環」。</p></div>
+<div data-lang="en"><p>Occurs in the <strong>cytoplasm</strong> (not mitochondria!). Acetyl-CoA exits mitochondria via citrate shuttle, then ACC carboxylates it to malonyl-CoA. <strong>Fatty acid synthase (FAS)</strong> is a large multifunctional enzyme (in mammals, one protein with 7 catalytic domains). Each round extends 2 carbons, consuming <strong>1 malonyl-CoA + 2 NADPH</strong>.</p>
+<p><strong>Versus β-oxidation:</strong> different location (cytosol vs matrix), different reducing power (NADPH vs NADH/FAD), different activation (malonyl-CoA + ACP vs CoA) — preventing a futile cycle.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="酮體" data-en="KETONE BODIES">酮體</div>
+<h2 data-zh="三、酮體：飢餓與酮酸中毒" data-en="III. Ketone bodies: starvation &amp; ketoacidosis">三、酮體</h2>
+<div data-lang="zh"><p><strong>長期飢餓或控制不佳的糖尿病</strong>：肝臟大量 β 氧化 → acetyl-CoA 過剩 → 無 OAA（被糖質新生抽走）→ TCA 卡住 → 乙醯-CoA 改路徑合成<strong>酮體</strong>（乙醯乙酸、β-羥丁酸、丙酮）。</p>
+<p>酮體是水溶性、能跨血腦屏障——飢餓時 50% 大腦能量來自酮體（神經元無法燒脂肪酸）。酮體被周邊組織轉回 acetyl-CoA 進入 TCA。</p>
+<p><strong>糖尿病酮酸中毒 (DKA)：</strong>第一型糖尿病典型急症——胰島素缺乏導致脂解過度、酮體過剩、血液 pH 急降（&lt;7.3）。臨床表現：脫水、Kussmaul 呼吸（深快）、酮味呼氣、意識模糊。</p>
+<p><strong>2024 熱：生酮飲食</strong>用於癲癇（兒童難治性療法）、神經退化病、減重——機制涉及酮體作為訊息分子 (HCA2 受體、HDAC 抑制)。</p></div>
+<div data-lang="en"><p><strong>Prolonged starvation or uncontrolled diabetes:</strong> liver high β-oxidation → excess acetyl-CoA → OAA depleted (taken by gluconeogenesis) → TCA stalls → acetyl-CoA reroutes to <strong>ketone bodies</strong> (acetoacetate, β-hydroxybutyrate, acetone).</p>
+<p>Ketone bodies are water-soluble and cross the blood-brain barrier — fuel ~50% of brain energy during starvation (neurons can't use FAs). Peripheral tissues convert them back to acetyl-CoA for TCA.</p>
+<p><strong>Diabetic ketoacidosis (DKA):</strong> classic type-1 diabetes emergency — insulin deficiency → excessive lipolysis → ketone overproduction → blood pH crashes (&lt;7.3). Clinically: dehydration, Kussmaul breathing (deep/fast), "acetone breath," confusion.</p>
+<p><strong>2024 trend: ketogenic diet</strong> for epilepsy (refractory pediatric), neurodegeneration, weight loss — mechanisms include ketones as signaling molecules (HCA2 receptor, HDAC inhibition).</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="胺基酸代謝" data-en="AA METABOLISM">胺基酸代謝</div>
+<h2 data-zh="四、胺基酸代謝與尿素循環" data-en="IV. Amino acid metabolism &amp; urea cycle">四、胺基酸代謝</h2>
+<div data-lang="zh"><p><strong>胺基酸的命運：</strong>(1) 蛋白質合成；(2) 轉胺脫氨後骨架進代謝；(3) 合成神經傳導物質 (Trp→serotonin、Tyr→dopamine/epinephrine、Glu→GABA)、血基質、嘌呤/嘧啶。</p>
+<p><strong>轉胺反應：</strong>胺基轉到 α-酮戊二酸生成麩胺酸，由 PLP（B6 衍生輔因子）介導。ALT/AST（肝功能標誌）就是這類酶。</p>
+<p><strong>尿素循環：</strong>把 NH₃ 變成 urea 排出（過量氨對神經有毒）。5 步：carbamoyl-P 合成 (CPS-I, 粒線體) → ornithine + carbamoyl-P → citrulline → argininosuccinate → arginine → urea + ornithine。每生成 1 urea 消耗 4 ATP eq。</p>
+<p><strong>胺基酸分類：</strong></p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>純醣原性：</strong>Ala, Gly, Ser, Cys, Asp, Asn, Glu, Gln, Pro, Met, His, Val, Arg</li>
+<li><strong>純酮原性：</strong>Lys, Leu</li>
+<li><strong>兩者皆是：</strong>Trp, Phe, Tyr, Thr, Ile</li>
+</ul></div>
+<div data-lang="en"><p><strong>Fates of amino acids:</strong> (1) protein synthesis; (2) transaminate/deaminate then skeleton enters metabolism; (3) make neurotransmitters (Trp→serotonin, Tyr→dopamine/epinephrine, Glu→GABA), heme, purines/pyrimidines.</p>
+<p><strong>Transamination:</strong> amino group transferred to α-KG → glutamate, mediated by PLP (a vitamin-B6 cofactor). ALT/AST (liver function biomarkers) are such enzymes.</p>
+<p><strong>Urea cycle:</strong> converts ammonia to urea (excess ammonia is neurotoxic). 5 steps: carbamoyl-P synthesis (CPS-I, mitochondrial) → ornithine + carbamoyl-P → citrulline → argininosuccinate → arginine → urea + ornithine. 4 ATP-equivalents consumed per urea.</p>
+<p><strong>AA classification:</strong></p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>Purely glucogenic:</strong> Ala, Gly, Ser, Cys, Asp, Asn, Glu, Gln, Pro, Met, His, Val, Arg</li>
+<li><strong>Purely ketogenic:</strong> Lys, Leu</li>
+<li><strong>Both:</strong> Trp, Phe, Tyr, Thr, Ile</li>
+</ul></div>
+<div class="callout warn"><span class="callout-icon">⚠️</span><div>
+<span data-lang="zh"><strong>尿素循環缺陷：</strong>各步酶缺陷都會造成高血氨症（OTC 缺陷最常見、X 連鎖）。臨床表現：新生兒嗜睡、抽搐、昏迷——若未及時處理可致命。處理：低蛋白飲食、移除氨（lactulose、phenylbutyrate）、必要時血液透析。</span>
+<span data-lang="en"><strong>Urea cycle defects:</strong> deficiencies in any step cause hyperammonemia (OTC deficiency is most common; X-linked). Clinically: neonatal lethargy, seizures, coma — can be fatal without prompt treatment. Manage with low-protein diet, ammonia scavengers (lactulose, phenylbutyrate), and dialysis if needed.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="脂解 vs 脂合切換器" data-en="Lipolysis vs lipogenesis switch">代謝切換</h2>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statSwitch">—</span><span class="sim-stat gold" id="statKetone">—</span></div>
+<div class="slider-group"><label><span data-zh="胰島素 (μU/mL)" data-en="Insulin (μU/mL)">胰島素</span> <span id="valIns">20</span></label><input type="range" id="sliderIns" min="0" max="100" value="20" step="5"></div>
+<div class="slider-group"><label><span data-zh="升糖素 (pg/mL)" data-en="Glucagon (pg/mL)">升糖素</span> <span id="valGlu">50</span></label><input type="range" id="sliderGlu" min="0" max="500" value="50" step="10"></div>
+<div class="slider-group"><label><span data-zh="碳水攝取 (g/day)" data-en="Carbs (g/day)">碳水</span> <span id="valCarb">200</span></label><input type="range" id="sliderCarb" min="0" max="400" value="200" step="20"></div>
+<div class="chart-container"><canvas id="ketoneChart"></canvas></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="五、高血氨症診斷" data-en="V. Hyperammonemia diagnosis">五、高血氨症</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="新生兒/兒童高血氨" data-en="Hyperammonemia in neonate/child">新生兒高血氨</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>瓜胺酸 (citrulline) ↑？<span class="dt-arrow">→</span> ASS / ASL 缺陷（瓜胺酸血症）</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>瓜胺酸 ↓？<span class="dt-arrow">→</span> CPS-1 或 OTC 缺陷（OTC = X 連鎖最常見）</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>有機酸尿（propionic / methylmalonic acid）？<span class="dt-arrow">→</span> 有機酸血症（B12 相關）</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>肝衰竭？<span class="dt-arrow">→</span> 後天性（雷氏症、Reye syndrome、肝硬化）</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>Citrulline ↑? <span class="dt-arrow">→</span> ASS / ASL deficiency (citrullinemia)</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>Citrulline ↓? <span class="dt-arrow">→</span> CPS-1 or OTC deficiency (OTC most common, X-linked)</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>Organic aciduria (propionic / methylmalonic)? <span class="dt-arrow">→</span> Organic acidemia (B12-related)</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>Liver failure? <span class="dt-arrow">→</span> Acquired (Reye syndrome, cirrhosis)</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="計算脂肪酸氧化 ATP 產量" data-en="Computing FA oxidation ATP yield">FA 氧化能量計算</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'r1')">R</button><button class="code-tab-btn" onclick="switchTab(this,'py1')">Python</button></div>
+<div class="code-tab-content active" id="r1"><pre><span class="comment"># 計算飽和脂肪酸完全氧化 ATP 產量</span>
+fa_atp &lt;- <span class="kw">function</span>(n_carbons) {
+  cycles &lt;- (n_carbons / <span class="num">2</span>) - <span class="num">1</span>
+  acetyl_CoA &lt;- n_carbons / <span class="num">2</span>
+
+  <span class="comment"># β 氧化：每輪 1 FADH2 (1.5 ATP) + 1 NADH (2.5 ATP)</span>
+  beta_atp &lt;- cycles * (<span class="num">1.5</span> + <span class="num">2.5</span>)
+
+  <span class="comment"># 每個 acetyl-CoA 進 TCA: 3 NADH (7.5) + 1 FADH2 (1.5) + 1 GTP = 10 ATP</span>
+  tca_atp &lt;- acetyl_CoA * <span class="num">10</span>
+
+  <span class="comment"># 減去活化代價 2 ATP</span>
+  beta_atp + tca_atp - <span class="num">2</span>
+}
+
+<span class="func">fa_atp</span>(<span class="num">16</span>)  <span class="comment"># 棕櫚酸 (palmitate, C16) = 106 ATP</span>
+<span class="func">fa_atp</span>(<span class="num">18</span>)  <span class="comment"># 硬脂酸 (stearate, C18) = 120 ATP</span>
+
+<span class="comment"># 與葡萄糖比較（每碳 ATP）</span>
+<span class="func">data.frame</span>(
+  分子 = <span class="kw">c</span>(<span class="str">"glucose"</span>, <span class="str">"palmitate"</span>, <span class="str">"stearate"</span>),
+  碳數 = <span class="kw">c</span>(<span class="num">6</span>, <span class="num">16</span>, <span class="num">18</span>),
+  ATP  = <span class="kw">c</span>(<span class="num">30</span>, <span class="func">fa_atp</span>(<span class="num">16</span>), <span class="func">fa_atp</span>(<span class="num">18</span>)),
+  ATP_per_C = <span class="kw">c</span>(<span class="num">30</span>/<span class="num">6</span>, <span class="func">fa_atp</span>(<span class="num">16</span>)/<span class="num">16</span>, <span class="func">fa_atp</span>(<span class="num">18</span>)/<span class="num">18</span>)
+)</pre></div>
+<div class="code-tab-content" id="py1"><pre><span class="kw">def</span> <span class="func">fa_atp</span>(n_carbons):
+    cycles = n_carbons // <span class="num">2</span> - <span class="num">1</span>
+    acetyl_CoA = n_carbons // <span class="num">2</span>
+    beta = cycles * (<span class="num">1.5</span> + <span class="num">2.5</span>)
+    tca  = acetyl_CoA * <span class="num">10</span>
+    <span class="kw">return</span> beta + tca - <span class="num">2</span>  <span class="comment"># 活化耗 2 ATP</span>
+
+<span class="kw">for</span> n,name <span class="kw">in</span> [(<span class="num">16</span>,<span class="str">"palmitate"</span>),(<span class="num">18</span>,<span class="str">"stearate"</span>),(<span class="num">22</span>,<span class="str">"behenate"</span>)]:
+    <span class="func">print</span>(<span class="str">f"{name} (C{n}): {fa_atp(n)} ATP, {fa_atp(n)/n:.1f} ATP/C"</span>)
+
+<span class="comment"># 計算 4 倍葡萄糖能量等效的脂肪酸</span>
+<span class="kw">import</span> numpy <span class="kw">as</span> np
+g_per_gram = {<span class="str">"glucose"</span>: <span class="num">30</span>/<span class="num">180</span>, <span class="str">"palmitate"</span>: fa_atp(<span class="num">16</span>)/<span class="num">256</span>}
+<span class="func">print</span>(<span class="str">f"ATP per gram: {g_per_gram}"</span>)
+<span class="func">print</span>(<span class="str">f"FA / glucose ratio: {g_per_gram['palmitate']/g_per_gram['glucose']:.2f}"</span>)
+
+<span class="comment"># 估算飢餓時酮體血液濃度</span>
+<span class="kw">def</span> <span class="func">ketone_state</span>(insulin_uU, fasting_hrs):
+    base = <span class="num">0.1</span>  <span class="comment"># mM</span>
+    <span class="kw">if</span> insulin_uU &lt; <span class="num">5</span>:
+        <span class="kw">return</span> base + <span class="num">0.5</span> * np.log1p(fasting_hrs)
+    <span class="kw">return</span> base
+<span class="func">print</span>(<span class="str">f"Day-3 fast ketones: {ketone_state(2, 72):.2f} mM (normal &lt; 0.5)"</span>)</pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="2"><p data-lang="zh">1. 為什麼 β 氧化發生在粒線體，FA 合成卻在細胞質？</p><p data-lang="en">1. Why β-oxidation in mito but FA synthesis in cytosol?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 為了好看</span><span data-lang="en">A. Aesthetic</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 巧合</span><span data-lang="en">B. Coincidence</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 區隔以避免無效循環，並使用不同還原力（NADH/FAD vs NADPH）</span><span data-lang="en">C. Compartmentalized to prevent futile cycles, and uses different reducing power (NADH/FAD vs NADPH)</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 兩者位置相同</span><span data-lang="en">D. They occur at the same location</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="1"><p data-lang="zh">2. DKA（糖尿病酮酸中毒）的根本原因？</p><p data-lang="en">2. Root cause of DKA?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 過度進食</span><span data-lang="en">A. Overeating</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 胰島素缺乏 → 脂解失控 → 酮體過剩 → 酸中毒</span><span data-lang="en">B. Insulin deficiency → uncontrolled lipolysis → ketone overproduction → acidosis</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 缺水</span><span data-lang="en">C. Dehydration</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 高鉀</span><span data-lang="en">D. Hyperkalemia</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="2"><p data-lang="zh">3. OTC 缺陷的特徵？</p><p data-lang="en">3. Characteristics of OTC deficiency?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 常染色體隱性</span><span data-lang="en">A. Autosomal recessive</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 不影響血氨</span><span data-lang="en">B. No effect on ammonia</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. X 連鎖、最常見的尿素循環缺陷、瓜胺酸 ↓、血氨 ↑↑</span><span data-lang="en">C. X-linked, most common urea cycle defect, citrulline ↓, ammonia ↑↑</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 影響糖解</span><span data-lang="en">D. Affects glycolysis</span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="tca-oxphos.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="TCA 循環與氧化磷酸化" data-en="TCA Cycle &amp;amp; Oxidative Phosphorylation">TCA 循環與氧化磷酸化</span></a>
+<a href="metabolism-integration.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="代謝整合與荷爾蒙調控" data-en="Metabolic Integration &amp;amp; Hormonal Control">代謝整合與荷爾蒙調控</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+const ketoneChart=new Chart(document.getElementById('ketoneChart'),{type:'bar',data:{labels:[],datasets:[{label:'flux',data:[],backgroundColor:[]}]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{y:{title:{display:true,text:'Activity / [Ketones]'},min:0,max:10}}}});
+function updateKetone(){
+  const ins=+document.getElementById('sliderIns').value;
+  const glu=+document.getElementById('sliderGlu').value;
+  const carb=+document.getElementById('sliderCarb').value;
+  document.getElementById('valIns').textContent=ins;
+  document.getElementById('valGlu').textContent=glu;
+  document.getElementById('valCarb').textContent=carb;
+  // Simplified physiology
+  const lipogen = (ins/20) * (carb/200) * 3;
+  const lipolysis = (glu/50) / (ins/20+0.5) * 3;
+  const ketones = Math.max(0, lipolysis - lipogen - 1);
+  ketoneChart.data.labels=['Lipogenesis','Lipolysis','Ketones (mM)'];
+  ketoneChart.data.datasets[0].data=[lipogen, lipolysis, ketones];
+  ketoneChart.data.datasets[0].backgroundColor=['#10b981','#9f1239','#a16207'];
+  ketoneChart.update('none');
+  const L=I18n.get();
+  let state;
+  if(lipogen>2 && lipolysis<2) state=L==='zh'?'🍔 飯後合脂':'🍔 Fed / lipogenic';
+  else if(lipolysis>2 && lipogen<2) state=L==='zh'?'😴 飢餓燒脂':'😴 Fasted / lipolytic';
+  else state=L==='zh'?'⚖️ 平衡':'⚖️ Balanced';
+  document.getElementById('statSwitch').textContent=state;
+  let kState;
+  if(ketones>5) kState=L==='zh'?'⚠️ 酮酸中毒風險':'⚠️ DKA risk';
+  else if(ketones>2) kState=L==='zh'?'🟡 中度酮症（生酮飲食）':'🟡 Moderate ketosis (keto diet)';
+  else kState=L==='zh'?'✅ 正常':'✅ Normal';
+  document.getElementById('statKetone').textContent=kState;
+}
+['sliderIns','sliderGlu','sliderCarb'].forEach(id=>document.getElementById(id).addEventListener('input',updateKetone));
+document.addEventListener('langchange',updateKetone);
+updateKetone();
+
+const QF={zh:{q1_y:'區隔在兩個位置避免無效循環，且 NADPH (合成) 與 NADH/FAD (分解) 池分開。',q2_y:'胰島素不足無法抑制脂解 → 大量脂肪酸 → 肝過量酮體 → 血液 pH 急降。',q3_y:'OTC 缺陷 X 連鎖、最常見的尿素循環缺陷，臨床特徵高血氨 + 瓜胺酸偏低。'},en:{q1_y:'Compartmentalization avoids futile cycles, plus separate NADPH (synthesis) and NADH/FAD (catabolism) pools.',q2_y:'No insulin → unrestricted lipolysis → liver makes excess ketones → blood pH drops.',q3_y:'OTC deficiency is X-linked, the most common urea-cycle defect; clinically hyperammonemia with low citrulline.'}};['q1_n','q2_n','q3_n'].forEach(k=>{QF.zh[k]='正確答案已標示。';QF.en[k]='Correct answer highlighted.';});
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

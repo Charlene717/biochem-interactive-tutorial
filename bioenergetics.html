@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.9 生物能量學 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html" class="active">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 9 / 18 · BLOCK C</div>
+<h1 data-zh="生物能量學：ΔG、ATP 與 Redox" data-en="Bioenergetics: ΔG, ATP &amp; Redox">生物能量學：ΔG、ATP 與 Redox</h1>
+<p class="subtitle" data-lang="zh">熱力學如何驅動生命——能量偶合、redox 電位與「為什麼 ATP 是生命的能量貨幣」。</p>
+<p class="subtitle" data-lang="en">How thermodynamics drives life — energy coupling, redox potentials, and "why ATP is life's energy currency."</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="熱力學" data-en="THERMODYNAMICS">熱力學</div>
+<h2 data-zh="一、ΔG = ΔH − TΔS：自由能的本質" data-en="I. ΔG = ΔH − TΔS: the essence of free energy">一、自由能</h2>
+<div data-lang="zh"><p>反應自發性的判據是<strong>吉布斯自由能變化 ΔG</strong>，非 ΔH 或 ΔS 單獨。ΔG &lt; 0 = 自發 (exergonic)；ΔG &gt; 0 = 非自發 (endergonic)；ΔG = 0 = 平衡。</p>
+<p><strong>關鍵：標準 ΔG°' vs 細胞內 ΔG</strong>——標準狀態 (1 M 反應物、pH 7) 的 ΔG°' 與細胞內實際 ΔG 可差很多倍。許多書上「ATP 水解 ΔG°' = −30.5 kJ/mol」是標準狀態；細胞內因為 ATP/ADP 比例約 100，實際 ΔG ≈ −50 至 −65 kJ/mol。</p>
+<p><strong>ΔG = ΔG°' + RT ln(Q)</strong>，Q = 反應商 = [products]/[reactants]。這個方程是理解能量偶合的關鍵。</p></div>
+<div data-lang="en"><p>The criterion for spontaneity is <strong>Gibbs free-energy change ΔG</strong>, not ΔH or ΔS alone. ΔG &lt; 0 = spontaneous (exergonic); ΔG &gt; 0 = non-spontaneous (endergonic); ΔG = 0 = equilibrium.</p>
+<p><strong>Key: standard ΔG°' vs cellular ΔG</strong> — the textbook ΔG°' (1 M reactants, pH 7) often differs greatly from cellular ΔG. The famous "ATP hydrolysis ΔG°' = −30.5 kJ/mol" is the standard value; in cells, the ATP/ADP ratio ~100 pushes actual ΔG to −50 to −65 kJ/mol.</p>
+<p><strong>ΔG = ΔG°' + RT ln(Q)</strong>, where Q = [products]/[reactants]. This equation is the key to understanding energy coupling.</p></div>
+<div class="callout tip"><span class="callout-icon">💡</span><div>
+<span data-lang="zh"><strong>能量偶合 (energy coupling)：</strong>把熱力學不利的反應與大量釋能反應「綁在一起」，使總 ΔG &lt; 0。例如：胺基酸活化（ΔG°' = +14 kJ/mol，不利） + ATP 水解 (−30.5) = −16.5 kJ/mol（自發）。沒有偶合，生命根本無法合成任何東西。</span>
+<span data-lang="en"><strong>Energy coupling:</strong> linking a thermodynamically unfavorable reaction with an exergonic one so that net ΔG &lt; 0. Example: amino-acid activation (ΔG°' = +14, unfavorable) + ATP hydrolysis (−30.5) = −16.5 kJ/mol (spontaneous). Without coupling, life could not biosynthesize anything.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="ATP" data-en="ATP">ATP</div>
+<h2 data-zh="二、為什麼是 ATP？" data-en="II. Why ATP?">二、為什麼是 ATP？</h2>
+<div data-lang="zh"><p>三磷酸腺苷的「高能磷酸鍵」其實是個誤導——磷酸酐鍵本身不是不尋常的化學鍵。ATP 水解 ΔG°' 之所以特別大（−30.5 kJ/mol）來自三個因素：</p>
+<ol style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>電荷排斥釋放：</strong>三個磷酸基帶 4 個負電，水解後一分為二減輕排斥</li>
+<li><strong>共振穩定：</strong>產物 ADP³⁻ 和 P<sub>i</sub>²⁻ 的共振結構數量遠多於 ATP⁴⁻</li>
+<li><strong>水合改善：</strong>分開後產物與水形成更多氫鍵</li>
+</ol>
+<p><strong>細胞內 ATP 濃度：</strong>~2–10 mM；ADP ~10–50 μM；AMP ~0.5–5 μM。ATP/ADP 比例維持在 100–1000，所以實際 ΔG 比 ΔG°' 大得多。</p></div>
+<div data-lang="en"><p>The "high-energy phosphate bond" is somewhat misleading — phosphoanhydride bonds aren't chemically unusual. ATP hydrolysis ΔG°' is large (−30.5 kJ/mol) for three reasons:</p>
+<ol style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>Charge repulsion relief:</strong> ATP's three phosphates carry 4 negative charges; splitting reduces repulsion</li>
+<li><strong>Resonance stabilization:</strong> products (ADP³⁻ and P<sub>i</sub>²⁻) have many more resonance structures than ATP⁴⁻</li>
+<li><strong>Better hydration:</strong> products form more H-bonds with water</li>
+</ol>
+<p><strong>Cellular ATP:</strong> ~2–10 mM; ADP ~10–50 μM; AMP ~0.5–5 μM. The ATP/ADP ratio (100–1000) makes cellular ΔG much larger than ΔG°'.</p></div>
+<table class="comp-table">
+<thead><tr><th data-zh="化合物" data-en="Compound">化合物</th><th>ΔG°' (kJ/mol)</th><th data-zh="角色" data-en="Role">角色</th></tr></thead>
+<tbody>
+<tr><td>Phosphoenolpyruvate (PEP)</td><td>−61.9</td><td data-zh="最高能；糖解最後一步生 ATP" data-en="Highest energy; final glycolysis ATP">最高能</td></tr>
+<tr><td>1,3-Bisphosphoglycerate</td><td>−49.4</td><td data-zh="糖解中間" data-en="Glycolysis intermediate">糖解中間</td></tr>
+<tr><td>Phosphocreatine</td><td>−43.0</td><td data-zh="肌肉 ATP 緩衝" data-en="Muscle ATP buffer">肌肉 ATP 緩衝</td></tr>
+<tr><td><strong>ATP → ADP + P<sub>i</sub></strong></td><td><strong>−30.5</strong></td><td data-zh="通用能量貨幣（中間）" data-en="Universal energy currency (intermediate)">通用能量幣</td></tr>
+<tr><td>Glucose-1-P</td><td>−20.9</td><td data-zh="肝醣中間" data-en="Glycogen intermediate">肝醣中間</td></tr>
+<tr><td>Glucose-6-P</td><td>−13.8</td><td data-zh="低能" data-en="Low">低能</td></tr>
+</tbody></table>
+<div class="callout warn"><span class="callout-icon">⚠️</span><div>
+<span data-lang="zh"><strong>關鍵概念：</strong>ATP 是「中間能量」化合物——能量比上方化合物低（接受其磷酸），但比下方高（可轉移磷酸給葡萄糖、AA、核苷酸）。這個「中間性」讓它成為理想的能量幣。</span>
+<span data-lang="en"><strong>Key concept:</strong> ATP is an <strong>intermediate-energy</strong> compound — lower than the compounds above (it accepts phosphate from them), higher than those below (it donates phosphate to glucose, AAs, nucleotides). This intermediacy makes it the ideal currency.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="Redox" data-en="REDOX">Redox</div>
+<h2 data-zh="三、Redox 電位與電子傳遞" data-en="III. Redox potentials &amp; electron transfer">三、Redox 電位</h2>
+<div data-lang="zh"><p>氧化還原反應的方向由<strong>半反應的標準電位 E°'</strong> 決定。電子自<strong>低電位（高還原力）流向高電位（強氧化）</strong>。連結 ΔG°' 與 ΔE°' 的公式：</p>
+<p style="text-align:center;font-family:var(--font-mono);background:var(--c-surface-alt);padding:12px;border-radius:8px;"><strong>ΔG°' = −n F ΔE°'</strong></p>
+<p>其中 n = 電子數、F = 法拉第常數 (96.485 kJ/V·mol)。NADH (E°' = −0.32 V) 將電子傳給 O₂ (E°' = +0.82 V)，ΔE°' = 1.14 V，每 NADH 釋放 220 kJ/mol——足以合成多個 ATP。</p></div>
+<div data-lang="en"><p>Direction of redox is set by the <strong>standard reduction potentials E°'</strong>. Electrons flow from <strong>low potential (strong reductant)</strong> to <strong>high potential (strong oxidant)</strong>. Linking ΔG°' to ΔE°':</p>
+<p style="text-align:center;font-family:var(--font-mono);background:var(--c-surface-alt);padding:12px;border-radius:8px;"><strong>ΔG°' = −n F ΔE°'</strong></p>
+<p>where n = electrons, F = Faraday constant (96.485 kJ/V·mol). NADH (E°' = −0.32 V) → O₂ (E°' = +0.82 V), ΔE°' = 1.14 V, releasing 220 kJ/mol per NADH — enough to make several ATPs.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="ΔG 計算器：偶合反應自發性" data-en="ΔG calculator: coupled-reaction spontaneity">ΔG 偶合計算器</h2>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statG">—</span><span class="sim-stat gold" id="statSpon">—</span></div>
+<div class="slider-group"><label><span data-zh="反應 ΔG°' (kJ/mol)" data-en="Reaction ΔG°' (kJ/mol)">反應 ΔG°'</span> <span id="valDGr">+15</span></label><input type="range" id="sliderDGr" min="-40" max="40" value="15" step="1"></div>
+<div class="slider-group"><label><span data-zh="ATP/ADP 比例" data-en="ATP/ADP ratio">ATP/ADP</span> <span id="valRatio">100</span></label><input type="range" id="sliderRatio" min="1" max="1000" value="100" step="10"></div>
+<div class="slider-group"><label><span data-zh="偶合 ATP 水解次數" data-en="Coupled ATP hydrolyses">偶合 ATP</span> <span id="valNATP">1</span></label><input type="range" id="sliderNATP" min="0" max="3" value="1" step="1"></div>
+<div class="chart-container"><canvas id="dgChart"></canvas></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="四、能量偶合策略選擇" data-en="IV. Coupling strategy selection">四、偶合策略</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="如何讓非自發反應發生？" data-en="How to drive a non-spontaneous reaction?">如何驅動 endergonic 反應？</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>反應 ΔG°' &lt; +30 kJ/mol？<span class="dt-arrow">→</span> <strong>偶合一個 ATP 水解</strong>（−30 kJ/mol）足夠。</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>反應 ΔG°' 介於 +30 到 +60？<span class="dt-arrow">→</span> 偶合<strong>兩個 ATP</strong>（如核苷酸 PRPP 合成）。</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>反應 ΔG°' &gt; +60？<span class="dt-arrow">→</span> 通常用<strong>能量更高的 PEP、磷酸肌酸、GTP</strong>，或多次 ATP（脂肪酸合成每延長 2 碳消耗 ATP+NADPH）。</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>不能直接偶合 ATP 的反應？<span class="dt-arrow">→</span> 用 <strong>離子梯度偶合</strong>（如 ATP synthase 利用 H⁺ 梯度合成 ATP；SGLT 用 Na⁺ 梯度進葡萄糖）。</div></div>
+<div class="dt-node"><span class="dt-q">Q5:</span><div>需要還原力？<span class="dt-arrow">→</span> 用 <strong>NADPH</strong>（脂肪酸合成、核苷酸合成、ROS 抗氧化）；而非 NADH（用於分解產 ATP）。</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>Reaction ΔG°' &lt; +30 kJ/mol? <span class="dt-arrow">→</span> Coupling <strong>one ATP hydrolysis</strong> (−30 kJ/mol) suffices.</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>ΔG°' between +30 and +60? <span class="dt-arrow">→</span> Use <strong>two ATPs</strong> (e.g. PRPP synthesis).</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>ΔG°' &gt; +60? <span class="dt-arrow">→</span> Use higher-energy compounds (PEP, phosphocreatine, GTP) or multi-step ATP coupling (FA synthesis uses ATP+NADPH per 2C extension).</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>Cannot directly couple ATP? <span class="dt-arrow">→</span> Use <strong>ion-gradient coupling</strong> (ATP synthase couples H⁺ gradient; SGLT uses Na⁺ gradient to import glucose).</div></div>
+<div class="dt-node"><span class="dt-q">Q5:</span><div>Need reducing power? <span class="dt-arrow">→</span> Use <strong>NADPH</strong> (FA synthesis, nucleotide synthesis, antioxidant), not NADH (used for catabolism/ATP).</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="ΔG 計算與細胞內能量狀態" data-en="ΔG calculations &amp; cellular energy state">ΔG 計算</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'r1')">R</button><button class="code-tab-btn" onclick="switchTab(this,'py1')">Python</button></div>
+<div class="code-tab-content active" id="r1"><pre><span class="comment"># ΔG = ΔG°' + RT ln(Q)</span>
+delta_G &lt;- <span class="kw">function</span>(dG0_prime, Q, T = <span class="num">310</span>) {
+  R &lt;- <span class="num">8.314e-3</span>  <span class="comment"># kJ/(mol·K)</span>
+  dG0_prime + R * T * <span class="func">log</span>(Q)
+}
+
+<span class="comment"># 細胞內 ATP 水解（ATP=4mM, ADP=0.04mM, Pi=4mM）</span>
+Q_ATP &lt;- (<span class="num">0.04</span> * <span class="num">4</span>) / <span class="num">4</span>  <span class="comment"># [ADP][Pi]/[ATP]</span>
+<span class="func">delta_G</span>(-<span class="num">30.5</span>, Q_ATP)  <span class="comment"># ≈ -57 kJ/mol（細胞內遠比 -30.5 大）</span>
+
+<span class="comment"># 從 redox 電位算 ΔG</span>
+deltaG_redox &lt;- <span class="kw">function</span>(dE_prime, n) {
+  F &lt;- <span class="num">96.485</span>  <span class="comment"># kJ/(V·mol)</span>
+  -n * F * dE_prime
+}
+<span class="comment"># NADH → O2: ΔE°' = 1.14 V, n = 2</span>
+<span class="func">deltaG_redox</span>(<span class="num">1.14</span>, <span class="num">2</span>)  <span class="comment"># -220 kJ/mol</span>
+
+<span class="comment"># 能量電荷 (Atkinson 能量電荷)</span>
+energy_charge &lt;- <span class="kw">function</span>(ATP, ADP, AMP) {
+  (ATP + <span class="num">0.5</span> * ADP) / (ATP + ADP + AMP)
+}
+<span class="func">energy_charge</span>(<span class="num">5</span>, <span class="num">0.5</span>, <span class="num">0.05</span>)  <span class="comment"># 健康細胞 ~ 0.85-0.95</span></pre></div>
+<div class="code-tab-content" id="py1"><pre><span class="kw">import</span> numpy <span class="kw">as</span> np
+
+R = <span class="num">8.314e-3</span>  <span class="comment"># kJ/(mol·K)</span>
+F = <span class="num">96.485</span>    <span class="comment"># kJ/(V·mol)</span>
+
+<span class="kw">def</span> <span class="func">delta_G</span>(dG0, Q, T=<span class="num">310</span>):
+    <span class="kw">return</span> dG0 + R * T * np.log(Q)
+
+<span class="comment"># ATP 在細胞 vs 標準</span>
+<span class="func">print</span>(<span class="str">f"Cellular ATP ΔG ≈ {delta_G(-30.5, 0.04*4/4):.1f} kJ/mol"</span>)
+<span class="func">print</span>(<span class="str">f"Standard ATP ΔG°' = -30.5 kJ/mol"</span>)
+
+<span class="comment"># Redox: NADH → O2</span>
+dG_redox = -<span class="num">2</span> * F * <span class="num">1.14</span>
+<span class="func">print</span>(<span class="str">f"NADH→O2 ΔG°' = {dG_redox:.0f} kJ/mol"</span>)
+
+<span class="comment"># 能量電荷</span>
+<span class="kw">def</span> <span class="func">energy_charge</span>(ATP, ADP, AMP):
+    <span class="kw">return</span> (ATP + <span class="num">0.5</span>*ADP) / (ATP + ADP + AMP)
+
+<span class="comment"># 多種細胞狀態</span>
+states = {
+    <span class="str">"健康細胞"</span>: (<span class="num">5</span>, <span class="num">0.5</span>, <span class="num">0.05</span>),
+    <span class="str">"運動疲憊"</span>: (<span class="num">2</span>, <span class="num">2</span>, <span class="num">0.5</span>),
+    <span class="str">"缺氧/瀕死"</span>: (<span class="num">0.5</span>, <span class="num">2</span>, <span class="num">3</span>),
+}
+<span class="kw">for</span> state, (a,d,m) <span class="kw">in</span> states.items():
+    <span class="func">print</span>(<span class="str">f"{state}: EC = {energy_charge(a,d,m):.2f}"</span>)
+<span class="comment"># EC < 0.5 → 細胞凋亡 / 自噬訊號</span></pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="2"><p data-lang="zh">1. 為什麼 ATP 適合做能量貨幣？</p><p data-lang="en">1. Why is ATP suitable as energy currency?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 是所有化合物中能量最高的</span><span data-lang="en">A. Highest-energy compound</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 化學鍵特別強</span><span data-lang="en">B. Especially strong bond</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 能量中等——可接受高能磷酸、又能轉移給低能受體</span><span data-lang="en">C. Intermediate energy — can accept from high-E donors and transfer to low-E acceptors</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 不會水解</span><span data-lang="en">D. Doesn't hydrolyze</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="1"><p data-lang="zh">2. NADH → O₂ 的 ΔG°'（n=2, ΔE°'=1.14 V）約為？</p><p data-lang="en">2. ΔG°' for NADH → O₂ (n=2, ΔE°'=1.14 V)?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. −30 kJ/mol</span><span data-lang="en">A. −30 kJ/mol</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. −220 kJ/mol（足以合成多個 ATP）</span><span data-lang="en">B. −220 kJ/mol (enough for several ATPs)</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. +220 kJ/mol</span><span data-lang="en">C. +220 kJ/mol</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 0</span><span data-lang="en">D. 0</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="2"><p data-lang="zh">3. NADPH 與 NADH 的功能分工？</p><p data-lang="en">3. NADPH vs NADH roles?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 完全相同</span><span data-lang="en">A. Same</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. NADH 合成、NADPH 分解</span><span data-lang="en">B. NADH synthesizes, NADPH catabolizes</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. NADH 用於分解產 ATP；NADPH 用於合成代謝（脂肪酸、核苷酸）與抗氧化</span><span data-lang="en">C. NADH for catabolism/ATP; NADPH for biosynthesis (FAs, nucleotides) &amp; antioxidant</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. NADPH 不存在</span><span data-lang="en">D. NADPH doesn't exist</span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="enzyme-regulation.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="酶調控：協同性與翻譯後修飾" data-en="Enzyme Regulation: Allostery &amp;amp; PTMs">酶調控：協同性與翻譯後修飾</span></a>
+<a href="carb-metabolism.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="醣類代謝" data-en="Carbohydrate Metabolism">醣類代謝</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+const dgChart=new Chart(document.getElementById('dgChart'),{type:'bar',data:{labels:[],datasets:[{label:'ΔG (kJ/mol)',data:[],backgroundColor:[]}]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{y:{title:{display:true,text:'ΔG (kJ/mol)'}}}}});
+function updateDG(){
+  const dGr=+document.getElementById('sliderDGr').value;
+  const ratio=+document.getElementById('sliderRatio').value;
+  const nATP=+document.getElementById('sliderNATP').value;
+  document.getElementById('valDGr').textContent=(dGr>=0?'+':'')+dGr;
+  document.getElementById('valRatio').textContent=ratio;
+  document.getElementById('valNATP').textContent=nATP;
+  const R=0.008314, T=310;
+  // ATP hydrolysis ΔG in cell: -30.5 + RT ln(1/ratio)
+  const dG_ATP = -30.5 + R*T*Math.log(0.04*4/4 / ratio*100); // simplified
+  const cellATP_dG = -30.5 - R*T*Math.log(ratio); // approx
+  const total = dGr + nATP * cellATP_dG;
+  dgChart.data.labels=['Reaction','+ ATP coupling','Net ΔG'];
+  dgChart.data.datasets[0].data=[dGr, nATP*cellATP_dG, total];
+  dgChart.data.datasets[0].backgroundColor=[dGr<0?'#10b981':'#dc2626',nATP*cellATP_dG<0?'#10b981':'#dc2626',total<0?'#10b981':'#dc2626'];
+  dgChart.update('none');
+  const L=I18n.get();
+  document.getElementById('statG').textContent=(L==='zh'?'淨 ΔG = ':'Net ΔG = ')+total.toFixed(1)+' kJ/mol';
+  document.getElementById('statSpon').textContent=total<0?(L==='zh'?'✅ 自發 (exergonic)':'✅ Spontaneous'):(L==='zh'?'❌ 非自發':'❌ Non-spontaneous');
+}
+['sliderDGr','sliderRatio','sliderNATP'].forEach(id=>document.getElementById(id).addEventListener('input',updateDG));
+document.addEventListener('langchange',updateDG);
+updateDG();
+
+const QF={zh:{q1_y:'ATP 是中間能量化合物：能接受 PEP 等高能化合物的磷酸，又能轉移給葡萄糖等低能受體。',q2_y:'ΔG°\' = -nFΔE°\' = -2 × 96.485 × 1.14 ≈ -220 kJ/mol，足以合成多個 ATP。',q3_y:'NADH 走分解代謝（產 ATP），NADPH 走合成代謝與抗氧化——分工明確的兩個還原力池。'},en:{q1_y:'ATP is intermediate energy: it accepts P from PEP/high-E donors and donates to glucose/low-E acceptors.',q2_y:'ΔG°\' = -nFΔE°\' = -2 × 96.485 × 1.14 ≈ -220 kJ/mol, enough for multiple ATPs.',q3_y:'NADH for catabolism (makes ATP); NADPH for biosynthesis and antioxidant — two separated reducing pools.'}};['q1_n','q2_n','q3_n'].forEach(k=>{QF.zh[k]='正確答案已標示。';QF.en[k]='Correct answer highlighted.';});
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

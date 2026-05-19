@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.1 緒論：水、pH 與弱作用力 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html" class="active">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 1 / 18 · BLOCK A</div>
+<h1 data-zh="緒論：水、pH 與弱作用力" data-en="Foundations: Water, pH &amp; Weak Interactions">緒論：水、pH 與弱作用力</h1>
+<p class="subtitle" data-lang="zh">所有生化反應都發生在水裡——理解氫鍵、疏水效應、緩衝與 pKa 是踏入生物化學的第一步。</p>
+<p class="subtitle" data-lang="en">Every biochemical reaction happens in water — understanding hydrogen bonds, the hydrophobic effect, buffers and pKa is the gateway to biochemistry.</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="概覽" data-en="OVERVIEW">概覽</div>
+<h2 data-zh="為什麼從「水」開始學生物化學？" data-en="Why start biochemistry with water?">為什麼從「水」開始學生物化學？</h2>
+<div data-lang="zh"><p>地球上的生命建立在水的化學特性之上。水佔細胞質量的 <strong>60–70%</strong>，所有酶反應、運輸、訊息傳遞、摺疊都在水溶液中發生。水的<strong>偶極矩、氫鍵能力、高介電常數</strong>形塑了：(1) 蛋白質為什麼會摺疊；(2) 為什麼脂質會自組裝成膜；(3) 為什麼 DNA 能保持雙股螺旋；(4) 為什麼酶能催化反應。</p><p>跳過水的化學，就等於跳過了生命選擇生化反應的<strong>物理基礎</strong>。本章建立四個核心概念：氫鍵、疏水效應、緩衝、酸鹼平衡。</p></div>
+<div data-lang="en"><p>Life on Earth is built upon the chemistry of water. Water makes up <strong>60–70%</strong> of cellular mass; every enzymatic reaction, transport process, signaling event, and folding pathway occurs in aqueous solution. Water's <strong>dipole moment, hydrogen-bonding capacity, and high dielectric constant</strong> shape (1) why proteins fold, (2) why lipids self-assemble into membranes, (3) why DNA maintains its double helix, and (4) why enzymes catalyze reactions.</p><p>Skip water chemistry and you skip the <strong>physical reason</strong> life chose the reactions it did. This chapter builds four cornerstone concepts: hydrogen bonds, hydrophobic effect, buffers, and acid–base equilibria.</p></div>
+<div class="callout tip"><span class="callout-icon">💡</span><div>
+<span data-lang="zh"><strong>核心直覺：</strong>生命的分子幾乎全部都是「兩面派」——一邊與水交朋友（極性），一邊躲水（疏水）。「極性」與「疏水」的競爭，是摺疊、組裝、催化的能量驅力。</span>
+<span data-lang="en"><strong>Core intuition:</strong> Almost every biological molecule is a "two-faced" entity — part friendly to water (polar), part hiding from it (hydrophobic). The competition between polarity and hydrophobicity is the energetic driving force behind folding, assembly, and catalysis.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="水的化學" data-en="WATER CHEMISTRY">水的化學</h2>
+<h2 data-zh="一、水分子的四個關鍵性質" data-en="I. Four key properties of water">一、水分子的四個關鍵性質</h2>
+<div class="card-grid cols-2">
+<div class="card"><div class="card-icon">💧</div><h4 data-zh="極性與偶極矩" data-en="Polarity &amp; dipole moment">極性與偶極矩</h4>
+<div data-lang="zh"><p>O 的電負度 (3.44) 遠高於 H (2.20)，O–H 鍵帶有部分電荷：O δ⁻、H δ⁺。淨偶極矩 1.85 D，使水分子間能形成強氫鍵。</p></div>
+<div data-lang="en"><p>O (electronegativity 3.44) is much more electronegative than H (2.20). O–H bonds carry partial charges: O δ⁻, H δ⁺. Net dipole moment 1.85 D allows water to form strong hydrogen bonds.</p></div></div>
+<div class="card"><div class="card-icon">🔗</div><h4 data-zh="氫鍵網絡" data-en="Hydrogen-bond network">氫鍵網絡</h4>
+<div data-lang="zh"><p>每個水分子平均同時形成 ~3.4 個氫鍵（液態 25°C）。鍵能 ~20 kJ/mol，遠弱於共價鍵 (~400) 但遠強於 van der Waals (~1)。生命剛好用對了這種「中等強度」的力。</p></div>
+<div data-lang="en"><p>Each water molecule forms ~3.4 hydrogen bonds on average (liquid, 25°C). Bond energy ~20 kJ/mol — far weaker than covalent (~400) but far stronger than van der Waals (~1). Life works at exactly this "Goldilocks" energy.</p></div></div>
+<div class="card"><div class="card-icon">⚡</div><h4 data-zh="高介電常數 (ε = 78.5)" data-en="High dielectric constant (ε = 78.5)">高介電常數</h4>
+<div data-lang="zh"><p>水能屏蔽帶電基團的庫倫力 78 倍——這就是為什麼 NaCl 在水裡溶解，但鹽橋（蛋白內離子鍵）在<strong>蛋白質疏水內部</strong>（ε ≈ 4–10）卻變得很強。</p></div>
+<div data-lang="en"><p>Water shields charge–charge Coulomb forces by ~78× — that's why NaCl dissolves in water, but salt bridges become much stronger in <strong>protein hydrophobic interiors</strong> (ε ≈ 4–10).</p></div></div>
+<div class="card"><div class="card-icon">🌀</div><h4 data-zh="自解離 (autoionization)" data-en="Autoionization">自解離</h4>
+<div data-lang="zh"><p>2 H₂O ⇌ H₃O⁺ + OH⁻，Kw = [H⁺][OH⁻] = 1.0 × 10⁻¹⁴ (25°C)。中性水 pH = 7 並非「沒有質子」，而是 [H⁺] = 10⁻⁷ M。生理 pH 7.4 略微鹼性。</p></div>
+<div data-lang="en"><p>2 H₂O ⇌ H₃O⁺ + OH⁻, with Kw = [H⁺][OH⁻] = 1.0 × 10⁻¹⁴ at 25°C. "Neutral" pH 7 isn't proton-free — it just means [H⁺] = 10⁻⁷ M. Physiological pH 7.4 is slightly basic.</p></div></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="弱作用力" data-en="WEAK FORCES">弱作用力</div>
+<h2 data-zh="二、四種「弱」非共價作用力" data-en="II. The four weak non-covalent interactions">二、四種「弱」非共價作用力</h2>
+<div data-lang="zh"><p>蛋白質摺疊、DNA 雙螺旋、藥物-靶點結合，都靠這四種作用力的<strong>加和</strong>——個別很弱（1–20 kJ/mol），但成百上千個累加起來就足以維持結構。</p></div>
+<div data-lang="en"><p>Protein folding, DNA double helix, drug–target binding all rely on the <strong>summation</strong> of these four forces — individually weak (1–20 kJ/mol), but hundreds or thousands of them are enough to hold structure.</p></div>
+<table class="comp-table">
+<thead><tr><th data-zh="作用力" data-en="Force">作用力</th><th data-zh="能量 (kJ/mol)" data-en="Energy (kJ/mol)">能量</th><th data-zh="距離依賴" data-en="Distance dep.">距離依賴</th><th data-zh="生物例子" data-en="Biological example">生物例子</th></tr></thead>
+<tbody>
+<tr><td><strong>Ionic / salt bridge</strong></td><td>~20</td><td>1/r</td><td><span data-lang="zh">Lys⁺–Asp⁻ 鹽橋</span><span data-lang="en">Lys⁺–Asp⁻ salt bridge</span></td></tr>
+<tr><td><strong>H-bond</strong></td><td>~5–30</td><td>~1/r²</td><td><span data-lang="zh">DNA 鹼基配對、α 螺旋骨架</span><span data-lang="en">DNA base pairing, α-helix backbone</span></td></tr>
+<tr><td><strong>Hydrophobic effect</strong></td><td>~1–10</td><td><span data-lang="zh">熵驅動</span><span data-lang="en">Entropy-driven</span></td><td><span data-lang="zh">蛋白核心、脂雙層</span><span data-lang="en">Protein core, lipid bilayer</span></td></tr>
+<tr><td><strong>van der Waals</strong></td><td>~0.4–4</td><td>1/r⁶</td><td><span data-lang="zh">藥物與口袋的形狀互補</span><span data-lang="en">Drug–pocket shape complementarity</span></td></tr>
+</tbody></table>
+<div class="callout warn"><span class="callout-icon">⚠️</span><div>
+<span data-lang="zh"><strong>「疏水效應」不是作用力——是熵效應。</strong>非極性分子聚在一起，並非彼此吸引，而是讓<strong>水分子重新獲得熵</strong>（不再需要排列成籠狀包覆它們）。這是熱力學最深的反直覺之一。</span>
+<span data-lang="en"><strong>The "hydrophobic effect" is not a force — it's an entropy effect.</strong> Nonpolar molecules cluster together not because they attract each other, but because doing so <strong>releases water molecules from forming cage-like clathrates</strong> around them, raising the system's entropy. One of thermodynamics's deepest counter-intuitions.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="緩衝液滴定模擬器（Henderson–Hasselbalch）" data-en="Buffer Titration Simulator (Henderson–Hasselbalch)">緩衝液滴定模擬器</h2>
+<div data-lang="zh"><p>拖動 <strong>pKa</strong> 滑桿，觀察滴定曲線如何位移。緩衝能力在 pKa ± 1 範圍內最強（中間最平坦處）。設定為磷酸鹽 (pKa₂ = 7.2) 並把 pH 設在 7.4，模擬血液緩衝系統。</p></div>
+<div data-lang="en"><p>Drag the <strong>pKa</strong> slider to shift the titration curve. Buffer capacity is greatest within pKa ± 1 (the flattest region). Set pKa = 7.2 (phosphate) and target pH = 7.4 to simulate blood buffering.</p></div>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statRatio">—</span><span class="sim-stat gold" id="statBuf">—</span></div>
+<div class="slider-group"><label><span data-zh="緩衝對 pKa" data-en="Buffer pKa">緩衝 pKa</span> <span id="valPKa">7.2</span></label><input type="range" id="sliderPKa" min="3" max="11" value="7.2" step="0.1"></div>
+<div class="slider-group"><label><span data-zh="目標 pH" data-en="Target pH">目標 pH</span> <span id="valPH">7.4</span></label><input type="range" id="sliderPH" min="2" max="12" value="7.4" step="0.1"></div>
+<div class="chart-container"><canvas id="titrationChart"></canvas></div>
+<p style="font-size:.82rem;color:var(--c-ink-muted);text-align:center;"><span data-lang="zh">X: 加入 OH⁻ 的當量 | Y: pH | 紅點 = 你目前的位置</span><span data-lang="en">X: equivalents of OH⁻ added | Y: pH | red dot = your current point</span></p>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="三、緩衝液選擇決策" data-en="III. Choosing a buffer system">三、緩衝液選擇決策</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="緩衝液選擇決策流程" data-en="Buffer selection decision tree">緩衝液選擇決策流程</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>目標 pH 是多少？<span class="dt-arrow">→</span> 選擇 pKa 在<strong>目標 pH ± 1</strong> 內的緩衝對。</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>需要做酶反應嗎？<span class="dt-arrow">→</span> 避開會螯合金屬離子或干擾酶的緩衝（如 Tris 不適合金屬酶）。改用 HEPES、MOPS、PIPES（Good's buffers）。</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>溫度變化大嗎？<span class="dt-arrow">→</span> Tris 的 pKa 對溫度極敏感 (ΔpKa/ΔT ≈ −0.028)，4°C 與 37°C 可差 0.9 pH 單位！改用 phosphate 或 HEPES。</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>分光光度分析？<span class="dt-arrow">→</span> 確認緩衝在你的波長下不吸光（HEPES 在 230 nm 以下吸光，蛋白 UV 量測會受干擾）。</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>What is your target pH? <span class="dt-arrow">→</span> Pick a buffer whose pKa lies within <strong>target pH ± 1</strong>.</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>Running enzymatic reactions? <span class="dt-arrow">→</span> Avoid buffers that chelate metals or interfere with the enzyme (Tris is bad for metalloenzymes). Use HEPES, MOPS, PIPES (Good's buffers).</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>Wide temperature range? <span class="dt-arrow">→</span> Tris pKa is extremely temperature-sensitive (ΔpKa/ΔT ≈ −0.028); can shift 0.9 pH units between 4°C and 37°C! Use phosphate or HEPES.</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>Spectrophotometric assay? <span class="dt-arrow">→</span> Confirm the buffer is transparent at your wavelength (HEPES absorbs below 230 nm — interferes with protein UV measurements).</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="生理應用" data-en="PHYSIOLOGY">生理應用</div>
+<h2 data-zh="四、血液 pH 的三層防禦" data-en="IV. Three lines of blood pH defense">四、血液 pH 的三層防禦</h2>
+<div class="workflow">
+<div class="workflow-step" data-step="1"><h4 data-zh="碳酸-碳酸氫鹽緩衝（毫秒）" data-en="Bicarbonate buffer (milliseconds)">碳酸-碳酸氫鹽緩衝（毫秒）</h4>
+<p data-lang="zh">CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻。pKa = 6.1，但因為 [HCO₃⁻]/[CO₂] ≈ 20，仍能在 pH 7.4 提供緩衝。<strong>關鍵：</strong>這個系統是「開放」的——肺可調節 CO₂ 排出量、腎可調節 HCO₃⁻ 重吸收。</p>
+<p data-lang="en">CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻. pKa = 6.1, but because [HCO₃⁻]/[CO₂] ≈ 20, it buffers effectively at pH 7.4. <strong>Key:</strong> this is an "open" system — lungs adjust CO₂ exhalation, kidneys adjust HCO₃⁻ reabsorption.</p>
+</div>
+<div class="workflow-step" data-step="2"><h4 data-zh="呼吸代償（分鐘）" data-en="Respiratory compensation (minutes)">呼吸代償（分鐘）</h4>
+<p data-lang="zh">血液 pH 下降 → 化學感受器刺激呼吸 → 過度通氣 → CO₂ 排出 → pH 上升。臨床上常見於糖尿病酮酸中毒患者的「Kussmaul 呼吸」。</p>
+<p data-lang="en">Falling pH → chemoreceptors trigger respiration → hyperventilation → CO₂ exhaled → pH rises. Clinically, this is "Kussmaul breathing" seen in diabetic ketoacidosis.</p>
+</div>
+<div class="workflow-step" data-step="3"><h4 data-zh="腎臟代償（小時–天）" data-en="Renal compensation (hours–days)">腎臟代償（小時–天）</h4>
+<p data-lang="zh">腎小管調節 H⁺ 排泄與 HCO₃⁻ 重吸收。慢但<strong>最終決定酸鹼平衡</strong>。腎衰竭患者代謝性酸中毒，正是這層防線失效。</p>
+<p data-lang="en">Renal tubules regulate H⁺ secretion and HCO₃⁻ reabsorption. Slow but <strong>ultimately determines acid–base balance</strong>. Metabolic acidosis in renal failure reflects loss of this defense.</p>
+</div>
+</div>
+<div class="callout danger"><span class="callout-icon">🩸</span><div>
+<span data-lang="zh"><strong>臨床警示：</strong>血液 pH 偏離 7.35–7.45 區間超過 0.05 即為臨床急症。pH &lt; 7.0 或 &gt; 7.7 通常致命——蛋白質會在這個範圍外大規模變性、酶活喪失。</span>
+<span data-lang="en"><strong>Clinical alert:</strong> Blood pH deviating &gt;0.05 from the 7.35–7.45 range is a medical emergency. pH &lt; 7.0 or &gt; 7.7 is usually fatal — proteins denature en masse and enzymes lose activity outside this window.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="Henderson–Hasselbalch 計算" data-en="Henderson–Hasselbalch calculations">Henderson–Hasselbalch 計算</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'r1')">R</button><button class="code-tab-btn" onclick="switchTab(this,'py1')">Python</button></div>
+<div class="code-tab-content active" id="r1"><pre><span class="comment"># pH = pKa + log10([A-]/[HA])</span>
+<span class="comment"># 已知 pKa 與目標 pH，計算 A-/HA 比例</span>
+hh_ratio &lt;- <span class="kw">function</span>(pH, pKa) <span class="num">10</span>^(pH - pKa)
+
+<span class="comment"># 範例：磷酸緩衝 pKa = 7.2，目標 pH = 7.4</span>
+<span class="func">hh_ratio</span>(<span class="num">7.4</span>, <span class="num">7.2</span>)  <span class="comment"># 1.585 → 配 HPO4²⁻ : H2PO4⁻ ≈ 1.59 : 1</span>
+
+<span class="comment"># 100 mM 總緩衝濃度的兩元素</span>
+total &lt;- <span class="num">100</span>
+ratio &lt;- <span class="func">hh_ratio</span>(<span class="num">7.4</span>, <span class="num">7.2</span>)
+HA &lt;- total / (<span class="num">1</span> + ratio); A &lt;- total - HA
+<span class="func">cat</span>(<span class="str">"H2PO4-:"</span>, HA, <span class="str">"mM, HPO4(2-):"</span>, A, <span class="str">"mM\n"</span>)
+
+<span class="comment"># 緩衝容量 β (Van Slyke)</span>
+beta &lt;- <span class="kw">function</span>(C, pH, pKa) {
+  Ka &lt;- <span class="num">10</span>^(-pKa); H &lt;- <span class="num">10</span>^(-pH)
+  <span class="num">2.303</span> * C * Ka * H / (Ka + H)^<span class="num">2</span>
+}
+<span class="func">beta</span>(<span class="num">0.1</span>, <span class="num">7.4</span>, <span class="num">7.2</span>)  <span class="comment"># 最大 β 在 pH = pKa</span></pre></div>
+<div class="code-tab-content" id="py1"><pre><span class="kw">import</span> numpy <span class="kw">as</span> np
+<span class="kw">import</span> matplotlib.pyplot <span class="kw">as</span> plt
+
+<span class="kw">def</span> <span class="func">hh_ratio</span>(pH, pKa):
+    <span class="kw">return</span> <span class="num">10</span>**(pH - pKa)
+
+<span class="comment"># 磷酸緩衝設計</span>
+total = <span class="num">100</span>  <span class="comment"># mM</span>
+pH, pKa = <span class="num">7.4</span>, <span class="num">7.2</span>
+ratio = hh_ratio(pH, pKa)
+HA = total / (<span class="num">1</span> + ratio)
+A  = total - HA
+<span class="func">print</span>(<span class="str">f"H2PO4-: {HA:.1f} mM, HPO4(2-): {A:.1f} mM"</span>)
+
+<span class="comment"># 緩衝容量曲線</span>
+pH_arr = np.linspace(<span class="num">3</span>, <span class="num">11</span>, <span class="num">200</span>)
+<span class="kw">def</span> <span class="func">beta</span>(C, pH, pKa):
+    Ka = <span class="num">10</span>**(-pKa); H = <span class="num">10</span>**(-pH)
+    <span class="kw">return</span> <span class="num">2.303</span> * C * Ka * H / (Ka + H)**<span class="num">2</span>
+
+plt.plot(pH_arr, beta(<span class="num">0.1</span>, pH_arr, <span class="num">7.2</span>))
+plt.xlabel(<span class="str">"pH"</span>); plt.ylabel(<span class="str">"β (M/pH)"</span>)
+plt.axvline(<span class="num">7.2</span>, ls=<span class="str">"--"</span>, color=<span class="str">"crimson"</span>, label=<span class="str">"pKa"</span>)
+plt.legend(); plt.show()</pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="2">
+<p data-lang="zh">1. 緩衝能力在哪裡最強？</p>
+<p data-lang="en">1. Where is buffer capacity strongest?</p>
+<div class="quiz-options">
+<div class="quiz-opt" data-idx="0"><span data-lang="zh">A. pH = 7（中性）</span><span data-lang="en">A. pH = 7 (neutral)</span></div>
+<div class="quiz-opt" data-idx="1"><span data-lang="zh">B. pH 遠離 pKa 時</span><span data-lang="en">B. When pH is far from pKa</span></div>
+<div class="quiz-opt" data-idx="2"><span data-lang="zh">C. pH = pKa 處（[A⁻]=[HA]）</span><span data-lang="en">C. At pH = pKa (where [A⁻] = [HA])</span></div>
+<div class="quiz-opt" data-idx="3"><span data-lang="zh">D. pH 越極端越強</span><span data-lang="en">D. The more extreme the pH, the stronger</span></div>
+</div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="2">
+<p data-lang="zh">2. 「疏水效應」的真正驅動力是？</p>
+<p data-lang="en">2. The true driving force of the "hydrophobic effect" is?</p>
+<div class="quiz-options">
+<div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 非極性分子互相吸引</span><span data-lang="en">A. Nonpolar molecules attract each other</span></div>
+<div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 強共價鍵形成</span><span data-lang="en">B. Strong covalent bond formation</span></div>
+<div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 水分子釋放熵（不再需排成籠狀）</span><span data-lang="en">C. Water molecules gain entropy (no longer caged)</span></div>
+<div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 庫倫力吸引</span><span data-lang="en">D. Coulombic attraction</span></div>
+</div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="1">
+<p data-lang="zh">3. 你要在 37°C 做酶反應 pH 7.5，下列哪個緩衝最不適合？</p>
+<p data-lang="en">3. You need pH 7.5 for an enzyme assay at 37°C — which buffer is least suitable?</p>
+<div class="quiz-options">
+<div class="quiz-opt" data-idx="0"><span data-lang="zh">A. HEPES (pKa 7.5)</span><span data-lang="en">A. HEPES (pKa 7.5)</span></div>
+<div class="quiz-opt" data-idx="1"><span data-lang="zh">B. Tris (pKa 8.1, ΔpKa/ΔT ≈ −0.028)</span><span data-lang="en">B. Tris (pKa 8.1, ΔpKa/ΔT ≈ −0.028)</span></div>
+<div class="quiz-opt" data-idx="2"><span data-lang="zh">C. MOPS (pKa 7.2)</span><span data-lang="en">C. MOPS (pKa 7.2)</span></div>
+<div class="quiz-opt" data-idx="3"><span data-lang="zh">D. Phosphate (pKa 7.2)</span><span data-lang="en">D. Phosphate (pKa 7.2)</span></div>
+</div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="index.html"><span class="nav-dir" data-zh="← 回主頁" data-en="← Home">← 回主頁</span><span class="nav-title" data-zh="教學首頁" data-en="Tutorial Hub">教學首頁</span></a>
+<a href="amino-acids-proteins.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="胺基酸與蛋白質結構" data-en="Amino Acids &amp;amp; Protein Structure">胺基酸與蛋白質結構</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+// Titration curve simulator
+const ctx=document.getElementById('titrationChart');
+function titrationData(pKa){
+  const data=[];
+  for(let eq=0.001;eq<2;eq+=0.005){
+    if(eq<1){const a=eq/(1-eq);data.push({x:eq,y:pKa+Math.log10(a)});}
+    else if(eq>1){data.push({x:eq,y:pKa+8+Math.log10((eq-1)/(2-eq+0.001))});}
+  }
+  return data;
+}
+const titChart=new Chart(ctx,{type:'scatter',data:{datasets:[
+  {label:'Titration',data:titrationData(7.2),showLine:true,borderColor:'#9f1239',backgroundColor:'rgba(159,18,57,0.2)',pointRadius:0,borderWidth:2},
+  {label:'Buffer zone (pKa ± 1)',data:[],backgroundColor:'rgba(212,160,60,0.3)',pointRadius:0,showLine:true,borderColor:'rgba(212,160,60,0.5)',borderDash:[4,4]},
+  {label:'You',data:[],backgroundColor:'#b91c1c',pointRadius:8,pointStyle:'circle'}
+]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{x:{title:{display:true,text:'eq OH⁻'},min:0,max:2},y:{title:{display:true,text:'pH'},min:0,max:14}},plugins:{legend:{position:'top'}}}});
+function updateTit(){
+  const pKa=+document.getElementById('sliderPKa').value;
+  const pH=+document.getElementById('sliderPH').value;
+  document.getElementById('valPKa').textContent=pKa.toFixed(1);
+  document.getElementById('valPH').textContent=pH.toFixed(1);
+  titChart.data.datasets[0].data=titrationData(pKa);
+  // Find eq at this pH
+  const eq=pH>pKa? 1/(1+Math.pow(10,pKa-pH)) : 1/(1+Math.pow(10,pKa-pH));
+  titChart.data.datasets[2].data=[{x:eq,y:pH}];
+  const ratio=Math.pow(10,pH-pKa);
+  const L=I18n.get();
+  document.getElementById('statRatio').textContent=(L==='zh'?'[A⁻]/[HA] = ':'Ratio = ')+ratio.toFixed(2);
+  const bufQuality=Math.abs(pH-pKa)<=1?(L==='zh'?'✅ 良好緩衝區':'✅ Good buffer'):(L==='zh'?'⚠️ 緩衝弱':'⚠️ Weak buffering');
+  document.getElementById('statBuf').textContent=bufQuality;
+  titChart.update('none');
+}
+['sliderPKa','sliderPH'].forEach(id=>document.getElementById(id).addEventListener('input',updateTit));
+document.addEventListener('langchange',updateTit);
+updateTit();
+
+// Quiz
+const QF={zh:{q1_y:'緩衝最強的位置是 pH = pKa，此時等量的酸/共軛鹼共存。',q1_n:'正確答案已標示。',q2_y:'疏水效應的真正驅力是水分子釋放熵，並非分子間吸引。',q2_n:'正確答案已標示。',q3_y:'Tris 對溫度極敏感，37°C 時 pKa 會大幅下降，造成緩衝失準。',q3_n:'正確答案已標示。'},en:{q1_y:'Maximum buffering occurs at pH = pKa, where [HA] = [A⁻].',q1_n:'Correct answer highlighted.',q2_y:'The driving force is entropy gain from released water, not molecular attraction.',q2_n:'Correct answer highlighted.',q3_y:'Tris pKa is highly temperature-sensitive — drops significantly at 37°C, ruining buffering.',q3_n:'Correct answer highlighted.'}};
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Biochemistry · References</title>
+<meta name="description" content="18 章生物化學互動式教程的教科書、權威論文、資料庫與最佳實踐文獻彙整，含 DOI 與延伸討論。">
+<link rel="stylesheet" href="../styles.css">
+<style>
+.ref-list{list-style:none;padding:0;margin:14px 0 0}
+.ref-list li{padding:14px 16px;background:var(--c-surface-alt);border:1px solid var(--c-border-light);border-radius:var(--radius);margin-bottom:10px;font-size:.92rem;line-height:1.65}
+.ref-list li:hover{background:var(--c-surface);border-color:var(--c-border)}
+.ref-tag{display:inline-block;font-family:var(--font-mono);font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:6px;margin-right:8px;letter-spacing:.5px}
+.ref-tag.paper{background:var(--c-accent-light);color:var(--c-accent-dark)}
+.ref-tag.doc{background:#e3f2fd;color:#1565c0}
+.ref-tag.bench{background:#fff3e0;color:#e65100}
+.ref-tag.db{background:#fce4ec;color:#ad1457}
+.ref-tag.book{background:#f3e5f5;color:#6a1b9a}
+.ref-tag.bestp{background:var(--c-highlight-light);color:#9a3412;border:1px solid var(--c-highlight)}
+.ref-tag.policy{background:#e0e7ff;color:#4338ca}
+.ref-author{color:var(--c-ink);font-weight:600}
+.ref-title{color:var(--c-ink);font-weight:500}
+.ref-meta{color:var(--c-ink-muted);font-size:.85rem;margin-top:4px;display:block}
+.ref-list a{color:var(--c-accent);text-decoration:none;border-bottom:1px dotted var(--c-accent)}
+.ref-list a:hover{color:var(--c-accent-dark);border-bottom-style:solid}
+.errata{background:#fef3c7;border-left:4px solid #d97706;border-radius:0 var(--radius-lg) var(--radius-lg) 0;padding:18px 22px;margin:18px 0;font-size:.9rem}
+.errata h4{margin:0 0 8px;color:#92400e;font-family:var(--font-display);font-size:1.05rem}
+.errata p{color:#78350f;margin-bottom:8px}
+.errata p:last-child{margin-bottom:0}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:18px 0}
+.toc-grid a{padding:10px 14px;background:var(--c-surface);border:1px solid var(--c-border-light);border-radius:var(--radius);text-decoration:none;color:var(--c-ink);font-size:.88rem;transition:var(--transition);display:flex;align-items:center;gap:8px}
+.toc-grid a:hover{border-color:var(--c-accent);background:var(--c-accent-light);color:var(--c-accent-dark)}
+.toc-grid a .step-tag{font-family:var(--font-mono);font-size:.72rem;color:var(--c-accent);font-weight:600}
+.section-anchor{scroll-margin-top:80px}
+</style>
+</head>
+<body>
+
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="../index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="../intro-biochemistry.html">Intro</a></li>
+    <li><a href="../amino-acids-proteins.html">AA·Prot</a></li>
+    <li><a href="../protein-structure-methods.html">Struct</a></li>
+    <li><a href="../carbohydrates-lipids.html">Carb·Lip</a></li>
+    <li><a href="../nucleic-acids.html">NA</a></li>
+    <li><a href="../enzymes-mechanism.html">Enzyme</a></li>
+    <li><a href="../enzyme-kinetics.html">Kinetics</a></li>
+    <li><a href="../enzyme-regulation.html">Reg.</a></li>
+    <li><a href="../bioenergetics.html">Energy</a></li>
+    <li><a href="../carb-metabolism.html">Carb·M</a></li>
+    <li><a href="../tca-oxphos.html">TCA·OxP</a></li>
+    <li><a href="../lipid-aa-metabolism.html">Lip·AA·M</a></li>
+    <li><a href="../metabolism-integration.html">Integr.</a></li>
+    <li><a href="../signal-transduction.html">Signal</a></li>
+    <li><a href="../molecular-biology-chemistry.html">Central</a></li>
+    <li><a href="../clinical-biochemistry.html">Clinic</a></li>
+    <li><a href="../drug-design-biochem.html">Drug</a></li>
+    <li><a href="../modern-techniques-ai.html">Modern</a></li>
+    <li><a href="index.html" class="active" style="font-weight:700" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+
+<header class="page-hero">
+<div class="step-badge" data-zh="參考資料 · REFERENCES" data-en="REFERENCES">REFERENCES</div>
+<h1 data-zh="Textbooks, Landmark Papers &amp; Databases" data-en="Biochemistry References Index">Biochemistry References Index</h1>
+<p class="subtitle" data-lang="zh">為「生物化學互動式教程」18 章提供教科書、原始論文、官方資料庫與最佳實踐綜述的完整佐證。所有條目附 DOI 連結。</p>
+<p class="subtitle" data-lang="en">References, citations, and sources for the Biochemistry Interactive Tutorial — papers, official documents, and benchmarks with DOI / URL links.</p>
+</header>
+
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="概覽" data-en="OVERVIEW">概覽</div>
+<h2 data-zh="引用標籤含義" data-en="Citation tag meanings">引用標籤含義</h2>
+<div class="card-grid cols-3">
+  <div class="card"><div class="card-icon" style="background:var(--c-accent-light)">📄</div><h4>Paper</h4><p data-lang="zh">原始論文 · 含 DOI / PubMed</p><p data-lang="en">Primary research papers with DOI / PubMed</p></div>
+  <div class="card"><div class="card-icon" style="background:#e3f2fd">📘</div><h4>Doc</h4><p data-lang="zh">官方文件、vignette、tutorial</p><p data-lang="en">Official documentation, vignettes, tutorials</p></div>
+  <div class="card"><div class="card-icon" style="background:var(--c-highlight-light)">⭐</div><h4>Best Practice</h4><p data-lang="zh">系統性綜述或 community 推薦</p><p data-lang="en">Systematic reviews or community recommendations</p></div>
+  <div class="card"><div class="card-icon" style="background:#fff3e0">📊</div><h4>Benchmark</h4><p data-lang="zh">方法評比 / 獨立 benchmarking</p><p data-lang="en">Method comparisons / independent benchmarking</p></div>
+  <div class="card"><div class="card-icon" style="background:#fce4ec">🗄️</div><h4>Database</h4><p data-lang="zh">結構、代謝、互作、化合物資料庫</p><p data-lang="en">Structure, metabolic, interaction, and compound databases</p></div>
+  <div class="card"><div class="card-icon" style="background:#f3e5f5">📚</div><h4>Book</h4><p data-lang="zh">線上免費書籍與經典教科書</p><p data-lang="en">Free online books and classic textbooks</p></div>
+</div>
+
+<h3 style="margin-top:32px" data-zh="章節目錄" data-en="Table of contents">章節目錄</h3>
+<div class="toc-grid">
+<a href="#ch01"><span class="step-tag">Ch.1</span>Foundations</a>
+<a href="#ch02"><span class="step-tag">Ch.2</span>Amino Acids</a>
+<a href="#ch03"><span class="step-tag">Ch.3</span>Structure Methods</a>
+<a href="#ch04"><span class="step-tag">Ch.4</span>Carbs &amp; Lipids</a>
+<a href="#ch05"><span class="step-tag">Ch.5</span>Nucleic Acids</a>
+<a href="#ch06"><span class="step-tag">Ch.6</span>Mechanisms</a>
+<a href="#ch07"><span class="step-tag">Ch.7</span>Kinetics</a>
+<a href="#ch08"><span class="step-tag">Ch.8</span>Regulation</a>
+<a href="#ch09"><span class="step-tag">Ch.9</span>Bioenergetics</a>
+<a href="#ch10"><span class="step-tag">Ch.10</span>Carb Metabolism</a>
+<a href="#ch11"><span class="step-tag">Ch.11</span>TCA &amp; OxPhos</a>
+<a href="#ch12"><span class="step-tag">Ch.12</span>Lipid &amp; AA</a>
+<a href="#ch13"><span class="step-tag">Ch.13</span>Integration</a>
+<a href="#ch14"><span class="step-tag">Ch.14</span>Signaling</a>
+<a href="#ch15"><span class="step-tag">Ch.15</span>Central Dogma</a>
+<a href="#ch16"><span class="step-tag">Ch.16</span>Clinical</a>
+<a href="#ch17"><span class="step-tag">Ch.17</span>Drug Design</a>
+<a href="#ch18"><span class="step-tag">Ch.18</span>Modern &amp; AI</a>
+<a href="#errata"><span class="step-tag">⚠️</span><span data-zh="教學註記與細節" data-en="Tutorial Notes & Details">教學註記與細節</span></a>
+</div>
+</section>
+
+<section class="section section-anchor" id="ch01">
+<h2 data-zh="Ch.1 · 水、pH 與弱作用力" data-en="Ch.1 · Water, pH and Weak Interactions">Ch.1 · 水、pH 與弱作用力</h2>
+<ul class="ref-list">
+<li><span class="ref-tag book">Book</span><span class="ref-author">Nelson, D.L. &amp; Cox, M.M. (2021)</span> <span class="ref-title">Lehninger Principles of Biochemistry (8th ed.). W.H. Freeman.</span> <span class="ref-meta"><span data-lang="zh">Ch.2 Water; ISBN 9781319228002</span><span data-lang="en">Ch.2 Water; ISBN 9781319228002</span></span></li>
+<li><span class="ref-tag book">Book</span><span class="ref-author">Berg, J.M., Tymoczko, J.L., Gatto, G.J., Stryer, L. (2023)</span> <span class="ref-title">Biochemistry (10th ed.). W.H. Freeman.</span> <span class="ref-meta"><span data-lang="zh">Chapter on Water and pH</span><span data-lang="en">Chapter on Water and pH</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Good, N.E. et al. (1966)</span> <span class="ref-title">Hydrogen ion buffers for biological research.</span> <span class="ref-meta"><span data-lang="zh">Biochemistry 5(2):467-477 · <a href="https://doi.org/10.1021/bi00866a011">DOI</a></span><span data-lang="en">Biochemistry 5(2):467-477 · <a href="https://doi.org/10.1021/bi00866a011">DOI</a></span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Chandler, D. (2005)</span> <span class="ref-title">Interfaces and the driving force of hydrophobic assembly.</span> <span class="ref-meta"><span data-lang="zh">Nature 437:640-647 · <a href="https://doi.org/10.1038/nature04162">DOI</a></span><span data-lang="en">Nature 437:640-647 · <a href="https://doi.org/10.1038/nature04162">DOI</a></span></span></li>
+<li><span class="ref-tag bestp">Best Practice</span><span class="ref-author">Mohan, C. (2003)</span> <span class="ref-title">A Guide for the Preparation and Use of Buffers in Biological Systems.</span> <span class="ref-meta"><span data-lang="zh">EMD Biosciences technical manual</span><span data-lang="en">EMD Biosciences technical manual</span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch02">
+<h2 data-zh="Ch.2 · 胺基酸與蛋白質結構" data-en="Ch.2 · Amino Acids and Protein Structure">Ch.2 · 胺基酸與蛋白質結構</h2>
+<ul class="ref-list">
+<li><span class="ref-tag book">Book</span><span class="ref-author">Lehninger, ch. 3-4</span> <span class="ref-title">Amino Acids, Peptides, and Proteins; Three-Dimensional Structure of Proteins.</span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Anfinsen, C.B. (1973)</span> <span class="ref-title">Principles that govern the folding of protein chains.</span> <span class="ref-meta"><span data-lang="zh">Science 181:223-230 · <a href="https://doi.org/10.1126/science.181.4096.223">DOI</a> · Nobel Prize 1972</span><span data-lang="en">Science 181:223-230 · <a href="https://doi.org/10.1126/science.181.4096.223">DOI</a> · Nobel Prize 1972</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Ramachandran, G.N., Ramakrishnan, C. &amp; Sasisekharan, V. (1963)</span> <span class="ref-title">Stereochemistry of polypeptide chain configurations.</span> <span class="ref-meta"><span data-lang="zh">J. Mol. Biol. 7:95-99</span><span data-lang="en">J. Mol. Biol. 7:95-99</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Dobson, C.M. (2003)</span> <span class="ref-title">Protein folding and misfolding.</span> <span class="ref-meta"><span data-lang="zh">Nature 426:884-890 · <a href="https://doi.org/10.1038/nature02261">DOI</a></span><span data-lang="en">Nature 426:884-890 · <a href="https://doi.org/10.1038/nature02261">DOI</a></span></span></li>
+<li><span class="ref-tag db">DB</span><span class="ref-author">UniProt Consortium</span> <span class="ref-title">UniProt Knowledgebase.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://www.uniprot.org">uniprot.org</a> · Nucleic Acids Research 2023</span><span data-lang="en"><a href="https://www.uniprot.org">uniprot.org</a> · Nucleic Acids Research 2023</span></span></li>
+<li><span class="ref-tag db">DB</span><span class="ref-author">Hartmann, M.D. (2024)</span> <span class="ref-title">AlphaFold Protein Structure Database.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://alphafold.ebi.ac.uk">alphafold.ebi.ac.uk</a></span><span data-lang="en"><a href="https://alphafold.ebi.ac.uk">alphafold.ebi.ac.uk</a></span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch03">
+<h2 data-zh="Ch.3 · 結構解析方法與 AlphaFold 3" data-en="Ch.3 · Structure Determination Methods and AlphaFold 3">Ch.3 · 結構解析方法與 AlphaFold 3</h2>
+<ul class="ref-list">
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Abramson, J., et al. (2024)</span> <span class="ref-title">Accurate structure prediction of biomolecular interactions with AlphaFold 3.</span> <span class="ref-meta"><span data-lang="zh">Nature 630:493-500 · <a href="https://doi.org/10.1038/s41586-024-07487-w">DOI</a></span><span data-lang="en">Nature 630:493-500 · <a href="https://doi.org/10.1038/s41586-024-07487-w">DOI</a></span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Jumper, J., et al. (2021)</span> <span class="ref-title">Highly accurate protein structure prediction with AlphaFold.</span> <span class="ref-meta"><span data-lang="zh">Nature 596:583-589 · <a href="https://doi.org/10.1038/s41586-021-03819-2">DOI</a></span><span data-lang="en">Nature 596:583-589 · <a href="https://doi.org/10.1038/s41586-021-03819-2">DOI</a></span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Yip, K.M., Fischer, N., Paknia, E., et al. (2020)</span> <span class="ref-title">Atomic-resolution protein structure determination by cryo-EM.</span> <span class="ref-meta"><span data-lang="zh">Nature 587:157-161 · <a href="https://doi.org/10.1038/s41586-020-2833-4">DOI</a></span><span data-lang="en">Nature 587:157-161 · <a href="https://doi.org/10.1038/s41586-020-2833-4">DOI</a></span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Nakane, T., Kotecha, A., Sente, A., et al. (2020)</span> <span class="ref-title">Single-particle cryo-EM at atomic resolution.</span> <span class="ref-meta"><span data-lang="zh">Nature 587:152-156 · <a href="https://doi.org/10.1038/s41586-020-2829-0">DOI</a></span><span data-lang="en">Nature 587:152-156 · <a href="https://doi.org/10.1038/s41586-020-2829-0">DOI</a></span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Nature Methods Editorial (2025)</span> <span class="ref-title">Advancing time-resolved structural biology: latest strategies in cryo-EM and X-ray crystallography.</span> <span class="ref-meta"><span data-lang="zh">Nat. Methods 22:e2659 · <a href="https://doi.org/10.1038/s41592-025-02659-6">DOI</a></span><span data-lang="en">Nat. Methods 22:e2659 · <a href="https://doi.org/10.1038/s41592-025-02659-6">DOI</a></span></span></li>
+<li><span class="ref-tag db">DB</span><span class="ref-author">wwPDB Consortium</span> <span class="ref-title">Protein Data Bank.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://www.rcsb.org">rcsb.org</a> · 230,000+ structures (2026)</span><span data-lang="en"><a href="https://www.rcsb.org">rcsb.org</a> · 230,000+ structures (2026)</span></span></li>
+<li><span class="ref-tag doc">Doc</span><span class="ref-author">EMBL-EBI</span> <span class="ref-title">AlphaFold Server &amp; Documentation.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://alphafoldserver.com">alphafoldserver.com</a></span><span data-lang="en"><a href="https://alphafoldserver.com">alphafoldserver.com</a></span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch04">
+<h2 data-zh="Ch.4 · 醣類、脂質與生物膜" data-en="Ch.4 · Carbohydrates, Lipids and Biological Membranes">Ch.4 · 醣類、脂質與生物膜</h2>
+<ul class="ref-list">
+<li><span class="ref-tag book">Book</span><span class="ref-author">Lehninger, ch. 7, 10-11</span> <span class="ref-title">Carbohydrates and Glycobiology; Lipids; Biological Membranes and Transport.</span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Singer, S.J. &amp; Nicolson, G.L. (1972)</span> <span class="ref-title">The fluid mosaic model of the structure of cell membranes.</span> <span class="ref-meta"><span data-lang="zh">Science 175:720-731 · <a href="https://doi.org/10.1126/science.175.4023.720">DOI</a></span><span data-lang="en">Science 175:720-731 · <a href="https://doi.org/10.1126/science.175.4023.720">DOI</a></span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Watanabe, Y., et al. (2020)</span> <span class="ref-title">Site-specific glycan analysis of the SARS-CoV-2 spike.</span> <span class="ref-meta"><span data-lang="zh">Science 369:330-333 · <a href="https://doi.org/10.1126/science.abb9983">DOI</a></span><span data-lang="en">Science 369:330-333 · <a href="https://doi.org/10.1126/science.abb9983">DOI</a></span></span></li>
+<li><span class="ref-tag db">DB</span><span class="ref-author">LIPID MAPS Consortium</span> <span class="ref-title">LIPID MAPS Structure Database.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://www.lipidmaps.org">lipidmaps.org</a></span><span data-lang="en"><a href="https://www.lipidmaps.org">lipidmaps.org</a></span></span></li>
+<li><span class="ref-tag db">DB</span><span class="ref-author">GlyTouCan</span> <span class="ref-title">International Glycan Structure Repository.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://glytoucan.org">glytoucan.org</a></span><span data-lang="en"><a href="https://glytoucan.org">glytoucan.org</a></span></span></li>
+<li><span class="ref-tag bestp">Best Practice</span><span class="ref-author">Lipinski, C.A. et al. (2001)</span> <span class="ref-title">Experimental and computational approaches to estimate solubility and permeability in drug discovery (Rule of 5).</span> <span class="ref-meta"><span data-lang="zh">Adv. Drug Deliv. Rev. 46:3-26</span><span data-lang="en">Adv. Drug Deliv. Rev. 46:3-26</span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch05">
+<h2 data-zh="Ch.5 · 核酸的化學與結構" data-en="Ch.5 · Chemistry and Structure of Nucleic Acids">Ch.5 · 核酸的化學與結構</h2>
+<ul class="ref-list">
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Watson, J.D. &amp; Crick, F.H. (1953)</span> <span class="ref-title">Molecular structure of nucleic acids: A structure for deoxyribose nucleic acid.</span> <span class="ref-meta"><span data-lang="zh">Nature 171:737-738</span><span data-lang="en">Nature 171:737-738</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Karikó, K., Buckstein, M., Ni, H. &amp; Weissman, D. (2005)</span> <span class="ref-title">Suppression of RNA recognition by Toll-like receptors: the impact of nucleoside modification.</span> <span class="ref-meta"><span data-lang="zh">Immunity 23:165-175 · <a href="https://doi.org/10.1016/j.immuni.2005.06.008">DOI</a> · Foundation for 2023 Nobel</span><span data-lang="en">Immunity 23:165-175 · <a href="https://doi.org/10.1016/j.immuni.2005.06.008">DOI</a> · Foundation for the 2023 Nobel Prize</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Cech, T.R. (1990)</span> <span class="ref-title">Self-splicing of group I introns.</span> <span class="ref-meta"><span data-lang="zh">Annu. Rev. Biochem. 59:543-568 · Nobel 1989</span><span data-lang="en">Annu. Rev. Biochem. 59:543-568 · Nobel Prize 1989</span></span></li>
+<li><span class="ref-tag doc">Doc</span><span class="ref-author">Hofacker, I.L.</span> <span class="ref-title">ViennaRNA Package.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://www.tbi.univie.ac.at/RNA/">tbi.univie.ac.at/RNA</a></span><span data-lang="en"><a href="https://www.tbi.univie.ac.at/RNA/">tbi.univie.ac.at/RNA</a></span></span></li>
+<li><span class="ref-tag db">DB</span><span class="ref-author">NCBI</span> <span class="ref-title">GenBank · RefSeq.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://www.ncbi.nlm.nih.gov">ncbi.nlm.nih.gov</a></span><span data-lang="en"><a href="https://www.ncbi.nlm.nih.gov">ncbi.nlm.nih.gov</a></span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch06">
+<h2 data-zh="Ch.6 · 酶催化機制" data-en="Ch.6 · Enzyme Catalytic Mechanisms">Ch.6 · 酶催化機制</h2>
+<ul class="ref-list">
+<li><span class="ref-tag book">Book</span><span class="ref-author">Lehninger, ch. 6</span> <span class="ref-title">Enzymes.</span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Pauling, L. (1948)</span> <span class="ref-title">Nature of forces between large molecules of biological interest.</span> <span class="ref-meta"><span data-lang="zh">Nature 161:707-709 · Origin of transition-state stabilization theory</span><span data-lang="en">Nature 161:707-709 · Origin of transition-state stabilization theory</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Vögeli, B. et al. (2024)</span> <span class="ref-title">Wide transition-state ensemble as key component for enzyme catalysis.</span> <span class="ref-meta"><span data-lang="zh">eLife 13:e93099 · <a href="https://doi.org/10.7554/eLife.93099">DOI</a></span><span data-lang="en">eLife 13:e93099 · <a href="https://doi.org/10.7554/eLife.93099">DOI</a></span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Schramm, V.L. (2018)</span> <span class="ref-title">Enzymatic Transition States and Drug Design.</span> <span class="ref-meta"><span data-lang="zh">Chem. Rev. 118:11194-11258 · <a href="https://doi.org/10.1021/acs.chemrev.8b00369">DOI</a></span><span data-lang="en">Chem. Rev. 118:11194-11258 · <a href="https://doi.org/10.1021/acs.chemrev.8b00369">DOI</a></span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Ahmed, M., Wilkins, M., Pyne, P., et al. (2024)</span> <span class="ref-title">Perspectives on Computational Enzyme Modeling.</span> <span class="ref-meta"><span data-lang="zh">Chem. Rev. 124:e2024 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10883025/">PMC</a></span><span data-lang="en">Chem. Rev. 124:e2024 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10883025/">PMC</a></span></span></li>
+<li><span class="ref-tag db">DB</span><span class="ref-author">IUBMB</span> <span class="ref-title">Enzyme Nomenclature (EC numbers).</span> <span class="ref-meta"><span data-lang="zh"><a href="https://www.qmul.ac.uk/sbcs/iubmb/enzyme/">qmul.ac.uk/sbcs/iubmb/enzyme</a></span><span data-lang="en"><a href="https://www.qmul.ac.uk/sbcs/iubmb/enzyme/">qmul.ac.uk/sbcs/iubmb/enzyme</a></span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch07">
+<h2 data-zh="Ch.7 · 酶動力學與抑制" data-en="Ch.7 · Enzyme Kinetics and Inhibition">Ch.7 · 酶動力學與抑制</h2>
+<ul class="ref-list">
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Michaelis, L. &amp; Menten, M.L. (1913)</span> <span class="ref-title">Die Kinetik der Invertinwirkung.</span> <span class="ref-meta"><span data-lang="zh">Biochem. Z. 49:333-369 · Translated 2011 by Goody &amp; Johnson</span><span data-lang="en">Biochem. Z. 49:333-369 · English translation by Goody &amp; Johnson (2011)</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Briggs, G.E. &amp; Haldane, J.B.S. (1925)</span> <span class="ref-title">A note on the kinetics of enzyme action.</span> <span class="ref-meta"><span data-lang="zh">Biochem. J. 19:338-339 · Steady-state derivation</span><span data-lang="en">Biochem. J. 19:338-339 · Steady-state derivation</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Singh, J., Petter, R.C., Baillie, T.A. &amp; Whitty, A. (2011)</span> <span class="ref-title">The resurgence of covalent drugs.</span> <span class="ref-meta"><span data-lang="zh">Nat. Rev. Drug Discov. 10:307-317 · <a href="https://doi.org/10.1038/nrd3410">DOI</a></span><span data-lang="en">Nat. Rev. Drug Discov. 10:307-317 · <a href="https://doi.org/10.1038/nrd3410">DOI</a></span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Canon, J. et al. (2019)</span> <span class="ref-title">The clinical KRAS(G12C) inhibitor AMG 510 drives anti-tumour immunity.</span> <span class="ref-meta"><span data-lang="zh">Nature 575:217-223 · Sotorasib (Lumakras)</span><span data-lang="en">Nature 575:217-223 · Sotorasib (Lumakras)</span></span></li>
+<li><span class="ref-tag bestp">Best Practice</span><span class="ref-author">Copeland, R.A. (2013)</span> <span class="ref-title">Evaluation of Enzyme Inhibitors in Drug Discovery (2nd ed.).</span> <span class="ref-meta"><span data-lang="zh">Wiley</span><span data-lang="en">Wiley</span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch08">
+<h2 data-zh="Ch.8 · 酶調控：協同性與翻譯後修飾" data-en="Ch.8 · Enzyme Regulation: Cooperativity and Post-translational Modifications">Ch.8 · 酶調控：協同性與翻譯後修飾</h2>
+<ul class="ref-list">
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Monod, J., Wyman, J. &amp; Changeux, J.P. (1965)</span> <span class="ref-title">On the nature of allosteric transitions: a plausible model.</span> <span class="ref-meta"><span data-lang="zh">J. Mol. Biol. 12:88-118 · MWC model</span><span data-lang="en">J. Mol. Biol. 12:88-118 · MWC model</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Koshland, D.E., Némethy, G. &amp; Filmer, D. (1966)</span> <span class="ref-title">Comparison of experimental binding data and theoretical models in proteins containing subunits.</span> <span class="ref-meta"><span data-lang="zh">Biochemistry 5:365-385 · KNF model</span><span data-lang="en">Biochemistry 5:365-385 · KNF model</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Manning, G., Whyte, D.B., Martinez, R., Hunter, T. &amp; Sudarsanam, S. (2002)</span> <span class="ref-title">The protein kinase complement of the human genome.</span> <span class="ref-meta"><span data-lang="zh">Science 298:1912-1934 · The "kinome"</span><span data-lang="en">Science 298:1912-1934 · The "kinome"</span></span></li>
+<li><span class="ref-tag db">DB</span><span class="ref-author">Hornbeck, P.V. et al.</span> <span class="ref-title">PhosphoSitePlus.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://www.phosphosite.org">phosphosite.org</a></span><span data-lang="en"><a href="https://www.phosphosite.org">phosphosite.org</a></span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch09">
+<h2 data-zh="Ch.9 · 生物能量學：ΔG、ATP 與 Redox" data-en="Ch.9 · Bioenergetics: ΔG, ATP and Redox">Ch.9 · 生物能量學：ΔG、ATP 與 Redox</h2>
+<ul class="ref-list">
+<li><span class="ref-tag book">Book</span><span class="ref-author">Lehninger, ch. 13</span> <span class="ref-title">Introduction to Metabolism.</span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Atkinson, D.E. (1968)</span> <span class="ref-title">The energy charge of the adenylate pool as a regulatory parameter.</span> <span class="ref-meta"><span data-lang="zh">Biochemistry 7:4030-4034</span><span data-lang="en">Biochemistry 7:4030-4034</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Alberty, R.A. (2003)</span> <span class="ref-title">Thermodynamics of Biochemical Reactions.</span> <span class="ref-meta"><span data-lang="zh">Wiley · Definitive textbook on ΔG°' under physiological conditions</span><span data-lang="en">Wiley · Definitive textbook on ΔG°' under physiological conditions</span></span></li>
+<li><span class="ref-tag db">DB</span><span class="ref-author">eQuilibrator (Milo lab, Weizmann)</span> <span class="ref-title">Biochemical thermodynamics calculator.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://equilibrator.weizmann.ac.il">equilibrator.weizmann.ac.il</a></span><span data-lang="en"><a href="https://equilibrator.weizmann.ac.il">equilibrator.weizmann.ac.il</a></span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch10">
+<h2 data-zh="Ch.10 · 醣類代謝" data-en="Ch.10 · Carbohydrate Metabolism">Ch.10 · 醣類代謝</h2>
+<ul class="ref-list">
+<li><span class="ref-tag book">Book</span><span class="ref-author">Lehninger, ch. 14-15</span> <span class="ref-title">Glycolysis, Gluconeogenesis, PPP; Glycogen Metabolism.</span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Pilkis, S.J. &amp; Granner, D.K. (1992)</span> <span class="ref-title">Molecular physiology of the regulation of hepatic gluconeogenesis and glycolysis (F2,6BP).</span> <span class="ref-meta"><span data-lang="zh">Annu. Rev. Physiol. 54:885-909</span><span data-lang="en">Annu. Rev. Physiol. 54:885-909</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Warburg, O. (1956)</span> <span class="ref-title">On the origin of cancer cells.</span> <span class="ref-meta"><span data-lang="zh">Science 123:309-314</span><span data-lang="en">Science 123:309-314</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Vander Heiden, M.G., Cantley, L.C. &amp; Thompson, C.B. (2009)</span> <span class="ref-title">Understanding the Warburg effect: the metabolic requirements of cell proliferation.</span> <span class="ref-meta"><span data-lang="zh">Science 324:1029-1033 · <a href="https://doi.org/10.1126/science.1160809">DOI</a></span><span data-lang="en">Science 324:1029-1033 · <a href="https://doi.org/10.1126/science.1160809">DOI</a></span></span></li>
+<li><span class="ref-tag db">DB</span><span class="ref-author">Kanehisa, M.</span> <span class="ref-title">KEGG: Kyoto Encyclopedia of Genes and Genomes.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://www.kegg.jp">kegg.jp</a></span><span data-lang="en"><a href="https://www.kegg.jp">kegg.jp</a></span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch11">
+<h2 data-zh="Ch.11 · TCA 循環與氧化磷酸化" data-en="Ch.11 · TCA Cycle and Oxidative Phosphorylation">Ch.11 · TCA 循環與氧化磷酸化</h2>
+<ul class="ref-list">
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Krebs, H.A. &amp; Johnson, W.A. (1937)</span> <span class="ref-title">The role of citric acid in intermediate metabolism in animal tissues.</span> <span class="ref-meta"><span data-lang="zh">Enzymologia 4:148-156 · Nobel 1953</span><span data-lang="en">Enzymologia 4:148-156 · Nobel Prize 1953</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Mitchell, P. (1961)</span> <span class="ref-title">Coupling of phosphorylation to electron and hydrogen transfer by a chemi-osmotic type of mechanism.</span> <span class="ref-meta"><span data-lang="zh">Nature 191:144-148 · Nobel 1978</span><span data-lang="en">Nature 191:144-148 · Nobel Prize 1978</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Boyer, P.D. (1997)</span> <span class="ref-title">The ATP synthase—a splendid molecular machine.</span> <span class="ref-meta"><span data-lang="zh">Annu. Rev. Biochem. 66:717-749 · Nobel 1997</span><span data-lang="en">Annu. Rev. Biochem. 66:717-749 · Nobel Prize 1997</span></span></li>
+<li><span class="ref-tag bestp">Best Practice</span><span class="ref-author">Hinkle, P.C. (2005)</span> <span class="ref-title">P/O ratios of mitochondrial oxidative phosphorylation.</span> <span class="ref-meta"><span data-lang="zh">Biochim. Biophys. Acta 1706:1-11 · Revised P/O values</span><span data-lang="en">Biochim. Biophys. Acta 1706:1-11 · Revised P/O values</span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch12">
+<h2 data-zh="Ch.12 · 脂質與胺基酸代謝" data-en="Ch.12 · Lipid and Amino Acid Metabolism">Ch.12 · 脂質與胺基酸代謝</h2>
+<ul class="ref-list">
+<li><span class="ref-tag book">Book</span><span class="ref-author">Lehninger, ch. 17-18</span> <span class="ref-title">Fatty Acid Catabolism; Amino Acid Oxidation and the Production of Urea.</span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">McGarry, J.D. &amp; Brown, N.F. (1997)</span> <span class="ref-title">The mitochondrial carnitine palmitoyltransferase system. From concept to molecular analysis.</span> <span class="ref-meta"><span data-lang="zh">Eur. J. Biochem. 244:1-14</span><span data-lang="en">Eur. J. Biochem. 244:1-14</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Newman, J.C. &amp; Verdin, E. (2017)</span> <span class="ref-title">β-Hydroxybutyrate: A signaling metabolite.</span> <span class="ref-meta"><span data-lang="zh">Annu. Rev. Nutr. 37:51-76</span><span data-lang="en">Annu. Rev. Nutr. 37:51-76</span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch13">
+<h2 data-zh="Ch.13 · 代謝整合與荷爾蒙調控" data-en="Ch.13 · Metabolic Integration and Hormonal Regulation">Ch.13 · 代謝整合與荷爾蒙調控</h2>
+<ul class="ref-list">
+<li><span class="ref-tag book">Book</span><span class="ref-author">Lehninger, ch. 23</span> <span class="ref-title">Hormonal Regulation and Integration of Mammalian Metabolism.</span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Hardie, D.G., Ross, F.A. &amp; Hawley, S.A. (2012)</span> <span class="ref-title">AMPK: a nutrient and energy sensor.</span> <span class="ref-meta"><span data-lang="zh">Nat. Rev. Mol. Cell Biol. 13:251-262</span><span data-lang="en">Nat. Rev. Mol. Cell Biol. 13:251-262</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Saxton, R.A. &amp; Sabatini, D.M. (2017)</span> <span class="ref-title">mTOR signaling in growth, metabolism, and disease.</span> <span class="ref-meta"><span data-lang="zh">Cell 168:960-976</span><span data-lang="en">Cell 168:960-976</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Drucker, D.J. (2024)</span> <span class="ref-title">Mechanisms of action and therapeutic application of GLP-1.</span> <span class="ref-meta"><span data-lang="zh">Cell Metab. 27:740-756 · GLP-1 revolution review</span><span data-lang="en">Cell Metab. 27:740-756 · Review of the GLP-1 revolution</span></span></li>
+<li><span class="ref-tag db">DB</span><span class="ref-author">Wishart, D.S. et al.</span> <span class="ref-title">HMDB · Human Metabolome Database.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://hmdb.ca">hmdb.ca</a></span><span data-lang="en"><a href="https://hmdb.ca">hmdb.ca</a></span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch14">
+<h2 data-zh="Ch.14 · 訊息傳遞與第二訊息" data-en="Ch.14 · Signal Transduction and Second Messengers">Ch.14 · 訊息傳遞與第二訊息</h2>
+<ul class="ref-list">
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Lefkowitz, R.J. &amp; Kobilka, B.K. (2012)</span> <span class="ref-title">Studies of GPCRs.</span> <span class="ref-meta"><span data-lang="zh">Nobel Prize 2012 lectures</span><span data-lang="en">Nobel Prize 2012 lectures</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Hauser, A.S. et al. (2024)</span> <span class="ref-title">Trends in GPCR drug discovery.</span> <span class="ref-meta"><span data-lang="zh">Nat. Rev. Drug Discov. 23:e2024 · ~34% of FDA-approved drugs target GPCRs</span><span data-lang="en">Nat. Rev. Drug Discov. 23:e2024 · Approximately 34% of FDA-approved drugs target GPCRs</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Lemmon, M.A. &amp; Schlessinger, J. (2010)</span> <span class="ref-title">Cell signaling by receptor tyrosine kinases.</span> <span class="ref-meta"><span data-lang="zh">Cell 141:1117-1134</span><span data-lang="en">Cell 141:1117-1134</span></span></li>
+<li><span class="ref-tag db">DB</span><span class="ref-author">Reactome</span> <span class="ref-title">Open-source pathway database.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://reactome.org">reactome.org</a></span><span data-lang="en"><a href="https://reactome.org">reactome.org</a></span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch15">
+<h2 data-zh="Ch.15 · 中心法則的化學細節" data-en="Ch.15 · Chemical Details of the Central Dogma">Ch.15 · 中心法則的化學細節</h2>
+<ul class="ref-list">
+<li><span class="ref-tag book">Book</span><span class="ref-author">Lehninger, ch. 24-27</span> <span class="ref-title">DNA Metabolism; RNA Metabolism; Protein Synthesis; Regulation of Gene Expression.</span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Steitz, T.A. &amp; Moore, P.B. (2003)</span> <span class="ref-title">RNA, the first macromolecular catalyst: the ribosome is a ribozyme.</span> <span class="ref-meta"><span data-lang="zh">Trends Biochem. Sci. 28:411-418 · Nobel 2009</span><span data-lang="en">Trends Biochem. Sci. 28:411-418 · Nobel Prize 2009</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Wahl, M.C., Will, C.L. &amp; Lührmann, R. (2009)</span> <span class="ref-title">The spliceosome: design principles of a dynamic RNP machine.</span> <span class="ref-meta"><span data-lang="zh">Cell 136:701-718</span><span data-lang="en">Cell 136:701-718</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Hershko, A. &amp; Ciechanover, A. (1998)</span> <span class="ref-title">The ubiquitin system.</span> <span class="ref-meta"><span data-lang="zh">Annu. Rev. Biochem. 67:425-479 · Nobel 2004</span><span data-lang="en">Annu. Rev. Biochem. 67:425-479 · Nobel Prize 2004</span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch16">
+<h2 data-zh="Ch.16 · 臨床生化與代謝疾病" data-en="Ch.16 · Clinical Biochemistry and Metabolic Diseases">Ch.16 · 臨床生化與代謝疾病</h2>
+<ul class="ref-list">
+<li><span class="ref-tag bestp">Best Practice</span><span class="ref-author">American Diabetes Association (2024)</span> <span class="ref-title">Standards of Medical Care in Diabetes—2024.</span> <span class="ref-meta"><span data-lang="zh">Diabetes Care 47(S1)</span><span data-lang="en">Diabetes Care 47(S1)</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Frangoul, H. et al. (2021)</span> <span class="ref-title">CRISPR-Cas9 gene editing for sickle cell disease and β-thalassemia.</span> <span class="ref-meta"><span data-lang="zh">N. Engl. J. Med. 384:252-260 · Foundation for 2023 Casgevy approval</span><span data-lang="en">N. Engl. J. Med. 384:252-260 · Foundation for the 2023 Casgevy approval</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Heijboer, R.B. et al. (2023)</span> <span class="ref-title">Triple combination CFTR modulator (Trikafta) in cystic fibrosis: real-world outcomes.</span> <span class="ref-meta"><span data-lang="zh">Eur. Respir. J. 61:e2023</span><span data-lang="en">Eur. Respir. J. 61:e2023</span></span></li>
+<li><span class="ref-tag policy">Policy</span><span class="ref-author">WHO</span> <span class="ref-title">ICD-11 (2025) — IEM classification.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://icd.who.int/">icd.who.int</a></span><span data-lang="en"><a href="https://icd.who.int/">icd.who.int</a></span></span></li>
+<li><span class="ref-tag db">DB</span><span class="ref-author">Online Mendelian Inheritance in Man</span> <span class="ref-title">OMIM.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://www.omim.org">omim.org</a></span><span data-lang="en"><a href="https://www.omim.org">omim.org</a></span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch17">
+<h2 data-zh="Ch.17 · 生化學與藥物設計" data-en="Ch.17 · Biochemistry and Drug Design">Ch.17 · 生化學與藥物設計</h2>
+<ul class="ref-list">
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Békés, M., Langley, D.R. &amp; Crews, C.M. (2022)</span> <span class="ref-title">PROTAC targeted protein degraders: the past is prologue.</span> <span class="ref-meta"><span data-lang="zh">Nat. Rev. Drug Discov. 21:181-200</span><span data-lang="en">Nat. Rev. Drug Discov. 21:181-200</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Liu, J. et al. (2025)</span> <span class="ref-title">Molecular glues and PROTACs in targeted protein degradation: mechanisms, advances, and therapeutic potential.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://pubmed.ncbi.nlm.nih.gov/40907798/">PubMed 40907798</a></span><span data-lang="en"><a href="https://pubmed.ncbi.nlm.nih.gov/40907798/">PubMed 40907798</a></span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Hopkins, A.L. &amp; Groom, C.R. (2002)</span> <span class="ref-title">The druggable genome.</span> <span class="ref-meta"><span data-lang="zh">Nat. Rev. Drug Discov. 1:727-730</span><span data-lang="en">Nat. Rev. Drug Discov. 1:727-730</span></span></li>
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Erlanson, D.A., Fesik, S.W., Hubbard, R.E., Jahnke, W. &amp; Jhoti, H. (2016)</span> <span class="ref-title">Twenty years on: the impact of fragments on drug discovery.</span> <span class="ref-meta"><span data-lang="zh">Nat. Rev. Drug Discov. 15:605-619</span><span data-lang="en">Nat. Rev. Drug Discov. 15:605-619</span></span></li>
+<li><span class="ref-tag bench">Bench</span><span class="ref-author">Buttenschoen, M. et al. (2024)</span> <span class="ref-title">PoseBusters: AI-based docking methods fail to generate physically valid poses.</span> <span class="ref-meta"><span data-lang="zh">Chemical Science · Benchmark used in AF3 evaluation</span><span data-lang="en">Chemical Science · Benchmark used in the AF3 evaluation</span></span></li>
+<li><span class="ref-tag db">DB</span><span class="ref-author">ChEMBL · BindingDB · DrugBank.</span> <span class="ref-meta"><span data-lang="zh"><a href="https://www.ebi.ac.uk/chembl/">ebi.ac.uk/chembl</a></span><span data-lang="en"><a href="https://www.ebi.ac.uk/chembl/">ebi.ac.uk/chembl</a></span></span></li>
+</ul>
+</section>
+
+<section class="section section-anchor" id="ch18">
+<h2 data-zh="Ch.18 · 現代生化技術與 AI" data-en="Ch.18 · Modern Biochemistry Techniques and AI">Ch.18 · 現代生化技術與 AI</h2>
+<ul class="ref-list">
+<li><span class="ref-tag paper">Paper</span><span class="ref-author">Watson, J.L., Juergens, D., Bennett, N.R. et al. (2023)</span> <span class="ref-title">De novo design of protein structure and function with RFdiffusion.</span> <span class="ref-meta"><span data-lang="zh">Nature 620:1089-1100 · Baker lab</span><span data-lang="en">Nature 620:1089-1100 · Baker lab</span></span></li>
+</ul>
+</section>
+
+<!-- ===================== Errata ===================== -->
+<section class="section section-anchor" id="errata">
+<div class="section-label" data-zh="教學註記" data-en="TUTORIAL NOTES">教學註記</div>
+<h2 data-zh="📌 教學註記與細節" data-en="📌 Tutorial Notes & Details">📌 教學註記與細節</h2>
+<p data-lang="zh">下方為閱讀「生物化學互動式教程」18 章與本 reference 比對後，整理出的易誤解、術語不一致或近期需更新之處。不修改原教學檔案，僅在此說明以利讀者參照。</p>
+<p data-lang="en">The notes below collect points across the 18 chapters of the Biochemistry Interactive Tutorial where terminology drifts between textbooks, common misreadings arise, or recent guidance has shifted. <strong>The original tutorial files are not modified; the clarifications live here for cross-reference.</strong></p>
+
+<div class="errata">
+
+  <span class="errata-label" data-zh="補充說明" data-en="Notes" style="display:inline-block;background:#e0e7ff;color:#3730a3;padding:2px 10px;border-radius:4px;font-size:.72rem;font-weight:700;letter-spacing:.5px;margin-bottom:8px">補充說明 · Notes</span>
+  <h4 data-zh="Ch.1-2 · Lehninger 8e (2021) 與 Berg 10e (2023) 術語差異" data-en="Ch.1-2 · Terminology drift between Lehninger 8e (2021) and Berg 10e (2023)">Ch.1-2 · Lehninger 8e (2021) 與 Berg 10e (2023) 術語差異</h4>
+  <p data-lang="zh">原教學在水、pH、胺基酸等基礎章節混用 Lehninger 與 Berg 兩大教科書的術語。實務上兩者並非完全等價：Lehninger 8e（Nelson &amp; Cox 2021）使用 <strong>“weak interactions”</strong> 統稱氫鍵、離子作用、van der Waals、疏水效應；Berg 10e（Berg, Tymoczko, Gatto, Stryer 2023）則習慣分述為 <strong>“noncovalent bonds / forces”</strong>。同樣地，Lehninger 將疏水效應描述為 <em>entropy-driven</em>，Berg 在第 1 章強調 <em>水分子排序損失</em>。讀者比對兩書時應留意章節編號（Lehninger Ch.2 vs Berg Ch.2）與圖示方向（Lehninger 由結構→功能；Berg 由作用力→結構）。</p>
+</div>
+
+<div class="errata">
+  <span class="errata-label" data-zh="補充說明" data-en="Notes" style="display:inline-block;background:#e0e7ff;color:#3730a3;padding:2px 10px;border-radius:4px;font-size:.72rem;font-weight:700;letter-spacing:.5px;margin-bottom:8px">補充說明 · Notes</span>
+  <h4 data-zh="Ch.7 · K_M / V_max 與 k_cat / K_M 的解讀差異" data-en="Ch.7 · Interpreting K_M / V_max vs k_cat / K_M correctly">Ch.7 · K_M / V_max 與 k_cat / K_M 的解讀差異</h4>
+  <p data-lang="zh">原教學在動力學章節並列 K_M、V_max 與 k_cat / K_M 三個量，但學生最常見的誤解是把 <strong>K_M 等同於受質親和力（K_d）</strong>。嚴格而言，K_M = (k_-1 + k_cat) / k_1，只有在 k_cat ≪ k_-1（快速平衡近似）時 K_M ≈ K_d；當 k_cat 接近或大於 k_-1（如 carbonic anhydrase、超氧化物歧化酶等近擴散極限酶）時，K_M 顯著大於 K_d。比較不同酶或不同受質的「催化效率」時，必須用 <strong>k_cat / K_M（specificity constant）</strong>，而不是單看 V_max — 因為 V_max 同時依賴於 [E]_total 與 k_cat，無法在不同酶之間直接比較；k_cat / K_M 的上限即擴散極限 ~10^8–10^9 M⁻¹ s⁻¹（Fersht <em>Structure and Mechanism in Protein Science</em>, 1999；Bar-Even et al., <em>Biochemistry</em> 50:4402, 2011, <a href="https://doi.org/10.1021/bi2002289">DOI</a>）。</p>
+  <p data-lang="en">The kinetics chapter introduces K_M, V_max, and k_cat / K_M side by side, but the most common student misconception is to equate <strong>K_M with substrate affinity (K_d)</strong>. Strictly, K_M = (k_-1 + k_cat) / k_1, and K_M ≈ K_d only under the rapid-equilibrium approximation when k_cat ≪ k_-1. For near-diffusion-limited enzymes (carbonic anhydrase, superoxide dismutase) k_cat ≳ k_-1, so K_M substantially exceeds K_d. To compare catalytic efficiency across enzymes or substrates, use the <strong>specificity constant k_cat / K_M</strong>, not V_max — V_max depends on [E]_total and is not enzyme-agnostic; the diffusion limit caps k_cat / K_M near 10^8–10^9 M⁻¹ s⁻¹ (Fersht, <em>Structure and Mechanism in Protein Science</em>, 1999; Bar-Even et al., <em>Biochemistry</em> 50:4402, 2011, <a href="https://doi.org/10.1021/bi2002289">DOI</a>).</p>
+</div>
+
+<div class="errata">
+  <span class="errata-label" data-zh="補充說明" data-en="Notes" style="display:inline-block;background:#e0e7ff;color:#3730a3;padding:2px 10px;border-radius:4px;font-size:.72rem;font-weight:700;letter-spacing:.5px;margin-bottom:8px">補充說明 · Notes</span>
+  <h4 data-zh="Ch.8 · Hill 係數 ≠ 異位調控的證據（MWC 1965 vs KNF 1966）" data-en="Ch.8 · Hill coefficient is NOT evidence of allostery (MWC 1965 vs KNF 1966)">Ch.8 · Hill 係數 ≠ 異位調控的證據（MWC 1965 vs KNF 1966）</h4>
+  <p data-lang="zh">原教學以血紅蛋白 S-shaped 曲線示範 Hill 係數 n_H ≈ 2.8，並將其等同於「具有 allosteric 調控」。這是常見但錯誤的捷徑。<strong>Hill 係數只是 log[Y/(1−Y)] vs log[S] 斜率的經驗值，不等於協同性的機制，更不等於亞基數目</strong>。理論上：(1) n_H = 1 不代表沒有 allostery（許多 V 型 allosteric 酶在飽和受質下 n_H ≈ 1）；(2) n_H 上限是亞基數，但實測值幾乎總是低於該上限（Hb 四聚體理論上限 4，實測 ~2.8）；(3) MWC（Monod, Wyman, Changeux 1965, J. Mol. Biol. 12:88，<a href="https://doi.org/10.1016/S0022-2836(65)80285-6">DOI</a>）假設所有亞基同步在 T↔R 之間切換；KNF（Koshland, Némethy, Filmer 1966, Biochemistry 5:365，<a href="https://doi.org/10.1021/bi00865a047">DOI</a>）允許序列性誘導契合，兩模型給出相似 S-曲線卻機制完全不同。實務上應同時報告 n_H、K_0.5（不是 K_M！）與配體結合化學計量。</p>
+  <p data-lang="en">The chapter uses the hemoglobin S-shaped curve to show n_H ≈ 2.8 and equates this with "allosteric regulation." This shortcut is common but wrong. <strong>The Hill coefficient is just an empirical slope of log[Y/(1−Y)] vs log[S]; it is neither a mechanism for cooperativity nor the number of subunits</strong>. (1) n_H = 1 does not mean "no allostery" — many V-type allosteric enzymes show n_H ≈ 1 under saturating substrate; (2) the theoretical ceiling of n_H is the subunit count but observed values almost always fall below it (Hb tetramer ceiling 4, observed ~2.8); (3) MWC (Monod, Wyman, Changeux 1965, J. Mol. Biol. 12:88, <a href="https://doi.org/10.1016/S0022-2836(65)80285-6">DOI</a>) assumes all subunits switch concertedly between T↔R, while KNF (Koshland, Némethy, Filmer 1966, Biochemistry 5:365, <a href="https://doi.org/10.1021/bi00865a047">DOI</a>) allows sequential induced fit — both fit similar sigmoidal curves with completely different mechanisms. Best practice: report n_H, K_0.5 (not K_M!), and ligand stoichiometry together.</p>
+</div>
+
+<div class="errata">
+  <span class="errata-label" data-zh="補充說明" data-en="Notes" style="display:inline-block;background:#e0e7ff;color:#3730a3;padding:2px 10px;border-radius:4px;font-size:.72rem;font-weight:700;letter-spacing:.5px;margin-bottom:8px">補充說明 · Notes</span>
+  <h4 data-zh="Ch.9, 15 · ATP / GTP / NADPH 的分工 — 別把所有「高能磷酸鍵」混為一談" data-en="Ch.9, 15 · ATP / GTP / NADPH division of labour — high-energy bonds aren't interchangeable">Ch.9, 15 · ATP / GTP / NADPH 的分工 — 別把所有「高能磷酸鍵」混為一談</h4>
+  <p data-lang="zh">原教學偶爾將 ATP / GTP / NADPH 一起稱作「細胞能量貨幣」。實際上三者各有專責，不可隨意互換：(1) <strong>ATP</strong> 是通用磷酸基團轉移者（ΔG°' ≈ −30.5 kJ/mol，hydrolysis），驅動絕大多數激酶反應與肌肉收縮；(2) <strong>GTP</strong> 主要用於蛋白合成（translation EF-Tu/EF-G、釋放因子）、訊息傳導（G proteins、Ras GTPase 計時器）與微管動力學 — 這些反應對 GTP 有<strong>結構特異性</strong>，無法以 ATP 替代；(3) <strong>NADPH</strong> 不是磷酸基團供體而是<strong>還原力貨幣</strong>，主要用於脂肪酸 / 膽固醇生合成、解毒（GSH 再生）與抗氧化系統，胞內 [NADPH]/[NADP⁺] 比值遠高於 [NADH]/[NAD⁺]（典型 ~100 vs ~0.01；Veech et al., <em>Biochem J</em> 1969；Hosios & Vander Heiden, <em>Mol Cell</em> 2018, <a href="https://doi.org/10.1016/j.molcel.2018.10.027">DOI</a>）。教學中應強調「能量」（磷酸基團 vs 還原當量）與「特異性」（哪個酶用哪個核苷酸）兩個軸。</p>
+  <p data-lang="en">The tutorial sometimes lumps ATP / GTP / NADPH together as "the cell's energy currency." In fact each has a specialised role and they are not interchangeable: (1) <strong>ATP</strong> is the universal phosphoryl-transfer donor (ΔG°' ≈ −30.5 kJ/mol of hydrolysis), powering most kinase reactions and muscle contraction; (2) <strong>GTP</strong> drives protein synthesis (translation EF-Tu/EF-G, release factors), signal transduction (G proteins, Ras GTPase timers) and microtubule dynamics — these reactions show <strong>structural specificity</strong> for GTP and cannot use ATP; (3) <strong>NADPH</strong> is not a phosphoryl donor but a <strong>reducing-power currency</strong>, supplying lipid/cholesterol biosynthesis, detoxification (GSH regeneration) and antioxidant defence; the cellular [NADPH]/[NADP⁺] ratio is far higher than [NADH]/[NAD⁺] (≈ 100 vs ≈ 0.01; Veech et al., <em>Biochem J</em> 1969; Hosios & Vander Heiden, <em>Mol Cell</em> 2018, <a href="https://doi.org/10.1016/j.molcel.2018.10.027">DOI</a>). Teaching should separate two axes: "energy form" (phosphoryl vs reducing equivalents) and "specificity" (which enzyme uses which nucleotide).</p>
+</div>
+
+<div class="errata">
+  <span class="errata-label" data-zh="補充說明" data-en="Notes" style="display:inline-block;background:#e0e7ff;color:#3730a3;padding:2px 10px;border-radius:4px;font-size:.72rem;font-weight:700;letter-spacing:.5px;margin-bottom:8px">補充說明 · Notes</span>
+  <h4 data-zh="Ch.3, 18 · AlphaFold 3 的非商用授權限制" data-en="Ch.3, 18 · AlphaFold 3 — the non-commercial licence restriction">Ch.3, 18 · AlphaFold 3 的非商用授權限制</h4>
+  <p data-lang="zh">原教學在介紹 AlphaFold 3（Abramson et al. 2024, <em>Nature</em> 630:493, <a href="https://doi.org/10.1038/s41586-024-07487-w">DOI</a>）時著重在準確度與配體 / DNA / RNA 預測能力，但<strong>並未提醒讀者授權條款</strong>。AF3 與 AF2 截然不同：(1) AF2（2021）以 Apache 2.0 開源，模型權重可下載並商用；(2) <strong>AF3（2024）初始僅以 AlphaFold Server（alphafoldserver.com）線上提供，禁止商用、禁止訓練衍生模型、每日有 query 上限</strong>；(3) 2024 年 11 月 DeepMind 在 GitHub 公開推理 code 但<strong>權重仍須申請、且僅限學術非營利使用</strong>；(4) 對藥廠 / 商業 CRO 而言，這意味著結構若用於專利、藥物開發或商業 services 都<strong>不能直接使用 AF3 輸出</strong>；社群已轉向 Boltz-1（MIT lab, 2024, <a href="https://doi.org/10.1101/2024.11.19.624167">bioRxiv</a>）與 Chai-1 等開源替代。引用 AF3 結構時應註明來源與授權範圍。</p>
+  <p data-lang="en">When introducing AlphaFold 3 (Abramson et al. 2024, <em>Nature</em> 630:493, <a href="https://doi.org/10.1038/s41586-024-07487-w">DOI</a>) the tutorial emphasises accuracy and ligand/DNA/RNA prediction but <strong>does not flag the licence</strong>. AF3 differs sharply from AF2: (1) AF2 (2021) is Apache-2.0 open source with downloadable weights usable commercially; (2) <strong>AF3 (2024) was initially available only through AlphaFold Server (alphafoldserver.com) with non-commercial terms, no derivative training, and daily query caps</strong>; (3) in November 2024 DeepMind released inference code on GitHub, but <strong>weights still require an application and are restricted to academic non-profit use</strong>; (4) for pharma / commercial CROs this means AF3 outputs <strong>cannot be used directly</strong> for patents, drug development, or paid services — the community has moved to open alternatives such as Boltz-1 (MIT lab, 2024, <a href="https://doi.org/10.1101/2024.11.19.624167">bioRxiv</a>) and Chai-1. Always cite AF3 structures with their licence scope.</p>
+</div>
+
+<div class="errata">
+  <span class="errata-label" data-zh="補充說明" data-en="Notes" style="display:inline-block;background:#e0e7ff;color:#3730a3;padding:2px 10px;border-radius:4px;font-size:.72rem;font-weight:700;letter-spacing:.5px;margin-bottom:8px">補充說明 · Notes</span>
+  <h4 data-zh="Ch.16 · Casgevy（2023 FDA 核准）的真實機制 — BCL11A enhancer，不是直接編輯 HBB" data-en="Ch.16 · Casgevy (FDA 2023) — BCL11A enhancer editing, NOT direct HBB repair">Ch.16 · Casgevy（2023 FDA 核准）的真實機制 — BCL11A enhancer，不是直接編輯 HBB</h4>
+  <p data-lang="zh">原教學在臨床章節介紹 Casgevy（exa-cel）為「全球首個 CRISPR-Cas9 核准療法」，但學生常誤以為它「修復 HBB 鐮刀型突變」。實際機制完全不同：Casgevy <strong>不修改鐮刀型 β-globin (HBB E6V) 突變</strong>，而是用 Cas9 切割<strong>紅血球祖細胞 BCL11A 基因的紅系特異性 enhancer（+58 區）</strong>，破壞 BCL11A 在紅血球譜系的表達。BCL11A 是胎兒血紅蛋白 (HbF, γ-globin) 的關鍵抑制者；其敲低使成年患者重新表達 HbF，HbF 不含突變的 β-globin、可正常攜氧並抑制 HbS 聚合（Bauer et al., <em>Science</em> 342:253, 2013, <a href="https://doi.org/10.1126/science.1242088">DOI</a>；Frangoul et al., <em>NEJM</em> 384:252, 2021, <a href="https://doi.org/10.1056/NEJMoa2031054">DOI</a>）。因此 Casgevy 同時治療鐮刀型貧血與 β-thalassemia — 兩者都受益於 HbF reactivation。這也說明<strong>「editing the disease gene」與「editing a regulator of the disease gene」是兩種完全不同的策略</strong>。</p>
+  <p data-lang="en">The clinical chapter calls Casgevy (exa-cel) "the world's first CRISPR-Cas9–approved therapy" but students often assume it "repairs the HBB sickle mutation." It does not. Casgevy <strong>does not edit the sickle β-globin (HBB E6V) mutation</strong>; instead Cas9 cuts the <strong>erythroid-specific enhancer of BCL11A (the +58 region) in haematopoietic progenitors</strong>, disrupting BCL11A expression in the red-cell lineage. BCL11A is the master repressor of fetal haemoglobin (HbF, γ-globin); its knockdown reactivates HbF in adult patients, and HbF lacks the mutant β-globin, carries oxygen normally, and blocks HbS polymerisation (Bauer et al., <em>Science</em> 342:253, 2013, <a href="https://doi.org/10.1126/science.1242088">DOI</a>; Frangoul et al., <em>NEJM</em> 384:252, 2021, <a href="https://doi.org/10.1056/NEJMoa2031054">DOI</a>). The same mechanism therefore treats both sickle-cell disease and β-thalassemia, both of which benefit from HbF reactivation. Conceptually: <strong>"editing the disease gene" and "editing a regulator of the disease gene" are two distinct therapeutic strategies</strong>.</p>
+</div>
+
+<div class="errata">
+  <span class="errata-label" data-zh="補充說明" data-en="Notes" style="display:inline-block;background:#e0e7ff;color:#3730a3;padding:2px 10px;border-radius:4px;font-size:.72rem;font-weight:700;letter-spacing:.5px;margin-bottom:8px">補充說明 · Notes</span>
+  <h4 data-zh="Ch.4, 17 · Ro5 vs bRo5 — PROTAC 與大環化合物已突破傳統 drug-likeness" data-en="Ch.4, 17 · Ro5 vs bRo5 — PROTACs and macrocycles break classical drug-likeness">Ch.4, 17 · Ro5 vs bRo5 — PROTAC 與大環化合物已突破傳統 drug-likeness</h4>
+  <p data-lang="zh">原教學引用 Lipinski's Rule of 5 (Ro5)（Lipinski et al. 2001, <em>Adv Drug Deliv Rev</em> 46:3，<a href="https://doi.org/10.1016/S0169-409X(00)00129-0">DOI</a>）做為小分子藥物設計的指導原則：MW &lt; 500, logP &lt; 5, HBD ≤ 5, HBA ≤ 10。但讀者應知道 <strong>Ro5 在 PROTAC、molecular glue 與某些大環化合物上完全不適用</strong>。Doak et al.（2014, <em>Chem Biol</em> 21:1115，<a href="https://doi.org/10.1016/j.chembiol.2014.08.013">DOI</a>）提出 <strong>"beyond Rule of 5" (bRo5)</strong> 空間（MW 500–3000, logP 高達 10, HBD/HBA 更寬鬆），涵蓋環孢素 A、口服雷帕霉素類似物與多數 PROTAC（MW ~800–1200）。臨床上已有口服 PROTAC（ARV-471/vepdegestrant、ARV-110/bavdegalutamide）進入後期試驗，證明 bRo5 化合物可獲得有用的口服生物利用度（Mullard, <em>Nat Rev Drug Discov</em> 20:247, 2021，<a href="https://doi.org/10.1038/d41573-021-00052-4">DOI</a>；DeGoey et al., <em>J Med Chem</em> 61:2636, 2018，<a href="https://doi.org/10.1021/acs.jmedchem.7b00717">DOI</a>）。教學應同時呈現 Ro5（小分子起點）與 bRo5（PROTAC / 大環）兩個座標系。</p>
+  <p data-lang="en">The tutorial cites Lipinski's Rule of 5 (Ro5) (Lipinski et al. 2001, <em>Adv Drug Deliv Rev</em> 46:3, <a href="https://doi.org/10.1016/S0169-409X(00)00129-0">DOI</a>): MW &lt; 500, logP &lt; 5, HBD ≤ 5, HBA ≤ 10 — but readers should know <strong>Ro5 does not apply to PROTACs, molecular glues, or many macrocycles</strong>. Doak et al. (2014, <em>Chem Biol</em> 21:1115, <a href="https://doi.org/10.1016/j.chembiol.2014.08.013">DOI</a>) defined the <strong>"beyond Rule of 5" (bRo5)</strong> space (MW 500–3000, logP up to 10, looser HBD/HBA limits) covering cyclosporin A, oral rapamycin analogues, and most PROTACs (MW ~800–1200). Oral PROTACs (ARV-471/vepdegestrant, ARV-110/bavdegalutamide) are now in late-stage trials, proving bRo5 molecules can deliver useful oral bioavailability (Mullard, <em>Nat Rev Drug Discov</em> 20:247, 2021, <a href="https://doi.org/10.1038/d41573-021-00052-4">DOI</a>; DeGoey et al., <em>J Med Chem</em> 61:2636, 2018, <a href="https://doi.org/10.1021/acs.jmedchem.7b00717">DOI</a>). Teach Ro5 (small-molecule starting point) and bRo5 (PROTAC / macrocycle) as two coordinate systems, not one universal rule.</p>
+</div>
+
+<div class="errata">
+  <span class="errata-label" data-zh="補充說明" data-en="Notes" style="display:inline-block;background:#e0e7ff;color:#3730a3;padding:2px 10px;border-radius:4px;font-size:.72rem;font-weight:700;letter-spacing:.5px;margin-bottom:8px">補充說明 · Notes</span>
+  <h4 data-zh="Ch.10, 16 · Warburg 效應的現代修正（Vander Heiden 2017）" data-en="Ch.10, 16 · Warburg effect — the modern correction (Vander Heiden 2017)">Ch.10, 16 · Warburg 效應的現代修正（Vander Heiden 2017）</h4>
+  <p data-lang="zh">原教學在醣解 / 癌症代謝章節引用 Warburg (1956, <em>Science</em> 123:309) 的「癌細胞偏好有氧醣解 (aerobic glycolysis)」觀察，但若僅停留在「線粒體缺陷」的舊解釋將造成嚴重誤導。<strong>現代共識（Vander Heiden, Cantley & Thompson 2009, <em>Science</em> 324:1029，<a href="https://doi.org/10.1126/science.1160809">DOI</a>；Liberti & Locasale 2016, <em>Trends Biochem Sci</em> 41:211，<a href="https://doi.org/10.1016/j.tibs.2015.12.001">DOI</a>；DeBerardinis & Chandel 2020, <em>Sci Adv</em> 6:eaaz0463，<a href="https://doi.org/10.1126/sciadv.aaz0463">DOI</a>）已將 Warburg 效應重新詮釋為</strong>：(1) <strong>多數癌細胞的線粒體功能正常</strong>，TCA 循環仍主動，氧化磷酸化也持續運作 — Warburg 的「mitochondrial damage causes cancer」假設大部分錯誤；(2) 偏好醣解的真正原因是<strong>滿足快速增殖所需的合成代謝（biosynthetic）需求</strong>：醣解中間產物分流進入 PPP（核苷酸合成）、絲胺酸 / 甘胺酸途徑（一碳代謝）、甘油 / 脂質骨架；(3) 此外，乳酸鹽<strong>本身是訊息分子與燃料</strong>（Faubert et al., <em>Cell</em> 171:358, 2017，<a href="https://doi.org/10.1016/j.cell.2017.09.019">DOI</a>），可被其他癌細胞 / 基質細胞輸入回 TCA。教學中宜以「增殖代謝重編程」取代過時的「線粒體缺陷」敘述。</p>
+  <p data-lang="en">The glycolysis / cancer-metabolism chapter cites Warburg's (1956, <em>Science</em> 123:309) observation that tumours prefer aerobic glycolysis, but stopping at the old "broken mitochondria" interpretation is seriously misleading. <strong>The modern consensus (Vander Heiden, Cantley & Thompson 2009, <em>Science</em> 324:1029, <a href="https://doi.org/10.1126/science.1160809">DOI</a>; Liberti & Locasale 2016, <em>Trends Biochem Sci</em> 41:211, <a href="https://doi.org/10.1016/j.tibs.2015.12.001">DOI</a>; DeBerardinis & Chandel 2020, <em>Sci Adv</em> 6:eaaz0463, <a href="https://doi.org/10.1126/sciadv.aaz0463">DOI</a>) reinterprets the Warburg effect</strong>: (1) <strong>most tumour cells have functional mitochondria</strong>, with active TCA flux and ongoing oxidative phosphorylation — Warburg's "mitochondrial damage causes cancer" hypothesis is largely wrong; (2) the real driver of glycolytic preference is <strong>biosynthetic demand for rapid proliferation</strong>: glycolytic intermediates branch into PPP (nucleotides), serine/glycine (one-carbon metabolism), and glycerol/lipid backbones; (3) lactate itself is <strong>a signalling molecule and a fuel</strong> (Faubert et al., <em>Cell</em> 171:358, 2017, <a href="https://doi.org/10.1016/j.cell.2017.09.019">DOI</a>) — neighbouring tumour or stromal cells can import lactate back into the TCA cycle. Replace the obsolete "mitochondrial defect" framing with "proliferative metabolic reprogramming."</p>
+</div>
+</section>
+<nav class="page-nav">
+  <a href="../index.html"><span class="nav-dir" data-zh="← 教學首頁" data-en="← Tutorial home">← 教學首頁</span><span class="nav-title" data-zh="回到主教學頁" data-en="Back to tutorial hub">回到主教學頁</span></a>
+  <a href="../biochem-quiz/index.html" target="_blank" rel="noopener"><span class="nav-dir" data-zh="互動考題 →" data-en="Interactive quiz →">互動考題 →</span><span class="nav-title" data-zh="互動式考題" data-en="Interactive Quiz">互動式考題</span></a>
+</nav>
+
+</main>
+<script src="../i18n.js"></script>
+</body>
+</html>

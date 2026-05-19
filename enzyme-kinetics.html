@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.7 酶動力學與抑制 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html" class="active">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 7 / 18 · BLOCK B</div>
+<h1 data-zh="酶動力學與抑制" data-en="Enzyme Kinetics &amp; Inhibition">酶動力學與抑制</h1>
+<p class="subtitle" data-lang="zh">Michaelis-Menten 方程、kcat/KM、四種抑制模式——藥物作用機制的數學基礎。</p>
+<p class="subtitle" data-lang="en">Michaelis-Menten, kcat/KM, four inhibition modes — the mathematical foundation of drug action.</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="MM 方程" data-en="MM EQUATION">MM 方程</div>
+<h2 data-zh="一、Michaelis-Menten 動力學" data-en="I. Michaelis-Menten kinetics">一、Michaelis-Menten</h2>
+<div data-lang="zh"><p>1913 Michaelis &amp; Menten 推導：<strong>v = V<sub>max</sub>·[S] / (K<sub>M</sub> + [S])</strong>。假設：(1) 酶-基質中間體 ES 在「穩態」存在（Briggs-Haldane 1925）；(2) [S] ≫ [E]，基質消耗可忽略。</p>
+<p><strong>關鍵參數：</strong></p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>V<sub>max</sub> = kcat·[E]<sub>total</sub></strong>：酶完全飽和時的速率上限。</li>
+<li><strong>K<sub>M</sub></strong>：v 達到 V<sub>max</sub>/2 時的 [S]，反映基質親和力（K<sub>M</sub> 小 = 親和力高）。</li>
+<li><strong>k<sub>cat</sub> (turnover number)</strong>：每秒每個酶分子催化的反應次數。範圍：每秒 1 至 10⁷。</li>
+<li><strong>k<sub>cat</sub>/K<sub>M</sub></strong>：<strong>「特異性常數」</strong>——衡量酶在低基質濃度下的整體效率，上限約 10⁸–10⁹ M⁻¹s⁻¹（擴散極限）。</li>
+</ul></div>
+<div data-lang="en"><p>Michaelis &amp; Menten (1913) derived: <strong>v = V<sub>max</sub>·[S] / (K<sub>M</sub> + [S])</strong>. Assumptions: (1) enzyme-substrate ES is in "steady state" (Briggs-Haldane 1925); (2) [S] ≫ [E], so substrate depletion is negligible.</p>
+<p><strong>Key parameters:</strong></p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>V<sub>max</sub> = kcat·[E]<sub>total</sub></strong>: max rate at full saturation.</li>
+<li><strong>K<sub>M</sub></strong>: [S] at v = V<sub>max</sub>/2; reflects substrate affinity (small K<sub>M</sub> = high affinity).</li>
+<li><strong>k<sub>cat</sub> (turnover)</strong>: reactions per enzyme per second. Range: 1 to 10⁷ s⁻¹.</li>
+<li><strong>k<sub>cat</sub>/K<sub>M</sub></strong>: <strong>"specificity constant"</strong> — overall efficiency at low [S]; upper limit ~10⁸–10⁹ M⁻¹s⁻¹ (diffusion limit).</li>
+</ul></div>
+<div class="callout tip"><span class="callout-icon">💡</span><div>
+<span data-lang="zh"><strong>「完美酶 (perfect enzyme)」概念：</strong>k<sub>cat</sub>/K<sub>M</sub> 接近擴散極限的酶——如 <strong>catalase, carbonic anhydrase, triosephosphate isomerase, fumarase</strong>——每次擴散到酶口的基質都會被催化。演化已達物理上限。</span>
+<span data-lang="en"><strong>"Catalytic perfection":</strong> enzymes whose k<sub>cat</sub>/K<sub>M</sub> reaches the diffusion limit — <strong>catalase, carbonic anhydrase, triose phosphate isomerase, fumarase</strong> — catalyze virtually every encounter. Evolution has hit the physical ceiling.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="Michaelis-Menten 與 Lineweaver-Burk 雙視圖" data-en="MM &amp; Lineweaver-Burk dual view">MM + Lineweaver-Burk</h2>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statKM">—</span><span class="sim-stat gold" id="statKcat">—</span></div>
+<div class="slider-group"><label><span data-zh="V<sub>max</sub> (μM/s)" data-en="V<sub>max</sub> (μM/s)">V<sub>max</sub></span> <span id="valVm">100</span></label><input type="range" id="sliderVm" min="10" max="500" value="100" step="10"></div>
+<div class="slider-group"><label><span data-zh="K<sub>M</sub> (μM)" data-en="K<sub>M</sub> (μM)">K<sub>M</sub></span> <span id="valKm">50</span></label><input type="range" id="sliderKm" min="1" max="500" value="50" step="1"></div>
+<div class="slider-group"><label><span data-zh="抑制劑模式" data-en="Inhibition mode">抑制模式</span> <span id="valInh">無</span></label><input type="range" id="sliderInh" min="0" max="3" value="0" step="1"></div>
+<div class="slider-group"><label><span data-zh="[I] (μM)" data-en="[I] (μM)">[I]</span> <span id="valI">0</span></label><input type="range" id="sliderI" min="0" max="200" value="0" step="5"></div>
+<div class="chart-container"><canvas id="mmChart"></canvas></div>
+<p style="font-size:.82rem;color:var(--c-ink-muted);text-align:center;"><span data-lang="zh">藍 = MM；橙 = Lineweaver-Burk (1/v vs 1/[S])</span><span data-lang="en">Blue = MM; orange = Lineweaver-Burk (1/v vs 1/[S])</span></p>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="抑制" data-en="INHIBITION">抑制</div>
+<h2 data-zh="二、四種抑制模式" data-en="II. Four inhibition modes">二、四種抑制模式</h2>
+<table class="comp-table">
+<thead><tr><th data-zh="模式" data-en="Mode">模式</th><th data-zh="結合位置" data-en="Binds">結合</th><th>K<sub>M</sub> obs</th><th>V<sub>max</sub> obs</th><th data-zh="L-B 圖特徵" data-en="L-B feature">L-B 特徵</th><th data-zh="例子" data-en="Example">例</th></tr></thead>
+<tbody>
+<tr><td><strong data-zh="競爭性" data-en="Competitive">競爭性</strong></td><td data-zh="活位點（與基質競爭）" data-en="Active site">活位點</td><td>↑</td><td>=</td><td data-zh="同 y 軸截距、斜率變大" data-en="Same y-int, steeper slope">y 截距同</td><td>Methotrexate vs DHFR; statins vs HMG-CoA</td></tr>
+<tr><td><strong data-zh="非競爭性" data-en="Non-competitive">非競爭性</strong></td><td data-zh="活位點外" data-en="Allosteric site">活位點外</td><td>=</td><td>↓</td><td data-zh="同 x 截距、不同 y" data-en="Same x-int, different y">x 截距同</td><td data-zh="重金屬離子、cyanide" data-en="Heavy metals, cyanide">重金屬</td></tr>
+<tr><td><strong data-zh="不競爭性" data-en="Uncompetitive">不競爭性</strong></td><td data-zh="僅結合 ES 複合物" data-en="ES complex only">僅 ES</td><td>↓</td><td>↓</td><td data-zh="平行斜線" data-en="Parallel lines">平行線</td><td>Lithium 抑制 IMPase</td></tr>
+<tr><td><strong data-zh="混合型" data-en="Mixed">混合型</strong></td><td data-zh="可結合 E 和 ES" data-en="Both E and ES">皆可</td><td>↑或↓</td><td>↓</td><td data-zh="斜線交於象限外" data-en="Lines cross off-axis">交於象限外</td><td data-zh="部分 allosteric 抑制" data-en="Some allosteric">部分變構</td></tr>
+</tbody></table>
+<div class="callout warn"><span class="callout-icon">⚠️</span><div>
+<span data-lang="zh"><strong>競爭性抑制可被高基質濃度「克服」</strong>（V<sub>max</sub> 不變）；非競爭性與不競爭性無法被克服（V<sub>max</sub> 下降）——這是藥物治療策略的根本差別。例如：methotrexate（競爭性）只在低 folate 時有效，臨床上用 leucovorin 拯救正常細胞。</span>
+<span data-lang="en"><strong>Competitive inhibition can be overcome by high substrate</strong> (V<sub>max</sub> unchanged); non- and uncompetitive cannot (V<sub>max</sub> drops) — a fundamental difference for therapy. Methotrexate (competitive) only works when folate is low; clinically, leucovorin rescues normal cells.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="不可逆" data-en="IRREVERSIBLE">不可逆抑制</div>
+<h2 data-zh="三、不可逆抑制與共價藥物" data-en="III. Irreversible inhibition &amp; covalent drugs">三、不可逆抑制</h2>
+<div data-lang="zh"><p><strong>機制：</strong>抑制劑與酶形成共價鍵——無法以稀釋或透析逆轉。臨床例子：</p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>阿斯匹靈</strong>乙醯化 COX-1/2 的 Ser529/516，永久失活</li>
+<li><strong>奧美拉唑 (omeprazole)</strong> 與 H⁺/K⁺ ATPase 的 Cys 形成雙硫鍵，停用胃酸分泌</li>
+<li><strong>青黴素 (penicillin)</strong> 結合細菌 transpeptidase（β-lactam 環打開）</li>
+<li><strong>Sotorasib (Lumakras, 2021 FDA)</strong> ——首個共價 KRAS-G12C 抑制劑，與 Cys12 形成共價鍵</li>
+<li><strong>Trastuzumab deruxtecan / 共價 EGFR 抑制劑（osimertinib）</strong>——新一代抗癌藥物多走共價路線</li>
+</ul>
+<p><strong>2020 後熱潮：</strong>covalent drug design 強勢回歸——電腦輔助選擇 warhead（acrylamide、α-halocarbonyl）、剖析 cysteinome 找可成藥靶點，<strong>covalent fragment screening</strong> 成為主要篩選方法。</p></div>
+<div data-lang="en"><p><strong>Mechanism:</strong> inhibitor forms a covalent bond with the enzyme — cannot be reversed by dilution or dialysis. Clinical examples:</p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>Aspirin</strong> acetylates Ser529/516 of COX-1/2, permanently inactivating it</li>
+<li><strong>Omeprazole</strong> forms a disulfide with H⁺/K⁺ ATPase Cys, suppressing acid secretion</li>
+<li><strong>Penicillin</strong> covalently labels bacterial transpeptidase (β-lactam ring opens)</li>
+<li><strong>Sotorasib (Lumakras, 2021 FDA)</strong> — the first covalent KRAS-G12C inhibitor, forms a covalent bond with Cys12</li>
+<li><strong>Osimertinib (covalent EGFR)</strong> — next-gen anticancer drugs increasingly use covalent designs</li>
+</ul>
+<p><strong>Post-2020 wave:</strong> covalent drug design returns — computational warhead selection (acrylamides, α-halocarbonyls), cysteinome mapping for druggable targets, and <strong>covalent fragment screening</strong> have become mainstream.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="四、從動力學圖判斷抑制類型" data-en="IV. Diagnosing inhibition from kinetic plots">四、判斷抑制類型</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="Lineweaver-Burk 圖診斷流程" data-en="Lineweaver-Burk diagnosis">Lineweaver-Burk 診斷</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>所有抑制劑濃度的直線都<strong>同樣截 y 軸</strong>（1/V<sub>max</sub> 不變）？<span class="dt-arrow">→</span> 競爭性抑制。</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>所有直線都<strong>同樣截 x 軸</strong>（K<sub>M</sub> 不變）？<span class="dt-arrow">→</span> 非競爭性抑制（pure non-competitive）。</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>所有直線<strong>互相平行</strong>？<span class="dt-arrow">→</span> 不競爭性抑制。</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>直線在象限外某點交會？<span class="dt-arrow">→</span> 混合型抑制。</div></div>
+<div class="dt-node"><span class="dt-q">Q5:</span><div>觀察到時間依賴性 (time-dependent) 抑制？<span class="dt-arrow">→</span> 可能是不可逆抑制劑，需做 dilution / dialysis 確認。</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>All lines share the same <strong>y-intercept</strong> (1/V<sub>max</sub> constant)? <span class="dt-arrow">→</span> Competitive.</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>All lines share the same <strong>x-intercept</strong> (K<sub>M</sub> constant)? <span class="dt-arrow">→</span> Pure non-competitive.</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>Lines <strong>parallel</strong> to each other? <span class="dt-arrow">→</span> Uncompetitive.</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>Lines cross outside both axes? <span class="dt-arrow">→</span> Mixed inhibition.</div></div>
+<div class="dt-node"><span class="dt-q">Q5:</span><div>Time-dependent inhibition observed? <span class="dt-arrow">→</span> Likely irreversible — confirm by dilution/dialysis.</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="非線性擬合 MM 與計算 IC50" data-en="Nonlinear MM fit &amp; IC50">擬合 MM 與 IC50</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'r1')">R / drc</button><button class="code-tab-btn" onclick="switchTab(this,'py1')">Python / SciPy</button></div>
+<div class="code-tab-content active" id="r1"><pre><span class="kw">library</span>(drc)
+
+<span class="comment"># 數據：基質濃度 vs 速率</span>
+df &lt;- data.frame(
+  S = <span class="kw">c</span>(<span class="num">5</span>, <span class="num">10</span>, <span class="num">20</span>, <span class="num">50</span>, <span class="num">100</span>, <span class="num">200</span>, <span class="num">500</span>),
+  v = <span class="kw">c</span>(<span class="num">11</span>, <span class="num">21</span>, <span class="num">37</span>, <span class="num">62</span>, <span class="num">80</span>, <span class="num">92</span>, <span class="num">98</span>)
+)
+
+<span class="comment"># 非線性最小平方擬合 MM</span>
+fit &lt;- <span class="func">drm</span>(v ~ S, data = df, fct = <span class="func">MM.2</span>())
+<span class="func">summary</span>(fit)  <span class="comment"># 取得 Vmax 與 KM</span>
+
+<span class="comment"># IC50：藥物-酶活關係（非 MM）</span>
+df2 &lt;- data.frame(
+  conc = <span class="num">10</span>^<span class="kw">seq</span>(-<span class="num">9</span>, -<span class="num">4</span>, length.out = <span class="num">8</span>),
+  resp = <span class="kw">c</span>(<span class="num">98</span>, <span class="num">95</span>, <span class="num">85</span>, <span class="num">62</span>, <span class="num">35</span>, <span class="num">15</span>, <span class="num">5</span>, <span class="num">2</span>)
+)
+ic_fit &lt;- <span class="func">drm</span>(resp ~ conc, data = df2, fct = <span class="func">LL.4</span>(fixed = <span class="kw">c</span>(<span class="kw">NA</span>, <span class="num">0</span>, <span class="num">100</span>, <span class="kw">NA</span>)))
+<span class="func">ED</span>(ic_fit, <span class="num">50</span>)  <span class="comment"># IC50</span></pre></div>
+<div class="code-tab-content" id="py1"><pre><span class="kw">import</span> numpy <span class="kw">as</span> np
+<span class="kw">from</span> scipy.optimize <span class="kw">import</span> curve_fit
+<span class="kw">import</span> matplotlib.pyplot <span class="kw">as</span> plt
+
+<span class="kw">def</span> <span class="func">mm</span>(S, Vmax, KM): <span class="kw">return</span> Vmax * S / (KM + S)
+
+S = np.array([<span class="num">5</span>, <span class="num">10</span>, <span class="num">20</span>, <span class="num">50</span>, <span class="num">100</span>, <span class="num">200</span>, <span class="num">500</span>])
+v = np.array([<span class="num">11</span>, <span class="num">21</span>, <span class="num">37</span>, <span class="num">62</span>, <span class="num">80</span>, <span class="num">92</span>, <span class="num">98</span>])
+
+popt, pcov = curve_fit(mm, S, v, p0=[<span class="num">100</span>, <span class="num">50</span>])
+Vmax, KM = popt
+<span class="func">print</span>(<span class="str">f"Vmax = {Vmax:.1f}, KM = {KM:.1f}"</span>)
+<span class="func">print</span>(<span class="str">f"kcat/KM (assume [E]=1μM) = {Vmax/KM*1e6:.2e} M⁻¹s⁻¹"</span>)
+
+<span class="comment"># 4-parameter logistic for IC50</span>
+<span class="kw">def</span> <span class="func">ll4</span>(c, top, bot, ic50, hill):
+    <span class="kw">return</span> bot + (top - bot) / (<span class="num">1</span> + (c/ic50)**hill)
+
+conc = np.logspace(-<span class="num">9</span>, -<span class="num">4</span>, <span class="num">8</span>)
+resp = np.array([<span class="num">98</span>, <span class="num">95</span>, <span class="num">85</span>, <span class="num">62</span>, <span class="num">35</span>, <span class="num">15</span>, <span class="num">5</span>, <span class="num">2</span>])
+popt2, _ = curve_fit(ll4, conc, resp, p0=[<span class="num">100</span>, <span class="num">0</span>, <span class="num">1e-6</span>, <span class="num">1</span>])
+<span class="func">print</span>(<span class="str">f"IC50 = {popt2[2]*1e9:.1f} nM"</span>)</pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="1"><p data-lang="zh">1. K<sub>M</sub> 的物理意義？</p><p data-lang="en">1. Physical meaning of K<sub>M</sub>?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 酶的最大速率</span><span data-lang="en">A. Maximum velocity</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. v 達 V<sub>max</sub>/2 時的 [S]，反映基質親和力</span><span data-lang="en">B. [S] at v = V<sub>max</sub>/2; reflects substrate affinity</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 平衡常數</span><span data-lang="en">C. Equilibrium constant</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 反應級數</span><span data-lang="en">D. Reaction order</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="0"><p data-lang="zh">2. 競爭性抑制劑的 Lineweaver-Burk 特徵？</p><p data-lang="en">2. Lineweaver-Burk feature of competitive inhibitor?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 同 y 軸截距、斜率增大（V<sub>max</sub> 不變，K<sub>M</sub> 表觀增大）</span><span data-lang="en">A. Same y-intercept, steeper slope (V<sub>max</sub> unchanged, K<sub>M</sub> apparent increases)</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 同 x 軸截距</span><span data-lang="en">B. Same x-intercept</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 平行線</span><span data-lang="en">C. Parallel lines</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 通過原點</span><span data-lang="en">D. Pass through origin</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="2"><p data-lang="zh">3. k<sub>cat</sub>/K<sub>M</sub> 接近 10⁹ M⁻¹s⁻¹ 代表？</p><p data-lang="en">3. k<sub>cat</sub>/K<sub>M</sub> ~ 10⁹ M⁻¹s⁻¹ means?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 酶催化太慢</span><span data-lang="en">A. Slow enzyme</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 結構不穩定</span><span data-lang="en">B. Unstable structure</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 接近擴散極限——「完美酶」</span><span data-lang="en">C. Near diffusion limit — "catalytic perfection"</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 表示 V<sub>max</sub> 很大</span><span data-lang="en">D. Implies large V<sub>max</sub></span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="enzymes-mechanism.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="酶催化機制" data-en="Enzyme Catalytic Mechanisms">酶催化機制</span></a>
+<a href="enzyme-regulation.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="酶調控：協同性與翻譯後修飾" data-en="Enzyme Regulation: Allostery &amp;amp; PTMs">酶調控：協同性與翻譯後修飾</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+const mmChart=new Chart(document.getElementById('mmChart'),{type:'scatter',data:{datasets:[
+  {label:'MM curve (no I)',data:[],showLine:true,borderColor:'#9f1239',pointRadius:0,borderWidth:2,yAxisID:'y'},
+  {label:'MM curve (+ I)',data:[],showLine:true,borderColor:'#a16207',borderDash:[5,5],pointRadius:0,borderWidth:2,yAxisID:'y'}
+]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{x:{title:{display:true,text:'[S] (μM)'},min:0,max:500},y:{title:{display:true,text:'v (μM/s)'},min:0}},plugins:{legend:{position:'top'}}}});
+const inhModes=['none','competitive','non-competitive','uncompetitive'];
+const inhLabels={zh:{none:'無',competitive:'競爭性',['non-competitive']:'非競爭性',uncompetitive:'不競爭性'},en:{none:'None',competitive:'Competitive',['non-competitive']:'Non-comp.',uncompetitive:'Uncomp.'}};
+function updateMM(){
+  const Vm=+document.getElementById('sliderVm').value;
+  const Km=+document.getElementById('sliderKm').value;
+  const inh=+document.getElementById('sliderInh').value;
+  const I  =+document.getElementById('sliderI').value;
+  const Ki=20;
+  document.getElementById('valVm').textContent=Vm;
+  document.getElementById('valKm').textContent=Km;
+  document.getElementById('valI').textContent=I;
+  const L=I18n.get();
+  document.getElementById('valInh').textContent=inhLabels[L][inhModes[inh]];
+  // Adjust Vm, Km based on inhibition
+  let VmObs=Vm, KmObs=Km;
+  if(I>0){
+    const alpha=1+I/Ki;
+    if(inh===1){KmObs=Km*alpha;} // competitive
+    else if(inh===2){VmObs=Vm/alpha;} // non-competitive
+    else if(inh===3){KmObs=Km/alpha; VmObs=Vm/alpha;} // uncompetitive
+  }
+  const data0=[],data1=[];
+  for(let s=0;s<=500;s+=10){
+    data0.push({x:s,y:Vm*s/(Km+s)});
+    data1.push({x:s,y:VmObs*s/(KmObs+s)});
+  }
+  mmChart.data.datasets[0].data=data0;
+  mmChart.data.datasets[1].data=data1;
+  mmChart.update('none');
+  document.getElementById('statKM').textContent=(L==='zh'?'K_M obs = ':'KM obs = ')+KmObs.toFixed(1)+' μM';
+  const kcatEst=(VmObs/Vm).toFixed(2);
+  document.getElementById('statKcat').textContent=(L==='zh'?'V_max obs / V_max = ':'Vmax ratio = ')+kcatEst;
+}
+['sliderVm','sliderKm','sliderInh','sliderI'].forEach(id=>document.getElementById(id).addEventListener('input',updateMM));
+document.addEventListener('langchange',updateMM);
+updateMM();
+
+const QF={zh:{q1_y:'K_M 是 v = Vmax/2 時的基質濃度，反映 ES 結合穩定性（K_M 小 → 親和力高）。',q2_y:'競爭性抑制劑：V_max 不變、K_M 表觀變大；L-B 圖同 y 軸截距、斜率增大。',q3_y:'k_cat/K_M ≈ 10⁹ 接近擴散極限，每次基質與酶碰面都會催化——「完美酶」狀態。'},en:{q1_y:'K_M is the [S] at v = Vmax/2 and reflects ES binding (small K_M = high affinity).',q2_y:'Competitive inhibitor: V_max unchanged, apparent K_M increases; L-B same y-intercept, steeper slope.',q3_y:'k_cat/K_M ~ 10⁹ approaches the diffusion limit — virtually every encounter is catalyzed: "catalytic perfection."'}};['q1_n','q2_n','q3_n'].forEach(k=>{QF.zh[k]='正確答案已標示。';QF.en[k]='Correct answer highlighted.';});
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

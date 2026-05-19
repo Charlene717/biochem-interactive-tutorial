@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.3 結構解析方法與 AlphaFold 3 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html" class="active">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 3 / 18 · BLOCK A</div>
+<h1 data-zh="結構解析方法與 AlphaFold 3" data-en="Structure Determination &amp; AlphaFold 3">結構解析方法與 AlphaFold 3</h1>
+<p class="subtitle" data-lang="zh">從 X-ray 到 cryo-EM 原子解析，從 AlphaFold 2 到 AlphaFold 3 涵蓋核酸與配體——2026 結構生物學的全景。</p>
+<p class="subtitle" data-lang="en">From X-ray to atomic cryo-EM, from AlphaFold 2 to AlphaFold 3 covering nucleic acids and ligands — the 2026 landscape of structural biology.</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="概覽" data-en="OVERVIEW">概覽</div>
+<h2 data-zh="為什麼要解結構？" data-en="Why determine structures?">為什麼要解結構？</h2>
+<div data-lang="zh"><p>結構是<strong>機制 (mechanism)</strong> 的鑰匙。沒有結構，我們只能從動力學、突變、生化反應推測酶/受體如何作用；有了結構，就能直接看見：催化殘基如何排列、藥物如何結合、變構訊號如何傳遞、突變為何致病。</p>
+<p>PDB（Protein Data Bank）截至 2026 已收錄超過 230,000 個實驗結構與 AlphaFold DB 約 2 億預測模型——涵蓋幾乎所有已知蛋白序列。</p></div>
+<div data-lang="en"><p>Structure is the key to <strong>mechanism</strong>. Without structures, we can only infer enzyme/receptor function from kinetics, mutations, and indirect biochemistry; with structures, we directly see how catalytic residues align, how drugs bind, how allosteric signals propagate, and why mutations cause disease.</p>
+<p>By 2026 the Protein Data Bank holds &gt;230,000 experimental structures, and the AlphaFold DB ~200 million predicted models — covering essentially every known protein sequence.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="實驗方法" data-en="EXPERIMENTAL">實驗方法</div>
+<h2 data-zh="一、三大實驗結構解析方法" data-en="I. Three experimental methods">一、三大實驗方法</h2>
+<table class="comp-table">
+<thead><tr><th data-zh="方法" data-en="Method">方法</th><th data-zh="解析度" data-en="Resolution">解析度</th><th data-zh="樣品需求" data-en="Sample">樣品</th><th data-zh="關鍵限制" data-en="Limitation">限制</th><th data-zh="最佳應用" data-en="Best for">最佳</th></tr></thead>
+<tbody>
+<tr><td><strong>X-ray crystallography</strong></td><td>0.6–4 Å</td><td data-zh="可結晶蛋白" data-en="Crystallizable">可結晶</td><td data-zh="需結晶；可能膜蛋白結晶極難" data-en="Crystallization; membrane proteins hard">需結晶</td><td data-zh="高解析度、配體複合物" data-en="High res; ligand complexes">配體複合物</td></tr>
+<tr><td><strong>Cryo-EM (single-particle)</strong></td><td data-zh="1.2–4 Å（2020 起達原子）" data-en="1.2–4 Å (atomic since 2020)">1.2–4 Å</td><td data-zh="~0.5–1 mg；不需結晶" data-en="~0.5–1 mg; no crystals">不需結晶</td><td data-zh="小蛋白（&lt;50 kDa）較難" data-en="Hard for small (&lt;50 kDa)">小蛋白困難</td><td data-zh="大複合體、膜蛋白、多構象" data-en="Large complexes, membrane">大複合體、膜蛋白</td></tr>
+<tr><td><strong>NMR</strong></td><td data-zh="2–5 Å（基於 NOE）" data-en="2–5 Å (NOE-based)">2–5 Å</td><td data-zh="&lt;30 kDa；¹⁵N/¹³C 標記" data-en="&lt;30 kDa; ¹⁵N/¹³C labeled">&lt;30 kDa</td><td data-zh="大小限制" data-en="Size limit">大小限制</td><td data-zh="動態、IDP、互動界面、藥物片段篩選" data-en="Dynamics, IDP, fragments">動態、IDP、片段篩選</td></tr>
+</tbody></table>
+<div class="callout tip"><span class="callout-icon">💡</span><div>
+<span data-lang="zh"><strong>2020–2025 重大突破：</strong>cryo-EM「解析度革命」——三個獨立小組（Yip, Nakane, Maki-Yonekura）將鐵蛋白 (apoferritin) 解析到 <strong>1.22 Å</strong>，突破原子解析屏障。2025 年微秒級 time-resolved cryo-EM（雷射閃熔再玻璃化）讓我們首次能看到「酶反應中間態」。</span>
+<span data-lang="en"><strong>2020–2025 breakthrough:</strong> The "resolution revolution" — three independent groups (Yip, Nakane, Maki-Yonekura) achieved <strong>1.22 Å</strong> on apoferritin, crossing the atomic-resolution barrier. In 2025, microsecond time-resolved cryo-EM (laser flash-melting + revitrification) enabled the first direct snapshots of "enzyme-reaction intermediates."</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="AlphaFold 3" data-en="ALPHAFOLD 3">AlphaFold 3</div>
+<h2 data-zh="二、AlphaFold 3：所有生命分子的統一架構" data-en="II. AlphaFold 3: A unified architecture for all biomolecules">二、AlphaFold 3</h2>
+<div data-lang="zh"><p>AlphaFold 2 (2020) 革新蛋白質結構預測；但僅能處理蛋白。<strong>AlphaFold 3 (Abramson et al., Nature 2024)</strong> 將架構擴展到<strong>蛋白質-蛋白質、蛋白質-核酸、蛋白質-小分子配體、蛋白質-離子、修飾胺基酸</strong>的聯合預測，核心改為<strong>擴散模型 (diffusion network)</strong>。</p>
+<p>關鍵突破：</p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>蛋白-配體預測準確度比傳統 docking 提升 ~50%</strong>（PoseBusters benchmark）</li>
+<li><strong>蛋白-核酸複合物比專門核酸預測器更準</strong></li>
+<li><strong>抗體-抗原預測準確度大幅高於 AlphaFold-Multimer v2.3</strong></li>
+<li><strong>毋需輸入任何結構資訊</strong>，從序列直接預測複合物</li></ul></div>
+<div data-lang="en"><p>AlphaFold 2 (2020) revolutionized protein structure prediction but handled proteins only. <strong>AlphaFold 3 (Abramson et al., Nature 2024)</strong> extends the architecture to jointly predict <strong>protein–protein, protein–nucleic-acid, protein–small-molecule, protein–ion, and modified-residue</strong> complexes. The core moved to a <strong>diffusion network</strong>.</p>
+<p>Key advances:</p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>Protein–ligand accuracy ~50% higher than traditional docking</strong> (PoseBusters benchmark)</li>
+<li><strong>Protein–nucleic-acid complexes outperform specialized predictors</strong></li>
+<li><strong>Antibody–antigen accuracy far exceeds AlphaFold-Multimer v2.3</strong></li>
+<li><strong>No structural input needed</strong> — predicts complexes directly from sequence</li></ul></div>
+<div class="callout warn"><span class="callout-icon">⚠️</span><div>
+<span data-lang="zh"><strong>AlphaFold 3 的限制：</strong>(1) 對 IDP/未摺疊區、構象集合的描述仍弱；(2) <strong>變構效應</strong>與配體誘發構象變化未必準確；(3) 預測 RMSD 並不等同於可信度——應檢查 pLDDT 與 PAE 分數；(4) 共價修飾、稀有金屬中心、糖鏈仍是相對弱項。實驗結構仍是金標準。</span>
+<span data-lang="en"><strong>AlphaFold 3 limits:</strong> (1) Poor on IDPs/unfolded regions and conformational ensembles; (2) <strong>Allosteric effects</strong> and ligand-induced conformational change are not always accurate; (3) RMSD ≠ confidence — always check pLDDT and PAE; (4) Covalent modifications, rare metal centers, glycan chains are relative weak spots. Experimental structures remain the gold standard.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="方法選擇與解析度視覺化" data-en="Method choice &amp; resolution visualization">方法選擇與解析度</h2>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statMethod">—</span><span class="sim-stat gold" id="statRes">—</span></div>
+<div class="slider-group"><label><span data-zh="蛋白大小 (kDa)" data-en="Protein size (kDa)">蛋白大小</span> <span id="valSize">100</span></label><input type="range" id="sliderSize" min="5" max="2000" value="100" step="5"></div>
+<div class="slider-group"><label><span data-zh="樣品難度（可結晶 → 不穩定）" data-en="Sample difficulty (crystallizable → unstable)">樣品難度</span> <span id="valDiff">3</span></label><input type="range" id="sliderDiff" min="1" max="5" value="3" step="1"></div>
+<div class="slider-group"><label><span data-zh="關注：靜態 → 動態" data-en="Focus: static → dynamic">關注</span> <span id="valDyn">2</span></label><input type="range" id="sliderDyn" min="1" max="5" value="2" step="1"></div>
+<div class="chart-container"><canvas id="resChart"></canvas></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="三、結構解析路徑選擇" data-en="III. Choosing a structural method">三、解析路徑選擇</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="實驗 vs 預測決策" data-en="Experimental vs predicted">實驗 vs 預測</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>你需要的是<strong>機制細節</strong>還是<strong>整體摺疊預判</strong>？<span class="dt-arrow">→</span> 機制 = 實驗結構；整體預判 = AlphaFold 3 即可。</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>蛋白能結晶嗎？<span class="dt-arrow">→</span> 能 = X-ray（解析度可達 1 Å）；不能 = cryo-EM（≥50 kDa）或 NMR（≤30 kDa）。</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>研究膜蛋白嗎？<span class="dt-arrow">→</span> 首選 <strong>cryo-EM in nanodiscs/SMA</strong>；2025 後絕大多數 GPCR 結構都用 cryo-EM。</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>研究 IDP / 動態？<span class="dt-arrow">→</span> NMR (HSQC、relaxation) 或 SAXS + EPR；AlphaFold 對動態幾乎無效。</div></div>
+<div class="dt-node"><span class="dt-q">Q5:</span><div>需要看「反應中間態」？<span class="dt-arrow">→</span> Time-resolved X-ray (XFEL) 或 microsecond cryo-EM（2025 起可用）。</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>Do you need <strong>mechanistic detail</strong> or just a <strong>rough fold</strong>? <span class="dt-arrow">→</span> Mechanism = experimental; rough fold = AlphaFold 3 is enough.</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>Crystallizable? <span class="dt-arrow">→</span> Yes = X-ray (down to 1 Å); No = cryo-EM (≥50 kDa) or NMR (≤30 kDa).</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>Membrane protein? <span class="dt-arrow">→</span> <strong>Cryo-EM in nanodiscs/SMA</strong>; nearly all post-2025 GPCR structures use cryo-EM.</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>IDP / dynamics? <span class="dt-arrow">→</span> NMR (HSQC, relaxation) or SAXS + EPR; AlphaFold is essentially blind to dynamics.</div></div>
+<div class="dt-node"><span class="dt-q">Q5:</span><div>Need reaction intermediates? <span class="dt-arrow">→</span> Time-resolved X-ray (XFEL) or microsecond cryo-EM (available since 2025).</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="使用 AlphaFold 與 PDB 結構" data-en="Using AlphaFold &amp; PDB structures">AlphaFold + PDB</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'r1')">R / Bio3D</button><button class="code-tab-btn" onclick="switchTab(this,'py1')">Python / Biopython</button></div>
+<div class="code-tab-content active" id="r1"><pre><span class="kw">library</span>(bio3d)
+
+<span class="comment"># 從 PDB 下載結構</span>
+pdb &lt;- <span class="func">read.pdb</span>(<span class="str">"1HHO"</span>)  <span class="comment"># 血紅蛋白</span>
+
+<span class="comment"># 基本資訊</span>
+<span class="func">summary</span>(pdb)
+<span class="func">torsion.pdb</span>(pdb)$phi  <span class="comment"># Ramachandran φ</span>
+
+<span class="comment"># 比對兩個結構（如 AlphaFold 預測 vs 實驗）</span>
+af_pdb &lt;- <span class="func">read.pdb</span>(<span class="str">"AF-P69905-F1-model_v4.pdb"</span>)
+aln &lt;- <span class="func">struct.aln</span>(pdb, af_pdb)
+<span class="func">cat</span>(<span class="str">"RMSD ="</span>, aln$rmsd, <span class="str">"Å\n"</span>)
+
+<span class="comment"># 標記 pLDDT 高/低區（AlphaFold 信心分數）</span>
+plddt &lt;- af_pdb$atom$b[af_pdb$atom$elety == <span class="str">"CA"</span>]
+<span class="func">hist</span>(plddt, breaks=<span class="num">50</span>, main=<span class="str">"AlphaFold pLDDT"</span>)
+<span class="comment"># pLDDT &gt; 90: 非常可信；70-90: 可信主鏈；50-70: 低信心；&lt;50: 通常無序</span></pre></div>
+<div class="code-tab-content" id="py1"><pre><span class="kw">from</span> Bio.PDB <span class="kw">import</span> PDBParser, Superimposer
+<span class="kw">import</span> numpy <span class="kw">as</span> np
+
+parser = PDBParser(QUIET=<span class="kw">True</span>)
+exp = parser.get_structure(<span class="str">"hb"</span>, <span class="str">"1HHO.pdb"</span>)
+af  = parser.get_structure(<span class="str">"af"</span>, <span class="str">"AF-P69905-F1-model_v4.pdb"</span>)
+
+<span class="comment"># 蒐集 CA 原子作疊合</span>
+exp_ca = [a <span class="kw">for</span> a <span class="kw">in</span> exp.get_atoms() <span class="kw">if</span> a.name==<span class="str">"CA"</span>]
+af_ca  = [a <span class="kw">for</span> a <span class="kw">in</span> af.get_atoms()  <span class="kw">if</span> a.name==<span class="str">"CA"</span>]
+
+sup = Superimposer()
+sup.set_atoms(exp_ca[:<span class="func">len</span>(af_ca)], af_ca[:<span class="func">len</span>(exp_ca)])
+<span class="func">print</span>(<span class="str">f"RMSD = {sup.rms:.2f} Å"</span>)
+
+<span class="comment"># 讀 pLDDT（存放在 B-factor 欄位）</span>
+plddt = np.array([a.get_bfactor() <span class="kw">for</span> a <span class="kw">in</span> af_ca])
+<span class="func">print</span>(<span class="str">f"Mean pLDDT: {plddt.mean():.1f}"</span>)
+<span class="func">print</span>(<span class="str">f"% confident (&gt;70): {(plddt&gt;70).mean()*100:.1f}%"</span>)
+
+<span class="comment"># API 呼叫 ESM-Fold / AlphaFold Server (2024+)</span>
+<span class="kw">import</span> requests
+seq = <span class="str">"MKTLLLTLVVVTIVCLDLGYT..."</span>
+r = requests.post(<span class="str">"https://api.esmatlas.com/foldSequence/v1/pdb/"</span>, data=seq)
+<span class="kw">with</span> <span class="func">open</span>(<span class="str">"esm.pdb"</span>, <span class="str">"w"</span>) <span class="kw">as</span> f: f.write(r.text)</pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="2"><p data-lang="zh">1. AlphaFold 3 相較 AlphaFold 2 最大的能力差別是？</p><p data-lang="en">1. The biggest capability leap from AlphaFold 2 to 3 is?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 速度快 1000 倍</span><span data-lang="en">A. 1000× faster</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 解析度提升至原子等級</span><span data-lang="en">B. Reaches atomic resolution</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 可預測蛋白-核酸-小分子-離子聯合複合物（用擴散模型）</span><span data-lang="en">C. Predicts protein–NA–ligand–ion joint complexes (diffusion model)</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 不需要序列輸入</span><span data-lang="en">D. No sequence input needed</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="1"><p data-lang="zh">2. 100 kDa 膜蛋白 GPCR 與配體複合物，最佳方法是？</p><p data-lang="en">2. 100 kDa GPCR–ligand complex — best method?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. NMR</span><span data-lang="en">A. NMR</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. Cryo-EM（在 nanodisc 或 detergent 中）</span><span data-lang="en">B. Cryo-EM (in nanodisc or detergent)</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 直接相信 AlphaFold 預測</span><span data-lang="en">C. Trust AlphaFold prediction directly</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. SAXS</span><span data-lang="en">D. SAXS</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="3"><p data-lang="zh">3. AlphaFold 預測模型的「pLDDT」分數意義是？</p><p data-lang="en">3. What does the AlphaFold "pLDDT" score mean?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 蛋白質的解析度（單位 Å）</span><span data-lang="en">A. Resolution in Å</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 配體結合親和力</span><span data-lang="en">B. Ligand binding affinity</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 訓練集大小</span><span data-lang="en">C. Training set size</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 每個殘基的局部信心分數，&gt;90 非常可信，&lt;50 通常無序</span><span data-lang="en">D. Per-residue local confidence; &gt;90 very high, &lt;50 usually disordered</span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="amino-acids-proteins.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="胺基酸與蛋白質結構" data-en="Amino Acids &amp;amp; Protein Structure">胺基酸與蛋白質結構</span></a>
+<a href="carbohydrates-lipids.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="醣類、脂質與生物膜" data-en="Carbohydrates, Lipids &amp;amp; Membranes">醣類、脂質與生物膜</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+// Method recommendation chart
+const resChart=new Chart(document.getElementById('resChart'),{type:'bar',data:{labels:['X-ray','Cryo-EM','NMR','AlphaFold 3'],datasets:[{label:'適合度 (0-100)',data:[50,50,50,80],backgroundColor:['#9f1239','#a16207','#6b21a8','#0e7490']}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,animation:false,scales:{x:{min:0,max:100}}}});
+function updateMethod(){
+  const size=+document.getElementById('sliderSize').value;
+  const diff=+document.getElementById('sliderDiff').value;
+  const dyn=+document.getElementById('sliderDyn').value;
+  document.getElementById('valSize').textContent=size+' kDa';
+  document.getElementById('valDiff').textContent=diff;
+  document.getElementById('valDyn').textContent=dyn;
+  // Score each method
+  const xray = (diff<=2?80:diff<=3?50:20) + (dyn<=2?20:0); // needs crystals, static only
+  const cryo = (size>=50?80:size>=20?40:10) + (dyn<=3?20:5);
+  const nmr  = (size<=30?80:size<=50?40:5) + (dyn>=3?25:10); // good for dynamics
+  const af   = 75 + (dyn<=2?15:dyn<=3?5:-30); // limited on dynamics/IDP
+  resChart.data.datasets[0].data=[xray,cryo,nmr,af];
+  resChart.update('none');
+  const max=Math.max(xray,cryo,nmr,af);
+  const idx=[xray,cryo,nmr,af].indexOf(max);
+  const names=['X-ray','Cryo-EM','NMR','AlphaFold 3'];
+  const L=I18n.get();
+  document.getElementById('statMethod').textContent=(L==='zh'?'最佳方法：':'Best: ')+names[idx];
+  document.getElementById('statRes').textContent=(L==='zh'?'分數 ':'Score ')+max;
+}
+['sliderSize','sliderDiff','sliderDyn'].forEach(id=>document.getElementById(id).addEventListener('input',updateMethod));
+document.addEventListener('langchange',updateMethod);
+updateMethod();
+
+const QF={zh:{q1_y:'AlphaFold 3 採擴散模型，將預測擴展到核酸、小分子、離子、修飾殘基的聯合複合物。',q2_y:'GPCR 等膜蛋白多以 cryo-EM 在 nanodisc 中解析，2025 起占主導。',q3_y:'pLDDT 是每殘基局部信心分數：>90 非常可信，<50 通常為無序區。'},en:{q1_y:'AF3 uses a diffusion network and predicts NA, ligands, ions, modified residues in joint complexes.',q2_y:'GPCRs and other membrane proteins are now predominantly solved by cryo-EM in nanodiscs.',q3_y:'pLDDT is per-residue local confidence: >90 very high, <50 usually disordered.'}};['q1_n','q2_n','q3_n'].forEach(k=>{QF.zh[k]='正確答案已標示。';QF.en[k]='Correct answer highlighted.';});
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.5 核酸的化學與結構 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html" class="active">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 5 / 18 · BLOCK A</div>
+<h1 data-zh="核酸的化學與結構" data-en="Nucleic Acid Chemistry &amp; Structure">核酸的化學與結構</h1>
+<p class="subtitle" data-lang="zh">從鹼基到雙螺旋，從 ribozyme 到核糖核酸藥物——理解 DNA/RNA 的化學特性，才能理解生命如何儲存與執行訊息。</p>
+<p class="subtitle" data-lang="en">From bases to double helix, from ribozymes to RNA therapeutics — understand the chemistry to understand how life stores and executes information.</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="化學組成" data-en="CHEMISTRY">化學組成</div>
+<h2 data-zh="一、核苷酸的三個組件" data-en="I. The three components of a nucleotide">一、核苷酸的三個組件</h2>
+<div data-lang="zh"><p>核苷酸 = <strong>含氮鹼基 + 五碳醣 + 磷酸基</strong>。核苷 = 鹼基 + 醣，多了磷酸才叫核苷酸。<strong>DNA</strong> 用去氧核糖（2'-H）、<strong>RNA</strong> 用核糖（2'-OH）——這 2' 位的氫氧基是 DNA/RNA 化學穩定性差異的關鍵。RNA 2'-OH 鄰位攻擊使其極易在鹼性條件下水解；DNA 卻可保存數萬年（古 DNA 研究即依此）。</p></div>
+<div data-lang="en"><p>Nucleotide = <strong>nitrogenous base + pentose sugar + phosphate</strong>. Nucleoside is base+sugar; add phosphate to get nucleotide. <strong>DNA</strong> uses deoxyribose (2'-H); <strong>RNA</strong> uses ribose (2'-OH) — this 2' hydroxyl is the chemical reason for the stability difference. RNA's 2'-OH enables in-line nucleophilic attack, making RNA easily hydrolyzed in base; DNA persists for thousands of years (the foundation of ancient-DNA studies).</p></div>
+<div class="card-grid cols-3">
+<div class="card"><h4>🧬 <span data-zh="嘌呤 (purine)" data-en="Purines">嘌呤</span></h4><div data-lang="zh"><p>雙環：腺嘌呤 (A)、鳥嘌呤 (G)。9 個原子（5 環 + 6 環稠合）。</p></div><div data-lang="en"><p>Bicyclic: adenine (A), guanine (G). 9-atom (5-ring + 6-ring fused).</p></div></div>
+<div class="card"><h4>🔬 <span data-zh="嘧啶 (pyrimidine)" data-en="Pyrimidines">嘧啶</span></h4><div data-lang="zh"><p>單環：胞嘧啶 (C)、胸腺嘧啶 (T, 僅 DNA)、尿嘧啶 (U, 僅 RNA)。</p></div><div data-lang="en"><p>Single ring: cytosine (C), thymine (T, DNA only), uracil (U, RNA only).</p></div></div>
+<div class="card"><h4>⚡ <span data-zh="多功能核苷酸" data-en="Multifunctional nucleotides">多功能核苷酸</span></h4><div data-lang="zh"><p>ATP/GTP（能量幣）、cAMP/cGMP（訊息）、NAD⁺/FAD（電子載體）、CoA、SAM——核苷酸不只是 DNA/RNA 單體。</p></div><div data-lang="en"><p>ATP/GTP (energy), cAMP/cGMP (signaling), NAD⁺/FAD (electron carriers), CoA, SAM — nucleotides do far more than build polymers.</p></div></div>
+</div>
+<div class="callout tip"><span class="callout-icon">💡</span><div>
+<span data-lang="zh"><strong>為什麼是 DNA 不是 RNA 儲存遺傳訊息？</strong>RNA 2'-OH 的化學不穩定性使其不適合長期儲存；但這個 2'-OH 也賦予 RNA 結構多樣性與催化能力 (ribozymes)。生命選擇 RNA 做執行、DNA 做存檔——這個分工是化學決定的。</span>
+<span data-lang="en"><strong>Why DNA, not RNA, stores genetic information?</strong> RNA's 2'-OH makes it chemically unstable; but the same 2'-OH gives RNA structural diversity and catalytic ability (ribozymes). Life chose RNA for execution and DNA for archival — a division driven by chemistry.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="雙螺旋" data-en="DOUBLE HELIX">雙螺旋</div>
+<h2 data-zh="二、DNA 雙螺旋的化學細節" data-en="II. Chemistry of the DNA double helix">二、雙螺旋化學</h2>
+<table class="comp-table">
+<thead><tr><th data-zh="特徵" data-en="Feature">特徵</th><th>B-DNA</th><th>A-DNA</th><th>Z-DNA</th></tr></thead>
+<tbody>
+<tr><td data-zh="螺旋手性" data-en="Helix handedness">手性</td><td data-zh="右手" data-en="Right">右手</td><td data-zh="右手" data-en="Right">右手</td><td data-zh="左手" data-en="Left">左手</td></tr>
+<tr><td data-zh="每圈鹼基對" data-en="bp/turn">bp/圈</td><td>10.5</td><td>11</td><td>12</td></tr>
+<tr><td data-zh="條件" data-en="Conditions">條件</td><td data-zh="生理鹽度水溶液（主要形式）" data-en="Physiological aqueous (dominant)">生理水溶液</td><td data-zh="低含水量、RNA-DNA 雜交" data-en="Dehydrated, RNA-DNA hybrid">脫水、RNA-DNA 雜交</td><td data-zh="GC 富集、高鹽、負超螺旋" data-en="GC-rich, high salt, negative supercoiling">GC 富、高鹽</td></tr>
+<tr><td data-zh="主要 vs 次要溝深" data-en="Major vs minor groove">溝深</td><td data-zh="深且寬 vs 淺且窄（蛋白辨識主要溝）" data-en="Deep+wide vs shallow+narrow (proteins read major)">主溝深寬</td><td data-zh="窄而深 vs 寬而淺" data-en="Narrow+deep vs wide+shallow">不同</td><td data-zh="幾乎平坦" data-en="Nearly flat">特殊</td></tr>
+</tbody></table>
+<div data-lang="zh"><p><strong>鹼基配對的氫鍵：</strong>A=T 兩個氫鍵；G≡C 三個氫鍵。所以 GC 含量高的序列<strong>熔點 (Tm) 較高</strong>。PCR primer 設計、SNP 探針穩定性、qPCR 機制都從這裡推導。</p>
+<p><strong>鹼基堆積：</strong>雙螺旋穩定性中，<strong>鹼基堆疊 (base stacking)</strong> 的貢獻其實大於氫鍵——這是熱力學上常被忽略的事實。</p></div>
+<div data-lang="en"><p><strong>Base-pair hydrogen bonds:</strong> A=T uses two H-bonds; G≡C uses three. So GC-rich sequences have <strong>higher Tm</strong>. This logic underlies PCR primer design, SNP probe stability, and qPCR mechanics.</p>
+<p><strong>Base stacking:</strong> in the double helix, <strong>base stacking</strong> contributes more to stability than hydrogen bonding — a thermodynamic fact often overlooked.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="DNA Tm 計算器" data-en="DNA Tm Calculator">DNA Tm 計算器</h2>
+<div data-lang="zh"><p>拖動 GC 含量與序列長度，觀察熔點如何變化。<strong>Wallace 法則：</strong>Tm = 2(A+T) + 4(G+C)，對短引子有效（&lt;20 bp）。對於較長序列，使用最近鄰參數模型較準。</p></div>
+<div data-lang="en"><p>Drag GC% and length to see Tm. <strong>Wallace rule:</strong> Tm = 2(A+T) + 4(G+C), valid for short primers (&lt;20 bp). For longer sequences, nearest-neighbor models are more accurate.</p></div>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statTm">—</span><span class="sim-stat gold" id="statStable">—</span></div>
+<div class="slider-group"><label><span data-zh="序列長度 (bp)" data-en="Length (bp)">長度</span> <span id="valLen">20</span></label><input type="range" id="sliderLen" min="6" max="60" value="20" step="1"></div>
+<div class="slider-group"><label><span data-zh="GC 含量 (%)" data-en="GC content (%)">GC%</span> <span id="valGC">50</span></label><input type="range" id="sliderGC" min="0" max="100" value="50" step="1"></div>
+<div class="slider-group"><label><span data-zh="鹽濃度 [Na⁺] (mM)" data-en="Salt [Na⁺] (mM)">鹽濃度</span> <span id="valNa">50</span></label><input type="range" id="sliderNa" min="10" max="500" value="50" step="10"></div>
+<div class="chart-container"><canvas id="tmChart"></canvas></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="RNA 結構" data-en="RNA STRUCTURE">RNA 結構</div>
+<h2 data-zh="三、RNA 二級/三級結構" data-en="III. RNA secondary &amp; tertiary structure">三、RNA 結構</h2>
+<div data-lang="zh"><p>RNA 是單股，但會自身摺疊出複雜結構：<strong>hairpin/stem-loop、bulge、internal loop、pseudoknot、kissing loop</strong>。三級結構則由<strong>非標準鹼基配對（如 G-U wobble、Hoogsteen）、長距離互作、金屬離子協調</strong>形成。tRNA 的 cloverleaf-L 形狀就是經典三級摺疊。</p>
+<p><strong>Ribozymes：</strong>RNA 本身可催化反應——核糖體的肽鍵形成、剪接體的 RNA 剪接、自切割 ribozyme（hammerhead、HDV）。這個發現顛覆了「酶 = 蛋白」的定義，Cech & Altman 因此獲 1989 Nobel。</p></div>
+<div data-lang="en"><p>RNA is single-stranded but folds into rich structures: <strong>hairpin/stem-loop, bulge, internal loop, pseudoknot, kissing loop</strong>. Tertiary structure uses <strong>non-Watson-Crick pairs (G-U wobble, Hoogsteen), long-range contacts, and metal-ion coordination</strong>. The tRNA cloverleaf-to-L is a classic tertiary fold.</p>
+<p><strong>Ribozymes:</strong> RNA itself can catalyze reactions — ribosomal peptidyl transfer, spliceosomal splicing, self-cleaving ribozymes (hammerhead, HDV). Cech &amp; Altman won the 1989 Nobel for this discovery, overturning "enzyme = protein."</p></div>
+<div class="callout warn"><span class="callout-icon">⚠️</span><div>
+<span data-lang="zh"><strong>2026 重點：mRNA 疫苗的化學工程。</strong>Karikó & Weissman (2023 Nobel) 的關鍵突破：將 mRNA 中的 uridine 替換為 <strong>N1-methylpseudouridine (m1Ψ)</strong>，降低 TLR/RIG-I 免疫識別、提升翻譯效率。這是核酸化學如何重塑現代醫學的最佳例子。</span>
+<span data-lang="en"><strong>2026 highlight: mRNA vaccine chemistry.</strong> Karikó &amp; Weissman's (2023 Nobel) key insight: replace uridine with <strong>N1-methylpseudouridine (m1Ψ)</strong> to evade TLR/RIG-I sensing and boost translation. A landmark example of nucleic-acid chemistry reshaping modern medicine.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="四、PCR primer 設計決策" data-en="IV. PCR primer design decisions">四、PCR primer 設計</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="primer 設計核心檢核" data-en="Primer design checklist">primer 設計核心</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>長度 18–22 nt，Tm 約 55–65°C，兩個 primer Tm 差 ≤ 2°C。</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>GC 含量 40–60%，3' 末端兩位最好為 G 或 C（GC clamp）。</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>避免：(a) 自身互補 (hairpin)；(b) 3' 末端 primer-dimer；(c) 連續四個以上同類鹼基。</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>跨內含子設計（兩個 primer 跨 exon-intron boundary）可區分 cDNA 與基因組污染。</div></div>
+<div class="dt-node"><span class="dt-q">Q5:</span><div>需要高特異性 (qPCR) → Primer3、IDT OligoAnalyzer 工具驗證 ΔG、specificity。</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>Length 18–22 nt, Tm 55–65°C, primer Tm difference ≤ 2°C.</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>GC 40–60%, 3' last two should be G or C (GC clamp).</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>Avoid: (a) hairpin self-complement; (b) 3' primer-dimer; (c) runs of ≥4 same base.</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>Span an intron (primers across exon-exon junction) to distinguish cDNA from gDNA contamination.</div></div>
+<div class="dt-node"><span class="dt-q">Q5:</span><div>High specificity needed (qPCR) → use Primer3 / IDT OligoAnalyzer to validate ΔG and off-targets.</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="Tm 計算與 RNA 二級結構預測" data-en="Tm calculation &amp; RNA secondary structure">Tm + RNA 折疊</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'r1')">R / Biostrings</button><button class="code-tab-btn" onclick="switchTab(this,'py1')">Python / Biopython</button></div>
+<div class="code-tab-content active" id="r1"><pre><span class="kw">library</span>(Biostrings)
+<span class="kw">library</span>(TmCalculator)
+
+seq &lt;- <span class="str">"ATGCGTACGTTAGCCGTAC"</span>
+
+<span class="comment"># 最近鄰參數模型（最準）</span>
+<span class="func">Tm_NN</span>(seq, Na = <span class="num">50</span>)
+
+<span class="comment"># Wallace 法則（短引子）</span>
+<span class="func">Tm_Wallace</span>(seq)
+
+<span class="comment"># GC 含量、長度</span>
+<span class="func">letterFrequency</span>(<span class="func">DNAString</span>(seq), <span class="str">"GC"</span>, as.prob=<span class="kw">TRUE</span>)
+
+<span class="comment"># RNA 二級結構（Vienna RNA）</span>
+<span class="kw">library</span>(<span class="str">"systemPipeR"</span>)  <span class="comment"># 或直接呼叫 RNAfold CLI</span>
+<span class="func">system</span>(<span class="str">"echo 'GCGGAUUUAGCUCAGUUGGGAGAGCGCCAGACUGAAGAUCUGGAGGUCCUGUGUUCGAUCCACAGAAUUCGCACCA' | RNAfold"</span>)</pre></div>
+<div class="code-tab-content" id="py1"><pre><span class="kw">from</span> Bio.SeqUtils <span class="kw">import</span> MeltingTemp <span class="kw">as</span> mt
+<span class="kw">from</span> Bio.Seq <span class="kw">import</span> Seq
+
+seq = <span class="func">Seq</span>(<span class="str">"ATGCGTACGTTAGCCGTAC"</span>)
+<span class="func">print</span>(<span class="str">f"Tm (Wallace) = {mt.Tm_Wallace(seq):.1f}°C"</span>)
+<span class="func">print</span>(<span class="str">f"Tm (NN, 50mM Na)  = {mt.Tm_NN(seq, Na=50):.1f}°C"</span>)
+
+<span class="comment"># GC 含量</span>
+<span class="kw">from</span> Bio.SeqUtils <span class="kw">import</span> gc_fraction
+<span class="func">print</span>(<span class="str">f"GC = {gc_fraction(seq)*100:.1f}%"</span>)
+
+<span class="comment"># RNA 二級結構（ViennaRNA Python bindings）</span>
+<span class="kw">import</span> RNA
+rna = <span class="str">"GCGGAUUUAGCUCAGUUGGGAGAGCGCCAGACUGAAGAUCUGGAGGUCCUGUGUUCGAUCCACAGAAUUCGCACCA"</span>
+struct, mfe = RNA.fold(rna)
+<span class="func">print</span>(<span class="str">f"Structure: {struct}"</span>)
+<span class="func">print</span>(<span class="str">f"MFE = {mfe:.2f} kcal/mol"</span>)
+<span class="comment"># tRNA 典型結構：cloverleaf — 三個 stem-loops + 4th stem</span></pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="1"><p data-lang="zh">1. 為什麼 GC 富集區段熔點較高？</p><p data-lang="en">1. Why do GC-rich regions have higher Tm?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. GC 鹼基較重</span><span data-lang="en">A. GC bases are heavier</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. G≡C 三個氫鍵 + 較強鹼基堆積</span><span data-lang="en">B. G≡C uses 3 H-bonds + stronger base stacking</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 與 DNA pol 結合更強</span><span data-lang="en">C. Binds DNA polymerase more tightly</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 容易斷裂</span><span data-lang="en">D. Easier to break</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="2"><p data-lang="zh">2. RNA 在鹼性條件下比 DNA 容易水解的原因是？</p><p data-lang="en">2. Why does RNA hydrolyze more easily than DNA under base?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. RNA 鹼基較不穩定</span><span data-lang="en">A. RNA bases are less stable</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. RNA 是單股</span><span data-lang="en">B. RNA is single-stranded</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. RNA 的 2'-OH 可形成鄰位攻擊，催化磷酸二酯鍵斷裂</span><span data-lang="en">C. RNA's 2'-OH enables in-line nucleophilic attack on the phosphodiester</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. RNA 帶較多電荷</span><span data-lang="en">D. RNA carries more charge</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="3"><p data-lang="zh">3. mRNA 疫苗最關鍵的化學修飾是？</p><p data-lang="en">3. Which chemical modification is most critical to mRNA vaccines?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 加長 polyA</span><span data-lang="en">A. Longer polyA</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 去除 5' cap</span><span data-lang="en">B. Removing 5' cap</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 換成 DNA</span><span data-lang="en">C. Replace with DNA</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 將 uridine 換成 N1-methylpseudouridine (m1Ψ)，避免 TLR/RIG-I 免疫識別</span><span data-lang="en">D. Replace uridine with N1-methylpseudouridine to evade TLR/RIG-I sensing</span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="carbohydrates-lipids.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="醣類、脂質與生物膜" data-en="Carbohydrates, Lipids &amp;amp; Membranes">醣類、脂質與生物膜</span></a>
+<a href="enzymes-mechanism.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="酶催化機制" data-en="Enzyme Catalytic Mechanisms">酶催化機制</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+const tmChart=new Chart(document.getElementById('tmChart'),{type:'line',data:{labels:Array.from({length:100},(_,i)=>10+i*0.5),datasets:[
+  {label:'Fraction double-stranded',data:[],borderColor:'#9f1239',backgroundColor:'rgba(159,18,57,0.15)',fill:true,tension:0.2}
+]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{x:{title:{display:true,text:'°C'}},y:{title:{display:true,text:'Fraction dsDNA'},min:0,max:1}}}});
+function updateTm(){
+  const len=+document.getElementById('sliderLen').value;
+  const gc=+document.getElementById('sliderGC').value;
+  const na=+document.getElementById('sliderNa').value;
+  document.getElementById('valLen').textContent=len;
+  document.getElementById('valGC').textContent=gc;
+  document.getElementById('valNa').textContent=na;
+  // Wallace + Marmur for longer
+  let Tm;
+  if(len<14) Tm = 2*((100-gc)/100*len) + 4*(gc/100*len);
+  else Tm = 64.9 + 0.41*gc - 500/len + 16.6*Math.log10(na/1000);
+  const data=[];
+  for(let i=0;i<100;i++){const t=10+i*0.5; const f=1/(1+Math.exp((t-Tm)/2)); data.push(f);}
+  tmChart.data.datasets[0].data=data;
+  tmChart.update('none');
+  const L=I18n.get();
+  document.getElementById('statTm').textContent=(L==='zh'?'Tm ≈ ':'Tm ≈ ')+Tm.toFixed(1)+'°C';
+  const stable=Tm>=55&&Tm<=65?(L==='zh'?'✅ 適合 PCR primer':'✅ Good for PCR primer'):(L==='zh'?'⚠️ 超出 PCR 適用範圍':'⚠️ Outside PCR-friendly range');
+  document.getElementById('statStable').textContent=stable;
+}
+['sliderLen','sliderGC','sliderNa'].forEach(id=>document.getElementById(id).addEventListener('input',updateTm));
+document.addEventListener('langchange',updateTm);
+updateTm();
+
+const QF={zh:{q1_y:'G≡C 比 A=T 多一個氫鍵，且 GC 鹼基堆積較強，因此熔點較高。',q2_y:'2′-OH 可作為親核基團對相鄰磷酸基發動鄰位攻擊，使 RNA 易水解；DNA 無 2′-OH 故穩定。',q3_y:'Karikó & Weissman 將 U 換成 m1Ψ，降低 TLR/RIG-I 識別並提高翻譯效率，是 mRNA 疫苗成功的關鍵化學。'},en:{q1_y:'G≡C has one more H-bond than A=T plus stronger base stacking, giving higher Tm.',q2_y:'The 2′-OH performs in-line nucleophilic attack on the adjacent phosphate; DNA lacks 2′-OH and is thus stable.',q3_y:'Karikó & Weissman replaced U with m1Ψ to evade TLR/RIG-I sensing and boost translation — the chemistry behind successful mRNA vaccines.'}};['q1_n','q2_n','q3_n'].forEach(k=>{QF.zh[k]='正確答案已標示。';QF.en[k]='Correct answer highlighted.';});
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

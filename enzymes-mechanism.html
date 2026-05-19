@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.6 酶催化機制 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html" class="active">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 6 / 18 · BLOCK B</div>
+<h1 data-zh="酶催化機制" data-en="Enzyme Catalytic Mechanisms">酶催化機制</h1>
+<p class="subtitle" data-lang="zh">酶如何把反應速率加快 10⁶–10¹⁷ 倍？六種催化策略加上 2024 新觀點「寬廣過渡態組合」。</p>
+<p class="subtitle" data-lang="en">How do enzymes accelerate reactions 10⁶–10¹⁷-fold? Six catalytic strategies plus the 2024 view of "broad transition-state ensembles."</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="概覽" data-en="OVERVIEW">概覽</div>
+<h2 data-zh="酶催化的核心問題" data-en="The core question of enzyme catalysis">核心問題</h2>
+<div data-lang="zh"><p>酶不改變反應的<strong>熱力學</strong>（ΔG 不變），只改變<strong>動力學</strong>——降低活化能 (Eₐ)。對甲基化反應的酶 catechol-O-methyltransferase 速率加快約 10¹⁷ 倍。要解釋這個誇張的數字，需要多種催化策略共同作用。</p>
+<p>EC 編號（Enzyme Commission）以六大類分類：<strong>1. Oxidoreductases、2. Transferases、3. Hydrolases、4. Lyases、5. Isomerases、6. Ligases</strong>。2018 後新增 7. Translocases。</p></div>
+<div data-lang="en"><p>Enzymes don't change reaction <strong>thermodynamics</strong> (ΔG is unchanged), only <strong>kinetics</strong> — they lower activation energy (Eₐ). Catechol-O-methyltransferase accelerates its reaction ~10¹⁷-fold. Explaining this requires multiple cooperating strategies.</p>
+<p>EC numbering classifies enzymes into six classes: <strong>1. Oxidoreductases, 2. Transferases, 3. Hydrolases, 4. Lyases, 5. Isomerases, 6. Ligases</strong>; class 7. Translocases was added in 2018.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="六種策略" data-en="SIX STRATEGIES">六種策略</div>
+<h2 data-zh="一、酶的六種催化策略" data-en="I. Six catalytic strategies">一、六種催化策略</h2>
+<div class="card-grid cols-2">
+<div class="card"><div class="card-icon">🎯</div><h4 data-zh="① 過渡態穩定化" data-en="① Transition-state stabilization">① 過渡態穩定化</h4><div data-lang="zh"><p>核心策略。酶活位點對<strong>過渡態 (TS)</strong> 的親和力比對基質高，相對降低 Eₐ。Pauling 1948 提出。<strong>過渡態類似物 (transition-state analogs)</strong> 因此成為最強的酶抑制劑（如 statins）。</p></div><div data-lang="en"><p>The core strategy. Active sites bind the <strong>transition state</strong> more tightly than the substrate, lowering Eₐ. Pauling (1948). <strong>Transition-state analogs</strong> are therefore the strongest enzyme inhibitors (e.g. statins).</p></div></div>
+<div class="card"><div class="card-icon">↕️</div><h4 data-zh="② 酸鹼催化" data-en="② Acid-base catalysis">② 酸鹼催化</h4><div data-lang="zh"><p>側鏈作為質子供體/受體加速反應。<strong>His (pKa 6.0)</strong> 是最常見的酸鹼催化殘基（生理 pH 下半質子化）。例：RNase A 用兩個 His（His12 作為酸、His119 作為鹼）。</p></div><div data-lang="en"><p>Side chains as proton donor/acceptor. <strong>His (pKa 6.0)</strong> is the most common acid-base residue (half-protonated at pH 7). Example: RNase A uses two His (His12 acid, His119 base).</p></div></div>
+<div class="card"><div class="card-icon">🔗</div><h4 data-zh="③ 共價催化" data-en="③ Covalent catalysis">③ 共價催化</h4><div data-lang="zh"><p>酶與基質形成短暫共價中間體，再分解。<strong>絲胺酸蛋白酶</strong>（chymotrypsin, trypsin, elastase）的 Ser-His-Asp <strong>催化三聯體</strong>是經典案例：Ser-OH 攻擊肽鍵 C，形成醯基-酶中間體。</p></div><div data-lang="en"><p>Enzyme forms a transient covalent intermediate with substrate. <strong>Serine proteases</strong> (chymotrypsin, trypsin, elastase) Ser-His-Asp <strong>catalytic triad</strong> is the classic case: Ser-OH attacks the peptide carbonyl, forming an acyl-enzyme intermediate.</p></div></div>
+<div class="card"><div class="card-icon">⚛️</div><h4 data-zh="④ 金屬離子催化" data-en="④ Metal-ion catalysis">④ 金屬離子催化</h4><div data-lang="zh"><p>金屬離子穩定負電荷、極化鍵結、執行 redox。例：<strong>羧肽酶 A（Zn²⁺）、碳酸酐酶（Zn²⁺）、超氧岐化酶（Cu, Zn）、細胞色素（Fe）</strong>。約 1/3 酶為金屬酶。</p></div><div data-lang="en"><p>Metals stabilize negative charges, polarize bonds, run redox. Examples: <strong>carboxypeptidase A (Zn²⁺), carbonic anhydrase (Zn²⁺), SOD (Cu, Zn), cytochromes (Fe)</strong>. ~1/3 of enzymes are metalloenzymes.</p></div></div>
+<div class="card"><div class="card-icon">📐</div><h4 data-zh="⑤ 近接與定向效應" data-en="⑤ Proximity &amp; orientation">⑤ 近接與定向</h4><div data-lang="zh"><p>酶把基質拉到正確位置與方向。光靠近接就可加速 10⁴–10⁸ 倍。雙基質酶（如轉胺酶）特別重要——兩個基質排列在毫米距離但 ångström 精度方向。</p></div><div data-lang="en"><p>Enzymes hold substrates in the right place and orientation. Proximity alone can accelerate reactions 10⁴–10⁸-fold. Especially critical for bisubstrate enzymes (e.g. transaminases).</p></div></div>
+<div class="card"><div class="card-icon">⛏️</div><h4 data-zh="⑥ 基質形變/誘導擬合" data-en="⑥ Substrate distortion / induced fit">⑥ 基質形變</h4><div data-lang="zh"><p>酶結合時迫使基質扭曲、靠近過渡態構象（Lysozyme 把 NAG-NAM 醣鏈扭轉為半椅式）。<strong>Koshland 1958 提出</strong>，後由結構生物學證實。</p></div><div data-lang="en"><p>Enzyme binding distorts the substrate toward the transition-state geometry (lysozyme bends NAG-NAM sugar to half-chair). <strong>Koshland's 1958 induced-fit model</strong>, later confirmed structurally.</p></div></div>
+</div>
+<div class="callout warn"><span class="callout-icon">⚠️</span><div>
+<span data-lang="zh"><strong>2024 新觀點（eLife 2024）：「寬廣過渡態組合」(broad TS ensemble)。</strong>傳統認為過渡態是<strong>單一結構</strong>；但結合 NMR 與 MD 模擬顯示，過渡態其實是一群能量相似的構象集合。這解釋了酶為何能耐多種突變、為何同一活位點可演化成不同特異性——「演化只需找一個寬鬆的過渡態漏斗」。</span>
+<span data-lang="en"><strong>2024 perspective (eLife 2024): "broad transition-state ensembles."</strong> The classical view holds transition state as a <strong>single structure</strong>; but NMR + MD show TS is actually a cluster of energetically equivalent conformations. This explains why enzymes tolerate mutations and why one active site can evolve into different specificities — "evolution only needs to find a loose TS funnel."</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="案例" data-en="CASE">經典案例</div>
+<h2 data-zh="二、絲胺酸蛋白酶催化三聯體" data-en="II. Serine protease catalytic triad">二、絲胺酸蛋白酶</h2>
+<div class="workflow">
+<div class="workflow-step" data-step="1"><h4 data-zh="基質結合" data-en="Substrate binding">基質結合</h4><p data-lang="zh">肽鍵基質進入結合口袋，S1 pocket 決定特異性：chymotrypsin 大且疏水（喜歡 Phe/Trp/Tyr），trypsin 帶 Asp（喜歡 Lys/Arg），elastase 淺（喜歡小殘基如 Ala）。</p><p data-lang="en">Peptide substrate enters; S1 pocket dictates specificity: chymotrypsin large/hydrophobic (Phe/Trp/Tyr), trypsin has Asp (Lys/Arg), elastase shallow (Ala/Gly).</p></div>
+<div class="workflow-step" data-step="2"><h4 data-zh="親核攻擊" data-en="Nucleophilic attack">親核攻擊</h4><p data-lang="zh">His57 從 Ser195-OH 拉走質子；Ser195 烷氧基攻擊肽鍵 C=O，形成四面體中間體。Asp102 與 His57 透過氫鍵穩定電荷。</p><p data-lang="en">His57 abstracts a proton from Ser195-OH; the Ser195 alkoxide attacks the peptide carbonyl, forming a tetrahedral intermediate. Asp102 stabilizes His57 charge via H-bond.</p></div>
+<div class="workflow-step" data-step="3"><h4 data-zh="醯基-酶中間體" data-en="Acyl-enzyme intermediate">醯基-酶中間體</h4><p data-lang="zh">肽鍵 C-N 斷裂，N 端離開（His57 將質子轉給離去 NH）。Ser195 與 C 端形成共價醯基-酶。</p><p data-lang="en">The C-N bond breaks, releasing the N-terminal fragment (His57 protonates the leaving NH). Ser195 retains the C-terminal as an acyl-enzyme.</p></div>
+<div class="workflow-step" data-step="4"><h4 data-zh="水解再生" data-en="Deacylation">水解再生</h4><p data-lang="zh">水分子由 His57 活化後攻擊醯基-酶，形成第二個四面體中間體，最終釋放 C 端片段並再生 Ser-OH。整個過程酶毫髮無損。</p><p data-lang="en">Water (activated by His57) attacks the acyl-enzyme, forming a second tetrahedral intermediate; the C-terminal fragment is released and Ser-OH is regenerated. The enzyme emerges unchanged.</p></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="活化能與催化速率" data-en="Activation energy &amp; catalytic rate">活化能模擬</h2>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statRate">—</span><span class="sim-stat gold" id="statFold">—</span></div>
+<div class="slider-group"><label><span data-zh="未催化 Ea (kJ/mol)" data-en="Uncatalyzed Ea (kJ/mol)">未催化 Ea</span> <span id="valEa">80</span></label><input type="range" id="sliderEa" min="40" max="200" value="80" step="5"></div>
+<div class="slider-group"><label><span data-zh="酶降低 Ea (kJ/mol)" data-en="Enzyme lowers Ea (kJ/mol)">降低</span> <span id="valDE">40</span></label><input type="range" id="sliderDE" min="0" max="100" value="40" step="5"></div>
+<div class="slider-group"><label><span data-zh="溫度 (K)" data-en="Temperature (K)">溫度</span> <span id="valT">310</span></label><input type="range" id="sliderT" min="273" max="373" value="310" step="1"></div>
+<div class="chart-container"><canvas id="eaChart"></canvas></div>
+<p style="font-size:.82rem;color:var(--c-ink-muted);text-align:center;"><span data-lang="zh">Arrhenius: k = A·exp(-Ea/RT)</span><span data-lang="en">Arrhenius: k = A·exp(-Ea/RT)</span></p>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="三、判定酶的催化機制" data-en="III. Identifying the catalytic mechanism">三、判定機制</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="從實驗線索推斷機制" data-en="Infer mechanism from clues">從實驗線索推斷</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>pH-rate 曲線顯示 pKa ≈ 6 處有過渡？<span class="dt-arrow">→</span> 牽涉 <strong>His</strong> 殘基（酸鹼催化）。</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>金屬螯合劑（EDTA）抑制？<span class="dt-arrow">→</span> 金屬酶（Zn²⁺、Mg²⁺、Mn²⁺...）。</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>能用 DFP 或 iodoacetamide 不可逆抑制？<span class="dt-arrow">→</span> DFP 標 <strong>Ser</strong>（絲胺酸蛋白酶）、iodoacetamide 標 <strong>Cys</strong>（半胱胺酸蛋白酶）。</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>反應中可捕獲共價中間體？<span class="dt-arrow">→</span> 共價催化（如醯基-酶、希夫鹼、麩胱甘肽中間體）。</div></div>
+<div class="dt-node"><span class="dt-q">Q5:</span><div>結構顯示基質扭曲？<span class="dt-arrow">→</span> 誘導擬合 + 基質形變（如 lysozyme）。</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>pH-rate curve shows transition near pKa ≈ 6? <span class="dt-arrow">→</span> Involves <strong>His</strong> (acid-base).</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>Metal chelators (EDTA) inhibit? <span class="dt-arrow">→</span> Metalloenzyme.</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>Irreversibly inhibited by DFP or iodoacetamide? <span class="dt-arrow">→</span> DFP labels <strong>Ser</strong> (serine protease); iodoacetamide labels <strong>Cys</strong> (cysteine protease).</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>Covalent intermediate trappable? <span class="dt-arrow">→</span> Covalent catalysis (acyl-enzyme, Schiff base, glutathione intermediates).</div></div>
+<div class="dt-node"><span class="dt-q">Q5:</span><div>Structure shows substrate distortion? <span class="dt-arrow">→</span> Induced fit + substrate strain (e.g. lysozyme).</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="活性位點殘基序列保守性分析" data-en="Active-site residue conservation">活性位點保守性</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'r1')">R / Bio3D</button><button class="code-tab-btn" onclick="switchTab(this,'py1')">Python</button></div>
+<div class="code-tab-content active" id="r1"><pre><span class="kw">library</span>(bio3d)
+
+<span class="comment"># 對絲胺酸蛋白酶家族做多重序列比對</span>
+seqs &lt;- <span class="func">read.fasta</span>(<span class="str">"serine_proteases.fa"</span>)
+aln  &lt;- <span class="func">seqaln</span>(seqs)
+
+<span class="comment"># 計算每個位置的保守性（用 entropy）</span>
+ent &lt;- <span class="func">entropy</span>(aln)$H
+
+<span class="comment"># 過濾保守位置（entropy &lt; 0.5）</span>
+conserved &lt;- <span class="kw">which</span>(ent &lt; <span class="num">0.5</span>)
+<span class="func">cat</span>(<span class="str">"Conserved positions:"</span>, conserved, <span class="str">"\n"</span>)
+
+<span class="comment"># 在結構上標出催化三聯體</span>
+pdb &lt;- <span class="func">read.pdb</span>(<span class="str">"1AKS"</span>)  <span class="comment"># α-chymotrypsin</span>
+triad &lt;- pdb$atom[pdb$atom$resno %in% <span class="kw">c</span>(<span class="num">57</span>, <span class="num">102</span>, <span class="num">195</span>) &amp; pdb$atom$elety == <span class="str">"CA"</span>, ]
+triad[, <span class="kw">c</span>(<span class="str">"resno"</span>, <span class="str">"resid"</span>)]  <span class="comment"># 應顯示 His-57, Asp-102, Ser-195</span></pre></div>
+<div class="code-tab-content" id="py1"><pre><span class="kw">from</span> Bio <span class="kw">import</span> AlignIO
+<span class="kw">import</span> numpy <span class="kw">as</span> np
+
+aln = AlignIO.read(<span class="str">"serine_proteases.aln"</span>, <span class="str">"clustal"</span>)
+n_seq = <span class="func">len</span>(aln); L = aln.get_alignment_length()
+
+<span class="comment"># Shannon entropy per column</span>
+<span class="kw">def</span> <span class="func">entropy</span>(col):
+    counts = {}
+    <span class="kw">for</span> aa <span class="kw">in</span> col:
+        counts[aa] = counts.get(aa, <span class="num">0</span>) + <span class="num">1</span>
+    H = <span class="num">0</span>
+    <span class="kw">for</span> c <span class="kw">in</span> counts.values():
+        p = c / <span class="func">len</span>(col)
+        H -= p * np.log2(p)
+    <span class="kw">return</span> H
+
+ent = [entropy(aln[:, i]) <span class="kw">for</span> i <span class="kw">in</span> <span class="func">range</span>(L)]
+conserved = [i <span class="kw">for</span> i,h <span class="kw">in</span> <span class="func">enumerate</span>(ent) <span class="kw">if</span> h &lt; <span class="num">0.3</span>]
+<span class="func">print</span>(<span class="str">f"Conserved columns: {conserved[:20]}..."</span>)
+
+<span class="comment"># 反應速率：Arrhenius</span>
+<span class="kw">def</span> <span class="func">k_rate</span>(Ea, T=<span class="num">310</span>, A=<span class="num">1e13</span>):
+    R = <span class="num">8.314</span>  <span class="comment"># J/(mol·K)</span>
+    <span class="kw">return</span> A * np.exp(-Ea * <span class="num">1000</span> / (R * T))
+
+<span class="comment"># 加速倍數</span>
+fold = k_rate(<span class="num">40</span>) / k_rate(<span class="num">80</span>)  <span class="comment"># Ea 從 80 降到 40</span>
+<span class="func">print</span>(<span class="str">f"Acceleration: {fold:.2e}-fold"</span>)</pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="1"><p data-lang="zh">1. 絲胺酸蛋白酶催化三聯體的組成？</p><p data-lang="en">1. The serine protease catalytic triad consists of?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. Ser-Cys-Lys</span><span data-lang="en">A. Ser-Cys-Lys</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. Ser-His-Asp</span><span data-lang="en">B. Ser-His-Asp</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. Tyr-Arg-Glu</span><span data-lang="en">C. Tyr-Arg-Glu</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. Ala-Gly-Val</span><span data-lang="en">D. Ala-Gly-Val</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="2"><p data-lang="zh">2. 酶降低反應的什麼？</p><p data-lang="en">2. Enzymes lower what?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. ΔG</span><span data-lang="en">A. ΔG</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 平衡常數 Keq</span><span data-lang="en">B. Equilibrium constant Keq</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 活化能 Ea（動力學）</span><span data-lang="en">C. Activation energy Ea (kinetics)</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 反應的方向</span><span data-lang="en">D. Reaction direction</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="3"><p data-lang="zh">3. 最強的酶抑制劑是？</p><p data-lang="en">3. Which is typically the strongest enzyme inhibitor?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 基質類似物</span><span data-lang="en">A. Substrate analog</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 產物</span><span data-lang="en">B. Product</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 鹽</span><span data-lang="en">C. Salt</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 過渡態類似物（酶對 TS 親和力最高）</span><span data-lang="en">D. Transition-state analog (enzyme binds TS most tightly)</span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="nucleic-acids.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="核酸的化學與結構" data-en="Nucleic Acid Chemistry &amp;amp; Structure">核酸的化學與結構</span></a>
+<a href="enzyme-kinetics.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="酶動力學與抑制" data-en="Enzyme Kinetics &amp;amp; Inhibition">酶動力學與抑制</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+const eaChart=new Chart(document.getElementById('eaChart'),{type:'line',data:{labels:Array.from({length:100},(_,i)=>i),datasets:[
+  {label:'Uncatalyzed',data:[],borderColor:'#6b7280',backgroundColor:'rgba(107,114,128,0.1)',fill:false,tension:0.3,borderWidth:2},
+  {label:'With enzyme',data:[],borderColor:'#9f1239',backgroundColor:'rgba(159,18,57,0.15)',fill:false,tension:0.3,borderWidth:2}
+]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{x:{title:{display:true,text:'Reaction coord.'}},y:{title:{display:true,text:'Free energy (kJ/mol)'}}}}});
+function updateEa(){
+  const Ea=+document.getElementById('sliderEa').value;
+  const dE=+document.getElementById('sliderDE').value;
+  const T =+document.getElementById('sliderT').value;
+  document.getElementById('valEa').textContent=Ea;
+  document.getElementById('valDE').textContent=dE;
+  document.getElementById('valT').textContent=T;
+  // Generate energy profile - Gaussian peak at center
+  const reactant=20, product=10;
+  const uncat=[], cat=[];
+  for(let i=0;i<100;i++){
+    const x=i;
+    const u=reactant + Ea*Math.exp(-((x-50)**2)/200) - (i>50?(reactant-product)*(i-50)/50:0);
+    const c=reactant + (Ea-dE)*Math.exp(-((x-50)**2)/200) - (i>50?(reactant-product)*(i-50)/50:0);
+    uncat.push(u); cat.push(c);
+  }
+  eaChart.data.datasets[0].data=uncat;
+  eaChart.data.datasets[1].data=cat;
+  eaChart.update('none');
+  // Arrhenius
+  const R=0.008314;
+  const k_un=Math.exp(-Ea/(R*T));
+  const k_cat=Math.exp(-(Ea-dE)/(R*T));
+  const L=I18n.get();
+  document.getElementById('statRate').textContent=(L==='zh'?'催化倍數: ':'Acceleration: ')+(k_cat/k_un).toExponential(2);
+  const desc=dE>=60?(L==='zh'?'⚡ 等同酶催化加速':'⚡ Enzyme-like acceleration'):dE>=30?(L==='zh'?'⚡ 中等加速':'⚡ Moderate'):(L==='zh'?'⚠️ 仍緩慢':'⚠️ Still slow');
+  document.getElementById('statFold').textContent=desc;
+}
+['sliderEa','sliderDE','sliderT'].forEach(id=>document.getElementById(id).addEventListener('input',updateEa));
+document.addEventListener('langchange',updateEa);
+updateEa();
+
+const QF={zh:{q1_y:'絲胺酸蛋白酶（chymotrypsin、trypsin 等）的催化三聯體為 Ser-His-Asp。',q2_y:'酶不改變熱力學（ΔG、Keq 不變），只降低活化能 Ea，加速到達平衡。',q3_y:'酶對過渡態的親和力遠高於基質與產物，因此過渡態類似物為最強抑制劑。'},en:{q1_y:'Serine proteases (chymotrypsin, trypsin) use the Ser-His-Asp catalytic triad.',q2_y:'Enzymes do not change thermodynamics (ΔG, Keq unchanged) — they only lower Ea to accelerate reaching equilibrium.',q3_y:'Enzyme affinity is highest for the transition state, so TS analogs are the strongest inhibitors.'}};['q1_n','q2_n','q3_n'].forEach(k=>{QF.zh[k]='正確答案已標示。';QF.en[k]='Correct answer highlighted.';});
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

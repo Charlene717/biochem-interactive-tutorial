@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.15 中心法則的化學細節 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html" class="active">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 15 / 18 · BLOCK D</div>
+<h1 data-zh="中心法則的化學細節" data-en="Chemistry of the Central Dogma">中心法則的化學細節</h1>
+<p class="subtitle" data-lang="zh">DNA 複製、轉錄、轉譯、PTM 全部都是化學反應——這章把 Block A-D 串起來。</p>
+<p class="subtitle" data-lang="en">DNA replication, transcription, translation, PTMs are all chemistry — this chapter weaves Block A-D together.</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="複製" data-en="REPLICATION">複製</div>
+<h2 data-zh="一、DNA 複製：高保真度的化學" data-en="I. DNA replication: chemistry of high fidelity">一、DNA 複製化學</h2>
+<div data-lang="zh"><p><strong>DNA pol III (E. coli)</strong> 或 <strong>pol α/δ/ε (eukaryote)</strong> 催化核苷酸聚合反應：3'-OH 攻擊新核苷酸的 α-磷酸，焦磷酸 (PPi) 為離去基團。每加一個核苷酸消耗約 6 ATP eq。</p>
+<p><strong>三層保真機制：</strong></p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>基質選擇性</strong>：聚合酶口袋形狀讓正確 dNTP 結合最緊（錯誤率 ~10⁻⁴）</li>
+<li><strong>3'→5' 校對 exonuclease</strong>：剛加入錯誤核苷酸時切除（降至 10⁻⁶）</li>
+<li><strong>錯配修復 (MMR)</strong>：複製後識別並修正（降至 10⁻⁹）</li>
+</ul>
+<p><strong>端粒問題：</strong>線性染色體末端因為「最後一個 RNA 引子無法移除」會逐漸縮短。<strong>端粒酶 (telomerase)</strong> 是 RNA 模板的反轉錄酶，可加長端粒（生殖細胞、幹細胞、85% 癌細胞中活化）——細胞老化與癌的化學基礎。</p></div>
+<div data-lang="en"><p><strong>DNA pol III (E. coli)</strong> or <strong>pol α/δ/ε (eukaryote)</strong> catalyze nucleotide polymerization: 3'-OH attacks the α-phosphate of the incoming nucleotide; pyrophosphate (PPi) leaves. Each addition costs ~6 ATP equivalents.</p>
+<p><strong>Three-layer fidelity:</strong></p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>Substrate selectivity</strong>: polymerase pocket binds correct dNTP tightest (~10⁻⁴ error rate)</li>
+<li><strong>3'→5' proofreading exonuclease</strong>: removes mismatches just incorporated (→ 10⁻⁶)</li>
+<li><strong>Mismatch repair (MMR)</strong>: post-replicative correction (→ 10⁻⁹)</li>
+</ul>
+<p><strong>The telomere problem:</strong> linear chromosomes shorten because the final RNA primer can't be removed. <strong>Telomerase</strong> is an RNA-templated reverse transcriptase that extends telomeres (active in germline, stem cells, and 85% of cancers) — the chemistry behind aging and oncogenesis.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="轉錄" data-en="TRANSCRIPTION">轉錄</div>
+<h2 data-zh="二、轉錄：RNA pol II 的催化機制" data-en="II. Transcription: RNA pol II catalysis">二、轉錄化學</h2>
+<div data-lang="zh"><p>真核細胞有三個 RNA polymerase：<strong>I (rRNA), II (mRNA + 多數 ncRNA), III (tRNA + 5S rRNA)</strong>。Pol II 的活位點與 DNA pol 結構類似，催化機制也類似——但<strong>沒有校對</strong>，所以 RNA 錯誤率 ~10⁻⁵（比 DNA 高 10000 倍，但 RNA 不需傳代）。</p>
+<p><strong>真核 mRNA 加工三大事件：</strong></p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>5' cap</strong>：m7G 帽，由 3 個酶串聯加上。保護 mRNA、招募核糖體</li>
+<li><strong>剪接 (splicing)</strong>：剪接體（U1-U6 snRNAs + ~150 蛋白）切除 intron。<strong>這個反應的催化中心是 RNA</strong>（U2/U6 snRNA），是 ribozyme</li>
+<li><strong>3' polyA tail</strong>：~200 個 A，保護降解、出核、翻譯效率</li>
+</ul>
+<p><strong>替代剪接</strong>讓人類 ~95% 基因產生多種異構物——一個基因可表達數十種蛋白。</p></div>
+<div data-lang="en"><p>Eukaryotes have three RNA polymerases: <strong>I (rRNA), II (mRNA + most ncRNA), III (tRNA + 5S rRNA)</strong>. Pol II's active site resembles DNA pol's, with similar two-metal catalysis — but <strong>no proofreading</strong>, so RNA error rate ~10⁻⁵ (10000× higher than DNA, but RNA isn't inherited).</p>
+<p><strong>Three major mRNA processing events in eukaryotes:</strong></p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li><strong>5' cap</strong>: m7G cap added by three enzymes in series. Protects mRNA, recruits ribosomes</li>
+<li><strong>Splicing</strong>: spliceosome (U1-U6 snRNAs + ~150 proteins) removes introns. <strong>The catalytic center is RNA</strong> (U2/U6 snRNA) — a ribozyme</li>
+<li><strong>3' polyA tail</strong>: ~200 A's, protects from degradation, aids export, boosts translation</li>
+</ul>
+<p><strong>Alternative splicing</strong> lets ~95% of human genes produce multiple isoforms — one gene can encode dozens of proteins.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="轉譯" data-en="TRANSLATION">轉譯</div>
+<h2 data-zh="三、轉譯：核糖體的肽鍵化學" data-en="III. Translation: ribosomal peptidyl transfer">三、轉譯化學</h2>
+<div data-lang="zh"><p>核糖體 = 大小兩個次單元（細菌 50S/30S, 真核 60S/40S）。其中肽基轉移酶活性 (peptidyl transferase center, PTC) 完全由 <strong>23S/28S rRNA</strong> 催化——核糖體是<strong>ribozyme</strong>（Cech, Steitz, Yonath 等獲 2009 Nobel）。</p>
+<p><strong>三個位點 A, P, E：</strong>(1) tRNA-AA 進 A 位點；(2) P 位點上的肽鏈攻擊新 AA 的氨基；(3) 肽鏈轉到 A 位點 tRNA；(4) 核糖體前移，A→P、P→E、E→空。</p>
+<p><strong>tRNA 載胺基酸：</strong>由 20 個 aminoacyl-tRNA synthetase 完成（每個 AA 一種酶）。這是<strong>遺傳密碼真正落實的化學步驟</strong>——錯誤率必須 &lt;10⁻⁴，否則蛋白質序列就亂了。許多 synthetase 帶有「校對結構域」剔除錯誤載入的 AA。</p>
+<p><strong>抗生素標靶：</strong>許多抗生素針對細菌核糖體（人類粒線體核糖體較像細菌，有副作用風險）。<strong>四環素</strong>阻 A 位點；<strong>氯黴素</strong>抑 PTC；<strong>大環內酯 (erythromycin)</strong> 卡住出口隧道。</p></div>
+<div data-lang="en"><p>The ribosome = two subunits (bacterial 50S/30S, eukaryotic 60S/40S). Peptidyl transferase activity (PTC) is fully catalyzed by <strong>23S/28S rRNA</strong> — the ribosome is a <strong>ribozyme</strong> (Cech, Steitz, Yonath, 2009 Nobel).</p>
+<p><strong>Three sites A, P, E:</strong> (1) aminoacyl-tRNA enters A site; (2) growing peptide on P-site attacks the incoming AA's amino group; (3) chain transfers to A-site tRNA; (4) ribosome translocates: A→P, P→E, E→empty.</p>
+<p><strong>tRNA charging:</strong> done by 20 aminoacyl-tRNA synthetases (one per AA). This is the <strong>chemical step where the genetic code is actually enforced</strong> — error rate must be &lt;10⁻⁴ or proteins are garbled. Many synthetases have proofreading domains to reject mischarged AAs.</p>
+<p><strong>Antibiotic targets:</strong> many antibiotics target bacterial ribosomes (human mitochondrial ribosomes resemble bacterial, hence side-effect risk). <strong>Tetracyclines</strong> block A site; <strong>chloramphenicol</strong> inhibits PTC; <strong>macrolides (erythromycin)</strong> jam the exit tunnel.</p></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="複製/轉錄/翻譯速率比較" data-en="Replication/transcription/translation rates">速率比較</h2>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statRate">—</span><span class="sim-stat gold" id="statFid">—</span></div>
+<div class="slider-group"><label><span data-zh="過程" data-en="Process">過程</span> <span id="valProc">DNA pol III</span></label><input type="range" id="sliderProc" min="0" max="3" value="0" step="1"></div>
+<div class="slider-group"><label><span data-zh="溫度 (°C)" data-en="Temperature (°C)">溫度</span> <span id="valT">37</span></label><input type="range" id="sliderT" min="20" max="55" value="37" step="1"></div>
+<div class="chart-container"><canvas id="rateChart"></canvas></div>
+<p style="font-size:.82rem;color:var(--c-ink-muted);text-align:center;"><span data-lang="zh">速率與保真度通常呈反比——演化的兩難</span><span data-lang="en">Speed and fidelity usually trade off — an evolutionary dilemma</span></p>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="PTM" data-en="PTM">PTM</div>
+<h2 data-zh="四、翻譯後修飾總覽" data-en="IV. Overview of post-translational modifications">四、PTM 化學</h2>
+<table class="comp-table">
+<thead><tr><th>PTM</th><th data-zh="靶殘基" data-en="Target">靶</th><th data-zh="加 / 移酶" data-en="Add / Remove enzyme">加移</th><th data-zh="效應" data-en="Effect">效應</th></tr></thead>
+<tbody>
+<tr><td>磷酸化</td><td>Ser, Thr, Tyr (His)</td><td>Kinase / phosphatase</td><td data-zh="-2 電荷；SH2/14-3-3 識別" data-en="-2 charge; SH2/14-3-3">電荷與招募</td></tr>
+<tr><td>乙醯化</td><td>Lys</td><td>HAT / HDAC</td><td data-zh="中和 +1 電荷；染色質開啟" data-en="Neutralizes +; chromatin opening">電荷中和</td></tr>
+<tr><td>甲基化</td><td>Lys (1-3 甲基), Arg</td><td>HMT / KDM, JmjC</td><td data-zh="不改電荷；可激活或抑制（依位置）" data-en="No charge change; activates or represses">位點特異</td></tr>
+<tr><td>泛素化</td><td>Lys (多元/單元)</td><td>E1-E2-E3 / DUB</td><td data-zh="K48 鏈→蛋白酶體降解；K63→訊息" data-en="K48→proteasome; K63→signaling">降解 vs 訊息</td></tr>
+<tr><td>SUMO 化</td><td>Lys</td><td>SAE / SENP</td><td data-zh="調控核質運輸、DNA 修復、轉錄" data-en="Nuclear transport, DNA repair, TF activity">調控功能</td></tr>
+<tr><td>糖基化</td><td>Asn (N-)、Ser/Thr (O-)</td><td>OGT / OGA / ER 酶</td><td data-zh="蛋白摺疊、細胞識別、抗體效應功能" data-en="Folding, recognition, antibody effector function">折疊與識別</td></tr>
+<tr><td>Prenylation</td><td>C 端 Cys</td><td>FNT / GGTase</td><td data-zh="掛上 farnesyl/geranylgeranyl，膜定位" data-en="Adds farnesyl/geranylgeranyl, membrane anchor">膜錨定</td></tr>
+<tr><td>ADP-ribosylation</td><td>Arg, Glu</td><td>PARP / PARG</td><td data-zh="DNA 修復；PARP 抑制劑治 BRCA-mut 癌" data-en="DNA repair; PARPi for BRCA-mut">DNA 修復</td></tr>
+</tbody></table>
+<div class="callout warn"><span class="callout-icon">⚠️</span><div>
+<span data-lang="zh"><strong>PTM 大爆炸：</strong>單一蛋白可同時帶數十種 PTM，組合稱「PTM 程式碼 (PTM code)」。組蛋白尾部的 PTM 組合構成「<strong>histone code</strong>」直接影響染色質狀態與基因表達——表觀遺傳學的化學基礎。</span>
+<span data-lang="en"><strong>PTM combinatorial explosion:</strong> a single protein can carry dozens of PTMs; the combination is called the "PTM code." Histone-tail PTM combinations form the <strong>histone code</strong>, directly controlling chromatin state and gene expression — the chemical foundation of epigenetics.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="五、中心法則藥物標靶選擇" data-en="V. Targeting the central dogma">五、藥物標靶</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="想抑制細胞分裂——攻哪個步驟？" data-en="Want to inhibit cell division — which step?">抑制細胞分裂</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">DNA 複製</span><span class="dt-arrow">→</span><div>核苷酸類似物（gemcitabine, fluorouracil）、拓樸異構酶抑制劑 (etoposide, irinotecan)、PARP 抑制劑（治 BRCA-mut）</div></div>
+<div class="dt-node"><span class="dt-q">轉錄</span><span class="dt-arrow">→</span><div>放線菌素 D (actinomycin D)、α-amanitin（毒鵝膏菇毒素，抑 RNA pol II）；少數臨床用——副作用太大</div></div>
+<div class="dt-node"><span class="dt-q">轉譯</span><span class="dt-arrow">→</span><div>大量抗生素（細菌核糖體選擇性）。對人類細胞: 環己醯亞胺 (cycloheximide) 研究用</div></div>
+<div class="dt-node"><span class="dt-q">PTM</span><span class="dt-arrow">→</span><div>kinase 抑制劑（imatinib, gefitinib, ibrutinib...）、HDAC 抑制劑 (vorinostat)、proteasome 抑制劑 (bortezomib)</div></div>
+<div class="dt-node"><span class="dt-q">蛋白降解</span><span class="dt-arrow">→</span><div>PROTAC（2025 多個臨床測試中）、分子膠——主動誘導目標蛋白降解</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">DNA replication</span><span class="dt-arrow">→</span><div>Nucleotide analogs (gemcitabine, fluorouracil), topoisomerase inhibitors (etoposide, irinotecan), PARP inhibitors (BRCA-mut)</div></div>
+<div class="dt-node"><span class="dt-q">Transcription</span><span class="dt-arrow">→</span><div>Actinomycin D, α-amanitin; few clinical uses — toxicity too high</div></div>
+<div class="dt-node"><span class="dt-q">Translation</span><span class="dt-arrow">→</span><div>Many antibiotics (bacterial-ribosome selective). For human cells: cycloheximide (research only)</div></div>
+<div class="dt-node"><span class="dt-q">PTM</span><span class="dt-arrow">→</span><div>Kinase inhibitors (imatinib, gefitinib, ibrutinib...), HDAC inhibitors (vorinostat), proteasome inhibitors (bortezomib)</div></div>
+<div class="dt-node"><span class="dt-q">Protein degradation</span><span class="dt-arrow">→</span><div>PROTACs (multiple in 2025 clinical trials), molecular glues — actively induce target degradation</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="codon 使用率與翻譯效率" data-en="Codon usage &amp; translation efficiency">Codon 使用率</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'r1')">R / Biostrings</button><button class="code-tab-btn" onclick="switchTab(this,'py1')">Python</button></div>
+<div class="code-tab-content active" id="r1"><pre><span class="kw">library</span>(Biostrings)
+<span class="kw">library</span>(coRdon)
+
+<span class="comment"># 讀入 CDS</span>
+cds &lt;- <span class="func">readDNAStringSet</span>(<span class="str">"human_cds.fa"</span>)
+
+<span class="comment"># 計算 codon adaptation index (CAI)</span>
+ct &lt;- <span class="func">codonTable</span>(cds)
+cai &lt;- <span class="func">CAI</span>(ct)
+
+<span class="comment"># 哪些基因翻譯效率最高？</span>
+top10 &lt;- <span class="func">head</span>(<span class="func">order</span>(cai, decreasing=<span class="kw">TRUE</span>), <span class="num">10</span>)
+
+<span class="comment"># 罕見密碼子叢集可能造成翻譯暫停 → 影響共轉譯摺疊</span>
+<span class="comment"># mRNA 疫苗設計考量 codon 優化，避免免疫識別</span></pre></div>
+<div class="code-tab-content" id="py1"><pre><span class="kw">from</span> Bio <span class="kw">import</span> SeqIO
+<span class="kw">from</span> Bio.SeqUtils <span class="kw">import</span> CodonAdaptationIndex
+<span class="kw">from</span> collections <span class="kw">import</span> Counter
+
+<span class="comment"># 計算 codon usage</span>
+seq = <span class="str">"ATGGGCAACAAGCTGCCGAAGGGCATCATCGTCATCATCGCCAACCACGAC"</span>
+codons = [seq[i:i+<span class="num">3</span>] <span class="kw">for</span> i <span class="kw">in</span> <span class="func">range</span>(<span class="num">0</span>, <span class="func">len</span>(seq)-<span class="num">2</span>, <span class="num">3</span>)]
+count = Counter(codons)
+<span class="func">print</span>(count.most_common(<span class="num">5</span>))
+
+<span class="comment"># mRNA 疫苗 codon 優化思路</span>
+<span class="comment"># 1) 提高 GC% → mRNA 穩定性 + 翻譯效率</span>
+<span class="comment"># 2) 移除 ARE (AU-rich element)、minor codons</span>
+<span class="comment"># 3) 替換 U → m1Ψ (Karikó & Weissman 2023 Nobel)</span>
+
+<span class="kw">def</span> <span class="func">codon_optimize</span>(protein_seq, preferred_codons):
+    <span class="kw">return</span> <span class="str">""</span>.join([preferred_codons[aa] <span class="kw">for</span> aa <span class="kw">in</span> protein_seq])
+
+<span class="comment"># 預測核糖體暫停（從 Ribo-seq 數據）</span>
+<span class="comment"># Pause sites: 罕見密碼子叢集、prolinerich</span>
+<span class="kw">def</span> <span class="func">find_pause_sites</span>(cds, rare_codon_freq):
+    pauses = []
+    <span class="kw">for</span> i <span class="kw">in</span> <span class="func">range</span>(<span class="num">0</span>, <span class="func">len</span>(cds)-<span class="num">14</span>, <span class="num">3</span>):
+        window = [cds[i+j:i+j+<span class="num">3</span>] <span class="kw">for</span> j <span class="kw">in</span> <span class="func">range</span>(<span class="num">0</span>, <span class="num">15</span>, <span class="num">3</span>)]
+        rare_count = <span class="func">sum</span>(<span class="num">1</span> <span class="kw">for</span> c <span class="kw">in</span> window <span class="kw">if</span> rare_codon_freq.get(c, <span class="num">1</span>) &lt; <span class="num">0.3</span>)
+        <span class="kw">if</span> rare_count &gt;= <span class="num">3</span>:
+            pauses.append(i)
+    <span class="kw">return</span> pauses</pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="2"><p data-lang="zh">1. DNA pol 的三層保真機制？</p><p data-lang="en">1. DNA pol's three-layer fidelity?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 只有一層</span><span data-lang="en">A. Just one</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 兩層</span><span data-lang="en">B. Two</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. 基質選擇 + 3'→5' 校對 + 錯配修復（總錯誤率 10⁻⁹）</span><span data-lang="en">C. Substrate selection + 3'→5' proofreading + MMR (total error rate 10⁻⁹)</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. 五層</span><span data-lang="en">D. Five</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="1"><p data-lang="zh">2. 核糖體催化肽鍵的活性中心由什麼組成？</p><p data-lang="en">2. The ribosome's peptidyl transferase center is made of?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 蛋白質酶</span><span data-lang="en">A. Protein enzyme</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 23S/28S rRNA（核糖體是 ribozyme，2009 Nobel）</span><span data-lang="en">B. 23S/28S rRNA — the ribosome is a ribozyme (2009 Nobel)</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. tRNA</span><span data-lang="en">C. tRNA</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. mRNA</span><span data-lang="en">D. mRNA</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="2"><p data-lang="zh">3. K48 與 K63 多元泛素化的差別？</p><p data-lang="en">3. Difference between K48 and K63 polyubiquitin chains?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. 完全相同</span><span data-lang="en">A. Same</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 兩者都導致降解</span><span data-lang="en">B. Both cause degradation</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. K48 → 蛋白酶體降解；K63 → 訊息傳遞、DNA 修復</span><span data-lang="en">C. K48 → proteasomal degradation; K63 → signaling, DNA repair</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. K63 → 降解</span><span data-lang="en">D. K63 → degradation</span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="signal-transduction.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="訊息傳遞與第二訊息" data-en="Signal Transduction &amp;amp; Second Messengers">訊息傳遞與第二訊息</span></a>
+<a href="clinical-biochemistry.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="臨床生化與代謝疾病" data-en="Clinical Biochemistry &amp;amp; Metabolic Diseases">臨床生化與代謝疾病</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+const procs=['DNA pol III','RNA pol II','Ribosome','Reverse transcriptase'];
+const rates={zh:{'DNA pol III':'~1000 nt/s','RNA pol II':'~50 nt/s','Ribosome':'~20 AA/s','Reverse transcriptase':'~3 nt/s'},en:{'DNA pol III':'~1000 nt/s','RNA pol II':'~50 nt/s','Ribosome':'~20 AA/s','Reverse transcriptase':'~3 nt/s'}};
+const fids={'DNA pol III':1e-9,'RNA pol II':1e-5,'Ribosome':1e-4,'Reverse transcriptase':1e-4};
+const rateChart=new Chart(document.getElementById('rateChart'),{type:'bar',data:{labels:procs,datasets:[{label:'Speed (nt or AA / s)',data:[1000,50,20,3],backgroundColor:['#9f1239','#a16207','#0e7490','#7c3aed']}]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{y:{type:'logarithmic',title:{display:true,text:'speed (log)'}}}}});
+function updateRate(){
+  const idx=+document.getElementById('sliderProc').value;
+  const T=+document.getElementById('sliderT').value;
+  const proc=procs[idx];
+  document.getElementById('valProc').textContent=proc;
+  document.getElementById('valT').textContent=T;
+  // Temperature scales speed with Q10
+  const tempFactor=Math.pow(2,(T-37)/10);
+  rateChart.data.datasets[0].data=rateChart.data.datasets[0].data.map((v,i)=>i===idx?[1000,50,20,3][i]*tempFactor:[1000,50,20,3][i]);
+  rateChart.update('none');
+  const L=I18n.get();
+  document.getElementById('statRate').textContent=(L==='zh'?'速率: ':'Rate: ')+(rates[L][proc]);
+  document.getElementById('statFid').textContent=(L==='zh'?'錯誤率: ':'Error rate: ')+fids[proc].toExponential(0);
+}
+['sliderProc','sliderT'].forEach(id=>document.getElementById(id).addEventListener('input',updateRate));
+document.addEventListener('langchange',updateRate);
+updateRate();
+
+const QF={zh:{q1_y:'DNA pol 用三層保真機制：基質選擇 (10⁻⁴) → 3\'→5\' 校對 (10⁻⁶) → MMR (10⁻⁹)。',q2_y:'核糖體的肽鍵催化中心是 23S/28S rRNA——核糖體本身是 ribozyme。',q3_y:'K48 多元泛素 → 蛋白酶體降解訊號；K63 → 非降解的訊息傳遞、DNA 修復、自噬。'},en:{q1_y:'DNA pol uses three layers: substrate selection (10⁻⁴) → 3\'→5\' proofreading (10⁻⁶) → MMR (10⁻⁹).',q2_y:'The peptidyl transferase center is made of 23S/28S rRNA — the ribosome is a ribozyme.',q3_y:'K48-linked polyUb → proteasomal degradation; K63 → non-degradative signaling, DNA repair, autophagy.'}};['q1_n','q2_n','q3_n'].forEach(k=>{QF.zh[k]='正確答案已標示。';QF.en[k]='Correct answer highlighted.';});
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch.2 胺基酸與蛋白質結構 — Biochemistry Tutorial</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head><body>
+<nav class="top-nav"><div class="top-nav-inner">
+  <a href="index.html" class="top-nav-brand"><span>⚗️</span> <span data-zh="生物化學" data-en="Biochemistry">生物化學</span></a>
+  <ul class="top-nav-links">
+    <li><a href="intro-biochemistry.html">Intro</a></li><li><a href="amino-acids-proteins.html" class="active">AA·Prot</a></li><li><a href="protein-structure-methods.html">Struct</a></li><li><a href="carbohydrates-lipids.html">Carb·Lip</a></li><li><a href="nucleic-acids.html">NA</a></li><li><a href="enzymes-mechanism.html">Enzyme</a></li><li><a href="enzyme-kinetics.html">Kinetics</a></li><li><a href="enzyme-regulation.html">Reg.</a></li><li><a href="bioenergetics.html">Energy</a></li><li><a href="carb-metabolism.html">Carb·M</a></li><li><a href="tca-oxphos.html">TCA·OxP</a></li><li><a href="lipid-aa-metabolism.html">Lip·AA·M</a></li><li><a href="metabolism-integration.html">Integr.</a></li><li><a href="signal-transduction.html">Signal</a></li><li><a href="molecular-biology-chemistry.html">Central</a></li><li><a href="clinical-biochemistry.html">Clinic</a></li><li><a href="drug-design-biochem.html">Drug</a></li><li><a href="modern-techniques-ai.html">Modern</a></li>
+    <li><a href="references/index.html" data-zh="📚 參考資料" data-en="📚 References">📚 參考資料</a></li>
+  </ul>
+</div></nav>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+<header class="page-hero"><div class="step-badge">CHAPTER 2 / 18 · BLOCK A</div>
+<h1 data-zh="胺基酸與蛋白質結構" data-en="Amino Acids &amp; Protein Structure">胺基酸與蛋白質結構</h1>
+<p class="subtitle" data-lang="zh">從 20 個字母拼出生命的萬種文字——序列、摺疊、功能的化學邏輯。</p>
+<p class="subtitle" data-lang="en">Twenty letters spell out the entire vocabulary of life — sequence, folding, and the chemistry of function.</p>
+</header>
+<main class="content-wrap">
+
+<section class="section">
+<div class="section-label" data-zh="概覽" data-en="OVERVIEW">概覽</div>
+<h2 data-zh="從胺基酸到「會動的機器」" data-en="From amino acids to working machines">從胺基酸到「會動的機器」</h2>
+<div data-lang="zh"><p>蛋白質佔細胞乾重的 50% 以上，是酶、結構、受體、運輸、訊息、防禦的執行者。所有蛋白質都是由 <strong>20 種標準胺基酸</strong>透過肽鍵串接而成。理解胺基酸的化學性質（電荷、極性、體積、芳香性）就能預測：</p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li>該蛋白質的等電點 (pI) 與電泳行為</li><li>哪些殘基會出現在<strong>疏水核心</strong>內，哪些在<strong>溶劑可及表面</strong></li><li>哪些殘基可被磷酸化、乙醯化、糖基化</li><li>哪些殘基扮演<strong>催化角色</strong>（His, Cys, Ser, Asp, Glu, Lys）</li></ul></div>
+<div data-lang="en"><p>Proteins are &gt;50% of cellular dry mass — the executors of catalysis, structure, signaling, transport, and defense. All are built from <strong>20 standard amino acids</strong> linked by peptide bonds. Knowing the chemical properties of amino acids (charge, polarity, size, aromaticity) lets you predict:</p>
+<ul style="margin:8px 0 16px 24px;color:var(--c-ink-light);">
+<li>The protein's isoelectric point (pI) and electrophoretic behavior</li><li>Which residues bury in the <strong>hydrophobic core</strong> vs the <strong>solvent-accessible surface</strong></li><li>Which residues get phosphorylated, acetylated, or glycosylated</li><li>Which residues serve as <strong>catalytic players</strong> (His, Cys, Ser, Asp, Glu, Lys)</li></ul></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="20 種胺基酸" data-en="20 AMINO ACIDS">20 種胺基酸</div>
+<h2 data-zh="一、依側鏈分類的 20 種胺基酸" data-en="I. The 20 amino acids by side-chain class">一、依側鏈分類的 20 種胺基酸</h2>
+<table class="comp-table">
+<thead><tr><th data-zh="類別" data-en="Class">類別</th><th data-zh="成員" data-en="Members">成員</th><th data-zh="關鍵性質" data-en="Key property">關鍵性質</th><th data-zh="典型角色" data-en="Typical role">典型角色</th></tr></thead>
+<tbody>
+<tr><td><strong data-zh="非極性脂肪族" data-en="Nonpolar aliphatic">非極性脂肪族</strong></td><td>Gly, Ala, Val, Leu, Ile, Met, Pro</td><td data-zh="疏水、無電荷" data-en="Hydrophobic, no charge">疏水、無電荷</td><td data-zh="蛋白質核心、膜貫穿區" data-en="Protein core, transmembrane helices">蛋白質核心、膜貫穿區</td></tr>
+<tr><td><strong data-zh="芳香族" data-en="Aromatic">芳香族</strong></td><td>Phe, Tyr, Trp</td><td data-zh="UV 280 nm 吸光、Tyr 可磷酸化" data-en="UV 280 absorb, Tyr phosphorylatable">UV 280 nm 吸光、Tyr 可磷酸化</td><td data-zh="蛋白濃度量測、訊息傳遞" data-en="Protein quant, signaling">蛋白濃度量測、訊息傳遞</td></tr>
+<tr><td><strong data-zh="極性不帶電" data-en="Polar uncharged">極性不帶電</strong></td><td>Ser, Thr, Cys, Asn, Gln</td><td data-zh="氫鍵、Cys 形成雙硫鍵" data-en="H-bonding, Cys → disulfide">氫鍵、Cys 形成雙硫鍵</td><td data-zh="酶活位點、結構穩定" data-en="Catalytic site, stability">酶活位點、結構穩定</td></tr>
+<tr><td><strong data-zh="正電（鹼性）" data-en="Positively charged (basic)">正電（鹼性）</strong></td><td>Lys, Arg, His</td><td data-zh="生理 pH 帶正電；His pKa 6.0 接近生理 pH" data-en="Positive at physiological pH; His pKa 6.0">帶正電；His pKa ≈ 6.0</td><td data-zh="DNA 結合、酶催化（His）" data-en="DNA binding, catalysis (His)">DNA 結合、酶催化</td></tr>
+<tr><td><strong data-zh="負電（酸性）" data-en="Negatively charged (acidic)">負電（酸性）</strong></td><td>Asp, Glu</td><td data-zh="生理 pH 帶負電" data-en="Negative at physiological pH">帶負電</td><td data-zh="金屬螯合、催化、鹽橋" data-en="Metal chelation, catalysis, salt bridges">金屬螯合、催化、鹽橋</td></tr>
+</tbody></table>
+<div class="callout tip"><span class="callout-icon">💡</span><div>
+<span data-lang="zh"><strong>記憶訣竅：</strong>側鏈 pKa 是預測「該殘基在生理 pH 帶什麼電」的關鍵。Asp/Glu (pKa ~4) 帶負；Lys (pKa 10.5)、Arg (pKa 12.5) 帶正；<strong>His (pKa 6.0)</strong> 在生理 pH 7.4 半質子化——這就是 His 能在催化中扮演「電子穿梭」角色的原因。</span>
+<span data-lang="en"><strong>Memory anchor:</strong> Side-chain pKa predicts charge at physiological pH. Asp/Glu (pKa ~4) carry negative; Lys (10.5)/Arg (12.5) carry positive; <strong>His (pKa 6.0)</strong> is half-protonated at pH 7.4 — exactly why it's the "proton shuttle" in countless enzyme active sites.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="互動模擬" data-en="INTERACTIVE">互動模擬</div>
+<h2 data-zh="Ramachandran 圖互動探索" data-en="Interactive Ramachandran Plot">Ramachandran 圖互動探索</h2>
+<div data-lang="zh"><p>蛋白質骨架的 <strong>φ (phi)</strong> 與 <strong>ψ (psi)</strong> 兩個二面角決定了局部構象。並非所有 (φ, ψ) 組合都能存在——有的會造成原子重疊。拖動座標點，看看你落在哪個允許區：</p></div>
+<div data-lang="en"><p>The protein backbone's <strong>φ (phi)</strong> and <strong>ψ (psi)</strong> dihedrals determine local conformation. Not all (φ, ψ) combinations are allowed — some cause steric clash. Drag the slider to see which region you fall in:</p></div>
+<div class="interactive-panel">
+<div class="sim-stats"><span class="sim-stat pass" id="statRegion">—</span><span class="sim-stat gold" id="statStruct">—</span></div>
+<div class="slider-group"><label><span data-zh="φ (phi)" data-en="φ (phi)">φ</span> <span id="valPhi">-60°</span></label><input type="range" id="sliderPhi" min="-180" max="180" value="-60" step="5"></div>
+<div class="slider-group"><label><span data-zh="ψ (psi)" data-en="ψ (psi)">ψ</span> <span id="valPsi">-45°</span></label><input type="range" id="sliderPsi" min="-180" max="180" value="-45" step="5"></div>
+<div class="chart-container"><canvas id="ramaChart"></canvas></div>
+<p style="font-size:.82rem;color:var(--c-ink-muted);text-align:center;"><span data-lang="zh">深色區為最常見構象、淺色為允許區、白色為禁止區</span><span data-lang="en">Dark = most common, light = allowed, white = forbidden</span></p>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="四級結構" data-en="STRUCTURE LEVELS">四級結構</div>
+<h2 data-zh="二、蛋白質結構的四個層級" data-en="II. Four levels of protein structure">二、蛋白質結構的四個層級</h2>
+<div class="workflow">
+<div class="workflow-step" data-step="1"><h4 data-zh="一級結構（Primary）" data-en="Primary structure">一級結構</h4>
+<p data-lang="zh">胺基酸線性序列。N 端 → C 端的順序。一級結構<strong>完全決定</strong>後面所有層級（Anfinsen, 1957 Nobel）。突變即在這層改變。</p>
+<p data-lang="en">Linear amino-acid sequence, N-terminus → C-terminus. Primary structure <strong>fully determines</strong> all higher levels (Anfinsen, 1957 Nobel). Mutations alter this layer.</p>
+</div>
+<div class="workflow-step" data-step="2"><h4 data-zh="二級結構（Secondary）" data-en="Secondary structure">二級結構</h4>
+<p data-lang="zh"><strong>α 螺旋 (φ ≈ -60°, ψ ≈ -45°)、β 折疊 (φ ≈ -120°, ψ ≈ +120°)、turns、loops</strong>。由骨架氫鍵維持（C=O ⋯ H–N）。預測工具：PSIPRED、DSSP、AlphaFold。</p>
+<p data-lang="en"><strong>α-helix (φ ≈ -60°, ψ ≈ -45°), β-sheet (φ ≈ -120°, ψ ≈ +120°), turns, loops</strong>. Stabilized by backbone H-bonds (C=O ⋯ H–N). Predictors: PSIPRED, DSSP, AlphaFold.</p>
+</div>
+<div class="workflow-step" data-step="3"><h4 data-zh="三級結構（Tertiary）" data-en="Tertiary structure">三級結構</h4>
+<p data-lang="zh">整條多肽的 3D 摺疊。由<strong>疏水核心、鹽橋、雙硫鍵、氫鍵、van der Waals</strong>共同維持。Domain = 可獨立摺疊的結構單元（如 SH2、Ig fold）。</p>
+<p data-lang="en">Full 3D fold of a polypeptide. Stabilized by <strong>hydrophobic core, salt bridges, disulfides, H-bonds, van der Waals</strong>. Domains = independently folding units (SH2, Ig fold, etc.).</p>
+</div>
+<div class="workflow-step" data-step="4"><h4 data-zh="四級結構（Quaternary）" data-en="Quaternary structure">四級結構</h4>
+<p data-lang="zh">多個次單元的組合。例如血紅蛋白 α₂β₂、F1-ATP synthase α₃β₃γ。允許<strong>協同性</strong>（cooperativity）出現——這是 Ch.8 酶調控的基礎。</p>
+<p data-lang="en">Assembly of multiple subunits. Examples: hemoglobin α₂β₂, F1-ATP synthase α₃β₃γ. Enables <strong>cooperativity</strong> — the basis of allosteric regulation (Ch.8).</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="摺疊與疾病" data-en="FOLDING &amp; DISEASE">摺疊與疾病</div>
+<h2 data-zh="三、蛋白質摺疊：能量漏斗與分子伴隨蛋白" data-en="III. Folding: energy funnel &amp; chaperones">三、摺疊：能量漏斗與伴隨蛋白</h2>
+<div data-lang="zh"><p>Levinthal 悖論：100 殘基蛋白若隨機搜索構象，需 10⁷⁷ 年才能折成正確結構——但實際只要毫秒。答案是<strong>能量漏斗 (folding funnel)</strong>：構象空間有定向偏置，朝最低自由能（natively folded）滑落。</p></div>
+<div data-lang="en"><p>Levinthal's paradox: a 100-residue protein randomly sampling conformations would take 10⁷⁷ years to fold — yet it happens in milliseconds. The answer is the <strong>folding funnel</strong>: conformational space is biased toward the global free-energy minimum (the native fold).</p></div>
+<div class="card-grid cols-3">
+<div class="card"><h4>🧬 <span data-zh="Hsp70 / Hsp90" data-en="Hsp70 / Hsp90">Hsp70/Hsp90</span></h4><div data-lang="zh"><p>ATP 驅動的摺疊伴隨蛋白，反覆「黏-放」未摺疊區，給予多次嘗試機會。</p></div><div data-lang="en"><p>ATP-driven chaperones — repeatedly bind/release exposed hydrophobic stretches, giving multiple folding attempts.</p></div></div>
+<div class="card"><h4>📦 <span data-zh="GroEL/GroES (chaperonin)" data-en="GroEL/GroES (chaperonin)">GroEL/GroES</span></h4><div data-lang="zh"><p>桶狀腔體，把不穩定中間體關進「無干擾」環境，給它私下摺疊。</p></div><div data-lang="en"><p>Barrel cavity that sequesters folding intermediates into a "private chamber" away from disruptive cellular crowding.</p></div></div>
+<div class="card"><h4>🩺 <span data-zh="錯誤摺疊疾病" data-en="Misfolding diseases">錯誤摺疊疾病</span></h4><div data-lang="zh"><p>Alzheimer Aβ、Parkinson α-synuclein、Huntington poly-Q、prion——同一摺疊出錯就形成澱粉樣纖維。</p></div><div data-lang="en"><p>Alzheimer's Aβ, Parkinson's α-synuclein, Huntington's poly-Q, prion — misfolding leads to amyloid fibrils.</p></div></div>
+</div>
+<div class="callout warn"><span class="callout-icon">⚠️</span><div>
+<span data-lang="zh"><strong>2026 觀點：</strong>AlphaFold 系列雖能預測「天然結構」，但對 IDP（intrinsically disordered proteins，本質無序蛋白）、構象集合 (conformational ensembles)、變構切換的捕捉仍有限。實驗結構生物學仍不可取代——詳見 Ch.3。</span>
+<span data-lang="en"><strong>2026 perspective:</strong> AlphaFold series predicts native structures well, but still struggles with IDPs (intrinsically disordered proteins), conformational ensembles, and allosteric switches. Experimental structural biology remains irreplaceable — see Ch.3.</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="決策引導" data-en="DECISION GUIDE">決策引導</div>
+<h2 data-zh="四、預測殘基定位與功能" data-en="IV. Predicting residue location &amp; function">四、預測殘基定位與功能</h2>
+<div class="decision-tree">
+<h4>🌳 <span data-zh="從序列預測該殘基會在哪裡" data-en="From sequence: where will this residue end up?">從序列預測該殘基會在哪裡</span></h4>
+<div data-lang="zh">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>該殘基是 Leu/Ile/Val/Phe/Trp？<span class="dt-arrow">→</span> 大概率在<strong>疏水核心</strong>或<strong>膜貫穿區</strong>。</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>該殘基是 Arg/Lys/Asp/Glu？<span class="dt-arrow">→</span> 通常在<strong>表面</strong>（除非形成內部鹽橋）。</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>該殘基是 Pro？<span class="dt-arrow">→</span> 容易出現在<strong>turn / loop</strong>或<strong>α 螺旋開頭 (helix N-cap)</strong>。</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>該殘基是 Cys？<span class="dt-arrow">→</span> 檢查是否形成<strong>雙硫鍵</strong>（細胞外蛋白常見、細胞質內罕見）。</div></div>
+<div class="dt-node"><span class="dt-q">Q5:</span><div>該殘基是 Gly？<span class="dt-arrow">→</span> 提供<strong>骨架靈活性</strong>，常見於 turn 或活性位點動態區。</div></div>
+</div>
+<div data-lang="en">
+<div class="dt-node"><span class="dt-q">Q1:</span><div>Is it Leu/Ile/Val/Phe/Trp? <span class="dt-arrow">→</span> Likely in the <strong>hydrophobic core</strong> or <strong>transmembrane helix</strong>.</div></div>
+<div class="dt-node"><span class="dt-q">Q2:</span><div>Is it Arg/Lys/Asp/Glu? <span class="dt-arrow">→</span> Usually on the <strong>surface</strong> (unless forming an internal salt bridge).</div></div>
+<div class="dt-node"><span class="dt-q">Q3:</span><div>Is it Pro? <span class="dt-arrow">→</span> Often in <strong>turns/loops</strong> or as <strong>α-helix N-cap</strong>.</div></div>
+<div class="dt-node"><span class="dt-q">Q4:</span><div>Is it Cys? <span class="dt-arrow">→</span> Check for <strong>disulfide bonds</strong> (common in extracellular proteins, rare in cytoplasmic ones).</div></div>
+<div class="dt-node"><span class="dt-q">Q5:</span><div>Is it Gly? <span class="dt-arrow">→</span> Provides <strong>backbone flexibility</strong> — often in turns or dynamic active-site regions.</div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label" data-zh="程式碼" data-en="CODE">程式碼</div>
+<h2 data-zh="計算等電點 (pI) 與摩爾消光係數" data-en="Computing pI and molar extinction">計算 pI 與消光係數</h2>
+<div class="code-tabs"><div class="code-tab-btns"><button class="code-tab-btn active" onclick="switchTab(this,'r1')">R</button><button class="code-tab-btn" onclick="switchTab(this,'py1')">Python / Biopython</button></div>
+<div class="code-tab-content active" id="r1"><pre><span class="kw">library</span>(Peptides)
+
+seq &lt;- <span class="str">"MASKVAILSAITYRTRDGGVPGKTYTYHHFV"</span>
+
+<span class="comment"># 等電點：所有可離子化基團電荷加總 = 0 處</span>
+<span class="func">pI</span>(seq, pKscale = <span class="str">"EMBOSS"</span>)
+
+<span class="comment"># 280 nm 摩爾消光係數 = 1490·#Tyr + 5500·#Trp + 125·#Cys-Cys</span>
+<span class="comment"># 用於蛋白濃度測定 A280 = ε·c·l</span>
+<span class="func">aaComp</span>(seq) |&gt;
+  <span class="kw">as.data.frame</span>() |&gt;
+  dplyr::summarise(eps = <span class="num">1490</span>*Y + <span class="num">5500</span>*W)
+
+<span class="comment"># 不穩定性指標、GRAVY、aliphatic index</span>
+<span class="func">instaIndex</span>(seq)
+<span class="func">hydrophobicity</span>(seq, scale = <span class="str">"KyteDoolittle"</span>)</pre></div>
+<div class="code-tab-content" id="py1"><pre><span class="kw">from</span> Bio.SeqUtils.ProtParam <span class="kw">import</span> ProteinAnalysis
+
+seq = <span class="str">"MASKVAILSAITYRTRDGGVPGKTYTYHHFV"</span>
+prot = ProteinAnalysis(seq)
+
+<span class="func">print</span>(<span class="str">f"pI = {prot.isoelectric_point():.2f}"</span>)
+<span class="func">print</span>(<span class="str">f"MW = {prot.molecular_weight():.1f} Da"</span>)
+<span class="func">print</span>(<span class="str">f"ε280 = {prot.molar_extinction_coefficient()[0]} M⁻¹·cm⁻¹"</span>)
+<span class="func">print</span>(<span class="str">f"GRAVY = {prot.gravy():.2f}"</span>)         <span class="comment"># 疏水性</span>
+<span class="func">print</span>(<span class="str">f"Instability = {prot.instability_index():.1f}"</span>)
+<span class="func">print</span>(<span class="str">f"Aromaticity = {prot.aromaticity():.3f}"</span>)
+<span class="func">print</span>(<span class="str">f"AA% = {prot.amino_acids_percent}"</span>)
+
+<span class="comment"># 二級結構傾向（Chou-Fasman 估計）</span>
+helix, turn, sheet = prot.secondary_structure_fraction()
+<span class="func">print</span>(<span class="str">f"α: {helix:.2f}, β: {sheet:.2f}, turn: {turn:.2f}"</span>)</pre></div>
+</div>
+</section>
+
+<section class="quiz-section">
+<h3>📝 <span data-zh="自我檢測" data-en="Self-Check">自我檢測</span></h3>
+<div class="quiz-q" data-answer="2"><p data-lang="zh">1. 哪個胺基酸在生理 pH 下能扮演「質子穿梭」催化角色？</p><p data-lang="en">1. Which amino acid serves as the "proton shuttle" in many active sites?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. Alanine</span><span data-lang="en">A. Alanine</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. Glycine</span><span data-lang="en">B. Glycine</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. Histidine（pKa ≈ 6.0）</span><span data-lang="en">C. Histidine (pKa ≈ 6.0)</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. Leucine</span><span data-lang="en">D. Leucine</span></div></div><div class="quiz-feedback" id="fb1"></div></div>
+
+<div class="quiz-q" data-answer="1"><p data-lang="zh">2. α 螺旋的典型 (φ, ψ) 為？</p><p data-lang="en">2. Typical (φ, ψ) for an α-helix?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. (+60°, +45°)</span><span data-lang="en">A. (+60°, +45°)</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. (-60°, -45°)</span><span data-lang="en">B. (-60°, -45°)</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. (-120°, +120°)</span><span data-lang="en">C. (-120°, +120°)</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. (+180°, -180°)</span><span data-lang="en">D. (+180°, -180°)</span></div></div><div class="quiz-feedback" id="fb2"></div></div>
+
+<div class="quiz-q" data-answer="2"><p data-lang="zh">3. 280 nm UV 吸光主要由哪些殘基貢獻？</p><p data-lang="en">3. Which residues dominate UV absorbance at 280 nm?</p>
+<div class="quiz-options"><div class="quiz-opt" data-idx="0"><span data-lang="zh">A. Lys 與 Arg</span><span data-lang="en">A. Lys and Arg</span></div><div class="quiz-opt" data-idx="1"><span data-lang="zh">B. 所有胺基酸貢獻相同</span><span data-lang="en">B. All amino acids equally</span></div><div class="quiz-opt" data-idx="2"><span data-lang="zh">C. Trp、Tyr（與少量雙硫鍵的 Cys-Cys）</span><span data-lang="en">C. Trp, Tyr (small contribution from Cys-Cys)</span></div><div class="quiz-opt" data-idx="3"><span data-lang="zh">D. Gly 與 Ala</span><span data-lang="en">D. Gly and Ala</span></div></div><div class="quiz-feedback" id="fb3"></div></div>
+</section>
+
+<nav class="page-nav"><a href="intro-biochemistry.html"><span class="nav-dir" data-zh="← 上一章" data-en="← Prev">← 上一章</span><span class="nav-title" data-zh="緒論：水、pH 與弱作用力" data-en="Foundations: Water, pH &amp;amp; Weak Interactions">緒論：水、pH 與弱作用力</span></a>
+<a href="protein-structure-methods.html"><span class="nav-dir" data-zh="下一章 →" data-en="Next →">下一章 →</span><span class="nav-title" data-zh="結構解析方法與 AlphaFold 3" data-en="Structure Determination &amp;amp; AlphaFold 3">結構解析方法與 AlphaFold 3</span></a>
+</nav>
+</main>
+<footer class="site-footer">© Charlene — Biochemistry Interactive Tutorial</footer>
+<script src="i18n.js"></script>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+function switchTab(b,id){const p=b.closest('.code-tabs');p.querySelectorAll('.code-tab-btn').forEach(x=>x.classList.remove('active'));p.querySelectorAll('.code-tab-content').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(id).classList.add('active');}
+
+// Ramachandran simulator — show favored regions
+const ramaPoints=[];
+// alpha-helix region (-60, -45) cluster
+for(let i=0;i<400;i++){ramaPoints.push({x:-60+Math.random()*40-20,y:-45+Math.random()*40-20,r:2,c:'rgba(159,18,57,0.4)'});}
+// beta-sheet region (-120, 120) cluster
+for(let i=0;i<300;i++){ramaPoints.push({x:-120+Math.random()*50-25,y:120+Math.random()*50-25,r:2,c:'rgba(161,98,7,0.4)'});}
+// left-handed helix (60, 45)
+for(let i=0;i<60;i++){ramaPoints.push({x:60+Math.random()*20-10,y:45+Math.random()*20-10,r:2,c:'rgba(76,175,80,0.3)'});}
+const ramaChart=new Chart(document.getElementById('ramaChart'),{type:'scatter',data:{datasets:[
+  {label:'Allowed',data:ramaPoints,backgroundColor:ctx=>ctx.raw?ctx.raw.c:'rgba(0,0,0,0.2)',pointRadius:2},
+  {label:'You',data:[],backgroundColor:'#b91c1c',pointRadius:10,pointStyle:'crossRot'}
+]},options:{responsive:true,maintainAspectRatio:false,animation:false,scales:{x:{title:{display:true,text:'φ (phi)'},min:-180,max:180},y:{title:{display:true,text:'ψ (psi)'},min:-180,max:180}},plugins:{legend:{position:'top'}}}});
+function updateRama(){
+  const phi=+document.getElementById('sliderPhi').value;
+  const psi=+document.getElementById('sliderPsi').value;
+  document.getElementById('valPhi').textContent=phi+'°';
+  document.getElementById('valPsi').textContent=psi+'°';
+  ramaChart.data.datasets[1].data=[{x:phi,y:psi}];
+  // Region detection
+  const L=I18n.get();
+  let region,struct;
+  if(phi>-90&&phi<-30&&psi>-75&&psi<-15){region=L==='zh'?'✅ α 螺旋區':'✅ α-helix region';struct=L==='zh'?'右手 α 螺旋':'right-handed α-helix';}
+  else if(phi>-150&&phi<-90&&psi>90&&psi<170){region=L==='zh'?'✅ β 折疊區':'✅ β-sheet region';struct=L==='zh'?'反平行/平行 β 鏈':'anti-/parallel β-strand';}
+  else if(phi>30&&phi<90&&psi>20&&psi<80){region=L==='zh'?'✅ 左手螺旋（罕見）':'✅ Left-handed (rare)';struct=L==='zh'?'通常只見於 Gly':'usually only at Gly';}
+  else{region=L==='zh'?'⚠️ 禁止/罕見區':'⚠️ Disallowed/rare';struct=L==='zh'?'通常造成原子重疊':'usually causes steric clash';}
+  document.getElementById('statRegion').textContent=region;
+  document.getElementById('statStruct').textContent=struct;
+  ramaChart.update('none');
+}
+['sliderPhi','sliderPsi'].forEach(id=>document.getElementById(id).addEventListener('input',updateRama));
+document.addEventListener('langchange',updateRama);
+updateRama();
+
+const QF={zh:{q1_y:'His pKa 約 6.0，生理 pH 下可吸放質子，因此常見於酶活位點。',q1_n:'正確答案已標示。',q2_y:'α 螺旋的典型骨架角為 (-60°, -45°)。',q2_n:'正確答案已標示。',q3_y:'280 nm 吸光主要來自 Trp (ε=5500) 與 Tyr (ε=1490)，雙硫鍵 Cys-Cys 貢獻 125。',q3_n:'正確答案已標示。'},en:{q1_y:'His has pKa ~6.0 so it can donate/accept protons near physiological pH — a classic active-site proton shuttle.',q1_n:'Correct answer highlighted.',q2_y:'Typical α-helix backbone angles are (-60°, -45°).',q2_n:'Correct answer highlighted.',q3_y:'280 nm absorbance comes primarily from Trp (ε=5500) and Tyr (ε=1490); disulfide Cys-Cys contributes 125.',q3_n:'Correct answer highlighted.'}};
+document.querySelectorAll('.quiz-q').forEach((q,qi)=>{const ans=+q.dataset.answer;q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',()=>{if(q.classList.contains('answered'))return;q.classList.add('answered');const fb=document.getElementById('fb'+(qi+1));const ok=+o.dataset.idx===ans;o.classList.add(ok?'correct':'wrong');if(!ok)q.querySelectorAll('.quiz-opt')[ans].classList.add('correct');const L=I18n.get();fb.className='quiz-feedback show '+(ok?'correct-fb':'wrong-fb');fb.textContent=(ok?'✅ ':'❌ ')+(QF[L]['q'+(qi+1)+'_'+(ok?'y':'n')]||'');});});});
+</script>
+</body></html>
